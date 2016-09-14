@@ -28,12 +28,26 @@
 }
 
 
-
+::-webkit-scrollbar {
+    width: 5px;
+}
+ 
+::-webkit-scrollbar-track {
+    /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);*/ 
+    border-radius: 0px;
+    background: #ffffff;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 0px;
+    background: #c7c7c7;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
 
 body { 
 	background: #F7F7F7;
 	padding-bottom: 0px;
-	padding-top: 20px; 
+	/*padding-top: 20px;*/ 
 	font-family: 'Raleway', sans-serif;
 }
 
@@ -45,23 +59,53 @@ body {
 }
 
 .jumbotron {
-	padding-top: 10%;
+	padding-top: 12vh;
+	padding-bottom: 25vh;
 	background-color: #f6f7eb;
 	color: #f6f7eb;
-	height: 620px;
 	text-align: center;
 	font-family: 'Raleway';
+	position: relative;
+    overflow: hidden;
+    height: 100vh;
+    z-index:0;
+}
+
+#video-background { 
+	position: absolute;
+	height: auto;
+	width: auto;
+	min-height: 100%;
+	min-width: 100%;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate3d(-50%, -50%, 0);
+	transform: translate3d(-50%, -50%, 0);
+	z-index: -100;
+}
+
+.jumbotron .overlay {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: -10;
+    background: rgba(0, 0, 0, 0.5);
+    /*opacity: 0.5;*/
 }
 
 .jumbotron h1 {
 	font-family: 'Pacifico';
 	color: #f6f7eb;
-	padding-bottom: 40px;
+	padding-bottom: 100px;
+	z-index: 100;
 }
 
 .token-input ui-autocomplete-input {
 	max-width: relative;
 }
+
 
 .input-group .form-control:first-child, .input-group-addon:first-child, .input-group-btn:first-child>.btn, .input-group-btn:first-child>.btn-group>.btn, .input-group-btn:first-child>.dropdown-toggle, .input-group-btn:last-child>.btn-group:not(:last-child)>.btn, .input-group-btn:last-child>.btn:not(:last-child):not(.dropdown-toggle) {
 	background: #fffff;
@@ -69,18 +113,17 @@ body {
  	font-size: 10pt;
 	text-align: left;
  	opacity: 0.8;
- 	width: 100%;
- 	position: relative;
  }
 
 .tokenfield {
 	max-height: 34px;
     padding-bottom: 0px;
-    height: 34px;
+    position: relative;
 }
 
 .header-text {
 	margin-bottom: 10px;
+	z-index: 2;
 	/*font-family: 'Pacifico';*/
 }
 
@@ -88,7 +131,7 @@ body {
 	background: linear-gradient(
       rgba(0, 0, 0, 0.4), 
       rgba(0, 0, 0, 0.4)
-    ),url("https://hd.unsplash.com/photo-1470549813517-2fa741d25c92");
+    ),url("https://yummyli.herokuapp.com/img/index-bg.jpg");
 	background-size: cover;
 	background-position: center;
 }
@@ -177,8 +220,8 @@ h4{
 }
 
 .gallery {
-	padding-top: 60px;
-	padding-bottom: 60px; 
+	margin-top: 100px;
+	margin-bottom: 100px; 
 	text-align: center;
 	font-size: 4.5rem;
 	font-family: 'Raleway', sans-serif;
@@ -228,16 +271,20 @@ h4{
 
 .wishlist{
 	font-size: 3.2rem;
-	text-shadow: 1px 1px 10px #4C4C4C;
+	/*text-shadow: -1px 0 #ffffff, 0 1px #ffffff, 1px 0 #ffffff, 0 -1px #ffffff;*/
+	/*text-shadow: 0px 0px 20px #000000;
+    text-shadow: 0 0 30px #be0000, 0 0 0 #F7F7F7;*/
+    text-shadow: 0px 0px 20px #4C4C4C;
 }
 
-.wishlist:hover{
-	font-size: 3.2rem;
-	text-shadow: 1px 1px 20px #000000;
+.thumbnail>img:hover {
+   opacity: 0.8;
 }
 
 a.link-heart {
-	color: #ECECEC;
+	/*color: #be0000;*/
+	color: #F7F7F7;
+	/*color:transparent;*/
 }
 
 .modal-logo {
@@ -295,13 +342,6 @@ a.link-heart {
 	margin-right: 10%;
 }
 
-/*.search-bar {
-	width: 70%;
-	margin-left: 15%;
-	margin-right: 15%;
-}
-*/
-
 .intext-logo {
 	font-family: Pacifico;
 	font-size: 2rem;
@@ -319,4 +359,10 @@ a.link-heart {
 
 .btn-learn:hover {
 	background: #eaeaea;
+}
+
+.up {
+    font-size: 30px;
+    margin-bottom: 60px;
+    color: #393e41;
 }
