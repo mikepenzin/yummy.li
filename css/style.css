@@ -59,7 +59,7 @@ body {
 }
 
 .jumbotron {
-	padding-top: 12vh;
+	padding-top: 10vh;
 	padding-bottom: 25vh;
 	background-color: #f6f7eb;
 	color: #f6f7eb;
@@ -98,7 +98,7 @@ body {
 .jumbotron h1 {
 	font-family: 'Pacifico';
 	color: #f6f7eb;
-	padding-bottom: 100px;
+	padding-bottom: 70px;
 	z-index: 100;
 }
 
@@ -124,7 +124,6 @@ body {
 .header-text {
 	margin-bottom: 10px;
 	z-index: 2;
-	/*font-family: 'Pacifico';*/
 }
 
 .jumbo-bg {
@@ -274,6 +273,11 @@ h4{
 
 .receipe-img-i-container {
 	color: #e04f67;
+	text-shadow: 
+			0PX 0PX 2em #393e41,
+			0PX 0PX 10em #C7C7C7,
+			0px 0px 20em #cccccc;
+			
     position: absolute;
     top: 17%;
     left: 0px;
