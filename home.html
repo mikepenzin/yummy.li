@@ -3,21 +3,38 @@
 <head>
   <title>yummy.li -  Search recipes using ingredients you already have in the kitchen! What's in your fridge?</title>
   <meta charset="utf-8">
+  <link rel="apple-touch-icon" sizes="57x57" href="img/fav-icon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="img/fav-icon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="img/fav-icon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="img/fav-icon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="img/fav-icon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="img/fav-icon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="img/fav-icon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="img/fav-icon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/fav-icon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="img/fav-icon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/fav-icon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="img/fav-icon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/fav-icon/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <link rel="stylesheet" href="css/normalize.css">
   <link href="https://fonts.googleapis.com/css?family=Pacifico|Raleway" rel="stylesheet">
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <!-- tokienfield stuff -->
-    <!-- jQuery UI CSS -->
-    <link href="css/jquery-ui.css" type="text/css" rel="stylesheet">
-    <!-- Bootstrap styling for Typeahead -->
-    <link href="css/tokenfield-typeahead.css" type="text/css" rel="stylesheet">
-    <!-- Tokenfield CSS -->
-    <link href="css/bootstrap-tokenfield.css" type="text/css" rel="stylesheet">
-    <!-- Docs CSS -->
-    <link href="css/pygments-manni.css" type="text/css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+   <!-- tokienfield stuff -->
+   <!-- jQuery UI CSS -->
+  <link href="css/jquery-ui.css" type="text/css" rel="stylesheet">
+   <!-- Bootstrap styling for Typeahead -->
+  <link href="css/tokenfield-typeahead.css" type="text/css" rel="stylesheet">
+   <!-- Tokenfield CSS -->
+  <link href="css/bootstrap-tokenfield.css" type="text/css" rel="stylesheet">
+   <!-- Docs CSS -->
+  <link href="css/pygments-manni.css" type="text/css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
 
 </head>
 <body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
@@ -54,8 +71,9 @@
 <div class="jumbotron" id="top">
   <div class="overlay"></div>
 	<video id="video-background" preload muted autoplay loop>
-    	<source src="video/Food-1094.mp4" type="video/mp4">
+    	<source src="video/Food-1095.mp4" type="video/mp4">
 	</video>
+  <!-- <iframe id="video-background" height="100%" width="100%" src="http://www.youtube.com/embed/95SNbn340TE?modestbranding=1&autoplay=1&controls=0&fs=0&iv_load_policy=3&loop=1&rel=0&showinfo=0&disablekb=1" frameborder="0"></iframe> -->
   <div class="header-text">
     <h1>
       yummy.li
@@ -147,110 +165,179 @@
       <h1>Best Recipes</h1>
 </div>
 
+<!-- Best Receipes gallery -->
+
 <div class="container">
   <div class="row">
-    <div class="col-md-4 col-sm-6 thumbnail">
-     <img src="http://i.imgur.com/qK42fUu.jpg">
-     <div class="wrapper">
-         <div class="image-text"><a class="link-heart" href="#"><span class="wishlist"><i class="fa fa-heart-o" aria-hidden="true"></i></span></a></div>
-     </div>
+
+  <!-- Receipe #1 -->
+    <div class="col-md-4 col-sm-6">
+    <div class="thumbnail">
+      <img src="img\food-photo\1.jpg">
+        <div class="receipe-img-i-container">
+          <a href="#"><i class="fa fa-heart fa-5x"></i></a>
+        </div>
      <div class="caption">
         <h3><a href="#" class="link">Thumbnail label</a></h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
         <p><a href="#" class="btn btn-default btn-def" role="button">Read more</a></p>
       </div>
-    </div>
-    <div class="col-md-4 col-sm-6 thumbnail">
-     <img src="https://images.unsplash.com/photo-1435771112039-1e5b2bcad966?dpr=2&fit=crop&fm=jpg&h=825&q=50&w=1450">
-     <div class="wrapper">
-         <div class="image-text"><a class="link-heart" href="#"><span class="wishlist"><i class="fa fa-heart-o" aria-hidden="true"></i></span></a></div>
-     </div>
-     <div class="caption">
-        <h3><a href="#" class="link">Thumbnail label</a></h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-        <p><a href="#" class="btn btn-default btn-def" role="button">Read more</a></p>
       </div>
     </div>
-    <div class="col-md-4 col-sm-6 thumbnail">
-     <img src="https://images.unsplash.com/photo-1442406964439-e46ab8eff7c4?dpr=2&fit=crop&fm=jpg&h=825&q=50&w=1450">
-     <div class="wrapper">
-         <div class="image-text"><a class="link-heart" href="#"><span class="wishlist"><i class="fa fa-heart-o" aria-hidden="true"></i></span></a></div>
-     </div>
+   
+   <!-- Receipe #2 -->
+    <div class="col-md-4 col-sm-6">
+    <div class="thumbnail">
+      <img src="img\food-photo\2.jpg">
+        <div class="receipe-img-i-container">
+          <a href="#"><i class="fa fa-heart fa-5x"></i></a>
+        </div>
      <div class="caption">
         <h3><a href="#" class="link">Thumbnail label</a></h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
         <p><a href="#" class="btn btn-default btn-def" role="button">Read more</a></p>
+      </div>
       </div>
     </div>
-    <div class="col-md-4 col-sm-6 thumbnail">
-     <img src="https://images.unsplash.com/photo-1439524970634-649c37a69e5c?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&w=1450&h=825&fit=crop&s=bfda9916c885869b43b70738693428d9">
-     <div class="wrapper">
-         <div class="image-text"><a class="link-heart" href="#"><span class="wishlist"><i class="fa fa-heart-o" aria-hidden="true"></i></span></a></div>
-     </div>
+
+    <!--md helper-->
+    <div class="clearfix col-sm-12 visible-md visible-sm"></div>
+
+   <!-- Receipe #3 -->
+    <div class="col-md-4 col-sm-6">
+    <div class="thumbnail">
+      <img src="img\food-photo\3.jpg">
+        <div class="receipe-img-i-container">
+          <a href="#"><i class="fa fa-heart fa-5x"></i></a>
+        </div>
      <div class="caption">
         <h3><a href="#" class="link">Thumbnail label</a></h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
         <p><a href="#" class="btn btn-default btn-def" role="button">Read more</a></p>
       </div>
-    </div> 
-    <div class="col-md-4 col-sm-6 thumbnail">
-     <img src="https://images.unsplash.com/photo-1444090542259-0af8fa96557e?dpr=2&fit=crop&fm=jpg&h=825&q=50&w=1450">
-     <div class="wrapper">
-         <div class="image-text"><a class="link-heart" href="#"><span class="wishlist"><i class="fa fa-heart-o" aria-hidden="true"></i></span></a></div>
-     </div>
-     <div class="caption">
-        <h3><a href="#" class="link">Thumbnail label</a></h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-        <p><a href="#" class="btn btn-default btn-def" role="button">Read more</a></p>
-      </div>
-    </div>   
-    <div class="col-md-4 col-sm-6 thumbnail">
-     <img src="https://images.unsplash.com/photo-1434543177303-ef2cc7707e0d?dpr=2&fit=crop&fm=jpg&h=825&q=50&w=1450">
-     <div class="wrapper">
-         <div class="image-text"><a class="link-heart" href="#"><span class="wishlist"><i class="fa fa-heart-o" aria-hidden="true"></i></span></a></div>
-     </div>
-     <div class="caption">
-        <h3><a href="#" class="link">Thumbnail label</a></h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-        <p><a href="#" class="btn btn-default btn-def" role="button">Read more</a></p>
       </div>
     </div>
-    <div class="col-md-4 col-sm-6 thumbnail">
-     <img src="https://images.unsplash.com/photo-1436262513933-a0b06755c784?dpr=2&fit=crop&fm=jpg&h=825&q=50&w=1450">
-     <div class="wrapper">
-         <div class="image-text"><a class="link-heart" href="#"><span class="wishlist"><i class="fa fa-heart-o" aria-hidden="true"></i></span></a></div>
-     </div>
+
+    <!--lg helper-->
+    <div class="clearfix col-lg-12 visible-lg"></div>
+
+   <!-- Receipe #4 -->
+    <div class="col-md-4 col-sm-6">
+    <div class="thumbnail">
+      <img src="img\food-photo\4.jpg">
+        <div class="receipe-img-i-container">
+          <a href="#"><i class="fa fa-heart fa-5x"></i></a>
+        </div>
      <div class="caption">
         <h3><a href="#" class="link">Thumbnail label</a></h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
         <p><a href="#" class="btn btn-default btn-def" role="button">Read more</a></p>
       </div>
+      </div>
     </div>
-    <div class="col-md-4 col-sm-6 thumbnail">
-     <img src="https://images.unsplash.com/photo-1439396087961-98bc12c21176?dpr=2&fit=crop&fm=jpg&h=825&q=50&w=1450">
-     <div class="wrapper">
-         <div class="image-text"><a class="link-heart" href="#"><span class="wishlist"><i class="fa fa-heart-o aria-hidden="true"></i></span></a></div>
-     </div>
+
+    <!--md helper-->
+    <div class="clearfix col-sm-12 visible-md visible-sm"></div>
+
+       <!-- Receipe #5 -->
+    <div class="col-md-4 col-sm-6">
+    <div class="thumbnail">
+      <img src="img\food-photo\5.jpg">
+        <div class="receipe-img-i-container">
+          <a href="#"><i class="fa fa-heart fa-5x"></i></a>
+        </div>
      <div class="caption">
         <h3><a href="#" class="link">Thumbnail label</a></h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
         <p><a href="#" class="btn btn-default btn-def" role="button">Read more</a></p>
       </div>
+      </div>
     </div>
-    <div class="col-md-4 col-sm-6 thumbnail">
-     <img src="https://images.unsplash.com/photo-1439694458393-78ecf14da7f9?dpr=2&fit=crop&fm=jpg&h=825&q=50&w=1450">
-     <div class="wrapper">
-         <div class="image-text"><a class="link-heart" href="#"><span class="wishlist"><i class="fa fa-heart-o" aria-hidden="true"></i></span></a></div>
-     </div>
+
+       <!-- Receipe #6 -->
+    <div class="col-md-4 col-sm-6">
+    <div class="thumbnail">
+      <img src="img\food-photo\6.jpg">
+        <div class="receipe-img-i-container">
+          <a href="#"><i class="fa fa-heart fa-5x"></i></a>
+        </div>
      <div class="caption">
         <h3><a href="#" class="link">Thumbnail label</a></h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
         <p><a href="#" class="btn btn-default btn-def" role="button">Read more</a></p>
       </div>
+      </div>
     </div>
-  </div>
+
+    <!--md helper-->
+    <div class="clearfix col-sm-12 visible-md visible-sm"></div>
+
+    <!--lg helper-->
+    <div class="clearfix col-lg-12 visible-lg"></div>
+
+           <!-- Receipe #7 -->
+    <div class="col-md-4 col-sm-6">
+    <div class="thumbnail">
+      <img src="img\food-photo\7.jpg">
+        <div class="receipe-img-i-container">
+          <a href="#"><i class="fa fa-heart fa-5x"></i></a>
+        </div>
+     <div class="caption">
+        <h3><a href="#" class="link">Thumbnail label</a></h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+        <p><a href="#" class="btn btn-default btn-def" role="button">Read more</a></p>
+      </div>
+      </div>
+    </div>
+
+           <!-- Receipe #8 -->
+    <div class="col-md-4 col-sm-6">
+    <div class="thumbnail">
+      <img src="img\food-photo\8.jpg">
+        <div class="receipe-img-i-container">
+          <a href="#"><i class="fa fa-heart fa-5x"></i></a>
+        </div>
+     <div class="caption">
+        <h3><a href="#" class="link">Thumbnail label</a></h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+        <p><a href="#" class="btn btn-default btn-def" role="button">Read more</a></p>
+      </div>
+      </div>
+    </div>
+
+    <!--md helper-->
+    <div class="clearfix col-sm-12 visible-md visible-sm"></div>
+
+           <!-- Receipe #9 -->
+    <div class="col-md-4 col-sm-6">
+    <div class="thumbnail">
+      <img src="img\food-photo\9.jpg">
+        <div class="receipe-img-i-container">
+          <a href="#"><i class="fa fa-heart fa-5x"></i></a>
+        </div>
+     <div class="caption">
+        <h3><a href="#" class="link">Thumbnail label</a></h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+        <p><a href="#" class="btn btn-default btn-def" role="button">Read more</a></p>
+      </div>
+      </div>
+    </div>
+
+    <!--lg helper-->
+    <div class="clearfix col-lg-12 visible-lg"></div>
+
 </div>
+</div>
+
 
 <div class="footer">
   <div>
