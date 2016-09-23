@@ -98,7 +98,7 @@ body {
 .jumbotron h1 {
 	font-family: 'Pacifico';
 	color: #f6f7eb;
-	padding-bottom: 70px;
+	margin-bottom: 20vh;
 	z-index: 100;
 }
 
@@ -201,6 +201,7 @@ h4{
 	background: #F7F7F7;
 	border: 1px solid #DEDEDE;
 	color: #393e41;
+	margin: 5px;
 }
 
 .btn-def:hover {
@@ -216,6 +217,13 @@ h4{
 .button-social:hover {
 	background: #2c3e50;
 	color: #ECECEC;
+}
+
+.thumbnail img{
+	display: block;
+	width: 100%;
+	height:	auto;
+	overflow: hidden;
 }
 
 .gallery {
@@ -257,55 +265,18 @@ h4{
 }
 
 
-/*.thumbnail>img:hover {
-   opacity: 0.8;
-}*/
-
-/*Start - Hover heart over thumbnail image*/
-
-.thumbnail:hover img {
-    opacity: 0.3;
-}
-
-.thumbnail:not(:hover) .receipe-img-i-container {
-    display: none;
-}
-
-.receipe-img-i-container {
+.btn-wishlist {
+	background: #F7F7F7;
+	border: 1px solid #e04f67;
 	color: #e04f67;
-	text-shadow: 
-			0PX 0PX 2em #393e41,
-			0PX 0PX 10em #C7C7C7,
-			0px 0px 20em #cccccc;
-			
-    position: absolute;
-    top: 17%;
-    left: 0px;
-    display: block;
-    height: 30%;
-    width: 100%;
-    z-index: 500;
-    text-align:center;
-    text-decoration: none;
+	margin: 5px;
 }
 
-.receipe-img-i-container:hover {
-	color: #e04f67;
-    text-decoration: none;
+.btn-wishlist:hover {
+	background: #e04f67;
+	border: 1px solid #F7F7F7;
+	color: #F7F7F7;
 }
-
-.receipe-img-i-container a i {
-	color: #e04f67;
-    text-decoration: none;
-}
-
-.receipe-img-i-container a i:hover {
-	color: #e04f67;
-    text-decoration: none;
-}
-
-
-/*End - Hover effect*/
 
 a.link-heart {
 	/*color: #be0000;*/
@@ -392,3 +363,9 @@ a.link-heart {
     margin-bottom: 60px;
     color: #393e41;
 }
+
+.row {
+	max-width: 100%;
+	margin: 0 auto;
+}
+
