@@ -177,7 +177,7 @@ body {
 	padding-top: 15px;
 }
 
-h4{
+.jumbotron h4{
 	padding-bottom: 40px;
 }
 
@@ -200,8 +200,9 @@ h4{
 .btn-def {
 	background: #F7F7F7;
 	border: 1px solid #DEDEDE;
+	font-size: 1.3rem;
 	color: #393e41;
-	margin: 5px;
+	margin: 1%;
 }
 
 .btn-def:hover {
@@ -268,8 +269,9 @@ h4{
 .btn-wishlist {
 	background: #F7F7F7;
 	border: 1px solid #e04f67;
+	font-size: 1.3rem;
 	color: #e04f67;
-	margin: 5px;
+	margin: 1%;
 }
 
 .btn-wishlist:hover {
@@ -288,7 +290,7 @@ a.link-heart {
 	font-family: 'Pacifico';
 	color: #393e41;
 	font-size: 4.8rem;
-	padding-bottom: 2px;
+	padding-bottom: 40px;
 	text-align: center;
 }
 
@@ -315,6 +317,7 @@ a.link-heart {
 	color: #f6f7eb;
 	text-align: center;
 	border-bottom: none;
+	padding-bottom: 5%;
 }
 
 .modal-footer {
@@ -369,3 +372,42 @@ a.link-heart {
 	margin: 0 auto;
 }
 
+/*start*/
+
+.equal-height-thumbnail { 
+  padding: .5vw;
+  font-size: 0;
+  display: -ms-flexbox;
+  -ms-flex-wrap: wrap;
+  -ms-flex-direction: column;
+  -webkit-flex-flow: row wrap; 
+  flex-flow: row wrap; 
+  display: -webkit-box;
+  display: flex;
+}
+
+.equal-height-thumbnail li { 
+  -webkit-box-flex: auto;
+  -ms-flex: auto;
+  flex: auto; 
+  width: 300px; 
+  margin: .5vw ; 
+  background: #FFF;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.1)
+  padding:0 0.5%;
+}
+
+.equal-height-thumbnail figure {
+  padding: 2%;
+}
+
+.equal-height-thumbnail figure img { 
+  width: 100%; 
+  height: auto; 
+}
+
+.caption { 
+	padding-left: 5%;
+	padding-right: 5%;
+}
+/*end*/
