@@ -70,6 +70,53 @@ jQuery(document).ready(function($) {
 
   });
 
+$('#tokenfield-2').tokenfield({
+    autocomplete: {
+      source: [
+      'Poultry','Nuts','Meat','Gluten','Dairy',
+      'Shellfish','Fish'
+      ],
+      delay: 100
+    },
+    showAutocompleteOnFocus: true,
+    delimiter: [',','-', '_']
+
+  });
+
+$('#tokenfield-3').tokenfield({
+    autocomplete: {
+      source: [
+      'Asian','Caribbean','Chinese','French','German',
+      'Indian','Thai','Italian','Mediterranean','Mexican',
+      'Tex-Mex','Irish','Greek','Japanese','Nordic','Portuguese','East European',
+      'African','British','Turkish and Middle Eastern','Spanish'
+      ],
+      delay: 100
+    },
+    showAutocompleteOnFocus: true,
+    delimiter: [',','-', '_']
+
+  });
+
+
+$('#tokenfield-4').tokenfield({
+    autocomplete: {
+      source: [
+      'Breads','Breakfast','Cakes','Casseroles','Cookies',
+      'Desserts','Dinner','Dips','Drinks','Fish Recipes',
+      'Grilling','BBQ','Kid Friendly','Meat Recipes','Poultry Recipes',
+      'Quick & Easy','Salad Dressing','Salads','Sandwiches','Sauces',
+      'Seafood Recipes','Slow Cooker','Soups','Veggie Recipes'
+      ],
+      delay: 100
+    },
+    showAutocompleteOnFocus: true,
+    delimiter: [',','-', '_']
+
+  });
+
+
+
   var engine = new Bloodhound({
     local: [{value: 'red'}, {value: 'blue'}, {value: 'green'} , {value: 'yellow'}, {value: 'violet'}, {value: 'brown'}, {value: 'purple'}, {value: 'black'}, {value: 'white'}],
     datumTokenizer: function(d) {
@@ -83,7 +130,7 @@ jQuery(document).ready(function($) {
     typeahead: [null, { source: engine.ttAdapter() }]
   });
 
-  $('#tokenfield-2')
+  $('#tokenfield-5')
     .on('tokenfield:createtoken', function (e) {
       var data = e.attrs.value.split('|')
       e.attrs.value = data[1] || data[0]
@@ -97,6 +144,7 @@ jQuery(document).ready(function($) {
         $(e.relatedTarget).addClass('invalid')
       }
     })
+
     .on('tokenfield:edittoken', function (e) {
       if (e.attrs.label !== e.attrs.value) {
         var label = e.attrs.label.split(' (')
