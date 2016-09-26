@@ -4,11 +4,6 @@ RewriteEngine on
 RewriteCond %{HTTP_HOST} ^yummyli.herokuapp.com[nc]
 RewriteRule ^(.*)$ http://www.yummyli.herokuapp.com/$1 [r=301,nc]
 
-//Caching schema
-<FilesMatch "\.(jpg|css|js)$">
-Header set Cache-Control "public, max-age=964224000"
-</FilesMatch>
-
 //Block bad bots
 RewriteEngine On 
 RewriteCond %{HTTP_USER_AGENT} ^BlackWidow [OR]
