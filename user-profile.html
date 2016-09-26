@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>yummy.li -  Mike Penzin - Profile page</title>
+  <meta charset="utf-8">
+  <link rel="apple-touch-icon" sizes="57x57" href="img/fav-icon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="img/fav-icon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="img/fav-icon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="img/fav-icon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="img/fav-icon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="img/fav-icon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="img/fav-icon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="img/fav-icon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/fav-icon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="img/fav-icon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/fav-icon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="img/fav-icon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/fav-icon/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link href="https://fonts.googleapis.com/css?family=Pacifico|Raleway" rel="stylesheet">
+  <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+   <!-- tokienfield stuff -->
+   <!-- jQuery UI CSS -->
+  <link href="css/jquery-ui.css" type="text/css" rel="stylesheet">
+   <!-- Bootstrap styling for Typeahead -->
+  <link href="css/tokenfield-typeahead.css" type="text/css" rel="stylesheet">
+   <!-- Tokenfield CSS -->
+  <link href="css/bootstrap-tokenfield.css" type="text/css" rel="stylesheet">
+   <!-- Docs CSS -->
+  <link href="css/pygments-manni.css" type="text/css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/profile-style.css">
+
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+<div class="container">
+  <div class="navbar-header">
+     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-blog" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    <a href="#top" class="navbar-brand"><span class="logo" >yummy.li</span></a>
+  </div>
+  <div class="collapse navbar-collapse" id="nav-blog">
+  <ul class="nav navbar-nav">
+    <li><a href="#">About</a></li>
+    <li><a href="#" data-toggle="modal" data-target="#howitworks">How it works?</a></li>
+  </ul>
+  <ul class="nav navbar-nav navbar-right">
+	<li><a href="#">Sign up / Log in</a></li>
+    <button type="button" class="btn navbar-btn" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
+		sagittis lacus vel augue laoreet rutrum faucibus.">
+      <span><i class="fa fa-heart-o" aria-hidden="true"></i></span> My Wishlist
+    </button>
+  </ul>
+  </div>
+</div>
+</nav>
+
+
+<div class="jumbotron jumbo-bg" id="top">
+  <div class="header-text">
+  	<h2>Hello, Michael!</h2>
+  	<h4>Here you can update your information and review wishlist</h4>
+  </div>
+</div>
+
+
+<div class="row profile-row">
+
+		<div class="tabs-left info">
+			<ul class="nav nav-pills nav-stacked col-md-2">
+			  <li class="active"><a data-toggle="tab" href="#home"><i class="fa fa-user" aria-hidden="true"></i>  Profile</a></li>
+			  <li><a data-toggle="tab" href="#menu1"><i class="fa fa-heart-o" aria-hidden="true"></i>  Wishlist</a></li>
+			  <li><a data-toggle="tab" href="#menu2"><i class="fa fa-info" aria-hidden="true"></i>  Additional info</a></li>
+			</ul>
+
+			<div class="tab-content col-md-10">
+			  <div id="home" class="tab-pane fade in active">
+				  <!-- <h3>Your Profile</h3> -->
+				  <div class="container-fluid row">
+				  	<div class="col-lg-4 col-md-4 col-sx-12">
+				  		<div class="image-cropper">
+						    <img src="https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/6/005/0ae/224/09c0412.jpg" class="rounded" />
+						</div>
+				  	</div>
+					<div class="col-lg-8 col-md-8 col-sx-12">
+					   	<form class="form-horizontal" method="post">
+						<fieldset>
+							<!-- Form Name -->
+							<!-- Text input-->
+							<div class="col-lg-12 col-md-12 col-sx-12">
+							<p>
+								Retrieve data from:
+							</p>
+							<p>
+									      	<a href="#" class="btn btn-default btn-facebook" role="button">
+									      		<i class="fa fa-facebook" aria-hidden="true"></i></span> Facebook</a>
+										    <a href="#" class="btn btn-default btn-google" role="button">
+										        <i class="fa fa-google-plus" aria-hidden="true"></i></span> Google+
+										    </a>
+										</p>
+							<div class="form-group col-lg-12 col-md-12 col-sx-12">
+							  <div>
+							  <label class="control-label" for="FirstName">Name:</label>  
+							  <input name="FirstName" type="text" value="Michael Penzin" class="form-control input-md">
+							  </div>
+							</div>
+							</div>
+
+							<!-- Email input-->
+							<div class="col-lg-12 col-md-12 col-sx-12">
+							<div class="form-group col-lg-12 col-md-12 col-sx-12">
+							  <div>
+							  <label class="control-label" for="email">E-mail:</label>  
+							  <input name="email" type="email" value="mike.penzin@gmail.com" class="form-control input-md">
+							  </div>
+							</div>
+							</div>
+
+							<div id="filter-panel" class="col-lg-12 col-md-12 col-sx-12 collapse filter-panel">
+
+							<!-- Text input-->
+							<div class="form-group form-group col-lg-12 col-md-12 col-sx-12">
+							  <div>
+							  <label class="control-label" for="old-password">Old Password:</label>  
+							  <input name="old-password" type="password" class="form-control input-md">
+							  </div>
+							  
+							</div>
+
+							<!-- Text input-->
+							<div class="form-group form-group col-lg-12 col-md-12 col-sx-12">
+							<div>
+							  <label class="control-label" for="new-password">New Password:</label>  
+							  <input name="new-password" type="password" class="form-control input-md">
+							  </div>
+							</div>		
+
+							<!-- Text input-->
+							<div class="form-group form-group col-lg-12 col-md-12 col-sx-12">
+							<div>
+							  <label class="control-label" for="double-password">Retype Password:</label>  
+							  <input name="double-password" type="password" class="form-control input-md">
+							  </div>
+							</div>
+
+							</div>
+
+							<!-- Button -->
+							<div class="col-lg-12 col-md-12 col-sx-12">
+							<div class="form-group form-group col-lg-12 col-md-12 col-sx-12">
+							<div>
+							  <label for="submit"></label>
+							  
+							  	<button type="button" class="btn btn-default btn-advn" data-toggle="collapse" data-target="#filter-panel">
+					            <i class="fa fa-bars" aria-hidden="true"></i> Advanced Options
+					        	</button>
+							    <button id="submit" name="submit" class="btn btn-default btn-search">Submit</button>
+							</div>  
+							</div>
+							</div>
+						</fieldset>
+						</form>
+						<div class="dummy"></div>
+					</div>
+				  </div>	
+			  </div>
+			  <div id="menu1" class="tab-pane fade">
+				  <!-- <h3>Your Wishlist</h3> -->
+					<div class="row">
+							<ul class="equal-height-thumbnail">
+						    
+							    <!-- Receipe #1 -->
+							    <li>
+							        <figure>
+							        	<img src="img\food-photo\1.jpg" alt="Equal height of thumbnail">
+							        </figure>
+							        <div class="caption">
+								        <a href="#" class="link"><h4>Title of receipe - Lorem ipsum dolor sit amet</h4></a>
+									    <h4><small class="text-muted">
+									    	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget enim et augue mattis tempor nec eget felis. 
+									    	</small>
+									    </h4>
+								        <p>
+									      	<a href="#" class="btn btn-default btn-def" role="button">Read more</a>
+										    <a href="#" class="btn btn-default btn-wishlist" role="button">
+										        <i class="fa fa-times" aria-hidden="true"></i></span> Remove item
+										    </a>
+										</p>
+							    	</div>
+							    </li>
+							    
+							    <!-- Receipe #2 -->
+							    <li>
+							        <figure>
+							        	<img src="img\food-photo\2.jpg" alt="Equal height of thumbnail">
+							        </figure>
+							        <div class="caption">
+								        <a href="#" class="link"><h4>Title of receipe</h4></a>
+									    <h4><small class="text-muted">
+									    	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget enim et augue mattis tempor nec eget felis. 
+									    	</small>
+									    </h4>
+								        <p>
+									      	<a href="#" class="btn btn-default btn-def" role="button">Read more</a>
+										    <a href="#" class="btn btn-default btn-wishlist" role="button">
+										        <i class="fa fa-times" aria-hidden="true"></i></span> Remove item
+										    </a>
+										</p>
+							    	</div>
+							    </li>
+							    
+							    <!-- Receipe #3 -->
+							    <li>
+							        <figure>
+							        	<img src="img\food-photo\3.jpg" alt="Equal height of thumbnail">
+							        </figure>
+							        <div class="caption">
+								        <a href="#" class="link"><h4>Title of receipe</h4></a>
+									    <h4><small class="text-muted">
+									    	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget enim et augue mattis tempor nec eget felis. 
+									    	</small>
+									    </h4>
+								        <p>
+									      	<a href="#" class="btn btn-default btn-def" role="button">Read more</a>
+										    <a href="#" class="btn btn-default btn-wishlist" role="button">
+										        <i class="fa fa-times" aria-hidden="true"></i></span> Remove item
+										    </a>
+										</p>
+							    	</div>
+							    </li>
+
+							    <!-- Receipe #4 -->
+							    <li>
+							        <figure>
+							        	<img src="img\food-photo\4.jpg" alt="Equal height of thumbnail">
+							        </figure>
+							        <div class="caption">
+								        <a href="#" class="link"><h4>Title of receipe</h4></a>
+									    <h4><small class="text-muted">
+									    	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget enim et augue mattis tempor nec eget felis. 
+									    	</small>
+									    </h4>
+								        <p>
+									      	<a href="#" class="btn btn-default btn-def" role="button">Read more</a>
+										    <a href="#" class="btn btn-default btn-wishlist" role="button">
+										        <i class="fa fa-times" aria-hidden="true"></i></span> Remove item
+										    </a>
+										</p>
+							    	</div>
+							    </li>
+
+							    <!-- Receipe #5 -->
+							    <li>
+							        <figure>
+							        	<img src="img\food-photo\5.jpg" alt="Equal height of thumbnail">
+							        </figure>
+							        <div class="caption">
+								        <a href="#" class="link"><h4>Title of receipe</h4></a>
+									    <h4><small class="text-muted">
+									    	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget enim et augue mattis tempor nec eget felis. 
+									    	</small>
+									    </h4>
+								        <p>
+									      	<a href="#" class="btn btn-default btn-def" role="button">Read more</a>
+										    <a href="#" class="btn btn-default btn-wishlist" role="button">
+										        <i class="fa fa-times" aria-hidden="true"></i></span> Remove item
+										    </a>
+										</p>
+							    	</div>
+							    </li>
+							    <!-- Receipe #6 -->
+							    <li>
+							        <figure>
+							        	<img src="img\food-photo\6.jpg" alt="Equal height of thumbnail">
+							        </figure>
+							        <div class="caption">
+								        <a href="#" class="link"><h4>Title of receipe</h4></a>
+									    <h4><small class="text-muted">
+									    	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget enim et augue mattis tempor nec eget felis. 
+									    	</small>
+									    </h4>
+								        <p>
+									      	<a href="#" class="btn btn-default btn-def" role="button">Read more</a>
+										    <a href="#" class="btn btn-default btn-wishlist" role="button">
+										        <i class="fa fa-times" aria-hidden="true"></i></span> Remove item
+										    </a>
+										</p>
+							    	</div>
+							    </li>
+
+							    <!-- Receipe #7 -->
+							    <li>
+							        <figure>
+							        	<img src="img\food-photo\7.jpg" alt="Equal height of thumbnail">
+							        </figure>
+							        <div class="caption">
+								        <a href="#" class="link"><h4>Title of receipe</h4></a>
+									    <h4><small class="text-muted">
+									    	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget enim et augue mattis tempor nec eget felis. 
+									    	</small>
+									    </h4>
+								        <p>
+									      	<a href="#" class="btn btn-default btn-def" role="button">Read more</a>
+										    <a href="#" class="btn btn-default btn-wishlist" role="button">
+										        <i class="fa fa-times" aria-hidden="true"></i></span> Remove item
+										    </a>
+										</p>
+							    	</div>
+							    </li>
+
+							    <!-- Receipe #8 -->
+							    <li>
+							        <figure>
+							        	<img src="img\food-photo\8.jpg" alt="Equal height of thumbnail">
+							        </figure>
+							        <div class="caption">
+								        <a href="#" class="link"><h4>Title of receipe</h4></a>
+									    <h4><small class="text-muted">
+									    	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget enim et augue mattis tempor nec eget felis. 
+									    	</small>
+									    </h4>
+								        <p>
+									      	<a href="#" class="btn btn-default btn-def" role="button">Read more</a>
+										    <a href="#" class="btn btn-default btn-wishlist" role="button">
+										        <i class="fa fa-times" aria-hidden="true"></i></span> Remove item
+										    </a>
+										</p>
+							    	</div>
+							    </li>
+
+							    <!-- Receipe #9 -->
+							    <li>
+							        <figure>
+							        	<img src="img\food-photo\9.jpg" alt="Equal height of thumbnail">
+							        </figure>
+							        <div class="caption">
+								        <a href="#" class="link"><h4>Title of receipe</h4></a>
+									    <h4><small class="text-muted">
+									    	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget enim et augue mattis tempor nec eget felis. 
+									    	</small>
+									    </h4>
+								        <p>
+									      	<a href="#" class="btn btn-default btn-def" role="button">Read more</a>
+										    <a href="#" class="btn btn-default btn-wishlist" role="button">
+										        <i class="fa fa-times" aria-hidden="true"></i></span> Remove item
+										    </a>
+										</p>
+							    	</div>
+							    </li>
+							</ul>
+					</div>
+			  </div>
+			  <div id="menu2" class="tab-pane fade">
+					<h3>Under construction</h3>
+					<div>
+					    <div class="dummy"></div>
+					</div>
+			  </div>
+			</div>
+		</div>
+	<!-- </div> -->
+</div>
+
+
+<div class="footer">
+  <div>
+    <a href="#myPage" class="smoothScroll" title="To Top">
+      <span class="up"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+    </a>
+  </div>
+  <div>
+   <a class="btn button-social" href="#" role="button"><span><i class="fa fa-facebook-official" aria-hidden="true"></i></span></a>
+
+   <a class="btn button-social" href="#" role="button"><span><i class="fa fa-twitter" aria-hidden="true"></i></span></a>
+
+   <a class="btn button-social" href="#" role="button"><span><i class="fa fa-codepen" aria-hidden="true"></i></span></a>
+
+   <a class="btn button-social" href="#" role="button"><span><i class="fa fa-github" aria-hidden="true"></i></span></a>
+
+   <a class="btn button-social" href="#" role="button"><span><i class="fa fa-google" aria-hidden="true"></i></span></a>
+
+   <a class="btn button-social" href="#" role="button"><span><i class="fa fa-pinterest-p" aria-hidden="true"></i></span></a>
+  </div> 
+  <div class="min-footer">
+    made with <span class="love"><i class="fa fa-heart" aria-hidden="true"></i></span> by Mike Penzin
+  </div>
+</div>
+
+<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<!-- tokienfield js stuff -->
+<script type="text/javascript" src="js/bootstrap-tokenfield.js" charset="UTF-8"></script>
+<script type="text/javascript" src="js/typeahead.bundle.min.js" charset="UTF-8"></script>
+	<!-- autocomplete data -->
+<script type="text/javascript" src="js/docs.js" charset="UTF-8"></script>
+<script type="text/javascript" src="js/smoothscroll.js"></script>
+
+
+</body>
+</html>
