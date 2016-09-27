@@ -1,1 +1,213 @@
-.hr-line,.strike{text-align:center}.btn-search:hover{background:#e04f67;border:1px solid #F7F7F7;color:#F7F7F7}.btn-search{background:#F7F7F7;border:1px solid #e04f67;color:#e04f67;width:100%}.btn-learn,.icons-field{color:#393e41}.modal-dialog{width:80%;margin-left:10%;margin-right:10%}.intext-logo{font-family:Pacifico;font-size:2rem}.btn-learn{background:#F7F7F7;border:1px solid #DEDEDE;margin-bottom:20px;opacity:.8;font-size:1.5rem;padding-bottom:12px}.center,.icons-field,.row{margin:0 auto}.btn-learn:hover{background:#eaeaea}.info .nav>li>a,.info .nav>li>a:focus{background-color:#f7f7f7}.row{width:100%}.info .nav>li>a{border-bottom:1px solid #ddd;color:#393e41}.info>.nav-tabs{border:none;margin:0}.btn-facebook,.btn-google{font-size:1.3rem;margin-bottom:1%;width:100%}.info>.nav-tabs>li{margin-right:2px}.info>.nav-tabs>li>a{border:0;margin-right:0;color:#737373}.info>.nav-tabs>li>a>i{color:#a6a6a6}.info>.nav-tabs>li.open,.info>.nav-tabs>li:hover{border-bottom:4px solid #fbcdcf}.info>.nav-tabs>li.open>a,.info>.nav-tabs>li:hover>a{border:0;background:0 0!important;color:#333}.info>.nav-tabs>li.open>a>i,.info>.nav-tabs>li:hover>a>i{color:#a6a6a6}.info>.nav-tabs>li.open .dropdown-menu,.info>.nav-tabs>li:hover .dropdown-menu{margin-top:0}.info>.nav-tabs>li.active{border-bottom:4px solid #E04F67;position:relative}.info>.nav-tabs>li.active>a{border:0;color:#333}.info>.nav-tabs>li.active>a>i{color:#404040}.info>.tab-content{margin-top:-3px;background-color:#f7f7f7;border:0;border-top:1px solid #eee;padding:15px 0}.portlet .info>.tab-content{padding-bottom:0}.info .tab-pane{padding-left:3%}.nav-tabs>.active>a,.nav-tabs>.active>a:focus{outline:0}.btn-google:hover{background:#F7F7F7;border:1px solid #dd4b39;color:#e04f67}.btn-google{background:#dd4b39;border:1px solid #F7F7F7;color:#F7F7F7}.btn-facebook:hover{background:#F7F7F7;border:1px solid #3b5998;color:#3b5998}.btn-facebook{background:#3b5998;border:1px solid #F7F7F7;color:#F7F7F7}.full-row{width:100%;margin:0 auto}.hr-line{border:none;border-top:1px solid #ccc;border-bottom:1px solid transparent;margin:12px 0}.strike{display:block;overflow:hidden;white-space:nowrap;margin-top:20px;margin-bottom:20px}.strike>span{position:relative;display:inline-block}.strike>span:after,.strike>span:before{content:"";position:absolute;top:50%;width:9999px;height:1px;border-top:1px solid #ccc;border-bottom:1px solid transparent}.strike>span:before{right:100%;margin-right:15px}.strike>span:after{left:100%;margin-left:15px}.full-row i{margin-right:10px}
+.btn-search:hover {
+	background: #e04f67;
+	border: 1px solid #F7F7F7;
+	color: #F7F7F7;
+}
+
+.btn-search {
+	background: #F7F7F7;
+	border: 1px solid #e04f67;
+	color: #e04f67;
+	width: 100%;
+}
+
+.modal-dialog {
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+.intext-logo {
+	font-family: Pacifico;
+	font-size: 2rem;
+}
+
+.btn-learn {
+	background: #F7F7F7;
+	border: 1px solid #DEDEDE;
+	color: #393e41;
+	margin-bottom:20px;
+	opacity: 0.8;
+	font-size: 1.5rem;
+	padding-bottom: 12px;
+}
+
+.btn-learn:hover {
+	background: #eaeaea;
+}
+
+.row {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.center {
+	margin: 0 auto;
+}
+
+.info .nav>li>a {
+	background-color: #f7f7f7;
+	border-bottom: 1px solid #ddd;
+	color: #393e41;
+}
+
+.info .nav>li>a:focus {
+	background-color: #f7f7f7;
+}
+
+.icons-field {
+	margin: 0 auto;
+	color: #393e41;
+}
+
+/* Default mode */
+.info > .nav-tabs {
+  border: none;
+  margin: 0px;
+}
+
+.info > .nav-tabs > li {
+  margin-right: 2px;
+}
+
+.info > .nav-tabs > li > a {
+  border: 0;
+  margin-right: 0;
+  color: #737373;
+}
+.info > .nav-tabs > li > a > i {
+  color: #a6a6a6;
+}
+.info > .nav-tabs > li.open, .info > .nav-tabs > li:hover {
+  border-bottom: 4px solid #fbcdcf;
+}
+.info > .nav-tabs > li.open > a, .info > .nav-tabs > li:hover > a {
+  border: 0;
+  background: none !important;
+  color: #333333;
+}
+.info > .nav-tabs > li.open > a > i, .info > .nav-tabs > li:hover > a > i {
+  color: #a6a6a6;
+}
+.info > .nav-tabs > li.open .dropdown-menu, .info > .nav-tabs > li:hover .dropdown-menu {
+  margin-top: 0px;
+}
+.info > .nav-tabs > li.active {
+  border-bottom: 4px solid #E04F67;
+  position: relative;
+}
+.info > .nav-tabs > li.active > a {
+  border: 0;
+  color: #333333;
+}
+.info > .nav-tabs > li.active > a > i {
+  color: #404040;
+}
+.info > .tab-content {
+  margin-top: -3px;
+  padding-left: 10px;
+  background-color: #f7f7f7;
+  border: 0;
+  border-top: 1px solid #eee;
+  padding: 15px 0;
+}
+.portlet .info > .tab-content {
+  padding-bottom: 0;
+}
+
+.info .tab-pane {
+	padding-left: 3%;
+}
+
+.nav-tabs > .active > a, .nav-tabs > .active > a:focus {
+  outline:none;
+}
+
+.btn-google:hover {
+	background: #F7F7F7;
+	border: 1px solid #dd4b39;
+	color: #e04f67;
+	
+}
+
+.btn-google {
+	background: #dd4b39;
+	border: 1px solid #F7F7F7;
+	font-size: 1.3rem;
+	color: #F7F7F7;
+	width: 100%;
+	margin-bottom: 1%;
+}
+
+.btn-facebook:hover {
+	background: #F7F7F7;
+	border: 1px solid #3b5998;
+	color: #3b5998;
+}
+
+.btn-facebook {
+	background: #3b5998;
+	border: 1px solid #F7F7F7;
+	font-size: 1.3rem;
+	color: #F7F7F7;
+	width: 100%;
+	margin-bottom: 1%;
+}
+
+.full-row {
+	width: 100%; /*SET your width here*/
+    margin: 0 auto;
+}
+
+/*.dummy {
+	padding-bottom: 100%;
+}*/
+
+.hr-line {
+    border: none;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid transparent;
+    text-align: center;
+    margin: 12px 0;
+}
+
+/*hr line with text*/
+
+ .strike {
+        display: block;
+        text-align: center;
+        overflow: hidden;
+        white-space: nowrap; 
+        margin-top: 20px;
+    	margin-bottom: 20px; 
+    }
+
+    .strike > span {
+        position: relative;
+        display: inline-block;
+    }
+	
+    .strike > span:before,
+    .strike > span:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 9999px;
+        height: 1px;
+        border-top: 1px solid #ccc;
+    	border-bottom: 1px solid transparent;
+    }
+
+    .strike > span:before {
+        right: 100%;
+        margin-right: 15px;
+    }
+
+    .strike > span:after {
+        left: 100%;
+        margin-left: 15px;
+    }
+
+    .full-row i{
+    	margin-right: 10px;
+    }
