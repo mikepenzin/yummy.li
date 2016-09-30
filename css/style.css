@@ -55,8 +55,9 @@
 
 body { 
 	background: #F7F7F7;
+	color: #393e41;
 	padding-bottom: 0px;
-	/*padding-top: 20px;*/ 
+	/*padding-top: 65px;*/
 	font-family: 'Raleway', sans-serif;
 }
 
@@ -67,9 +68,28 @@ body {
 	font-size: 2.8rem;
 }
 
+/*.chevron {
+	position: absolute;
+	z-index: 300;
+	display: inline-block;
+}
+
+.chevron a {
+	-webkit-transform: translate(0, -50%);
+	transform: translate(0, -50%);
+	color: #fff;
+	letter-spacing: .1em;
+	text-decoration: none;
+	opacity: 0.8;
+	transition: opacity .3s;
+}
+.chevron a:hover {
+	opacity: .5;
+}*/
+
 .jumbotron {
-	padding-top: 10vh;
-	padding-bottom: 25vh;
+	/*padding-top: 10%;
+	padding-bottom: 5%;*/
 	background-color: #f6f7eb;
 	color: #f6f7eb;
 	text-align: center;
@@ -107,12 +127,17 @@ body {
 .jumbotron h1 {
 	font-family: 'Pacifico';
 	color: #f6f7eb;
-	margin-bottom: 20vh;
+	margin-top: 2vh;
+	margin-bottom: 10vh;
 	z-index: 100;
 }
 
+.jumbotron h2 {
+	margin-bottom: 1%;
+}
+
 .token-input ui-autocomplete-input {
-	max-width: relative;
+	width: 100%;
 }
 
 
@@ -128,6 +153,7 @@ body {
 	max-height: 34px;
     padding-bottom: 0px;
     position: relative;
+    margin-bottom: 20vh;
 }
 
 .header-text {
@@ -237,7 +263,8 @@ body {
 }
 
 .gallery {
-	margin-top: 100px;
+	padding-top: 130px;
+    margin-top: -80px;
 	margin-bottom: 100px; 
 	text-align: center;
 	font-size: 4.5rem;
@@ -362,18 +389,18 @@ a.link-heart {
 }
 
 .intext-logo {
-	font-family: Pacifico;
-	font-size: 2rem;
+	font-family: "Pacifico";
+	font-size: 1.5rem;
 }
 
 .btn-learn {
 	background: #F7F7F7;
 	border: 1px solid #DEDEDE;
 	color: #393e41;
-	margin-bottom:20px;
+	margin-bottom: 4vh;
 	opacity: 0.8;
-	font-size: 1.5rem;
-	padding-bottom: 12px;
+	font-size: 1.2rem;
+	padding-bottom: 10px;
 }
 
 .btn-learn:hover {
