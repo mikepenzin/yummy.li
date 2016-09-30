@@ -65,6 +65,7 @@ body {
 	padding-top: 55px; 
 	font-family: 'Raleway', sans-serif;
 	margin: 0 auto;
+	color: #393e41;
 }
 
 .logo {
@@ -99,7 +100,7 @@ body {
 }
 
 .token-input ui-autocomplete-input {
-	max-width: relative;
+	width: 100%;
 }
 
 
