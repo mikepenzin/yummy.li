@@ -424,10 +424,13 @@ body {
 
 .social-footer{
 	text-align: center;
+	margin-bottom: 20px;
 }
 
 .leftpanel {
-	padding-left: 10%;
+	/*padding-left: 15%;*/
+	text-align: center;
+	margin-bottom: 20px;
 }
 
 .min-footer {
@@ -443,10 +446,29 @@ body {
 	color: #393e41;
 	line-height: 200%;
 	padding-bottom: 5px;
-	font-size: 1.3rem;
+	font-size: 1.4rem;
 }
 
 .leftpanel a:hover {
+	color: #c7c7c7;
+	text-decoration: none;
+}
+
+.right-panel {
+	margin: 0 auto; 
+	font-size: 1.3rem;
+
+}
+
+.right-panel .input-group{
+	background: #ffffff;
+	color: #393e41;
+	width: 100%;
+	padding-bottom: 5px;
+	font-size: 1.9rem;
+}
+
+.right-panel a:hover {
 	color: #c7c7c7;
 	text-decoration: none;
 }
@@ -455,6 +477,7 @@ body {
 	background: #ffffff;
 	border: 0px;
 	color: #393e41;
+	font-size: 1.9rem;
 }
 
 .button-social:hover {
