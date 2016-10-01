@@ -476,12 +476,12 @@ body {
 .button-social {
 	background: #ffffff;
 	border: 0px;
-	color: #393e41;
+	color: #74777A;
 	font-size: 1.9rem;
 }
 
 .button-social:hover {
-	color: #c7c7c7;
+	color: #393e41;
 }
 
 .up {
