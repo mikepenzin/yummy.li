@@ -129,7 +129,7 @@ body {
 	background: linear-gradient(
       rgba(0, 0, 0, 0.4), 
       rgba(0, 0, 0, 0.4)
-    ),url("https://yummyli.herokuapp.com/img/food-photo/3.jpg");
+    ),url("https://yummyli.herokuapp.com/img/food-photo/old-big/3.jpg");
 	background-size: cover;
 	background-position: center;
 }
