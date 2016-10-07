@@ -37,7 +37,7 @@ jQuery(document).ready(function($) {
       ],
       delay: 100
     },
-    showAutocompleteOnFocus: true,
+    showAutocompleteOnFocus: false,
     delimiter: [',','-', '_'],
     limit: 4
   });
