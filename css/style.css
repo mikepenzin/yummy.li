@@ -6,6 +6,7 @@
 @import 'tokenfield-typeahead.css';
 @import 'bootstrap-tokenfield.css';
 @import 'pygments-manni.css';
+@import 'animate.min.css';
 
 /* Large desktop */
 @media (min-width: 1200px) { ... }
@@ -181,7 +182,7 @@ if it's not present, don't show loader */
 
 .navbar-toggle{
 	background: transparent;
-    border: none !important;
+    /*border: none !important;*/
     color: #f6f7eb;
 }
 
@@ -193,6 +194,10 @@ if it's not present, don't show loader */
 .navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover{
 	background-color: #393e41;
 	color: #F7F7F7;
+}
+
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover{
+	background-color: #393e41;
 }
 
 .navbar-inverse .navbar-nav>li>a {
@@ -384,9 +389,9 @@ if it's not present, don't show loader */
 
 /*Recipe Gallery*/
 .gallery {
-	padding-top: 130px;
-    margin-top: -80px;
-	margin-bottom: 100px; 
+	padding-top: 80px;
+    margin-top: -30px;
+	margin-bottom: 80px; 
 	text-align: center;
 	font-size: 4.5rem;
 	font-family: 'Raleway', sans-serif;
@@ -484,6 +489,7 @@ if it's not present, don't show loader */
 }
 
 /* Thumbnails Equal height - start*/
+
 .equal-height-thumbnail { 
   padding: .5vw;
   font-size: 0;
@@ -560,7 +566,7 @@ if it's not present, don't show loader */
 	color: #393e41;
 	line-height: 200%;
 	padding-bottom: 5px;
-	font-size: 1.4rem;
+	font-size: 0.9em;
 }
 
 .leftpanel a:hover {
@@ -579,7 +585,7 @@ if it's not present, don't show loader */
 	color: #393e41;
 	width: 100%;
 	padding-bottom: 5px;
-	font-size: 1.9rem;
+	font-size: 0.9em;
 }
 
 .right-panel a:hover {

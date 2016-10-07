@@ -35,12 +35,13 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           </button>
-          <a href="#" class="navbar-brand smoothScroll"><span class="logo" >yummy.li</span></a>
+          <a href="#myPage" class="navbar-brand smoothScroll"><span class="logo" >yummy.li</span></a>
         </div>
         <div class="collapse navbar-collapse" id="nav-blog">
           <ul class="nav navbar-nav">
             <li><a href="#">About</a></li>
             <li><a href="#" data-toggle="modal" data-target="#howitworks">How it works?</a></li>
+            <li><a href="#pics" class="smoothScroll">Best Recipes</a></li>
             <li class="divider-vertical"></li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
@@ -151,9 +152,9 @@
     <div class="row">
       <div class="col-lg-12 col-md-12">
         <div class="row">
-          <ul class="equal-height-thumbnail" id="grid">
+          <ul class="equal-height-thumbnail">
                 <!-- Receipe #1 -->
-                <li>
+                <li class="wow slideInUp">
                   <figure>
                     <img src="img\food-photo\1.jpg" alt="Equal height of thumbnail">
                   </figure>
@@ -173,7 +174,7 @@
               </li>
               
               <!-- Receipe #2 -->
-              <li>
+              <li class="wow slideInUp">
                 <figure>
                   <img src="img\food-photo\2.jpg" alt="Equal height of thumbnail">
                 </figure>
@@ -193,7 +194,7 @@
               </li>
             
               <!-- Receipe #3 -->
-              <li>
+              <li class="wow slideInUp">
                 <figure>
                   <img src="img\food-photo\3.jpg" alt="Equal height of thumbnail">
                 </figure>
@@ -212,7 +213,7 @@
                 </div>
               </li>
               <!-- Receipe #4 -->
-              <li>
+              <li class="wow slideInUp">
                 <figure>
                   <img src="img\food-photo\4.jpg" alt="Equal height of thumbnail">
                 </figure>
@@ -231,7 +232,7 @@
                 </div>
               </li>
               <!-- Receipe #5 -->
-              <li>
+              <li class="wow slideInUp">
                 <figure>
                   <img src="img\food-photo\5.jpg" alt="Equal height of thumbnail">
                 </figure>
@@ -250,7 +251,7 @@
                 </div>
               </li>
               <!-- Receipe #6 -->
-              <li>
+              <li class="wow slideInUp">
                 <figure>
                   <img src="img\food-photo\6.jpg" alt="Equal height of thumbnail">
                 </figure>
@@ -269,7 +270,7 @@
                 </div>
               </li>
               <!-- Receipe #7 -->
-              <li>
+              <li class="wow slideInUp">
                 <figure>
                   <img src="img\food-photo\7.jpg" alt="Equal height of thumbnail">
                 </figure>
@@ -288,7 +289,7 @@
                 </div>
                 </li>
                 <!-- Receipe #8 -->
-              <li>
+              <li class="wow slideInUp">
                 <figure>
                   <img src="img\food-photo\8.jpg" alt="Equal height of thumbnail">
                 </figure>
@@ -307,7 +308,7 @@
                 </div>
               </li>
               <!-- Receipe #9 -->
-              <li>
+              <li class="wow slideInUp">
                 <figure>
                   <img src="img\food-photo\9.jpg" alt="Equal height of thumbnail">
                 </figure>
@@ -341,23 +342,23 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-4  leftpanel">
+        <div class="col-lg-4 leftpanel">
           <div class="row">
-              <div class="col-md-6 col-xs-3">
+              <div class="col-md-6 col-xs-6">
                 <a href="team.html">About Us</a>
               </div>
-              <div class="col-md-6 col-xs-3">
+              <div class="col-md-6 col-xs-6">
                 <a href="team.html#terms">Terms of use</a>
               </div>
-              <div class="col-md-6 col-xs-3">
+              <div class="col-md-6 col-xs-6">
                 <a href="team.html#contact">Contact Us</a>
               </div>
-              <div class="col-md-6 col-xs-3">
+              <div class="col-md-6 col-xs-6">
                 <a href="signup.html">Sign Up</a>
               </div>
           </div> 
       </div>
-      <div class="col-md-4 col-md-push-4 col-sm-6 right-panel">
+      <div class="col-lg-4 col-lg-push-4 col-md-12 col-sm-12 right-panel">
         <div>
           <form action="https://trvlbids.us10.list-manage.com/subscribe/post" method="post">
                 <input type="hidden" name="u" value="bb683f73a8c73f15986300c4c">
@@ -371,7 +372,7 @@
           </form>
         </div>
       </div>    
-      <div class="col-md-4 col-md-pull-4 col-sm-6 social-footer">
+      <div class="col-lg-4 col-lg-pull-4 col-md-12 ol-sm-6 social-footer">
         <div>
             <a class="btn button-social" href="#" role="button">
               <span><i class="fa fa-facebook" aria-hidden="true"></i></span>
@@ -399,7 +400,8 @@
     </div>
   </div>
 
-  <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+
+<!--   <script type="text/javascript" src="js/jquery-2.1.4.js"></script> -->
   <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
   <script type="text/javascript" src="js/jquery-ui.js"></script>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
@@ -412,5 +414,21 @@
   <!-- smooth scroll -->
   <script type="text/javascript" src="js/smoothscroll.js"></script>
   <script type="text/javascript" src="js/loader.js"></script>
+  <script src="js/wow.min.js"></script>
+
+  <!--Initiate WOW js, can be at the bottom of your file -->
+  <script>
+    wow = new WOW(
+      {
+          boxClass:     'wow',      // default
+          animateClass: 'animated', // change this if you are not using animate.css
+          offset:       0,          // default
+          mobile:       true,       // keep it on mobile
+          live:         true        // track if element updates
+        }
+      )
+     wow.init();
+  </script>
+
 </body>
 </html>
