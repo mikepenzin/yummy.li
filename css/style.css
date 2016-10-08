@@ -1,11 +1,9 @@
 @import 'normalize.css';
-@import 'https://fonts.googleapis.com/css?family=Pacifico|Raleway';
+@import 'https://fonts.googleapis.com/css?family=Assistant|Parisienne';
 @import '../font-awesome/css/font-awesome.min.css';
 @import 'bootstrap.min.css';
+@import 'https://cdn.rawgit.com/morteza/bootstrap-rtl/v3.3.4/dist/css/bootstrap-rtl.min.css';
 @import 'jquery-ui.css';
-@import 'tokenfield-typeahead.css';
-@import 'bootstrap-tokenfield.css';
-@import 'pygments-manni.css';
 @import 'animate.min.css';
 
 /* Large desktop */
@@ -54,12 +52,14 @@
 }
 
 /*General Body*/
-body { 
+body {
+	direction: rtl;
 	background: #F7F7F7;
 	color: #393e41;
-	padding-bottom: 0px;
-	font-family: 'Raleway', sans-serif;
+	/*padding-top: 28px;*/
+	font-family: 'Assistant', sans-serif;
 	z-index: -100;
+    opacity: 1;
 }
 
 .row {
@@ -67,53 +67,36 @@ body {
 	margin: 0 auto;
 }
 
-/*Loader*/
-
-/* Paste this css to your style sheet file or under head tag */
-/* This only works with JavaScript, 
-if it's not present, don't show loader */
-.no-js #loader { display: none;  }
-.js #loader { display: block; position: absolute; left: 100px; top: 0; }
-.se-pre-con {
-	position: fixed;
-	left: 0px;
-	top: 0px;
-	width: 100%;
-	height: 100%;
-	z-index: 9999;
-	background: url("https://yummyli.herokuapp.com/img/loader.gif") center no-repeat #fff;
-}
-
 /*Navigation Bar*/
 .logo {
 	color: #f6f7eb;
-	font-family: 'Pacifico';
-	font-size: 2.8rem;
+	font-family: 'Parisienne';
+	font-size: 2.3rem;
 }
 
+.nav-logo-heb {
+	color: #f6f7eb;
+	font-family: 'Assistant', sans-serif;
+	font-size: 2.3rem;
+}
 
-.navbar-inverse .navbar-nav>li>a:link {
+.navbar-default .navbar-nav>li>a:link {
 	color: #f6f7eb;
 }
 
-.navbar-inverse .navbar-nav>li>a:visited {
+.navbar-default .navbar-nav>li>a:visited {
 	color: #f6f7eb;
 }
 
-.navbar-inverse .navbar-nav>li>a:hover {
+.navbar-default .navbar-nav>li>a:hover {
 	color: #c4c4c4;
 }
 
-.navbar-inverse .navbar-nav>li>a:active {
+.navbar-default .navbar-nav>li>a:active {
 	color: #f6f7eb;
 }
 
-.navbar .divider-vertical {
-	height: 20px;
-	margin: 0 9px;
-}
-
-.navbar-inverse{
+.navbar-default{
     background: transparent;
     border: none !important;
     transition-duration: 0.5s;
@@ -155,10 +138,6 @@ if it's not present, don't show loader */
     border: none !important;
 }
 
-.navbar-brand {
-	background: transparent;
-}  
-
 .collapsing {
 	background-color: #393e41;
     border: none !important;
@@ -172,65 +151,33 @@ if it's not present, don't show loader */
 	color: #f6f7eb; 
 }
 
-.navbar-inverse .navbar-toggle .icon-bar {
+.navbar-default .navbar-toggle .icon-bar {
   background-color: #f6f7eb;
 }
-.navbar-inverse .navbar-collapse,
-.navbar-inverse .navbar-form {
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
   border-color: #f6f7eb;
 }
 
 .navbar-toggle{
 	background: transparent;
-    /*border: none !important;*/
+    border: none !important;
     color: #f6f7eb;
 }
 
-.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover{
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover{
 	background-color: #393e41;
 	color: #f6f7eb;
 }
 
-.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover{
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover{
 	background-color: #393e41;
 	color: #F7F7F7;
 }
-
-.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:focus, .navbar-inverse .navbar-nav>.active>a:hover{
-	background-color: #393e41;
-}
-
-.navbar-inverse .navbar-nav>li>a {
-	color: #f6f7eb;
-}
-
-.navbar-nav {
-	padding-top: 5px;
-}
-
-.navbar-fixed-top {
-	padding-bottom: 5px;
-}
-
-.navbar-btn {
-    background: transparent;
-	border: 1px solid #ECECEC;
-	color: #ECECEC;
-	margin-left: 10px;
-	padding: 8px;
-}
-
-.navbar-btn:hover {
-	background: #ECECEC;
-	border: 1px solid #ECECEC;
-	color: #393e41;
-}
-
-.navbar-btn:visited {
-	background: #ECECEC;
-	border: 1px solid #ECECEC;
-	color: #393e41;
-}
+/*.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus
+.spacer{
+   background-color:#f6f7eb;   
+}*/
 
 /*Central Section - Jumbotron*/
 .jumbotron {
@@ -241,12 +188,23 @@ if it's not present, don't show loader */
 	position: relative;
     overflow: hidden;
     height: 100vh;
-    padding-top: 30vh;
-    z-index:0;
+    z-index: 0;
+
 }
 
 .jumbotron h1 {
-	font-family: 'Pacifico';
+	font-family: 'Parisienne';
+	color: #f6f7eb;
+	margin-top: 20vh;
+	margin-bottom: 10vh;
+	z-index: 100;
+	line-height: 40%;
+	z-index: 100;
+
+}
+
+.jumbotron h1 .logo-heb {
+	font-family: 'Assistant', sans-serif;
 	color: #f6f7eb;
 	margin-top: 2vh;
 	margin-bottom: 10vh;
@@ -255,27 +213,35 @@ if it's not present, don't show loader */
 
 .jumbotron h2 {
 	margin-bottom: 1%;
-	font-size: 3rem;
+	font-family: 'Assistant', sans-serif;;
 }
 
 .jumbotron h4{
 	padding-bottom: 40px;
+	font-family: 'Assistant', sans-serif;
 }
 
 .header-text {
 	margin-bottom: 10px;
 	z-index: 2;
+	font-family: 'Assistant', sans-serif;
 }
 
 /*Jumbotron background*/
-/*.jumbo-bg {
+.jumbo-bg {
 	background: linear-gradient(
-      rgba(0, 0, 0, 0.4), 
-      rgba(0, 0, 0, 0.4)
-    ),url("https://yummyli.herokuapp.com/img/index-bg.jpg");
+      rgba(0, 0, 0, 0.5), 
+      rgba(0, 0, 0, 0.5)
+    ),url("http://vita-tours.herokuapp.com/img/3.jpg");
 	background-size: cover;
-	background-position: center;
-}*/
+	background-position: fixed;
+}
+
+/*images*/
+/*
+https://hd.unsplash.com/photo-1467035170010-4983895b24cd
+https://upload.wikimedia.org/wikipedia/commons/a/ae/PikiWiki_Israel_4207_landscape_in_Ramat_Hagolan.jpg
+*/
 
 /*Jumbotron video*/
 #video-background { 
@@ -302,7 +268,7 @@ if it's not present, don't show loader */
 }
 
 .intext-logo {
-	font-family: "Pacifico";
+	font-family: "Parisienne";
 	font-size: 1.5rem;
 }
 
@@ -335,95 +301,17 @@ if it's not present, don't show loader */
 	background: #eaeaea;
 }
 
-/*Search bar*/
-.token-input ui-autocomplete-input {
-	width: 60%;
-}
-
-.input-group .form-control:first-child, .input-group-addon:first-child, .input-group-btn:first-child>.btn, .input-group-btn:first-child>.btn-group>.btn, .input-group-btn:first-child>.dropdown-toggle, .input-group-btn:last-child>.btn-group:not(:last-child)>.btn, .input-group-btn:last-child>.btn:not(:last-child):not(.dropdown-toggle) {
-	background: #fffff;
- 	border: none;
- 	font-size: 10pt;
-	text-align: left;
- 	opacity: 0.8;
- }
-
-.tokenfield {
-	max-height: 34px;
-    padding-bottom: 0px;
-    position: relative;
-    margin-bottom: 20vh;
-}
-
-/*Inner buttons*/
-.button-new:hover {
-	background: #ECECEC;
-	border: 1px solid #393e41;
-	color: #393e41;
-}
-
-.button-new {
-	background: #393e41;
-	border: 1px solid #393e41;
-	color: #ECECEC;
-}
-
-.btn-def {
-	background: #F7F7F7;
-	border: 1px solid #DEDEDE;
-	font-size: 1.3rem;
-	color: #393e41;
-	margin: 1%;
-}
-
-.btn-def:hover {
-	background: #eaeaea;
-}
-
-.thumbnail img{
-	display: block;
-	width: 100%;
-	height:	auto;
-	overflow: hidden;
-}
-
-/*Recipe Gallery*/
-.gallery {
-	padding-top: 80px;
-    margin-top: -30px;
-	margin-bottom: 80px; 
-	text-align: center;
-	font-size: 4.5rem;
-	font-family: 'Raleway', sans-serif;
-	text-transform: uppercase;
-}
-
-.link {
-	color: #393e41;
-}
-
-.link:hover {
-	color: #393e41;
-	text-decoration: none;
-}
-
-.btn-wishlist {
-	background: #F7F7F7;
-	border: 1px solid #e04f67;
-	font-size: 1.3rem;
-	color: #e04f67;
-	margin: 1%;
-}
-
-.btn-wishlist:hover {
-	background: #e04f67;
-	border: 1px solid #F7F7F7;
-	color: #F7F7F7;
-}
-
 /*Modal Style*/
 .modal-logo {
-	font-family: 'Pacifico';
+	font-family: 'Parisienne', cursive;
+	color: #393e41;
+	font-size: 4.8rem;
+	padding-bottom: 40px;
+	text-align: center;
+}
+
+.modal-logo-heb {
+	font-family: 'Assistant', sans-serif;
 	color: #393e41;
 	font-size: 4.8rem;
 	padding-bottom: 40px;
@@ -488,8 +376,41 @@ if it's not present, don't show loader */
 	margin-right: 10%;
 }
 
-/* Thumbnails Equal height - start*/
+/*Recipe Gallery*/
+.gallery {
+	padding-top: 50px;
+    margin-top: -20px;
+	margin-bottom: 50px; 
+	text-align: center;
+	font-size: 4.5rem;
+	font-family: 'Assistant', sans-serif;
+	text-transform: uppercase;
+}
 
+.link {
+	color: #393e41;
+}
+
+.link:hover {
+	color: #393e41;
+	text-decoration: none;
+}
+
+.btn-wishlist {
+	background: #F7F7F7;
+	border: 1px solid #e04f67;
+	font-size: 1.3rem;
+	color: #e04f67;
+	margin: 1%;
+}
+
+.btn-wishlist:hover {
+	background: #e04f67;
+	border: 1px solid #F7F7F7;
+	color: #F7F7F7;
+}
+
+/* Thumbnails Equal height - start*/
 .equal-height-thumbnail { 
   padding: .5vw;
   font-size: 0;
@@ -522,11 +443,56 @@ if it's not present, don't show loader */
   height: auto; 
 }
 
+.equal-height-thumbnail-about { 
+  padding: .5vw;
+  margin:0 auto;
+  font-size: 0;
+  display: -ms-flexbox;
+  -ms-flex-wrap: wrap;
+  -ms-flex-direction: column;
+  -webkit-flex-flow: row wrap; 
+  flex-flow: row wrap; 
+  display: -webkit-box;
+  display: flex;
+}
+
+.equal-height-thumbnail-about li { 
+  -webkit-box-flex: auto;
+  -ms-flex: auto;
+  flex: auto; 
+  width: 200px; 
+  margin: .5vw ; 
+  background: #FFF;
+  box-shadow: 0 0 1px 1px rgba(0,0,0,0.1)
+  padding:0 0.5%;
+}
+
+.equal-height-thumbnail-about figure {
+  padding: 2%;
+}
+
+.equal-height-thumbnail-about figure img { 
+  width: 100%; 
+  height: auto; 
+}
+
 .caption { 
 	padding-left: 5%;
 	padding-right: 5%;
 }
 /*end*/
+
+/*Map overlay*/
+
+.map-overlay {
+   background:transparent; 
+   position: relative; 
+   width:100%;
+   height:150px; /* your iframe height */
+   top:150px;  /* your iframe height */
+   margin-top:-150px;  /* your iframe height */
+   z-index: 500;
+}
 
 /*Footer Style*/
 .footer {
@@ -566,7 +532,7 @@ if it's not present, don't show loader */
 	color: #393e41;
 	line-height: 200%;
 	padding-bottom: 5px;
-	font-size: 0.9em;
+	font-size: 1.4rem;
 }
 
 .leftpanel a:hover {
@@ -585,7 +551,7 @@ if it's not present, don't show loader */
 	color: #393e41;
 	width: 100%;
 	padding-bottom: 5px;
-	font-size: 0.9em;
+	font-size: 1.9rem;
 }
 
 .right-panel a:hover {
@@ -607,5 +573,9 @@ if it's not present, don't show loader */
 .up {
     font-size: 30px;
     margin-bottom: 60px;
+    color: #74777A;
+}
+
+.up:hover {
     color: #393e41;
 }
