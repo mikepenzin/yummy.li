@@ -38,7 +38,11 @@
         </div>
       </div>
     </nav>
-    <div class="jumbotron jumbo-bg" id="top">
+    <div class="jumbotron" id="top">
+    <div class="overlay"></div>
+        <video id="video-background" preload muted autoplay loop>
+          <source src="video/israel-video.mp4" type="video/mp4">
+        </video>
         <div class="header-text">
           <h1>
           	Vita Tours
@@ -160,7 +164,7 @@
         <div class="row">
           <ul class="equal-height-thumbnail">
                 <!-- Receipe #1 -->
-                <li class="wow slideInUp">
+                <li>
                   <figure>
                     <img src="img\1.jpg" alt="Equal height of thumbnail">
                   </figure>
@@ -181,7 +185,7 @@
               </li>
               
               <!-- Receipe #2 -->
-              <li class="wow slideInUp">
+              <li>
                 <figure>
                   <img src="img\2.jpg" alt="Equal height of thumbnail">
                 </figure>
@@ -198,7 +202,7 @@
               </li>
             
               <!-- Receipe #3 -->
-              <li class="wow slideInUp">
+              <li>
                 <figure>
                   <img src="img\3.jpg" alt="Equal height of thumbnail">
                 </figure>
@@ -214,7 +218,7 @@
                 </div>
               </li>
               <!-- Receipe #4 -->
-              <li class="wow slideInUp">
+              <li>
                 <figure>
                   <img src="img\4.jpg" alt="Equal height of thumbnail">
                 </figure>
@@ -230,7 +234,7 @@
                 </div>
               </li>
               <!-- Receipe #5 -->
-              <li class="wow slideInUp">
+              <li>
                 <figure>
                   <img src="img\5.jpg" alt="Equal height of thumbnail">
                 </figure>
@@ -246,7 +250,7 @@
                 </div>
               </li>
               <!-- Receipe #6 -->
-              <li class="wow slideInUp">
+              <li>
                 <figure>
                   <img src="img\6.jpg" alt="Equal height of thumbnail">
                 </figure>
@@ -262,7 +266,7 @@
                 </div>
               </li>
               <!-- Receipe #7 -->
-              <li class="wow slideInUp">
+              <li>
                 <figure>
                   <img src="img\7.jpg" alt="Equal height of thumbnail">
                 </figure>
@@ -278,7 +282,7 @@
                 </div>
                 </li>
                 <!-- Receipe #8 -->
-              <li class="wow slideInUp">
+              <li>
                 <figure>
                   <img src="img\8.jpg" alt="Equal height of thumbnail">
                 </figure>
@@ -294,7 +298,7 @@
                 </div>
               </li>
               <!-- Receipe #9 -->
-              <li class="wow slideInUp">
+              <li>
                 <figure>
                   <img src="img\9.jpg" alt="Equal height of thumbnail">
                 </figure>
@@ -402,28 +406,5 @@
   <script type="text/javascript" src="js/navbar.js" charset="UTF-8"></script>
   <!-- smooth scroll -->
   <script type="text/javascript" src="js/smoothscroll.js"></script>
-  <script type="text/javascript" src="js/wow.min.js"></script>
-
-  <!--Initiate WOW js, can be at the bottom of your file -->
-  <script>
-    wow = new WOW(
-      {
-          boxClass:     'wow',      // default
-          animateClass: 'animated', // change this if you are not using animate.css
-          offset:       0,          // default
-          mobile:       true,       // keep it on mobile
-          live:         true        // track if element updates
-        }
-      )
-     wow.init();
-
-     $(document).ready(function(){
-
-      /*! Fades in page on load */
-      $('body').css('display', 'none');
-      $('body').fadeIn(1000);
-
-      });
-  </script>
 </body>
 </html>

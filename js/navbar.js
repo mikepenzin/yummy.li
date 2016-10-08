@@ -6,19 +6,17 @@
 	
 	// fade in .navbar
 	$(function () {
-		
 		$(window).scroll(function () {
             // set distance user needs to scroll before we fadeIn navbar
 			if ($(this).scrollTop() > 100) {
-				$('.navbar-inverse').fadeIn();
-				$('.navbar-inverse').css('background-color', '#393e41');
+				$('.navbar-default').css('background-color', '#393e41').fadeIn();
 				
-				// $('.navbar-header').css('background-color', '#393e41').fadeIn();
+				$('.collapsing').css('background-color', '#393e41').fadeIn();
 
 			} else {
-				$('.navbar-inverse').css('background-color', 'transparent');
-				
-				// $('.navbar-header').css('background-color', 'transparent');
+				$('.navbar-default').css('background-color', 'transparent');
+			
+				$('.collapsing').css('background-color', 'transparent');
 			}
 		});
 	
