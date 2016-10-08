@@ -1,19 +1,32 @@
 <!DOCTYPE html>
-<html lang="he">
+<html>
 <head>
-	<meta charset="utf-8">
-	<title>Vita Tours - ויטה טורס</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<!--[if lte IE 8]> 
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Parisienne" /> 
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Assistant" />
-	<![endif]-->
-
+    <title>yummy.li -  Search recipes using ingredients you already have in the kitchen! What's in your fridge?</title>
+    <meta charset="utf-8">
+    <link rel="apple-touch-icon" sizes="57x57" href="img/fav-icon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/fav-icon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/fav-icon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/fav-icon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/fav-icon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/fav-icon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/fav-icon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/fav-icon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/fav-icon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="img/fav-icon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/fav-icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/fav-icon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/fav-icon/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
-<body id="myPage" dir="rtl">
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+<div class="se-pre-con"></div>
 
-    <nav class="navbar navbar-default navbar-fixed-top pull-left">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-blog" aria-expanded="false">
@@ -22,42 +35,57 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           </button>
-          <a href="#myPage" class="navbar-brand smoothScroll"><span class="nav-logo-heb">ויטה טורס - </span><span class="logo" >Vita Tours</span></a>
+          <a href="#myPage" class="navbar-brand smoothScroll"><span class="logo" >yummy.li</span></a>
         </div>
         <div class="collapse navbar-collapse" id="nav-blog">
           <ul class="nav navbar-nav">
-            <li><a href="#about" class="smoothScroll">עלינו</a></li>
-            <li><a href="#pics" class="smoothScroll">הצעות שלנו</a></li>
-            <li><a href="#contact" class="smoothScroll">צרו קשר</a></li>
-            <!-- <li><a href="#" data-toggle="modal" data-target="#howitworks">הצעות שלנו</a></li> -->
+            <li><a href="team.html">About</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#howitworks">How it works?</a></li>
+            <li><a href="#pics" class="smoothScroll">Best Recipes</a></li>
+            <li class="divider-vertical"></li>
           </ul>
-          <!-- <ul class="nav navbar-nav navbar-left">
+          <ul class="nav navbar-nav navbar-right">
             <li><a href="signup.html">Sign up / Log in</a></li>
-            <li> <a href="#"><span><i class="fa fa-heart-o" aria-hidden="true"></i></span> My Wishlist</a></li> 
-          </ul> -->
+            <button type="button" class="btn navbar-btn" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
+            sagittis lacus vel augue laoreet rutrum faucibus.">
+            <span><i class="fa fa-heart-o" aria-hidden="true"></i></span> My Wishlist
+            </button>
+            <!--<li> <a href="#"><span><i class="fa fa-heart-o" aria-hidden="true"></i></span> My Wishlist</a></li> -->
+          </ul>
         </div>
       </div>
     </nav>
-    <div class="jumbotron jumbo-bg" id="top">
+    <div class="jumbotron" id="top">
+      <div class="overlay"></div>
+        <video id="video-background" preload muted autoplay loop>
+          <source src="video/Food-1095.mp4" type="video/mp4">
+        </video>
         <div class="header-text">
-          <h1>
-          	Vita Tours
-            <div class="logo-heb">ויטה טורס </div>
+          <!-- <h1>
+            yummy.li
           </h1>
-          <!-- <div>
-            <a href="#" data-toggle="modal" data-target="#howitworks"><button type="button" class="btn btn-default btn-learn">Learn about <span class="intext-logo">Vita Tours</span></button></a>
+          <div>
+            <a href="#" data-toggle="modal" data-target="#howitworks"><button type="button" class="btn btn-default btn-learn">Learn about <span class="intext-logo">yummy.li</span></button></a>
             <a href="#"><button type="button" class="btn btn-default btn-learn-1"><span><i class="fa fa-heart-o" aria-hidden="true"></i></span> My Wishlist</button></a>
           </div> -->
           <h2>
-            בואו לטייל איתנו!
+            What's in your fridge?
           </h2>
           <h4>
-            ימי גיבוש וימי כיף לכל אחד!
+            Search recipes using ingredients you already have in the kitchen!
           </h4>
+          <form action="#" method="get">
+            <div class="container input-group">
+              <input type="text" class="form-control" id="tokenfield-1"
+              placeholder="Type maximum 4 ingredients..."  name="search">
+              <span class="input-group-btn">
+                <input type="submit" class="btn btn-default" value="Go!">
+              </span>
+            </div>
+          </form>
       </div>
     </div>
   </div>
-
   <!-- Modal -->
     <div id="howitworks" class="modal fade" role="dialog">
       <div class="modal-dialog">
@@ -66,7 +94,7 @@
           <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal">&times;</button>
             <h4 class="modal-title">
-            <span class="modal-logo-heb">ויטה טורס - </span><span class="modal-logo">Vita Tours</span>
+            <span class="modal-logo">yummy.li</span>
             </h4>
           </div>
           <div class="modal-body">
@@ -110,50 +138,16 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default button-new-reverse" data-dismiss="modal">ענק!</button>
+            <button type="button" class="btn btn-default button-new-reverse" data-dismiss="modal">Nice!</button>
           </div>
         </div>
       </div>
     </div>
   <!-- /Modal -->
-	<div class="container gallery" id="about">
-		<h1>עלינו</h1>
-	</div>
-	<div class="container">
-		<h4 class="text-muted">
-		לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית נולום ארווס סאפיאן - פוסיליס קוויס, אקווזמן קוואזי במר מודוף. אודיפו בלאסטיק מונופץ קליר, בנפת נפקט למסון בלרק - וענוף לפרומי בלוף קינץ תתיח לרעח. לת צשחמי צש בליא, מנסוטו צמלח לביקו ננבי, צמוקו בלוקריה שיצמה ברורק. גולר מונפרר סוברט לורם שבצק יהול, לכנוץ בעריר גק ליץ, ושבעגט ליבם סולגק. בראיט ולחת צורק מונחף, בגורמי מגמש. תרבנך וסתעד לכנו סתשם השמה - לתכי מורגם בורק? לתיג ישבעס.
-		</h4>
-			<div class="row">
-		      <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-xs-10 col-xs-offset-1">
-		        <div class="row">
-		          <ul class="equal-height-thumbnail-about">
-			          <!-- <li>
-			            <figure>
-			                <img src="img\about\1.jpg" alt="Equal height of thumbnail">
-			            </figure>
-			          </li> -->
-			          <li>
-			            <figure>
-			                <img src="img\about\2.jpg" alt="Equal height of thumbnail">
-			            </figure>
-			          </li>
-			          <li>
-			            <figure>
-			                <img src="img\about\3.jpg" alt="Equal height of thumbnail">
-			            </figure>
-			          </li>
-			      </ul>
-			    </div>
-			   </div>
-			</div>
-	</div>
-</div>
-
-
   <div class="container gallery" id="pics">
-    <h1>הצעות שלנו</h1>
+    <h1>Best Recipes</h1>
   </div>
-
+  <!-- Best Receipes gallery -->
   <div class="container">
     <div class="row">
       <div class="col-lg-12 col-md-12">
@@ -162,20 +156,19 @@
                 <!-- Receipe #1 -->
                 <li class="wow slideInUp">
                   <figure>
-                    <img src="img\1.jpg" alt="Equal height of thumbnail">
+                    <img src="img\food-photo\1.jpg" alt="Equal height of thumbnail">
                   </figure>
                   <div class="caption">
-                    <a href="#" class="link"><h4>טיול בילתי נשכח לרמת הגולן</h4></a>
+                    <a href="#" class="link"><h4>Title of receipe - Lorem ipsum dolor sit amet</h4></a>
                     <h4><small class="text-muted">
-                    הנהות הקטנות של החיים
-                    לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית נולום ארווס סאפיאן - פוסיליס קוויס, אקווזמן קוואזי במר מודוף. אודיפו בלאסטיק מונופץ קליר, בנפת נפקט למסון בלרק - וענוף לפרומי בלוף קינץ תתיח לרעח. לת צשחמי צש בליא, מנסוטו צמלח לביקו ננבי, צמוקו בלוקריה שיצמה ברורק. גולר מונפרר סוברט לורם שבצק יהול, לכנוץ בעריר גק ליץ, ושבעגט ליבם סולגק. בראיט ולחת צורק מונחף, בגורמי מגמש. תרבנך וסתעד לכנו סתשם השמה - לתכי מורגם בורק? לתיג ישבעס.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget enim et augue mattis tempor nec eget felis.
                     </small>
                     </h4>
                     <p>
-                      <a href="#contact" class="btn btn-default btn-def smoothScroll" role="button">צור קשר להצעת מחיר</a>
-                      <!-- <a href="#" class="btn btn-default btn-wishlist" role="button">
+                      <a href="#" class="btn btn-default btn-def" role="button">Read more</a>
+                      <a href="#" class="btn btn-default btn-wishlist" role="button">
                       <i class="fa fa-heart-o" aria-hidden="true"></i></span> Add to Wishlist
-                    </a> -->
+                    </a>
                   </p>
                 </div>
               </li>
@@ -183,16 +176,19 @@
               <!-- Receipe #2 -->
               <li class="wow slideInUp">
                 <figure>
-                  <img src="img\2.jpg" alt="Equal height of thumbnail">
+                  <img src="img\food-photo\2.jpg" alt="Equal height of thumbnail">
                 </figure>
                 <div class="caption">
-                  <a href="#" class="link"><h4>שם של טיול אחר, לא פחות מהנה מרמת הגולן</h4></a>
+                  <a href="#" class="link"><h4>Title of receipe</h4></a>
                   <h4><small class="text-muted">
-                  לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית נולום ארווס סאפיאן - פוסיליס קוויס, אקווזמן קוואזי במר מודוף. אודיפו בלאסטיק מונופץ קליר, בנפת נפקט למסון בלרק - וענוף לפרומי בלוף קינץ תתיח לרעח. לת צשחמי צש בליא, מנסוטו צמלח לביקו ננבי, צמוקו בלוקריה שיצמה ברורק. גולר מונפרר סוברט לורם שבצק יהול, לכנוץ בעריר גק ליץ, ושבעגט ליבם סולגק. בראיט ולחת צורק מונחף, בגורמי מגמש. תרבנך וסתעד לכנו סתשם השמה - לתכי מורגם בורק? לתיג ישבעס.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget enim et augue mattis tempor nec eget felis.
                   </small>
                   </h4>
                   <p>
-                    <a href="#contact" class="btn btn-default btn-def smoothScroll" role="button">צור קשר להצעת מחיר</a>
+                    <a href="#" class="btn btn-default btn-def" role="button">Read more</a>
+                    <a href="#" class="btn btn-default btn-wishlist" role="button">
+                    <i class="fa fa-heart-o" aria-hidden="true"></i></span> Add to Wishlist
+                    </a>
                   </p>
                 </div>
               </li>
@@ -200,112 +196,133 @@
               <!-- Receipe #3 -->
               <li class="wow slideInUp">
                 <figure>
-                  <img src="img\3.jpg" alt="Equal height of thumbnail">
+                  <img src="img\food-photo\3.jpg" alt="Equal height of thumbnail">
                 </figure>
                 <div class="caption">
-                  <a href="#" class="link"><h4>שם של טיול אחר, לא פחות מהנה מרמת הגולן</h4></a>
+                  <a href="#" class="link"><h4>Title of receipe</h4></a>
                   <h4><small class="text-muted">
-                  לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית נולום ארווס סאפיאן - פוסיליס קוויס, אקווזמן קוואזי במר מודוף. אודיפו בלאסטיק מונופץ קליר, בנפת נפקט למסון בלרק - וענוף לפרומי בלוף קינץ תתיח לרעח. לת צשחמי צש בליא, מנסוטו צמלח לביקו ננבי, צמוקו בלוקריה שיצמה ברורק. גולר מונפרר סוברט לורם שבצק יהול, לכנוץ בעריר גק ליץ, ושבעגט ליבם סולגק. בראיט ולחת צורק מונחף, בגורמי מגמש. תרבנך וסתעד לכנו סתשם השמה - לתכי מורגם בורק? לתיג ישבעס.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget enim et augue mattis tempor nec eget felis.
                   </small>
                   </h4>
                   <p>
-                    <a href="#contact" class="btn btn-default btn-def smoothScroll" role="button">צור קשר להצעת מחיר</a>
+                    <a href="#" class="btn btn-default btn-def" role="button">Read more</a>
+                    <a href="#" class="btn btn-default btn-wishlist" role="button">
+                    <i class="fa fa-heart-o" aria-hidden="true"></i></span> Add to Wishlist
+                    </a>
                   </p>
                 </div>
               </li>
               <!-- Receipe #4 -->
               <li class="wow slideInUp">
                 <figure>
-                  <img src="img\4.jpg" alt="Equal height of thumbnail">
+                  <img src="img\food-photo\4.jpg" alt="Equal height of thumbnail">
                 </figure>
                 <div class="caption">
-                  <a href="#" class="link"><h4>שם של טיול אחר, לא פחות מהנה מרמת הגולן</h4></a>
+                  <a href="#" class="link"><h4>Title of receipe</h4></a>
                   <h4><small class="text-muted">
-                  לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית נולום ארווס סאפיאן - פוסיליס קוויס, אקווזמן קוואזי במר מודוף. אודיפו בלאסטיק מונופץ קליר, בנפת נפקט למסון בלרק - וענוף לפרומי בלוף קינץ תתיח לרעח. לת צשחמי צש בליא, מנסוטו צמלח לביקו ננבי, צמוקו בלוקריה שיצמה ברורק. גולר מונפרר סוברט לורם שבצק יהול, לכנוץ בעריר גק ליץ, ושבעגט ליבם סולגק. בראיט ולחת צורק מונחף, בגורמי מגמש. תרבנך וסתעד לכנו סתשם השמה - לתכי מורגם בורק? לתיג ישבעס.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget enim et augue mattis tempor nec eget felis.
                   </small>
                   </h4>
                   <p>
-                    <a href="#contact" class="btn btn-default btn-def smoothScroll" role="button">צור קשר להצעת מחיר</a>
+                    <a href="#" class="btn btn-default btn-def" role="button">Read more</a>
+                    <a href="#" class="btn btn-default btn-wishlist" role="button">
+                    <i class="fa fa-heart-o" aria-hidden="true"></i></span> Add to Wishlist
+                    </a>
                   </p>
                 </div>
               </li>
               <!-- Receipe #5 -->
               <li class="wow slideInUp">
                 <figure>
-                  <img src="img\5.jpg" alt="Equal height of thumbnail">
+                  <img src="img\food-photo\5.jpg" alt="Equal height of thumbnail">
                 </figure>
                 <div class="caption">
-                  <a href="#" class="link"><h4>שם של טיול אחר, לא פחות מהנה מרמת הגולן</h4></a>
+                  <a href="#" class="link"><h4>Title of receipe</h4></a>
                   <h4><small class="text-muted">
-                  לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית נולום ארווס סאפיאן - פוסיליס קוויס, אקווזמן קוואזי במר מודוף. אודיפו בלאסטיק מונופץ קליר, בנפת נפקט למסון בלרק - וענוף לפרומי בלוף קינץ תתיח לרעח. לת צשחמי צש בליא, מנסוטו צמלח לביקו ננבי, צמוקו בלוקריה שיצמה ברורק. גולר מונפרר סוברט לורם שבצק יהול, לכנוץ בעריר גק ליץ, ושבעגט ליבם סולגק. בראיט ולחת צורק מונחף, בגורמי מגמש. תרבנך וסתעד לכנו סתשם השמה - לתכי מורגם בורק? לתיג ישבעס.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget enim et augue mattis tempor nec eget felis.
                   </small>
                   </h4>
                   <p>
-                    <a href="#contact" class="btn btn-default btn-def smoothScroll" role="button">צור קשר להצעת מחיר</a>
+                    <a href="#" class="btn btn-default btn-def" role="button">Read more</a>
+                    <a href="#" class="btn btn-default btn-wishlist" role="button">
+                    <i class="fa fa-heart-o" aria-hidden="true"></i></span> Add to Wishlist
+                    </a>
                   </p>
                 </div>
               </li>
               <!-- Receipe #6 -->
               <li class="wow slideInUp">
                 <figure>
-                  <img src="img\6.jpg" alt="Equal height of thumbnail">
+                  <img src="img\food-photo\6.jpg" alt="Equal height of thumbnail">
                 </figure>
                 <div class="caption">
-                  <a href="#" class="link"><h4>שם של טיול אחר, לא פחות מהנה מרמת הגולן</h4></a>
+                  <a href="#" class="link"><h4>Title of receipe</h4></a>
                   <h4><small class="text-muted">
-                  לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית נולום ארווס סאפיאן - פוסיליס קוויס, אקווזמן קוואזי במר מודוף. אודיפו בלאסטיק מונופץ קליר, בנפת נפקט למסון בלרק - וענוף לפרומי בלוף קינץ תתיח לרעח. לת צשחמי צש בליא, מנסוטו צמלח לביקו ננבי, צמוקו בלוקריה שיצמה ברורק. גולר מונפרר סוברט לורם שבצק יהול, לכנוץ בעריר גק ליץ, ושבעגט ליבם סולגק. בראיט ולחת צורק מונחף, בגורמי מגמש. תרבנך וסתעד לכנו סתשם השמה - לתכי מורגם בורק? לתיג ישבעס.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget enim et augue mattis tempor nec eget felis.
                   </small>
                   </h4>
                   <p>
-                    <a href="#contact" class="btn btn-default btn-def smoothScroll" role="button">צור קשר להצעת מחיר</a>
+                    <a href="#" class="btn btn-default btn-def" role="button">Read more</a>
+                    <a href="#" class="btn btn-default btn-wishlist" role="button">
+                    <i class="fa fa-heart-o" aria-hidden="true"></i></span> Add to Wishlist
+                    </a>
                   </p>
                 </div>
               </li>
               <!-- Receipe #7 -->
               <li class="wow slideInUp">
                 <figure>
-                  <img src="img\7.jpg" alt="Equal height of thumbnail">
+                  <img src="img\food-photo\7.jpg" alt="Equal height of thumbnail">
                 </figure>
                 <div class="caption">
-                  <a href="#" class="link"><h4>שם של טיול אחר, לא פחות מהנה מרמת הגולן</h4></a>
+                  <a href="#" class="link"><h4>Title of receipe</h4></a>
                   <h4><small class="text-muted">
-                  לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית נולום ארווס סאפיאן - פוסיליס קוויס, אקווזמן קוואזי במר מודוף. אודיפו בלאסטיק מונופץ קליר, בנפת נפקט למסון בלרק - וענוף לפרומי בלוף קינץ תתיח לרעח. לת צשחמי צש בליא, מנסוטו צמלח לביקו ננבי, צמוקו בלוקריה שיצמה ברורק. גולר מונפרר סוברט לורם שבצק יהול, לכנוץ בעריר גק ליץ, ושבעגט ליבם סולגק. בראיט ולחת צורק מונחף, בגורמי מגמש. תרבנך וסתעד לכנו סתשם השמה - לתכי מורגם בורק? לתיג ישבעס.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget enim et augue mattis tempor nec eget felis.
                   </small>
                   </h4>
                   <p>
-                    <a href="#contact" class="btn btn-default btn-def smoothScroll" role="button">צור קשר להצעת מחיר</a>
+                    <a href="#" class="btn btn-default btn-def" role="button">Read more</a>
+                    <a href="#" class="btn btn-default btn-wishlist" role="button">
+                    <i class="fa fa-heart-o" aria-hidden="true"></i></span> Add to Wishlist
+                    </a>
                   </p>
                 </div>
                 </li>
                 <!-- Receipe #8 -->
               <li class="wow slideInUp">
                 <figure>
-                  <img src="img\8.jpg" alt="Equal height of thumbnail">
+                  <img src="img\food-photo\8.jpg" alt="Equal height of thumbnail">
                 </figure>
                 <div class="caption">
-                  <a href="#" class="link"><h4>שם של טיול אחר, לא פחות מהנה מרמת הגולן</h4></a>
+                  <a href="#" class="link"><h4>Title of receipe</h4></a>
                   <h4><small class="text-muted">
-                  לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית נולום ארווס סאפיאן - פוסיליס קוויס, אקווזמן קוואזי במר מודוף. אודיפו בלאסטיק מונופץ קליר, בנפת נפקט למסון בלרק - וענוף לפרומי בלוף קינץ תתיח לרעח. לת צשחמי צש בליא, מנסוטו צמלח לביקו ננבי, צמוקו בלוקריה שיצמה ברורק. גולר מונפרר סוברט לורם שבצק יהול, לכנוץ בעריר גק ליץ, ושבעגט ליבם סולגק. בראיט ולחת צורק מונחף, בגורמי מגמש. תרבנך וסתעד לכנו סתשם השמה - לתכי מורגם בורק? לתיג ישבעס.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget enim et augue mattis tempor nec eget felis.
                   </small>
                   </h4>
                   <p>
-                    <a href="#contact" class="btn btn-default btn-def smoothScroll" role="button">צור קשר להצעת מחיר</a>
+                    <a href="#" class="btn btn-default btn-def" role="button">Read more</a>
+                    <a href="#" class="btn btn-default btn-wishlist" role="button">
+                    <i class="fa fa-heart-o" aria-hidden="true"></i></span> Add to Wishlist
+                    </a>
                   </p>
                 </div>
               </li>
               <!-- Receipe #9 -->
               <li class="wow slideInUp">
                 <figure>
-                  <img src="img\9.jpg" alt="Equal height of thumbnail">
+                  <img src="img\food-photo\9.jpg" alt="Equal height of thumbnail">
                 </figure>
                 <div class="caption">
-                  <a href="#" class="link"><h4>שם של טיול אחר, לא פחות מהנה מרמת הגולן</h4></a>
+                  <a href="#" class="link"><h4>Title of receipe</h4></a>
                   <h4><small class="text-muted">
-                  לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית נולום ארווס סאפיאן - פוסיליס קוויס, אקווזמן קוואזי במר מודוף. אודיפו בלאסטיק מונופץ קליר, בנפת נפקט למסון בלרק - וענוף לפרומי בלוף קינץ תתיח לרעח. לת צשחמי צש בליא, מנסוטו צמלח לביקו ננבי, צמוקו בלוקריה שיצמה ברורק. גולר מונפרר סוברט לורם שבצק יהול, לכנוץ בעריר גק ליץ, ושבעגט ליבם סולגק. בראיט ולחת צורק מונחף, בגורמי מגמש. תרבנך וסתעד לכנו סתשם השמה - לתכי מורגם בורק? לתיג ישבעס.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget enim et augue mattis tempor nec eget felis.
                   </small>
                   </h4>
                   <p>
-                    <a href="#contact" class="btn btn-default btn-def smoothScroll" role="button">צור קשר להצעת מחיר</a>
+                    <a href="#" class="btn btn-default btn-def" role="button">Read more</a>
+                    <a href="#" class="btn btn-default btn-wishlist" role="button">
+                    <i class="fa fa-heart-o" aria-hidden="true"></i></span> Add to Wishlist
+                    </a>
                   </p>
                 </div>
               </li>
@@ -313,57 +330,6 @@
         </div>
     </div>
   </div>
-</div>  
-
-<div class="container gallery" id="contact">
-    <h1>צרו קשר</h1>
-  </div>
-
-<div class="container">
-	<div class="row">
-		<div class="col-lg-12 col-md-12 col-sx-12">
-			<div class="map-overlay" onClick="style.pointerEvents='none'"></div>
-			<div style="-webkit-filter: grayscale(70%); filter: grayscale(70%);">
-				<iframe
-				  width="100%"
-				  height="150"
-				  frameborder="0" style="border:0"
-				  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53659.84113203713!2d35.03809154371487!3d32.79915070948223!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151dba585b88e8fb%3A0x4a9a3505ab50ce3b!2z16DXmdeh16DXkdeV15nXnSA0LCDXl9eZ16TXlA!5e0!3m2!1siw!2sil!4v1475314658353">
-				</iframe>
-			</div>
-		</div>
-	</div>
-
-	<div class="container row">
-		<div class="col-md-4 col-sx-12">
-			<h3>
-				<span class="intext-logo">ויטה טורס</span>
-			</h3>
-			<p>
-				סילבר 113, חיפה , ישראל
-			</p>
-			<p>	
-				טל: 0544958954
-			</p>
-			<p>	
-				מייל: info@yummy.li
-			</p>
-		</div>
-		<div class="col-md-8 col-sx-12">
-			<div>
-				<h3>צרו קשר להצעות מחיר:</h3>
-				<form method="POST" action="http://formspree.io/arkadypenzin@gmail.com">
-					<div class="form-group">
-				  		<input type="email" class="form-control" name="email" placeholder="אימייל">
-				  	</div>
-				  	<div class="form-group">	
-				  		<textarea name="message" class="form-control" placeholder="תוכן ההודעה"></textarea>
-				  	</div>
-				  <button type="submit" class="btn btn-default">שלח</button>
-				</form>
-			</div>	
-		</div>
-	</div>
 </div>
 
   <div class="row footer">
@@ -375,16 +341,56 @@
             </a>
         </div>
       </div>
-      <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 social-footer">
+      <div class="row">
+        <div class="col-lg-4 leftpanel">
+          <div class="row">
+              <div class="col-md-6 col-xs-6">
+                <a href="team.html">About Us</a>
+              </div>
+              <div class="col-md-6 col-xs-6">
+                <a href="team.html#terms">Terms of use</a>
+              </div>
+              <div class="col-md-6 col-xs-6">
+                <a href="team.html#contact">Contact Us</a>
+              </div>
+              <div class="col-md-6 col-xs-6">
+                <a href="signup.html">Sign Up</a>
+              </div>
+          </div> 
+      </div>
+      <div class="col-lg-4 col-lg-push-4 col-md-12 col-sm-12 right-panel">
         <div>
-            <a class="btn button-social" href="#" target="blank" role="button">
+          <form action="https://trvlbids.us10.list-manage.com/subscribe/post" method="post">
+                <input type="hidden" name="u" value="bb683f73a8c73f15986300c4c">
+                <input type="hidden" name="id" value="f5837e18ae">
+                <div class="input-group">
+                  <input type="email" class="form-control" placeholder="Enter your email"  name="MERGE0" id="MERGE0" required>
+                  <span class="input-group-btn">
+                    <input type="submit" class="btn btn-default" value="Subscribe">
+                  </span>
+                </div>
+          </form>
+        </div>
+      </div>    
+      <div class="col-lg-4 col-lg-pull-4 col-md-12 ol-sm-6 social-footer">
+        <div>
+            <a class="btn button-social" href="#" role="button">
+              <span><i class="fa fa-facebook" aria-hidden="true"></i></span>
+            </a>
+            <a class="btn button-social" href="#" role="button">
+              <span><i class="fa fa-twitter" aria-hidden="true"></i></span>
+            </a>
+            <a class="btn button-social" href="#" role="button">
+              <span><i class="fa fa-codepen" aria-hidden="true"></i></span>
+            </a>
+            <a class="btn button-social" href="#" role="button">
+              <span><i class="fa fa-github" aria-hidden="true"></i></span>
+            </a>
+            <a class="btn button-social" href="#" role="button">
               <span><i class="fa fa-google" aria-hidden="true"></i></span>
             </a>
-            <a class="btn button-social" href="#" target="blank" role="button">
-              <span><i class="fa fa-instagram" aria-hidden="true"></i></span>
-            </a>
-            <a class="btn button-social" href="https://www.facebook.com/vita.israetour/" target="blank" role="button">
-              <span><i class="fa fa-facebook" aria-hidden="true"></i></span>
+            <a class="btn button-social" href="#" role="button">
+              <span><i class="fa fa-pinterest-p" aria-hidden="true"></i></span>
             </a>
         </div>
         <div class="min-footer">
@@ -395,13 +401,19 @@
   </div>
 
 
-  <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+<!--   <script type="text/javascript" src="js/jquery-2.1.4.js"></script> -->
   <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
   <script type="text/javascript" src="js/jquery-ui.js"></script>
   <script type="text/javascript" src="js/bootstrap.min.js"></script>
   <script type="text/javascript" src="js/navbar.js" charset="UTF-8"></script>
+  <!-- tokienfield js stuff -->
+  <script type="text/javascript" src="js/bootstrap-tokenfield.js" charset="UTF-8"></script>
+  <script type="text/javascript" src="js/typeahead.bundle.min.js" charset="UTF-8"></script>
+  <!-- autocomplete data -->
+  <script type="text/javascript" src="js/docs.js" charset="UTF-8"></script>
   <!-- smooth scroll -->
   <script type="text/javascript" src="js/smoothscroll.js"></script>
+  <script type="text/javascript" src="js/loader.js"></script>
   <script type="text/javascript" src="js/wow.min.js"></script>
 
   <!--Initiate WOW js, can be at the bottom of your file -->
@@ -416,14 +428,7 @@
         }
       )
      wow.init();
-
-     $(document).ready(function(){
-
-      /*! Fades in page on load */
-      $('body').css('display', 'none');
-      $('body').fadeIn(1000);
-
-      });
   </script>
+
 </body>
 </html>
