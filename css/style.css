@@ -336,10 +336,11 @@ if it's not present, don't show loader */
 }
 
 /*Search bar*/
-.token-input ui-autocomplete-input {
+
+/*.token-input ui-autocomplete-input {
 	width: 60%;
 }
-
+*/
 .input-group .form-control:first-child, .input-group-addon:first-child, .input-group-btn:first-child>.btn, .input-group-btn:first-child>.btn-group>.btn, .input-group-btn:first-child>.dropdown-toggle, .input-group-btn:last-child>.btn-group:not(:last-child)>.btn, .input-group-btn:last-child>.btn:not(:last-child):not(.dropdown-toggle) {
 	background: #fffff;
  	border: none;
@@ -349,7 +350,7 @@ if it's not present, don't show loader */
  }
 
 .tokenfield {
-	max-height: 34px;
+	/*max-height: 34px;*/
     padding-bottom: 0px;
     position: relative;
     margin-bottom: 20vh;
