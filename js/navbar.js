@@ -2,7 +2,7 @@
   $(document).ready(function(){
     
 	// // hide .navbar first
-	// $(".navbar").hide();
+	$(".navbar-fixed-bottom").hide();
 	
 	// fade in .navbar
 	$(function () {
@@ -12,14 +12,20 @@
 			if ($(this).scrollTop() > 100) {
 				$('.navbar-inverse').fadeIn();
 				$('.navbar-inverse').css('background-color', '#393e41');
-				
-				// $('.navbar-header').css('background-color', '#393e41').fadeIn();
 
 			} else {
 				$('.navbar-inverse').css('background-color', 'transparent');
+				$('.navbar-fixed-bottom').fadeOut();
 				
-				// $('.navbar-header').css('background-color', 'transparent');
 			}
+
+			if ($(this).scrollTop() > 300) {
+				$('.navbar-fixed-bottom').fadeIn();
+
+			} else {
+				$('.navbar-fixed-bottom').fadeOut();
+			}
+
 		});
 	
 	});
