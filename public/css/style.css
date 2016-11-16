@@ -699,12 +699,22 @@ margin-left: 15px;
 
 @media (max-width: 768px) {
 	.home-footer {
-		padding-top: 20vh;
+		padding-top: 15vh;
 	}
 }
 
 @media (min-width: 768px) {
 	.home-footer {
-		padding-top: 40vh;
+		padding-top: 35vh;
 	}
+}
+
+.fork-me-text {
+	color: #f6f7eb;
+	font-size: 14px;
+}
+
+.fork-me-text:hover {
+	color: #f6f7eb;
+	text-decoration: none;
 }
