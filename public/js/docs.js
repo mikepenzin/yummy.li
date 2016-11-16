@@ -12,32 +12,6 @@ jQuery(document).ready(function($) {
   $('.token-example-field').tokenfield();
 
   $('#tokenfield-1').tokenfield({
-    autocomplete: {
-      source: [
-      'asparagus','apples','avacado','alfalfa','squash',
-      'almond','arugala','artichoke','applesauce','noodles',
-      'antelope','tuna','apple','avocado','bruscetta','bacon',
-      'beans','bagels','BBQ','bison','barley','beer','bisque',
-      'bluefish','bread','broccoli','buritto','babaganoosh','cabbage',
-      'cake','carrots','celery','cheese','chicken','catfish','chips',
-      'chocolate','chowder','clams','coffee','cookies','corn',
-      'cupcakes','crab','curry','chimichanga','dates','dips',
-      'duck','dumplings','donuts','eggs','enchilada','eggrolls',
-      'muffins','edimame','fajita','falafel','fish','franks',
-      'fondu','toast','dip','garlic','ginger','gnocchi','goose',
-      'granola','grapes','beans','guancamole','gumbo','grits',
-      'crackers','ham','halibut','hamburger','honey','haiku',
-      'hummus','bread','jambalaya','jam','jerky','jalapeño',
-      'kale','kabobs','ketchup','kiwi','kingfish','lobster',
-      'lamb','linguine','lasagna','meatballs','moose','milk',
-      'milkshake','ostrich','pizza','pepperoni','porter','pancakes',
-      'quesadilla','quiche','reuben','spinach','spaghetti','toast',
-      'venison','waffles','wine','walnuts','yogurt','ziti','zucchini'
-
-      ],
-      delay: 100
-    },
-    showAutocompleteOnFocus: false,
     delimiter: [',','-', '_'],
     limit: 4
   });
@@ -86,6 +60,8 @@ $('#tokenfield-3').tokenfield({
     delimiter: [',','-', '_']
 
   });
+  
+  
 
 $('#tokenfield-3').on('tokenfield:createtoken', function (event) {
 	    var existingTokens = $(this).tokenfield('getTokens');
@@ -112,6 +88,26 @@ $('#tokenfield-4').tokenfield({
   });
 
 $('#tokenfield-4').on('tokenfield:createtoken', function (event) {
+	    var existingTokens = $(this).tokenfield('getTokens');
+	    $.each(existingTokens, function(index, token) {
+	        if (token.value === event.attrs.value)
+	            event.preventDefault();
+	    });
+	});
+	
+	$('#tokenfield-5').tokenfield({
+    autocomplete: {
+      source: [
+      'Vegan','Ovo Vegan'
+      ],
+      delay: 100
+    },
+    showAutocompleteOnFocus: true,
+    delimiter: [',','-', '_']
+
+  });
+
+$('#tokenfield-5').on('tokenfield:createtoken', function (event) {
 	    var existingTokens = $(this).tokenfield('getTokens');
 	    $.each(existingTokens, function(index, token) {
 	        if (token.value === event.attrs.value)

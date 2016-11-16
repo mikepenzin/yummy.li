@@ -76,7 +76,7 @@ body {
 }
 
 .jumbotron {
-	padding-top: 45px;
+	padding-top: 25px;
 	padding-bottom: 10px;
 	background-color: #f6f7eb;
 	color: #f6f7eb;
@@ -192,7 +192,7 @@ body {
 	font-size: 1.3rem;
 	border: 1px solid #DEDEDE;
 	color: #393e41;
-	margin: 1%;
+	margin-left: 1%;
 }
 
 .btn-def:hover {
@@ -216,39 +216,6 @@ body {
 }
 
 /*start*/
-
-.equal-height-thumbnail { 
-  padding: .5vw;
-  font-size: 0;
-  display: -ms-flexbox;
-  -ms-flex-wrap: wrap;
-  -ms-flex-direction: column;
-  -webkit-flex-flow: row wrap; 
-  flex-flow: row wrap; 
-  display: -webkit-box;
-  display: flex;
-}
-
-.equal-height-thumbnail li { 
-  -webkit-box-flex: auto;
-  -ms-flex: auto;
-  flex: auto; 
-  width: 250px; 
-  margin: .5vw ; 
-  background: #FFF;
-  box-shadow: 0 0 1px 1px rgba(0,0,0,0.1)
-  padding:0 0.5%;
-}
-
-.equal-height-thumbnail figure {
-  padding: 2%;
-}
-
-.equal-height-thumbnail figure img { 
-  width: 100%; 
-  height: auto; 
-}
-
 .caption { 
 	padding-left: 5%;
 	padding-right: 5%;
@@ -311,7 +278,6 @@ body {
 	font-size: 1.3rem;
 	border: 1px solid #e04f67;
 	color: #e04f67;
-	margin: 1%;
 }
 
 .btn-wishlist:hover {

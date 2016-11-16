@@ -1,0 +1,31 @@
+{
+  "name": "yummyli",
+  "version": "0.0.1",
+  "description": "Search recipes by ingredients",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mikepenzin/yummy.li.git"
+  },
+  "keywords": [
+    "recipes",
+    "search"
+  ],
+  "author": "Mike Penzin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mikepenzin/yummy.li/issues"
+  },
+  "homepage": "https://github.com/mikepenzin/yummy.li#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "compression": "^1.6.2",
+    "ejs": "^2.5.2",
+    "express": "^4.14.0",
+    "request": "^2.78.0",
+    "unirest": "^0.5.1"
+  }
+}

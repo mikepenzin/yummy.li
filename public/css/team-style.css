@@ -3,14 +3,6 @@
 @import '../font-awesome/css/font-awesome.min.css';
 @import 'bootstrap.min.css';
 @import 'jquery-ui.css';
-/* Large desktop */
-@media (min-width: 1200px) { ... }
-
-/* Portrait tablet to landscape and desktop */
-@media (min-width: 768px) and (max-width: 979px) { ... }
-
-/* Landscape phone to portrait tablet */
-@media (max-width: 767px) { ... }
 
 /* Landscape phones and down */
 @media (max-width: 480px) { ... }
@@ -95,16 +87,7 @@ color: #f6f7eb;
 margin-bottom: 15px;
 z-index: 100;
 }
-.token-input ui-autocomplete-input {
-max-width: relative;
-}
-.input-group .form-control:first-child, .input-group-addon:first-child, .input-group-btn:first-child>.btn, .input-group-btn:first-child>.btn-group>.btn, .input-group-btn:first-child>.dropdown-toggle, .input-group-btn:last-child>.btn-group:not(:last-child)>.btn, .input-group-btn:last-child>.btn:not(:last-child):not(.dropdown-toggle) {
-background: #ffffff;
-border: none;
-font-size: 10pt;
-text-align: left;
-opacity: 0.8;
-}
+
 .header-text {
 margin-bottom: 10px;
 z-index: 2;
@@ -186,44 +169,6 @@ margin-right: 5px;
 .btn-advn:hover {
 background: #eaeaea;
 }
-.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
-background-color: #e04f67;
-border-color: #e04f67;
-}
-/*start*/
-.equal-height-thumbnail {
-padding: .5vw;
-font-size: 0;
-display: -ms-flexbox;
--ms-flex-wrap: wrap;
--ms-flex-direction: column;
--webkit-flex-flow: row wrap;
-flex-flow: row wrap;
-display: -webkit-box;
-display: flex;
-}
-.equal-height-thumbnail li {
--webkit-box-flex: auto;
--ms-flex: auto;
-flex: auto;
-width: 250px;
-margin: .5vw ;
-background: #FFF;
-box-shadow: 0 0 1px 1px rgba(0,0,0,0.1)
-padding:0 0.5%;
-}
-.equal-height-thumbnail figure {
-padding: 2%;
-}
-.equal-height-thumbnail figure img {
-width: 100%;
-height: auto;
-}
-.caption {
-padding-left: 5%;
-padding-right: 5%;
-}
-/*end*/
 .button-social {
 background: #ffffff;
 border: 0px;
@@ -262,6 +207,13 @@ color: #393e41;
 color: #393e41;
 }
 .link:hover {
+color: #393e41;
+text-decoration: none;
+}
+a {
+color: #393e41;
+}
+a:hover {
 color: #393e41;
 text-decoration: none;
 }
