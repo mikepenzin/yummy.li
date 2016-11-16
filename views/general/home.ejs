@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>yummy.li -  Search recipes using ingredients you already have in the kitchen! What's in your fridge?</title>
+    <meta charset="utf-8">
+    <link rel="apple-touch-icon" sizes="57x57" href="img/fav-icon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/fav-icon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/fav-icon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/fav-icon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/fav-icon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/fav-icon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/fav-icon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/fav-icon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/fav-icon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="img/fav-icon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/fav-icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/fav-icon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/fav-icon/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-blog" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          </button>
+          <a href="#myPage" class="navbar-brand smoothScroll"><span class="logo" >yummy.li</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="nav-blog">
+          <ul class="nav navbar-nav">
+            <li><a href="/team">About</a></li>
+            <li><a href="#" data-toggle="modal" data-target="#howitworks">How it works?</a></li>
+            <li class="divider-vertical"></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><button type="button" class="btn navbar-btn" data-container="body" data-toggle="popover" data-placement="bottom" data-html="true" data-target="#my-popover-content">Sign up / Log in</button></li>
+            <!--<button type="button" class="btn navbar-btn">-->
+            <!--<span><i class="fa fa-heart-o" aria-hidden="true"></i></span> My Wishlist-->
+            <!--</button>-->
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+<!-- Signup - Login content! -->
+
+<script type="text/html" id="my-popover-content">
+
+      <div class="col-lg-12 col-md-12 col-xs-12">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sx-12">
+            <a href="#" class="btn btn-default btn-facebook" role="button"><span><i class="fa fa-facebook" aria-hidden="true"></i></span>  Facebook</a>
+          </div>
+          <div class="col-lg-12 col-md-12 col-sx-12">
+            <a href="#" class="btn btn-default btn-google" role="button"><span><i class="fa fa-google-plus" aria-hidden="true"></i></span>  Google</a>
+          </div>
+        </div>    
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sx-12 strike">
+            <span>OR</span>
+          </div>  
+        </div>  
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sx-12">
+            <form class="form-horizontal" method="post">
+              <fieldset>
+                <!-- Form Name -->
+                <!-- Text input-->              
+                <div>
+                  <label class="control-label" for="email">E-mail:</label>
+                  <input name="email" type="email" placeholder="Enter your email" class="form-control input-md">
+                </div>
+                <!-- Email input-->
+                <div>
+                  <label class="control-label" for="email">Password:</label>
+                  <input name="password" type="password" placeholder="Enter desired password" class="form-control input-md">
+                </div>
+                <a href="#"><h4><small class="text-muted">Forgot a password?</small></h4></a>
+                <!-- Button -->
+                <div class="row">
+                  <div class="col-lg-12 col-md-12 col-sx-12">
+                    <label for="login"></label>
+                    <button id="login" name="login" class="btn btn-default btn-login">Log In / Sign Up</button>
+                  </div>
+                  <!-- <div class="col-lg-6 col-md-12 col-sx-12">
+                    <label for="signup"></label>
+                    <button id="signup" name="signup" class="btn btn-default btn-signup">Sign Up</button>
+                  </div> -->
+                </div>
+              </fieldset>
+            </form>
+          </div>  
+        </div>          
+      </div>
+    
+</script>
+
+    <div class="jumbotron" id="top">
+      <div class="overlay"></div>
+        <video id="video-background" preload muted autoplay loop>
+          <source src="video/Food-1095.mp4" type="video/mp4">
+        </video>
+        <div class="header-text">
+          <!-- <h1>
+            yummy.li
+          </h1>
+          <div>
+            <a href="#" data-toggle="modal" data-target="#howitworks"><button type="button" class="btn btn-default btn-learn">Learn about <span class="intext-logo">yummy.li</span></button></a>
+            <a href="#"><button type="button" class="btn btn-default btn-learn-1"><span><i class="fa fa-heart-o" aria-hidden="true"></i></span> My Wishlist</button></a>
+          </div> -->
+          <h2>
+            What's in your fridge?
+          </h2>
+          <h4>
+            Search recipes using ingredients you already have in the kitchen!
+          </h4>
+          <form action="/q" method="get">
+            <div class="container input-group">
+              <input type="text" class="form-control" id="tokenfield-1"
+              placeholder="Type maximum 4 ingredients..."  name="search">
+              <span class="input-group-btn">
+                <input type="submit" class="btn btn-default" value="Go!">
+              </span>
+            </div>
+          </form>
+          <div>
+              <div class="home-footer">
+                made with <span><i class="fa fa-heart-o" aria-hidden="true"></i></span> by Mike Penzin
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+<% include ../partials/modal-hiw %>
+
+    <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/smoothscroll.js"></script>
+    <!-- tokienfield js stuff -->
+    <script type="text/javascript" src="js/bootstrap-tokenfield.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="js/typeahead.bundle.min.js" charset="UTF-8"></script>
+    <!-- autocomplete data -->
+    <script type="text/javascript" src="js/docs.js" charset="UTF-8"></script>
+      <script type="text/javascript">
+        $(function () {
+          $('[data-toggle="popover"]').popover()
+          container: 'body'
+        })
+    
+        $("[data-toggle='popover']").each(function(index, element) {
+            var contentElementId = $(element).data().target;
+            var contentHtml = $(contentElementId).html();
+            $(element).popover({
+                content: contentHtml
+            });
+        });
+      </script>
+  
+</body>
+</html>

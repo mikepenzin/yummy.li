@@ -1,55 +1,8 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>yummy.li -  Mike Penzin - Profile page</title>
-		<meta charset="utf-8">
-		<link rel="apple-touch-icon" sizes="57x57" href="img/fav-icon/apple-icon-57x57.png">
-		<link rel="apple-touch-icon" sizes="60x60" href="img/fav-icon/apple-icon-60x60.png">
-		<link rel="apple-touch-icon" sizes="72x72" href="img/fav-icon/apple-icon-72x72.png">
-		<link rel="apple-touch-icon" sizes="76x76" href="img/fav-icon/apple-icon-76x76.png">
-		<link rel="apple-touch-icon" sizes="114x114" href="img/fav-icon/apple-icon-114x114.png">
-		<link rel="apple-touch-icon" sizes="120x120" href="img/fav-icon/apple-icon-120x120.png">
-		<link rel="apple-touch-icon" sizes="144x144" href="img/fav-icon/apple-icon-144x144.png">
-		<link rel="apple-touch-icon" sizes="152x152" href="img/fav-icon/apple-icon-152x152.png">
-		<link rel="apple-touch-icon" sizes="180x180" href="img/fav-icon/apple-icon-180x180.png">
-		<link rel="icon" type="image/png" sizes="192x192"  href="img/fav-icon/android-icon-192x192.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="img/fav-icon/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="96x96" href="img/fav-icon/favicon-96x96.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="img/fav-icon/favicon-16x16.png">
-		<link rel="manifest" href="/manifest.json">
-		<meta name="msapplication-TileColor" content="#ffffff">
-		<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-		<meta name="theme-color" content="#ffffff">
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-		<link rel="stylesheet" type="text/css" href="css/team-style.css">
-	</head>
-	<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
-		<nav class="navbar navbar-inverse navbar-fixed-top">
-			<div class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-blog" aria-expanded="false">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					</button>
-					<a href="#top" class="navbar-brand"><span class="logo" >yummy.li</span></a>
-				</div>
-				<div class="collapse navbar-collapse" id="nav-blog">
-					<ul class="nav navbar-nav">
-						<li><a href="#">About</a></li>
-						<li><a href="#" data-toggle="modal" data-target="#howitworks">How it works?</a></li>
-					</ul>
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#">Sign up / Log in</a></li>
-						<button type="button" class="btn navbar-btn" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
-						sagittis lacus vel augue laoreet rutrum faucibus.">
-						<span><i class="fa fa-heart-o" aria-hidden="true"></i></span> My Wishlist
-						</button>
-					</ul>
-				</div>
-			</div>
-		</nav>
+<link rel="stylesheet" type="text/css" href="css/team-style.css">
+
+<% include ../partials/header %>
+
+<link rel="stylesheet" type="text/css" href="css/team-style.css">
 
 		<div class="row profile-row">
 			<div class="tabs-left info">
@@ -335,39 +288,13 @@
 							</div>
 					</div>
 				</div>	
+</div>
+</div>
+</div>
+    <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/smoothscroll.js"></script>
+	<script type="text/javascript" src="js/tabs-url.js" charset="UTF-8"></script>
 
-</div>
-</div>
-
-</div>
-<div class="footer">
-		<div>
-			<a href="#myPage" class="smoothScroll" title="To Top">
-			<span class="up"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
-			</a>
-		</div>
-		<div>
-			<a class="btn button-social" href="#" role="button"><span><i class="fa fa-facebook-official" aria-hidden="true"></i></span></a>
-			<a class="btn button-social" href="#" role="button"><span><i class="fa fa-twitter" aria-hidden="true"></i></span></a>
-			<a class="btn button-social" href="#" role="button"><span><i class="fa fa-codepen" aria-hidden="true"></i></span></a>
-			<a class="btn button-social" href="#" role="button"><span><i class="fa fa-github" aria-hidden="true"></i></span></a>
-			<a class="btn button-social" href="#" role="button"><span><i class="fa fa-google" aria-hidden="true"></i></span></a>
-			<a class="btn button-social" href="#" role="button"><span><i class="fa fa-pinterest-p" aria-hidden="true"></i></span></a>
-		</div>
-		<div class="min-footer">
-			made with <span class="love"><i class="fa fa-heart" aria-hidden="true"></i></span> by Mike Penzin
-		</div>
-</div>
-<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
-<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
-<script type="text/javascript" src="js/jquery-ui.js"></script>
-<script type="text/javascript" src="js/bootstrap.min.js"></script>
-<!-- tokienfield js stuff -->
-<script type="text/javascript" src="js/bootstrap-tokenfield.js" charset="UTF-8"></script>
-<script type="text/javascript" src="js/typeahead.bundle.min.js" charset="UTF-8"></script>
-<!-- autocomplete data -->
-<script type="text/javascript" src="js/docs.js" charset="UTF-8"></script>
-<script type="text/javascript" src="js/tabs-url.js" charset="UTF-8"></script>
-<script type="text/javascript" src="js/smoothscroll.js"></script>
-</body>
-</html>
+<% include ../partials/footer %>
