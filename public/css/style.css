@@ -56,6 +56,14 @@ body{
 	margin: 0;
 }
 
+a {
+	color: #393e41;
+}
+a:hover {
+	color: #393e41;
+	text-decoration: none;
+}
+
 /*Navigation Bar*/
 .logo {
 	color: #f6f7eb;
@@ -236,6 +244,19 @@ body{
     margin: 0;
 }
 
+.jumbotron-inner{
+	background-color: #f6f7eb;
+	color: #f6f7eb;
+	text-align: center;
+	font-family: 'Raleway';
+	position: relative;
+    overflow: hidden;
+    height: auto;
+    z-index:0;
+}
+
+
+
 .jumbotron h1 {
 	font-family: 'Pacifico';
 	color: #f6f7eb;
@@ -263,7 +284,7 @@ body{
 }
 
 .jumbotron h4{
-	padding-bottom: 40px;
+	padding-bottom: 30px;
 }
 
 .header-text {
@@ -283,6 +304,24 @@ body{
 	-webkit-transform: translate3d(-50%, -50%, 0);
 	transform: translate3d(-50%, -50%, 0);
 	z-index: -100;
+}
+
+.jumbo-bg-show {
+	background: linear-gradient(
+      rgba(0, 0, 0, 0.4), 
+      rgba(0, 0, 0, 0.4)
+    ),url("/img/food-photo/old-big/4.jpg");
+	background-size: cover;
+	background-position: center;
+}
+
+.jumbo-bg-search {
+	background: linear-gradient(
+      rgba(0, 0, 0, 0.4), 
+      rgba(0, 0, 0, 0.4)
+    ),url("https://yummyli.herokuapp.com/img/index-bg.jpg");
+	background-size: cover;
+	background-position: center;
 }
 
 .jumbotron .overlay {
@@ -327,6 +366,20 @@ body{
 
 .btn-learn-1:hover {
 	background: #eaeaea;
+}
+
+.info {
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 20px;
+}
+
+.recipe-image img{
+	/*position: relative;*/
+	height: auto;
+	width: 100%;
+    margin: 0 0 30px auto; /* Align slide image horizontally center */
+    box-shadow: 0px 0px 20px #b2b2b2;
 }
 
 /*Search bar*/
@@ -614,17 +667,10 @@ margin-left: 15px;
 
 /*Footer Style*/
 .footer {
-/*	padding: 20px;*/
-/*	font-size: 1.5rem;*/
 	font-family: 'Raleway', sans-serif;
-/*	position: relative;
-  	bottom: 0;
-  	left: 0;
-  	height: auto;*/
   	background-color: white;
   	width: 100%;
   	outline: none;
-/*  	margin-top: 20px;*/
 }
 
 .social-footer{
@@ -633,7 +679,6 @@ margin-left: 15px;
 }
 
 .leftpanel {
-	/*padding-left: 15%;*/
 	text-align: center;
 	margin-bottom: 20px;
 }
