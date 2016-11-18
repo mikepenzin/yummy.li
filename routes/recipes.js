@@ -1,6 +1,5 @@
 var express     = require("express"),
     unirest     = require("unirest"),
-    request     = require("request"),
     router      = express.Router();
 
 
@@ -8,20 +7,29 @@ router.get("/", function(req, res){
     res.render("general/home");
 });
 
+
 router.get("/q", function(req, res){
     var search = req.query.search;
-    var url = 'http://www.recipepuppy.com/api/?i=' + search + '&p=1';
-    request(url, function (error, response, body) {
-      if (!error && response.statusCode == 200) {
-        console.log(body);  
-        var data = JSON.parse(body);
-        res.render("recipe/search", {data:data, q:search}); 
-      } else {
-        console.log("Something whent wrong!");
-        console.log(error);
-      }
+    var page = Number(req.query.page) || 1;
+    unirest.get("https://community-food2fork.p.mashape.com/search?key=ec0cc812a67bdf0f980e49db6f3fca85&page=" + page + "&q=" + search + "&sort=r")
+    .header("X-Mashape-Key", "Fj5xGp8OhGmshrg45yEPk5IvGe0xp1DCBIFjsnLHD4OsQxCvPD")
+    .header("Accept", "application/json")
+    .end(function (result) {
+        if (result.statusCode == 200) {
+            var data = JSON.parse(result.body);
+            data = data.recipes;
+            if(data.length > 0){   
+               //this array is not empty 
+               res.render("recipe/search", {data:data, q:search, page:page});
+            }else{
+               //this array is empty
+               res.redirect("back");
+            }
+          } else {
+            console.log("Something whent wrong!");
+            console.log(result.status, result.headers);
+          }    
     });
-    
 });
 
 
