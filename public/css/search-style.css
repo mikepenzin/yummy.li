@@ -68,6 +68,16 @@ body {
 	color: #393e41;
 }
 
+
+a {
+	color: #393e41;
+}
+
+a:hover {
+	color: #393e41;
+	text-decoration: none;
+}
+
 .logo {
 	/*color: #E04F67;*/
 	color: #f6f7eb;
@@ -99,10 +109,9 @@ body {
 	z-index: 100;
 }
 
-.token-input ui-autocomplete-input {
-	width: 100%;
+.form-inline{
+	width: 80%;	
 }
-
 
 .input-group .form-control:first-child, .input-group-addon:first-child, .input-group-btn:first-child>.btn, .input-group-btn:first-child>.btn-group>.btn, .input-group-btn:first-child>.dropdown-toggle, .input-group-btn:last-child>.btn-group:not(:last-child)>.btn, .input-group-btn:last-child>.btn:not(:last-child):not(.dropdown-toggle) {
 	background: #fffff;
@@ -112,6 +121,20 @@ body {
  	opacity: 0.8;
  }
 
+ .input-group-btn:last-child>.btn, .input-group-btn:last-child>.btn-group {
+ 	min-height: 34px;
+ }
+
+.input-group .form-control:first-child, .input-group-addon:first-child, .input-group-btn:first-child>.btn, .input-group-btn:first-child>.btn-group>.btn, .input-group-btn:first-child>.dropdown-toggle, .input-group-btn:last-child>.btn-group:not(:last-child)>.btn, .input-group-btn:last-child>.btn:not(:last-child):not(.dropdown-toggle){
+	min-height: 34px;
+}
+
+.tokenfield {
+	/*max-height: 34px;*/
+    padding-bottom: 0px;
+    position: relative;
+    margin-bottom: 20vh;
+}
 .header-text {
 	margin-bottom: 10px;
 	z-index: 2;
@@ -168,7 +191,7 @@ body {
 }
 
 .jumbotron h4{
-	margin-bottom: 70px;
+	margin-bottom: 20px;
 }
 
 .love {
@@ -192,7 +215,8 @@ body {
 	font-size: 1.3rem;
 	border: 1px solid #DEDEDE;
 	color: #393e41;
-	margin-left: 1%;
+	margin-right: 1%;
+	margin-top: 2%;
 }
 
 .btn-def:hover {
@@ -278,6 +302,7 @@ body {
 	font-size: 1.3rem;
 	border: 1px solid #e04f67;
 	color: #e04f67;
+	margin-top: 2%;
 }
 
 .btn-wishlist:hover {

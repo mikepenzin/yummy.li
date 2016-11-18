@@ -1,5 +1,6 @@
 var express     = require("express"),
     unirest     = require("unirest"),
+    request     = require("request"),
     router      = express.Router();
 
 
@@ -7,25 +8,20 @@ router.get("/", function(req, res){
     res.render("general/home");
 });
 
-
 router.get("/q", function(req, res){
     var search = req.query.search;
-    unirest.get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=" + search + "&limitLicense=false&number=100&ranking=2")
-    .header("X-Mashape-Key", "tCT2wqvYHGmshbK1SlktapWjEhP1p1rxFmYjsnJtzd5AJysylS")
-    .header("Accept", "application/json")
-    .end(function (result) {
-        if (result.statusCode == 200) {
-            var data = result.body;
-            data = data.filter(function(recipe) {
-                return recipe.likes > 50;
-            });
-            var numFound = data.length;
-            res.render("recipe/search", {data:data.sort(dynamicSort("likes")), length:numFound, q:search}); 
-          } else {
-            console.log("Something whent wrong!");
-            console.log(result.status, result.headers);
-          }    
+    var url = 'http://www.recipepuppy.com/api/?i=' + search + '&p=1';
+    request(url, function (error, response, body) {
+      if (!error && response.statusCode == 200) {
+        console.log(body);  
+        var data = JSON.parse(body);
+        res.render("recipe/search", {data:data, q:search}); 
+      } else {
+        console.log("Something whent wrong!");
+        console.log(error);
+      }
     });
+    
 });
 
 
