@@ -1,0 +1,36 @@
+<% include ../partials/header %>
+<link rel="stylesheet" type="text/css" href="/css/team-style.css">
+<% include ../partials/navbar-body %>
+	
+<% include ../partials/modal-hiw %>
+	<div class="container">	
+		<div class="row">
+			<div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-xs-12">
+			    <h2>LOG IN</h2>
+			    <p class="help-block">(or <a href="/auth/signup">signup</a>)</p>
+				<form class="form-horizontal" action="/auth/login" method="POST">
+					<!-- Text input-->							
+					<div>
+						<label class="control-label" for="email">E-mail:</label>
+						<input name="username" type="email" placeholder="Enter your email" class="form-control input-md">
+					</div>
+					<!-- Email input-->
+					<div>
+					    <label class="control-label" for="email">Password:</label>
+						<input name="password" type="password" placeholder="Enter desired password" class="form-control input-md">
+					</div>
+						<a href="#"><h4><small class="text-muted">Forgot a password?</small></h4></a>
+					<!-- Button -->
+						<button id="signup" name="signup" class="btn btn-default btn-signup btn-block">Log in</button>
+				</form>
+			</div>	
+		</div>					
+	</div>
+	
+<script type="text/javascript" src="js/jquery-2.1.4.js"></script>
+<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="js/jquery-ui.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/smoothscroll.js"></script>
+</body>
+</html>

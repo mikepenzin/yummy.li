@@ -47,14 +47,29 @@ html{
 	margin: 0;
 }
 
-body{ 
-	background: #F7F7F7;
-	color: #393e41;
-	font-family: 'Raleway', sans-serif;
-	z-index: -100;
-	height: 100%;
-	margin: 0;
+@media (max-width: 768px) {
+	body{ 
+		background: #F7F7F7;
+		color: #393e41;
+		font-family: 'Raleway', sans-serif;
+		z-index: -100;
+		height: 100%;
+		margin: 0;
+		padding-top: 55px;
+	}
 }
+
+@media (min-width: 768px) {
+	body{ 
+		background: #F7F7F7;
+		color: #393e41;
+		font-family: 'Raleway', sans-serif;
+		z-index: -100;
+		height: 100%;
+		margin: 0;
+	}
+}
+
 
 a {
 	color: #393e41;
@@ -269,7 +284,7 @@ a:hover {
 
 @media (max-width: 768px) {
 	.jumbotron h2 {
-		margin-top: 30vh;
+		margin-top: 20vh;
 		margin-bottom: 1%;
 		font-size: 3rem;
 	}
@@ -311,6 +326,24 @@ a:hover {
       rgba(0, 0, 0, 0.4), 
       rgba(0, 0, 0, 0.4)
     ),url("/img/food-photo/old-big/4.jpg");
+	background-size: cover;
+	background-position: center;
+}
+
+.jumbo-bg-profile {
+	background: linear-gradient(
+      rgba(0, 0, 0, 0.4), 
+      rgba(0, 0, 0, 0.4)
+    ),url("/img/food-photo/old-big/6.jpg");
+	background-size: cover;
+	background-position: center;
+}
+
+.jumbo-bg-wishlist {
+	background: linear-gradient(
+      rgba(0, 0, 0, 0.4), 
+      rgba(0, 0, 0, 0.4)
+    ),url("/img/food-photo/old-big/9.jpg");
 	background-size: cover;
 	background-position: center;
 }
@@ -394,6 +427,7 @@ a:hover {
  	font-size: 10pt;
 	text-align: left;
  	opacity: 0.8;
+ 	max-height: 34px;
  }
 
  .input-group-btn:last-child>.btn, .input-group-btn:last-child>.btn-group {

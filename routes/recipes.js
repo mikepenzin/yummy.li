@@ -1,5 +1,7 @@
 var express     = require("express"),
     unirest     = require("unirest"),
+    middleware  = require('../middleware'),
+    User        = require('../models/user'),
     router      = express.Router();
 
 
@@ -7,7 +9,7 @@ router.get("/", function(req, res){
     res.render("general/home");
 });
 
-// Used Environment variable (process.env.API_URL) for my personal API key from Food2Fork
+// Used Environment variable (process.env.API_URL) for personal API key from Food2Fork
 
 //SHOW search results for recipes - by ingridients 
 router.get("/q", function(req, res){
@@ -37,7 +39,6 @@ router.get("/q", function(req, res){
 
 //SHOW - recipe by recipe id
 router.get("/recipe/:recipe_id", function(req, res){
-    console.log(req.params.recipe_id);
     var url = "https://community-food2fork.p.mashape.com/get?key=" + process.env.API_URL + "&rId=" + req.params.recipe_id;
     unirest.get(url)
     .header("X-Mashape-Key", "Fj5xGp8OhGmshrg45yEPk5IvGe0xp1DCBIFjsnLHD4OsQxCvPD")
@@ -46,7 +47,6 @@ router.get("/recipe/:recipe_id", function(req, res){
         if (result.statusCode == 200) {
             var data = JSON.parse(result.body);
             data = data.recipe;
-            console.log(data); 
             res.render("recipe/show", {recipe:data});
           } else {
             console.log("Something whent wrong!");
@@ -56,4 +56,51 @@ router.get("/recipe/:recipe_id", function(req, res){
     });
 });
 
+// Add item to users whishlist
+router.put("/wishlist/:user_id/:recipe_id",middleware.isLoggedIn, function(req, res){
+    var id = req.body.id;
+    var image_url = req.body.image_url;
+    var publisher = req.body.publisher;
+    var title = req.body.title;
+    var newWishlistItem = {
+        id: id, 
+        image_url: image_url, 
+        publisher: publisher, 
+        title: title
+    };
+    User.findById(req.params.user_id, function(err, foundUser){
+        if(err) {
+            console.log(err);
+        } else {
+            console.log(newWishlistItem);
+            foundUser.recipes.push(newWishlistItem);
+            foundUser.save();
+            console.log("New recipe added to user");
+            res.redirect("back");
+        }
+    });
+});
+
+//Remove item from wishlist
+router.put("/wishlist/:user_id/:recipe_id/remove",middleware.isLoggedIn, function(req, res){
+    var id = req.params.recipe_id;
+    User.findById(req.params.user_id, function (err, foundUser) {
+      var recipe = foundUser.recipes; 
+      if (!err) {
+          for (var i = 0; i < recipe.length; i++) {
+              if (recipe[i].id == id) {
+                    foundUser.recipes[i].remove();
+                    foundUser.save(function (err) {
+                        if (err){
+                            console.log(err);
+                        } else {
+                            res.redirect("back");
+                        }
+                    });
+                }
+            }
+        }
+    });
+});
+    
 module.exports = router;

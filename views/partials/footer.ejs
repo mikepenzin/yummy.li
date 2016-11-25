@@ -65,43 +65,4 @@
       </div>
     </div>
   </div>
-
-
-  <script type="text/javascript" src="js/jquery-2.1.4.js"></script>
-  <script type="text/javascript" src="js/jquery-ui.js"></script>
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
-  <!-- smooth scroll -->
-  <script type="text/javascript" src="js/smoothscroll.js"></script>
-  <script type="text/javascript" src="js/wow.min.js"></script>
-  <script type="text/javascript" src="js/jquery.grid-a-licious.min.js"></script>
-	<script type="text/javascript" src="js/grid.js"></script>
-
-  <!--Initiate WOW js, can be at the bottom of your file -->
-  <script>
-    wow = new WOW(
-      {
-          boxClass:     'wow',      // default
-          animateClass: 'animated', // change this if you are not using animate.css
-          offset:       0,          // default
-          mobile:       true,       // keep it on mobile
-          live:         true        // track if element updates
-        }
-      )
-     wow.init();
-  </script>
-  <script type="text/javascript">
-    $(function () {
-      $('[data-toggle="popover"]').popover()
-      container: 'body'
-    })
-
-    $("[data-toggle='popover']").each(function(index, element) {
-        var contentElementId = $(element).data().target;
-        var contentHtml = $(contentElementId).html();
-        $(element).popover({
-            content: contentHtml
-        });
-    });
-  </script>
-</body>
-</html>
+  

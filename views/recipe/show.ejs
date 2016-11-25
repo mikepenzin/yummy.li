@@ -1,30 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>yummy.li -  Search recipes using ingredients you already have in the kitchen! What's in your fridge?</title>
-    <meta charset="utf-8">
-    <link rel="apple-touch-icon" sizes="57x57" href="/img/fav-icon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/img/fav-icon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/img/fav-icon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/img/fav-icon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/img/fav-icon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/img/fav-icon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/img/fav-icon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/img/fav-icon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/img/fav-icon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/img/fav-icon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/img/fav-icon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/img/fav-icon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/img/fav-icon/favicon-16x16.png">
-    <link rel="manifest" href="/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
-    <link rel="stylesheet" type="text/css" href="../css/recipe-style.css">
-    <% include ../partials/navbar-body %>
-    <% include ../partials/modal-hiw %>
+<% include ../partials/header %>
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+<link rel="stylesheet" type="text/css" href="../css/recipe-style.css">
+<% include ../partials/navbar-body %>
 
 		<div class="jumbotron jumbo-bg-show" id="top">
 			<div class="header-text">
@@ -41,9 +18,37 @@
 				<div class="row icons-field">
 					<div class="col-md-8 col-xs-12">
 						<a href="<%= recipe.source_url %>" class="btn btn-default btn-def" role="button" target="blank">Original at <%= recipe.publisher %></a>
-						<a href="#" class="btn btn-default btn-wishlist" role="button">
-						<i class="fa fa-heart-o" aria-hidden="true"></i></span> Add to Wishlist
-					</a>
+						<% if(!currentUser){ %>
+									          	<a href="/auth/login" class="btn btn-default btn-wishlist" role="button">
+												  <i class="fa fa-heart-o" aria-hidden="true"></i></span> Add to Wishlist
+											  	</a>
+									        <% } else { %>
+									        	<% var userRecipes = currentUser.recipes; %>
+									        	<% var found = false; %>
+									        	<% for (var i = 0; i < userRecipes.length; i++) { %>
+									        		<% if(userRecipes[i].id == recipe.recipe_id) { %>
+									        			<% found = true; %>
+									        			<% break; %>
+									        		<% } %>
+									        	<% } %>
+								        		<% if(found) { %>
+								        			<form action="/wishlist/<%= currentUser._id %>/<%= recipe.recipe_id %>/remove?_method=PUT" method="POST">
+				            							<button class="btn btn-default btn-wishlist">
+				            							    <i class="fa fa-times" aria-hidden="true"></i></span> Remove item
+				            							</button>
+				            						</form>
+								        		<% } else { %>
+								        			<form action="/wishlist/<%= currentUser._id %>/<%= recipe.recipe_id %>?_method=PUT" method="POST">
+										        		<input type='hidden' name='id' value='<%= recipe.recipe_id %>' />
+										        		<input type='hidden' name='title' value='<%- recipe.title %>' />
+										        		<input type='hidden' name='image_url' value='<%= recipe.image_url %>' />
+										        		<input type='hidden' name='publisher' value='<%= recipe.publisher %>' />
+										                <button class="btn btn-default btn-wishlist">
+										                	<i class="fa fa-heart-o" aria-hidden="true"></i></span> Add to Wishlist
+										                </button>
+										            </form>
+								        		<% } %>
+							            <% } %>
 				</div>
 			</div>
 			<div class="row info">
@@ -76,111 +81,9 @@
 		</div>
 	</div>
 
-  <div class="row footer">
-    <div class="container">
-      <div class="row social-footer">
-        <div class="col-md-12 col-lg-12 col-xs-12">
-            <a href="#myPage" class="smoothScroll" title="To Top">
-            <span class="up"><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
-            </a>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-4 leftpanel">
-          <div class="row">
-              <div class="col-md-6 col-xs-6">
-                <a href="team.html">About Us</a>
-              </div>
-              <div class="col-md-6 col-xs-6">
-                <a href="team.html#terms">Terms of use</a>
-              </div>
-              <div class="col-md-6 col-xs-6">
-                <a href="team.html#contact">Contact Us</a>
-              </div>
-              <div class="col-md-6 col-xs-6">
-                <a href="signup.html">Sign Up</a>
-              </div>
-          </div> 
-      </div>
-      <div class="col-lg-4 col-lg-push-4 col-md-12 col-sm-12 right-panel">
-        <div>
-          <form action="https://trvlbids.us10.list-manage.com/subscribe/post" method="post">
-                <input type="hidden" name="u" value="bb683f73a8c73f15986300c4c">
-                <input type="hidden" name="id" value="f5837e18ae">
-                <div class="input-group">
-                  <input type="email" class="form-control" placeholder="Enter your email"  name="MERGE0" id="MERGE0" required>
-                  <span class="input-group-btn">
-                    <input type="submit" class="btn btn-default" value="Subscribe">
-                  </span>
-                </div>
-          </form>
-        </div>
-      </div>    
-      <div class="col-lg-4 col-lg-pull-4 col-md-12 ol-sm-6 social-footer">
-        <div>
-            <a class="btn button-social" href="#" role="button">
-              <span><i class="fa fa-facebook" aria-hidden="true"></i></span>
-            </a>
-            <a class="btn button-social" href="#" role="button">
-              <span><i class="fa fa-twitter" aria-hidden="true"></i></span>
-            </a>
-            <a class="btn button-social" href="#" role="button">
-              <span><i class="fa fa-codepen" aria-hidden="true"></i></span>
-            </a>
-            <a class="btn button-social" href="#" role="button">
-              <span><i class="fa fa-github" aria-hidden="true"></i></span>
-            </a>
-            <a class="btn button-social" href="#" role="button">
-              <span><i class="fa fa-google" aria-hidden="true"></i></span>
-            </a>
-            <a class="btn button-social" href="#" role="button">
-              <span><i class="fa fa-pinterest-p" aria-hidden="true"></i></span>
-            </a>
-        </div>
-        <div class="min-footer">
-          made with <span class="love"><i class="fa fa-heart" aria-hidden="true"></i></span> by Mike Penzin
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-    <script type="text/javascript" src="/js/jquery-2.1.4.js"></script>
-    <script type="text/javascript" src="/js/jquery-ui.js"></script>
-    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
-  <!-- smooth scroll -->
-    <script type="text/javascript" src="/js/smoothscroll.js"></script>
-    <script type="text/javascript" src="/js/wow.min.js"></script>
-    <script type="text/javascript" src="/js/jquery.grid-a-licious.min.js"></script>
-    <script type="text/javascript" src="/js/grid.js"></script>
-	<script type="text/javascript" src="/js/navbar.js" charset="UTF-8"></script>
-
-  <!--Initiate WOW js, can be at the bottom of your file -->
-  <script>
-    wow = new WOW(
-      {
-          boxClass:     'wow',      // default
-          animateClass: 'animated', // change this if you are not using animate.css
-          offset:       0,          // default
-          mobile:       true,       // keep it on mobile
-          live:         true        // track if element updates
-        }
-      )
-     wow.init();
-  </script>
-  <script type="text/javascript">
-    $(function () {
-      $('[data-toggle="popover"]').popover()
-      container: 'body'
-    })
-
-    $("[data-toggle='popover']").each(function(index, element) {
-        var contentElementId = $(element).data().target;
-        var contentHtml = $(contentElementId).html();
-        $(element).popover({
-            content: contentHtml
-        });
-    });
-  </script>
+<% include ../partials/footer %>
+<% include ../partials/modal-hiw %>
+<% include ../partials/html-footer %>
+    <script type="text/javascript" src="/js/navbar.js" charset="UTF-8"></script>
 </body>
 </html>
