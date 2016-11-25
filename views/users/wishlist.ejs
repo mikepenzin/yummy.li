@@ -1,0 +1,48 @@
+<% include ../partials/header %>
+<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/profile-style.css">
+<% include ../partials/navbar-body %>
+
+<div class="jumbotron jumbo-bg-wishlist" id="top">
+	<div class="header-text">
+		<h2><i class="fa fa-heart-o" aria-hidden="true"></i> My Wishlist</h2>
+	</div>
+</div>
+
+	<div class="row"> 
+        <div class"container">
+            <div class="col-lg-12 col-md-12 col-sx-12">
+                <div id="gallery-recipes">
+            	    <% recipes = currentUser.recipes %>
+            	    <% recipes.reverse() %>
+            		<% recipes.forEach(function(recipe){ %> 
+            	    	<div class="item thumbnail wow fadeInUp">
+            		    	<img src="<%= recipe.image_url %>" alt="<%- recipe.title %>">
+            			    <div class="caption">
+            					<a href="/recipe/<%= recipe.id %>" class="link"><h5><%- recipe.title %>...</h5></a>
+            					<span class="label label-default"><%= recipe.publisher %></span>
+            					<br><br>
+            					<p>
+            				    	<a href="/recipe/<%= recipe.id %>" class="btn btn-default btn-def btn-block" role="button">
+            					      Read more
+            					    </a>
+            						<form action="/wishlist/<%= currentUser._id %>/<%= recipe.id %>/remove?_method=PUT" method="POST">
+            								<button class="btn btn-default btn-wishlist btn-block">
+            								    <i class="fa fa-times" aria-hidden="true"></i></span> Remove item
+            								</button>
+            						</form>
+            					</p>
+            				</div>
+            			</div>
+            	    <% }); %>
+            	 </div>
+            </div>
+        </div>	
+    </div>
+
+<% include ../partials/footer %>
+<% include ../partials/modal-hiw %>
+<% include ../partials/html-footer %>
+    <script type="text/javascript" src="/js/navbar.js" charset="UTF-8"></script>
+</body>
+</html>

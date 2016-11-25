@@ -1,0 +1,46 @@
+<% include ../partials/header %>
+<link rel="stylesheet" type="text/css" href="/css/team-style.css">
+<% include ../partials/navbar-body %>
+	
+	<div class="container">	
+		<div class="row">
+			<div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-xs-12">
+			    <h2>SIGN UP</h2>
+				<form class="form-horizontal" action="/auth/signup" method="POST" enctype="multipart/form-data">
+					<!-- Text input-->	
+					<p class="help-block">All fields are required!</p>
+					<div>
+						<label class="control-label" for="email">E-mail:</label>
+						<input name="username" type="email" placeholder="Enter your email" class="form-control input-md" require>
+					</div>
+					<!-- Email input-->
+					<div>
+					    <label class="control-label" for="email">Password:</label>
+						<input name="password" type="password" placeholder="Enter desired password" class="form-control input-md" require>
+					</div>
+					<div>
+						<label class="control-label" for="email">Full Name</label>
+						<input name="name" type="text" placeholder="Enter your full name" class="form-control input-md" require>
+					</div>
+					<br>
+					<div>
+						<label>
+						    Choose your profile picture
+						</label>
+						<input type="file" name="image" placeholder="image url">
+					</div>
+					<br>
+					<div>
+					    <!-- Button -->
+						<button id="signup" name="signup" class="btn btn-default btn-signup btn-block">Sign Up</button>
+					</div>
+					
+				</form>
+			</div>	
+		</div>					
+	</div>
+	
+<% include ../partials/modal-hiw %>
+<% include ../partials/html-footer %>
+</body>
+</html>
