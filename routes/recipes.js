@@ -22,13 +22,15 @@ router.get("/q", function(req, res){
         if (result.statusCode == 200) {
             var data = JSON.parse(result.body);
             data = data.recipes;
-            if(data !== undefined || data.length > 0){   
-               //this array is not empty 
-               res.render("recipe/search", {data:data, q:search, page:page});
-            }else{
-               //this array is empty
-               res.redirect("back");
-            }
+            console.log(data);
+            console.log(data.length);
+                if(data.length !== 0){   
+                   //this array is not empty 
+                   res.render("recipe/search", {data:data, q:search, page:page});
+                } else {
+                   //this array is empty
+                   res.redirect("back");
+                }
           } else {
             console.log("Something whent wrong!");
             console.log(result.status, result.headers);
