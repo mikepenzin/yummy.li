@@ -2,6 +2,10 @@
 
 Search recipes using ingredients you already have in the kitchen!
 
+v. 1.4.0 - Users profile update functionality
+
+1. Added User information update, including user picture update.
+
 //===============================//
 
 v. 1.3.0 - Users authentication and Wishlist functionality
@@ -37,8 +41,7 @@ v. 1.0.0 - Initial release
 
 // Notes for future releases
 
-1. Add update route from existing user
-2. Add "Forgot password" functionality
-3. Add authentication with facebook, google
-4. Add analytics
+1. Add "Forgot password" functionality
+2. Add authentication with facebook, google
+3. Add analytics
 
