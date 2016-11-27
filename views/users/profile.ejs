@@ -5,7 +5,7 @@
 
 <div class="jumbotron jumbo-bg-profile" id="top">
 	<div class="header-text">
-		<h2>Your Profile</h2>
+		<h2>Hi, <%= currentUser.name %>! </h2>
 	</div>
 </div>
 
@@ -15,20 +15,29 @@
 					<div class="image-cropper">
 						<img src="<%= currentUser.image %>" class="rounded" />
 					</div>
+					<div>
+						<a href="/profile/<%= currentUser._id %>/update" class="btn btn-default btn-def btn-block" role="button">
+					    	Update your profile
+						</a>
+						<a href="/profile/<%= currentUser._id %>/profilePicture" class="btn btn-default btn-def btn-block" role="button">
+					    	Update profile picture
+						</a>
+					</div>
+					<div class="dummy"></div>
 				</div>
 				<div class="col-lg-8 col-md-8 col-sx-12">
-					<h2><%= currentUser.name %></h2>
+					<h2><%= currentUser.name %> <%= currentUser.surname %></h2>
+					<h4><%= currentUser.location %></h4>
 					<h5><%= currentUser.username %></h5>
-				</div>
-				<div>
-				    <a href="/profile/<%= currentUser._id %>/update" class="btn btn-default btn-def" role="button">
-					    Update your profile
-					</a>
-				</div>
-				<div>
-				    <a href="/profile/<%= currentUser._id %>/wishlist" class="btn btn-default btn-wishlist" role="button">
-						<i class="fa fa-heart-o" aria-hidden="true"></i> My Wishlist
-					</a>
+					<p class="well">
+						<%= currentUser.bio %>
+					</p>
+					<div>
+						<% num = currentUser.recipes.length %>
+					    <a href="/profile/<%= currentUser._id %>/wishlist" class="btn btn-default btn-wishlist" role="button">
+							<i class="fa fa-heart-o" aria-hidden="true"></i> My Wishlist (<%= num %>)
+						</a>
+					</div>	
 				</div>
 				<div class="dummy"></div>
 			</div>

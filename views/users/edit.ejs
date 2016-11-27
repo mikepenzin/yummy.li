@@ -6,7 +6,7 @@
 
 <div class="jumbotron jumbo-bg-profile" id="top">
 	<div class="header-text">
-		<h2>Hello, Michael!</h2>
+		<h2>Hi, <%= currentUser.name %>!</h2>
 	</div>
 </div>
 
@@ -14,45 +14,49 @@
 	<div class="row">
 		<div class="col-lg-4 col-md-4 col-sx-12">
 			<div class="image-cropper">
-				<img src="https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/6/005/0ae/224/09c0412.jpg" class="rounded" />
+				<img src="<%= currentUser.image %>" class="rounded" />
 			</div>
 		</div>
-		<div class="col-lg-8 col-md-8 col-sx-12">
-			<form class="form-horizontal" method="post">
-				<div class="col-lg-12 col-md-12 col-sx-12">
-					<div class="form-group col-lg-12 col-md-12 col-sx-12">
-						<div>
-							<label class="control-label" for="FirstName">Name:</label>
-							<input name="FirstName" type="text" value="Michael Penzin" class="form-control input-md">
-						</div>
-					</div>
+		<div class="col-lg-6 col-lg-offset-1 col-md-6 col-md-offset-1 col-sx-12">
+			<form class="form-horizontal" action="/profile/<%= currentUser._id %>/new?_method=PUT" method="POST">
+				<div>
+					<label class="control-label" for="email">First Name:</label>
+					<input name="name" type="text" value="<%= currentUser.name %>" class="form-control input-md">
 				</div>
-				<div class="col-lg-12 col-md-12 col-sx-12">
-					<div class="form-group col-lg-12 col-md-12 col-sx-12">
-						<div>
-							<label class="control-label" for="email">E-mail:</label>
-							<input name="email" type="email" value="mike.penzin@gmail.com" class="form-control input-md">
-						</div>
-					</div>
+				<div>
+					<label class="control-label" for="email">Last Name:</label>
+					<input name="surname" type="text" value="<%= currentUser.surname %>" class="form-control input-md">
 				</div>
-				<!-- Button -->
-				<div class="col-lg-12 col-md-12 col-sx-12">
-					<div class="form-group form-group col-lg-12 col-md-12 col-sx-12">
-						<div>
-							<label for="submit"></label>
-							
-							<button type="button" class="btn btn-default btn-advn" data-toggle="collapse" data-target="#filter-panel">
-							<i class="fa fa-bars" aria-hidden="true"></i> Advanced Options
-							</button>
-							<button id="submit" name="submit" class="btn btn-default btn-search">Submit</button>
-						</div>
-					</div>
+				<div>
+					<label class="control-label" for="email">Your Location:</label>
+					<% if(currentUser.location == undefined){ %>
+                        <input type="text" class="form-control" name="location" placeholder="Where are you from?">
+                    <% } else { %>
+                        <input type="text" class="form-control" name="location" value="<%= currentUser.location %>">
+                    <% } %>
 				</div>
-		</form>
+				<div>
+					<label class="control-label" for="email">Bio:</label>
+					<% if(currentUser.bio == undefined){ %>
+                        <textarea class="form-control" rows="5" placeholder="Your bio" name="bio"></textarea>
+                    <% } else { %>
+                        <textarea class="form-control" rows="5" placeholder="Your bio" name="bio"><%= currentUser.bio %></textarea>
+                    <% } %>
+				</div>
+				<br>
+				<div>
+				    <!-- Button -->
+					<button id="signup" name="signup" class="btn btn-default btn-signup btn-block">Update your profile</button>
+				</div>
+				
+			</form>
+		</div>
 		<div class="dummy"></div>
-			</div>
-		</div>
 </div>
 
 <% include ../partials/footer %>
-<script type="text/javascript" src="/js/navbar.js" charset="UTF-8"></script>
+<% include ../partials/modal-hiw %>
+<% include ../partials/html-footer %>
+    <script type="text/javascript" src="/js/navbar.js" charset="UTF-8"></script>
+</body>
+</html>
