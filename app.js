@@ -7,6 +7,7 @@ var bodyParser              = require("body-parser"),
     LocalStrategy           = require("passport-local"),
     passportLocalMongoose   = require("passport-local-mongoose"),
     User                    = require('./models/user'),
+    flash                   = require('express-flash'),
     app                     = express();
 
 app.use(compression(9));
@@ -26,6 +27,16 @@ app.use(require("express-session")({
     resave: false,
     saveUninitialized: false
 }));
+
+//app to use flash
+app.use(flash());
+
+app.use(function(req, res, next){
+    res.locals.currentUser = req.user;
+    res.locals.success = req.flash('success');
+    res.locals.error = req.flash('error');
+    next();
+});
 
 //for Passport
 app.use(passport.initialize());

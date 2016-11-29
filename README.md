@@ -2,6 +2,18 @@
 
 Search recipes using ingredients you already have in the kitchen!
 
+//===============================//
+
+v. 1.5.0 - Users password reset, frontend changes
+
+1. Added "Forgot password" functionality including mail notification
+2. Added user picture in nav bar 
+3. Old user picture deleted upon picture update
+4. changed footer to more relative
+5. Minor frontend bugs were fixed
+
+//===============================//
+
 v. 1.4.0 - Users profile update functionality
 
 1. Added User information update, including user picture update.
@@ -41,7 +53,8 @@ v. 1.0.0 - Initial release
 
 // Notes for future releases
 
-1. Add "Forgot password" functionality
-2. Add authentication with facebook, google
-3. Add analytics
+1. Add authentication with facebook, google
+2. Add analytics
+3. Add SEO
+4. Add sitemap
 

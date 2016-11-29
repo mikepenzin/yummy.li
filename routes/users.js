@@ -1,6 +1,7 @@
 var express     = require("express");
 var router      = express.Router();
 var multer      = require('multer');
+var fs          = require('fs');
 var User        = require('../models/user');
 var middleware  = require('../middleware');
 
@@ -82,7 +83,7 @@ router.get("/:user_id/profilePicture", middleware.isLoggedIn, function(req, res)
     });
 });
 
-//Update - user profile
+//Update - user profile picture
 router.put("/:user_id/profilePicture", middleware.isLoggedIn, function(req, res){
     upload(req,res,function(err) {
         if(err) {
@@ -94,6 +95,16 @@ router.put("/:user_id/profilePicture", middleware.isLoggedIn, function(req, res)
     var newUserInfo = {
         image: image
     };
+    User.findById(req.params.user_id, function(err, user){
+       if(err) {
+           console.log(err);
+       } else {
+            var path = "./public" + user.image;   
+            fs.unlink(path , function(err){
+                if(err) return console.log(err);
+            }); 
+       }
+    });
     User.findByIdAndUpdate(req.params.user_id, newUserInfo, function(err, updatedUser){
             if(err){
               console.log(err);
