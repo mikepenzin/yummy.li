@@ -13,17 +13,24 @@
 	<div class="row">
 				<div class="col-lg-4 col-md-4 col-sx-12">
 					<div class="image-cropper">
-						<img src="<%= currentUser.image %>" class="rounded" />
+						<% if(currentUser.image == undefined){ %>
+		                    <div id="profile-pic">
+		                        <img src="/img/profile_user.jpg" class="rounded" />
+		                    </div>
+		                <% } else { %>
+		                    <div id="profile-pic">
+		                        <img src="<%= currentUser.image %>" class="rounded" />
+		                    </div>
+		                <% } %>
 					</div>
-					<div>
+					<div class="buttons-panel">
 						<a href="/profile/<%= currentUser._id %>/update" class="btn btn-default btn-def btn-block" role="button">
-					    	Update your profile
+					    	<i class="fa fa-pencil" aria-hidden="true"></i> Update your profile
 						</a>
 						<a href="/profile/<%= currentUser._id %>/profilePicture" class="btn btn-default btn-def btn-block" role="button">
-					    	Update profile picture
+					    	<i class="fa fa-camera" aria-hidden="true"></i> Update profile picture
 						</a>
 					</div>
-					<div class="dummy"></div>
 				</div>
 				<div class="col-lg-8 col-md-8 col-sx-12">
 					<h2><%= currentUser.name %> <%= currentUser.surname %></h2>

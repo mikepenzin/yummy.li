@@ -54,8 +54,11 @@ html{
 		font-family: 'Raleway', sans-serif;
 		z-index: -100;
 		height: 100%;
+		width: 100%;
+		padding: 0;
 		margin: 0;
 		padding-top: 55px;
+    	display: table;
 	}
 }
 
@@ -66,7 +69,10 @@ html{
 		font-family: 'Raleway', sans-serif;
 		z-index: -100;
 		height: 100%;
+		width: 100%;
+		padding: 0;
 		margin: 0;
+    	display: table;
 	}
 }
 
@@ -112,6 +118,15 @@ a:hover {
     background: transparent;
     border: none !important;
     transition-duration: 0.5s;
+}
+
+.navbar-nav .profile-img {
+	max-height: 30px;
+	border-radius: 50%;
+	width: auto;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 15px;
 }
 
 @media (max-width: 768px) {
@@ -666,45 +681,15 @@ a:hover {
 	margin-right: 5px;
 }
 
-/*hr line with text*/
-.strike {
-display: block;
-text-align: center;
-overflow: hidden;
-white-space: nowrap;
-margin-top: 20px;
-margin-bottom: 20px;
-}
-.strike > span {
-position: relative;
-display: inline-block;
-}
-
-.strike > span:before,
-.strike > span:after {
-content: "";
-position: absolute;
-top: 50%;
-width: 9999px;
-height: 1px;
-border-top: 1px solid #ccc;
-border-bottom: 1px solid transparent;
-}
-.strike > span:before {
-right: 100%;
-margin-right: 15px;
-}
-.strike > span:after {
-left: 100%;
-margin-left: 15px;
-}
-
 /*Footer Style*/
+
 .footer {
 	font-family: 'Raleway', sans-serif;
   	background-color: white;
   	width: 100%;
   	outline: none;
+  	display: table-row;
+    height: 0;
 }
 
 .social-footer{
@@ -773,8 +758,6 @@ margin-left: 15px;
     margin-bottom: 60px;
     color: #393e41;
 }
-
-
 
 @media (max-width: 768px) {
 	.home-footer {
