@@ -3,18 +3,17 @@ var router                  = express.Router();
 var passport                = require("passport");
 var multer                  = require('multer');
 var nodemailer              = require('nodemailer');
+var sgTransport             = require('nodemailer-sendgrid-transport');
 var async                   = require('async');
 var crypto                  = require('crypto');
 var User                    = require('../models/user');
 
 
 var smtpTransport = nodemailer.createTransport('SMTP', {
-    host: 'smtp.gmail.com',
-    port: 465,
-    secureConnection: true, // use SSL
+    service: 'SendGrid',
     auth: {
-          user: process.env.MAIL_ID,
-          pass: process.env.MAIL_PASS
+          user: process.env.SENDGRID_USERNAME,
+          pass: process.env.SENDGRID_PASSWORD
       }
 });
           
