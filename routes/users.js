@@ -100,20 +100,24 @@ router.put("/:user_id/profilePicture", middleware.isLoggedIn, function(req, res)
            console.log(err);
        } else {
             var path = "./public" + user.image;   
-            fs.unlink(path , function(err){
-                if(err) return console.log(err);
-            }); 
+            User.findByIdAndUpdate(req.params.user_id, newUserInfo, function(err, updatedUser){
+                if(err){
+                  console.log(err);
+                  res.redirect("back");
+                } else {
+                    if( user.image !== undefined ) {
+                        fs.unlink(path , function(err){
+                            if(err) {
+                                console.log(err);
+                            }    
+                        });
+                    }
+                    res.redirect("/profile/" + req.params.user_id);
+                }
+            });
        }
     });
-    User.findByIdAndUpdate(req.params.user_id, newUserInfo, function(err, updatedUser){
-            if(err){
-              console.log(err);
-              res.redirect("back");
-            } else {
-              res.redirect("/profile/" + req.params.user_id);
-            }
-        });
-     });
+    });
 });
 
 module.exports = router;

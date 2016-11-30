@@ -13,9 +13,15 @@
 <div class="container">
 	<div class="row">
 		<div class="col-lg-4 col-md-4 col-sx-12">
-			<div class="image-cropper">
-				<img src="<%= currentUser.image %>" class="rounded" />
-			</div>
+			<% if(currentUser.image == undefined){ %>
+                <div class="image-cropper">
+					<img src="/img/profile_user.jpg" class="rounded" />
+				</div>
+            <% } else { %>
+                <div class="image-cropper">
+					<img src="<%= currentUser.image %>" class="rounded" />
+				</div>
+            <% } %>
 		</div>
 		<div class="col-lg-6 col-lg-offset-1 col-md-6 col-md-offset-1 col-sx-12">
 			<form class="form-horizontal" action="/profile/<%= currentUser._id %>/profilePicture?_method=PUT" method="POST" enctype="multipart/form-data">
