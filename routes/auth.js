@@ -34,15 +34,10 @@ router.get("/signup", function(req, res){
 
 //CREATE - register new user
 router.post("/signup", function(req, res){
-    upload(req,res,function(err) {
-        if(err) {
-            return res.end("Error uploading file." + err);
-        }
-        var img = '/uploads/' + req.file.filename;
         var newUser = new User({
             username: req.body.username,
             name: req.body.name,
-            image: img
+            surname: req.body.surname
         });
         User.register(newUser, req.body.password, function(err, user){
             if(err){
@@ -54,7 +49,6 @@ router.post("/signup", function(req, res){
                 });
             }
         });
-    });
 });
 
 //SHOW - Login form
