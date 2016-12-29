@@ -92,6 +92,16 @@ a:hover {
 	font-size: 2.8rem;
 }
 
+.hat {
+	max-height: 35px;
+	display: inline-block;
+    display: inline;
+}
+
+.navbar-brand>img {
+	display: inline-block;
+	margin-right: -19px;
+}	
 
 .navbar-inverse .navbar-nav>li>a:link {
 	color: #f6f7eb;
