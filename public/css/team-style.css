@@ -56,6 +56,16 @@ color: #f6f7eb;
 font-family: 'Pacifico';
 font-size: 2.8rem;
 }
+.hat {
+	max-height: 35px;
+	display: inline-block;
+    display: inline;
+}
+
+.navbar-brand>img {
+	display: inline-block;
+	margin-right: -19px;
+}
 .jumbotron {
 padding-top: 45px;
 padding-bottom: 10px;
