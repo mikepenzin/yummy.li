@@ -1,4 +1,5 @@
 <% include ../partials/header %>
+<title><%= recipe.title %> - yummy.li</title>
 <link rel="stylesheet" type="text/css" href="../css/style.css">
 <link rel="stylesheet" type="text/css" href="../css/recipe-style.css">
 <% include ../partials/navbar-body %>
@@ -67,7 +68,7 @@
 								</tbody>
 							</table>
 						</p>
-						<h3>Direcions</h3>
+						<h3>Directions</h3>
 						<p>
 							Please view on <a href="<%= recipe.source_url %>" target="blank"><%= recipe.publisher %></a>
     						<p class="well">
