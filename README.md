@@ -4,6 +4,13 @@ Search recipes using ingredients you already have in the kitchen!
 
 //===============================//
 
+v. 1.6.0 - No results page added
+
+1. Added page for "no results" in recipes search
+2. Minor frontend bugs were fixed
+
+//===============================//
+
 v. 1.5.0 - Users password reset, frontend changes
 
 1. Added "Forgot password" functionality including mail notification
