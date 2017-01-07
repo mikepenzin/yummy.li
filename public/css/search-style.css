@@ -11,17 +11,31 @@
     padding-bottom: 30px;
 }
 
+.jumbotron-noresults {
+	background-color: #f6f7eb;
+	color: #f6f7eb;
+	text-align: center;
+	font-family: 'Raleway';
+	position: relative;
+    overflow: hidden;
+    height: 100%;
+    z-index:0;
+    top: 20%;
+    /*margin-bottom: 30px;*/
+    /*padding-bottom: 30px;*/
+}
+
 @media (max-width: 768px) {
-	.jumbotron h2 {
-		margin-top: 30px;
+	.jumbotron-noresults h2 {
+		margin-top: 20%;
 		margin-bottom: 10px;
 		font-size: 3rem;
 	}
 }
 
 @media (min-width: 768px) {
-	.jumbotron h2 {
-		margin-top: 70px;
+	.jumbotron-noresults h2 {
+		margin-top: 20%;
 		margin-bottom: 20px;
 		font-size: 3rem;
 	}
