@@ -27,7 +27,13 @@
 
 @media (max-width: 768px) {
 	.jumbotron-noresults h2 {
-		margin-top: 20%;
+		margin-top: 15%;
+		margin-bottom: 10px;
+		font-size: 3rem;
+	}
+	
+	.jumbotron h2 {
+		margin-top: 30px;
 		margin-bottom: 10px;
 		font-size: 3rem;
 	}
@@ -35,7 +41,13 @@
 
 @media (min-width: 768px) {
 	.jumbotron-noresults h2 {
-		margin-top: 20%;
+		margin-top: 18%;
+		margin-bottom: 20px;
+		font-size: 3rem;
+	}
+	
+	.jumbotron h2 {
+		margin-top: 70px;
 		margin-bottom: 20px;
 		font-size: 3rem;
 	}
