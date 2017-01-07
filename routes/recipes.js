@@ -6,7 +6,8 @@ var express     = require("express"),
 
 
 router.get("/", function(req, res){
-    res.render("general/home");
+    var title = "yummy.li -  Search recipes using ingredients you already have in the kitchen! What's in your fridge?"
+    res.render("general/home", {title: title});
 });
 
 // Used Environment variable (process.env.API_URL) for personal API key from Food2Fork
@@ -22,14 +23,12 @@ router.get("/q", function(req, res){
         if (result.statusCode == 200) {
             var data = JSON.parse(result.body);
             data = data.recipes;
-            console.log(data);
-            console.log(data.length);
                 if(data.length !== 0){   
                    //this array is not empty 
                    res.render("recipe/search", {data:data, q:search, page:page});
                 } else {
                    //this array is empty
-                   res.redirect("back");
+                   res.render("recipe/noresults", {q:search});
                 }
           } else {
             console.log("Something whent wrong!");
@@ -74,10 +73,8 @@ router.put("/wishlist/:user_id/:recipe_id",middleware.isLoggedIn, function(req, 
         if(err) {
             console.log(err);
         } else {
-            console.log(newWishlistItem);
             foundUser.recipes.push(newWishlistItem);
             foundUser.save();
-            console.log("New recipe added to user");
             res.redirect("back");
         }
     });
