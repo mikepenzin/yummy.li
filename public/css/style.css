@@ -1,12 +1,12 @@
-@import 'normalize.css';
+@import '../lib/normalize.css';
 @import 'https://fonts.googleapis.com/css?family=Pacifico|Raleway';
 @import '../font-awesome/css/font-awesome.min.css';
-@import 'bootstrap.min.css';
-@import 'jquery-ui.css';
-@import 'tokenfield-typeahead.css';
-@import 'bootstrap-tokenfield.css';
-@import 'pygments-manni.css';
-@import 'animate.min.css';
+@import '../lib/bootstrap.min.css';
+@import '../lib/jquery-ui.css';
+@import '../lib/tokenfield-typeahead.css';
+@import '../lib/bootstrap-tokenfield.css';
+@import '../lib/pygments-manni.css';
+@import '../lib/animate.min.css';
 
 /*// Mixin for transition/transform*/
 .translate(@x; @y) {
@@ -468,6 +468,10 @@ a:hover {
     padding-bottom: 0px;
     position: relative;
     margin-bottom: 20vh;
+}
+
+.tokenfield .token .token-label {
+	color: #666;
 }
 
 /*Inner buttons*/
