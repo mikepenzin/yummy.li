@@ -1,10 +1,12 @@
 var express     = require("express");
 var router      = express.Router();
 var multer      = require('multer');
+var Filepicker  = require('node-filepicker');
 var fs          = require('fs');
 var User        = require('../models/user');
 var middleware  = require('../middleware');
 
+var filepicker = new Filepicker('API_KEY');
 
 var storage =   multer.diskStorage({
   destination: function (req, file, callback) {

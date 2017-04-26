@@ -1,11 +1,12 @@
 <% include ../partials/header %>
+<title><%= currentUser.name %>'s profile - yummy.li</title>
 <link rel="stylesheet" type="text/css" href="/css/style.css">
 <link rel="stylesheet" type="text/css" href="/css/profile-style.css">
 <% include ../partials/navbar-body %>
 
 <div class="jumbotron jumbo-bg-profile" id="top">
 	<div class="header-text">
-		<h2>Hi, <%= currentUser.name %>! </h2>
+		<h2>Hi, <%= currentUser.username %>!</h2>
 	</div>
 </div>
 
