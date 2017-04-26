@@ -4,7 +4,7 @@ var express     = require("express"),
     User        = require('../models/user'),
     router      = express.Router();
 
-
+//Index route 
 router.get("/", function(req, res){
     var title = "yummy.li -  Search recipes using ingredients you already have in the kitchen! What's in your fridge?"
     res.render("general/home", {title: title});
@@ -101,5 +101,5 @@ router.put("/wishlist/:user_id/:recipe_id/remove",middleware.isLoggedIn, functio
         }
     });
 });
-    
+
 module.exports = router;

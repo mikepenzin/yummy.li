@@ -168,6 +168,21 @@ User.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: { $gt
   });  
 });
 
+
+// =====================================
+// FACEBOOK ROUTES =====================
+// =====================================
+// route for facebook authentication and login
+router.get('/facebook', passport.authenticate('facebook', { scope : 'email' }));
+
+// handle the callback after facebook has authenticated the user
+router.get('/facebook/callback',
+    passport.authenticate('facebook', {
+        successRedirect : '/',
+        failureRedirect : '/auth/login'
+    }));
+
+
 //LOGOUT
 router.get("/logout", function(req, res){
     req.logout();

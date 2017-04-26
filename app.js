@@ -5,7 +5,6 @@ var bodyParser              = require("body-parser"),
     mongoose                = require('mongoose'),
     passport                = require("passport"),
     LocalStrategy           = require("passport-local"),
-    passportLocalMongoose   = require("passport-local-mongoose"),
     User                    = require('./models/user'),
     flash                   = require('express-flash'),
     app                     = express();
@@ -16,7 +15,7 @@ console.log("Current runnig database: " + process.env.DATABASEURL);
 // If process.env.DATABASEURL = undefined - need to perform:
 // export DATABASEURL=mongodb://localhost/yummydb
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.DATABASEURL);
+mongoose.connect(process.env.DATABASEURL || "mongodb://localhost/yummydb");
 
 //=========================
 // Passport configuration
@@ -51,9 +50,6 @@ app.use(function(req, res, next){
     next();
 });
 
-//=========================
-// END - Passport configuration
-//=========================
 
 //requring routes
 var recipeRoutes    = require("./routes/recipes"),

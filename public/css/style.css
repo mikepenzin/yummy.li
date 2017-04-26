@@ -8,23 +8,6 @@
 @import '../lib/pygments-manni.css';
 @import '../lib/animate.min.css';
 
-/*// Mixin for transition/transform*/
-.translate(@x; @y) {
-  -webkit-transform: translate(@x, @y);
-      -ms-transform: translate(@x, @y); // IE9+
-          transform: translate(@x, @y);
-}
-.transition(@transition) {
-  -webkit-transition: @transition;
-          transition: @transition;
-}
-.transition-transform(@transition) {
-  -webkit-transition: -webkit-transform @transition;
-     -moz-transition: -moz-transform @transition;
-       -o-transition: -o-transform @transition;
-          transition: transform @transition;
-}
-
 /*Scroll bar*/
 ::-webkit-scrollbar {
     width: 5px;
