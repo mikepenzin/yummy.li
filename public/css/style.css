@@ -1,12 +1,10 @@
-@import '../lib/normalize.css';
 @import 'https://fonts.googleapis.com/css?family=Pacifico|Raleway';
-@import '../font-awesome/css/font-awesome.min.css';
-@import '../lib/bootstrap.min.css';
-@import '../lib/jquery-ui.css';
-@import '../lib/tokenfield-typeahead.css';
-@import '../lib/bootstrap-tokenfield.css';
-@import '../lib/pygments-manni.css';
-@import '../lib/animate.min.css';
+@import '../components/font-awesome/css/font-awesome.min.css';
+@import '../components/bootstrap/dist/css/bootstrap.min.css';
+@import '../components/jquery-ui/themes/base/jquery-ui.min.css';
+@import '../components/bootstrap-tokenfield/dist/css/tokenfield-typeahead.min.css';
+@import '../components/bootstrap-tokenfield/dist/css/bootstrap-tokenfield.min.css';
+@import '../components/animate.css/animate.min.css';
 
 /*Scroll bar*/
 ::-webkit-scrollbar {
@@ -418,6 +416,7 @@ a:hover {
 .recipe-image img{
 	/*position: relative;*/
 	height: auto;
+	border-radius: 20px;
 	width: 100%;
     margin: 0 0 30px auto; /* Align slide image horizontally center */
     box-shadow: 0px 0px 20px #b2b2b2;
@@ -425,10 +424,6 @@ a:hover {
 
 /*Search bar*/
 
-/*.token-input ui-autocomplete-input {
-	width: 60%;
-}
-*/
 .input-group .form-control:first-child, .input-group-addon:first-child, .input-group-btn:first-child>.btn, .input-group-btn:first-child>.btn-group>.btn, .input-group-btn:first-child>.dropdown-toggle, .input-group-btn:last-child>.btn-group:not(:last-child)>.btn, .input-group-btn:last-child>.btn:not(:last-child):not(.dropdown-toggle) {
 	background: #fffff;
  	border: none;
@@ -447,7 +442,6 @@ a:hover {
 }
 
 .tokenfield {
-	/*max-height: 34px;*/
     padding-bottom: 0px;
     position: relative;
     margin-bottom: 20vh;

@@ -9,6 +9,18 @@ Backend: NodeJS, MongoDB, ExpressJS, PassportJS
 
 ------------------------------------------------------------
 
+#### v. 1.7.1 - Better file upload, via Filepicker
+
+- Added file upload via Filepicker API.
+- Added Bower for Frontend dependencies control
+
+
+#### v. 1.6.1 - Code refactoring
+
+- Code refactoring
+- Minor frontend bugs were fixed
+
+
 #### v. 1.6.0 - No results page added
 
 - Added page for "no results" in recipes search

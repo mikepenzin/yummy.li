@@ -2,35 +2,37 @@
 <title>Search results for <%= q %> - yummy.li</title>
 <link rel="stylesheet" type="text/css" href="/css/style.css">
 <link rel="stylesheet" type="text/css" href="/css/search-style.css">
+
 <% include ../partials/navbar-body %>
-		<div class="jumbotron-noresults jumbo-bg-search" id="top">
-			<div class="header-text">
-				<h2>Oh no! We couldn't find any recipes matching your search <i class="fa fa-frown-o" aria-hidden="true"></i></h2>
-				<h4>Please, give it another try and refine your search</h4>
-				<div class="container">
-				<div class="col-lg-12 col-md-12 col-sx-12">
-					<form action="/q" method="get">
-			            <div class="input-group">
-			              <input type="text" class="form-control" id="tokenfield-1" name="search" value="<%= q %>">
-			              <input type="hidden" name="page" value="1" />
-			              <span class="input-group-btn">
-			                <input type="submit" class="btn btn-default" value="Go!">
-			              </span>
-			            </div>
-			          </form>
-				</div>
-			</div>
+
+<div class="jumbotron-noresults jumbo-bg-search" id="top">
+	<div class="header-text">
+		<h2>Oh no! We couldn't find any recipes matching your search <i class="fa fa-frown-o" aria-hidden="true"></i></h2>
+		<h4>Please, give it another try and refine your search</h4>
+		<div class="container">
+			<div class="col-lg-12 col-md-12 col-sx-12">
+				<form action="/q" method="get">
+		            <div class="input-group">
+		              <input type="text" class="form-control" id="tokenfield-1" name="search" value="<%= q %>">
+		              <input type="hidden" name="page" value="1" />
+		              <span class="input-group-btn">
+		                <input type="submit" class="btn btn-default" value="Go!">
+		              </span>
+		            </div>
+		          </form>
 			</div>
 		</div>
+	</div>
+</div>
 		
 
 <% include ../partials/modal-hiw %>
 <% include ../partials/html-footer %>
-<!-- tokienfield js stuff -->
-    <script type="text/javascript" src="/js/bootstrap-tokenfield.js" charset="UTF-8"></script>
-    <script type="text/javascript" src="/js/typeahead.bundle.min.js" charset="UTF-8"></script>
-    <!-- autocomplete data -->
+
+    <script type="text/javascript" src="/components/bootstrap-tokenfield/dist/bootstrap-tokenfield.min.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="/components/bootstrap-tokenfield/docs-assets/js/typeahead.bundle.min.js" charset="UTF-8"></script>
     <script type="text/javascript" src="/js/docs.js" charset="UTF-8"></script>
     <script type="text/javascript" src="/js/navbar.js" charset="UTF-8"></script>
+    
 </body>
 </html>

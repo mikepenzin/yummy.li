@@ -1,0 +1,28 @@
+{
+  "name": "yummyli",
+  "description": "Search recipes by ingredients",
+  "main": "app.js",
+  "authors": [
+    "Mike Penzin"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "recipes",
+    "search"
+  ],
+  "homepage": "https://github.com/mikepenzin/yummy.li",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "bootstrap": "^3.3.7",
+    "jquery-ui": "^1.12.1",
+    "gridalicious": "*",
+    "bootstrap-tokenfield": "^0.12.1"
+  }
+}

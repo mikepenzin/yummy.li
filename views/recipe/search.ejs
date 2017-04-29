@@ -2,7 +2,9 @@
 <title>Search results for <%= q %> - yummy.li</title>
 <link rel="stylesheet" type="text/css" href="/css/style.css">
 <link rel="stylesheet" type="text/css" href="/css/search-style.css">
+
 <% include ../partials/navbar-body %>
+
 		<div class="jumbotron jumbo-bg-search" id="top">
 			<div class="header-text">
 				<h2>Horay! We found some nice recipes!</h2>
@@ -25,7 +27,7 @@
 		
 		<div id="gallery-recipes">
 			<% data.forEach(function(recipe){ %> 
-				<div class="item thumbnail wow fadeInUp">
+				<div class="item thumbnail">
 					<img src="<%= recipe.image_url %>" alt="<%- recipe.title %>">
 					<div class="caption">
 						<a href="/recipe/<%= recipe.recipe_id %>" class="link"><h5><%- recipe.title.substring(0, 50) %>...</h5></a>
@@ -91,11 +93,11 @@
 <% include ../partials/footer %>
 <% include ../partials/modal-hiw %>
 <% include ../partials/html-footer %>
-<!-- tokienfield js stuff -->
-    <script type="text/javascript" src="/js/bootstrap-tokenfield.js" charset="UTF-8"></script>
-    <script type="text/javascript" src="/js/typeahead.bundle.min.js" charset="UTF-8"></script>
-    <!-- autocomplete data -->
+
+    <script type="text/javascript" src="/components/bootstrap-tokenfield/dist/bootstrap-tokenfield.min.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="/components/bootstrap-tokenfield/docs-assets/js/typeahead.bundle.min.js" charset="UTF-8"></script>
     <script type="text/javascript" src="/js/docs.js" charset="UTF-8"></script>
     <script type="text/javascript" src="/js/navbar.js" charset="UTF-8"></script>
+    
 </body>
 </html>
