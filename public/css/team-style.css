@@ -1,8 +1,7 @@
-@import '../lib/normalize.css';
 @import 'https://fonts.googleapis.com/css?family=Pacifico|Raleway';
-@import '../font-awesome/css/font-awesome.min.css';
-@import '../lib/bootstrap.min.css';
-@import '../lib/jquery-ui.css';
+@import '../components/font-awesome/css/font-awesome.min.css';
+@import '../components/bootstrap/dist/css/bootstrap.min.css';
+@import '../components/jquery-ui/themes/base/jquery-ui.min.css';
 
 /* Landscape phones and down */
 @media (max-width: 480px) { ... }

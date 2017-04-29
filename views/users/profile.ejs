@@ -4,9 +4,11 @@
 <link rel="stylesheet" type="text/css" href="/css/profile-style.css">
 <% include ../partials/navbar-body %>
 
+<script type="text/javascript" src="/js/filestack.js"></script>
+
 <div class="jumbotron jumbo-bg-profile" id="top">
 	<div class="header-text">
-		<h2>Hi, <%= currentUser.username %>!</h2>
+		<h2>Hi, <%= currentUser.name %>!</h2>
 	</div>
 </div>
 
@@ -26,11 +28,12 @@
 					</div>
 					<div class="buttons-panel">
 						<a href="/profile/<%= currentUser._id %>/update" class="btn btn-default btn-def btn-block" role="button">
-					    	<i class="fa fa-pencil" aria-hidden="true"></i> Update your profile
+							<i class="fa fa-pencil" aria-hidden="true"></i> Update your profile
 						</a>
-						<a href="/profile/<%= currentUser._id %>/profilePicture" class="btn btn-default btn-def btn-block" role="button">
-					    	<i class="fa fa-camera" aria-hidden="true"></i> Update profile picture
-						</a>
+						<form class="form-horizontal" action="/profile/<%= currentUser._id %>/profilePicture?_method=PUT" method="POST" id="uploadFile">
+							<input type="filepicker" data-fp-apikey="AplOSzF0fTtmzg0bfVQOiz" onchange="addImageURL(event.fpfile.url)">
+							<input type="hidden" name="image" id="image" value="">
+						</form>
 					</div>
 				</div>
 				<div class="col-lg-8 col-md-8 col-sx-12">
@@ -51,6 +54,13 @@
 			</div>
 		</div>
 </div>
+
+<script>
+	function addImageURL(data) {
+		document.getElementById('image').value = data;
+		$("#uploadFile").submit();
+	} 
+</script>
 
 <% include ../partials/footer %>
 <% include ../partials/modal-hiw %>

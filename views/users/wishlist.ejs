@@ -17,7 +17,7 @@
             	    <% recipes = currentUser.recipes %>
             	    <% recipes.reverse() %>
             		<% recipes.forEach(function(recipe){ %> 
-            	    	<div class="item thumbnail wow fadeInUp">
+            	    	<div class="item thumbnail">
             		    	<img src="<%= recipe.image_url %>" alt="<%- recipe.title %>">
             			    <div class="caption">
             					<a href="/recipe/<%= recipe.id %>" class="link"><h5><%- recipe.title %>...</h5></a>
@@ -44,6 +44,8 @@
 <% include ../partials/footer %>
 <% include ../partials/modal-hiw %>
 <% include ../partials/html-footer %>
+
     <script type="text/javascript" src="/js/navbar.js" charset="UTF-8"></script>
+    
 </body>
 </html>

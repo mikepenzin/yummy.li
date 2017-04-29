@@ -1,77 +1,71 @@
 var express                 = require("express");
 var router                  = express.Router();
 var passport                = require("passport");
-var multer                  = require('multer');
 var nodemailer              = require('nodemailer');
 var sgTransport             = require('nodemailer-sendgrid-transport');
 var async                   = require('async');
 var crypto                  = require('crypto');
 var User                    = require('../models/user');
 
-
+// Configuring - nodemailer mail sending through SendGrid
 var smtpTransport = nodemailer.createTransport('SMTP', {
-    service: 'SendGrid',
-    auth: {
-          user: process.env.SENDGRID_USERNAME,
-          pass: process.env.SENDGRID_PASSWORD
-      }
-});
-          
-var storage =   multer.diskStorage({
-  destination: function (req, file, callback) {
-    callback(null, './public/uploads');
-  },
-  filename: function (req, file, callback) {
-    callback(null, Date.now() + file.originalname);
+  service: 'SendGrid',
+  auth: {
+        user: process.env.SENDGRID_USERNAME,
+        pass: process.env.SENDGRID_PASSWORD
   }
 });
-var upload = multer({ storage : storage}).single('image');
-      
-//NEW - show form to register new user
+
+
+//NEW - Show form to register new User
 router.get("/signup", function(req, res){
-    res.render("users/signup");
+  res.render("users/signup");
 });
 
-//CREATE - register new user
+
+//CREATE - Register new User
 router.post("/signup", function(req, res){
-        var newUser = new User({
-            username: req.body.username,
-            name: req.body.name,
-            surname: req.body.surname
-        });
-        User.register(newUser, req.body.password, function(err, user){
-            if(err){
-                console.log(err);
-                return res.render("users/signup");
-            } else {
-                passport.authenticate("local")(req, res, function(){
-                    res.redirect("/"); 
-                });
-            }
-        });
+  var newUser = new User({
+    username: req.body.username,
+    name: req.body.name,
+    surname: req.body.surname
+  });
+  User.register(newUser, req.body.password, function(err, user){
+    if(err){
+      console.log(err);
+      return res.render("users/signup");
+    } else {
+      passport.authenticate("local")(req, res, function(){
+          res.redirect("/"); 
+      });
+    }
+  });
 });
+
 
 //SHOW - Login form
 router.get("/login", function(req, res){
-    res.render("users/login");    
+  res.render("users/login");    
 });
 
-//LOGIN to system - middleware
+
+//LOGIN Route
 router.post("/login", passport.authenticate("local", {
-       successRedirect: "/",
-       failureRedirect: "/login"
-    }), function(req, res){
+    successRedirect: "/",
+    failureRedirect: "/login"
+  }), function(req, res){
 });
 
-//FORGOT
 
+//SHOW - User password reset form
 router.get('/forgot', function(req, res){
    res.render("users/forgot"); 
 });
 
 
+//CREATE - Send User's password reset token to user's email
 router.post('/forgot', function(req, res, next) {
-    var username = req.body.username;
+  var username = req.body.username;
   async.waterfall([
     function(done) {
       crypto.randomBytes(20, function(err, buf) {
@@ -113,26 +107,29 @@ router.post('/forgot', function(req, res, next) {
   });
 });
 
-// RESET GET ROUTE
+// SHOW - Show new password form
 router.get('/reset/:token', function(req, res) {
   User.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: { $gt: Date.now() } }, function(err, user) {
-    if (!user) {
-      req.flash('error', 'Password reset token is invalid or has expired.');
-      return res.redirect('/forgot');
+    if (err) {
+      console.log(err);
+    } else {
+      if (!user) {
+        req.flash('error', 'Password reset token is invalid or has expired.');
+        return res.redirect('/forgot');
+      }
+      res.render('users/reset', { user: req.user });
     }
-    res.render('users/reset', {
-      user: req.user
-    });
   });
 });
 
-// RESET POST ROUTE
+
+// POST - Update User's password
 router.post('/reset/:token', function(req, res) {
-if(req.body.password !== req.body.confirm) {
-  req.flash('error', 'Password and password confirmation fields must be the same');
-  return res.redirect('back');
-}  
-User.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: { $gt: Date.now() } }, function(err, user) {
+  if(req.body.password !== req.body.confirm) {
+    req.flash('error', 'Password and password confirmation fields must be the same');
+    return res.redirect('back');
+  }  
+  User.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: { $gt: Date.now() } }, function(err, user) {
     if(err){
       console.log(err);
     }
@@ -144,43 +141,33 @@ User.findOne({ resetPasswordToken: req.params.token, resetPasswordExpires: { $gt
     user.setPassword(req.body.password, function(err){
       if(err){
         console.log(err);
-      }
-      user.resetPasswordToken = undefined;
-      user.resetPasswordExpires = undefined;
-      user.save(function(err) {
-          if(err){
-            console.log(err);
-          }
-          var mailOptions = {
-            to: user.username,
-            from: 'passwordreset@yummy.li',
-            subject: 'yummy.li // Your password has been changed',
-            text: 'Hello,\n\n' +
-              'This is a confirmation that the password for your account has just been changed.\n'
-          };
-            smtpTransport.sendMail(mailOptions, function(err) {
+      } else {
+        user.resetPasswordToken = undefined;
+        user.resetPasswordExpires = undefined;
+        user.save(function(err) {
+        if(err){
+          console.log(err);
+        }
+        var mailOptions = {
+          to: user.username,
+          from: 'passwordreset@yummy.li',
+          subject: 'yummy.li // Your password has been changed',
+          text: 'Hello,\n\n' +
+            'This is a confirmation that the password for your account has just been changed.\n'
+        };
+          smtpTransport.sendMail(mailOptions, function(err) {
+            if (err) {
+              console.log(err);
+            } else {
               console.log("Message sent to: " + user.username);
-              res.redirect('/auth/login');
-            });
-           
+              res.redirect('/auth/login'); 
+            }
           });
+        });  
+      }
     });
   });  
 });
-
-
-// =====================================
-// FACEBOOK ROUTES =====================
-// =====================================
-// route for facebook authentication and login
-router.get('/facebook', passport.authenticate('facebook', { scope : 'email' }));
-
-// handle the callback after facebook has authenticated the user
-router.get('/facebook/callback',
-    passport.authenticate('facebook', {
-        successRedirect : '/',
-        failureRedirect : '/auth/login'
-    }));
 
 
 //LOGOUT

@@ -1,6 +1,6 @@
 {
   "name": "yummyli",
-  "version": "1.6.1",
+  "version": "1.7.1",
   "description": "Search recipes by ingredients",
   "main": "app.js",
   "scripts": {
@@ -16,7 +16,7 @@
     "search"
   ],
   "author": "Mike Penzin",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/mikepenzin/yummy.li/issues"
   },
@@ -31,8 +31,6 @@
     "express-session": "^1.14.2",
     "method-override": "^2.3.6",
     "mongoose": "^4.6.8",
-    "multer": "^1.2.0",
-    "node-filepicker": "^0.1.2",
     "nodemailer": "0.7.1",
     "nodemailer-sendgrid-transport": "^0.2.0",
     "passport": "^0.3.2",

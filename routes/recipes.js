@@ -4,15 +4,15 @@ var express     = require("express"),
     User        = require('../models/user'),
     router      = express.Router();
 
-//Index route 
+//Index route - Show search form
 router.get("/", function(req, res){
-    var title = "yummy.li -  Search recipes using ingredients you already have in the kitchen! What's in your fridge?"
+    var title = "yummy.li -  Search recipes using ingredients you already have in the kitchen! What's in your fridge?";
     res.render("general/home", {title: title});
 });
 
 // Used Environment variable (process.env.API_URL) for personal API key from Food2Fork
 
-//SHOW search results for recipes - by ingridients 
+//SHOW - search results for recipes - by ingridients 
 router.get("/q", function(req, res){
     var search = req.query.search;
     var page = Number(req.query.page) || 1;
@@ -38,7 +38,7 @@ router.get("/q", function(req, res){
     });
 });
 
-//SHOW - recipe by recipe id
+//SHOW - Recipe data
 router.get("/recipe/:recipe_id", function(req, res){
     var url = "https://community-food2fork.p.mashape.com/get?key=" + process.env.API_URL + "&rId=" + req.params.recipe_id;
     unirest.get(url)
@@ -57,17 +57,13 @@ router.get("/recipe/:recipe_id", function(req, res){
     });
 });
 
-// Add item to users whishlist
+// UPDATE - Add recipe to User's wishlist
 router.put("/wishlist/:user_id/:recipe_id",middleware.isLoggedIn, function(req, res){
-    var id = req.body.id;
-    var image_url = req.body.image_url;
-    var publisher = req.body.publisher;
-    var title = req.body.title;
     var newWishlistItem = {
-        id: id, 
-        image_url: image_url, 
-        publisher: publisher, 
-        title: title
+        id: req.body.id, 
+        image_url: req.body.image_url, 
+        publisher: req.body.publisher, 
+        title: req.body.title
     };
     User.findById(req.params.user_id, function(err, foundUser){
         if(err) {
@@ -80,14 +76,14 @@ router.put("/wishlist/:user_id/:recipe_id",middleware.isLoggedIn, function(req, 
     });
 });
 
-//Remove item from wishlist
+//UPDATE - Remove recipe from User's wishlist
 router.put("/wishlist/:user_id/:recipe_id/remove",middleware.isLoggedIn, function(req, res){
     var id = req.params.recipe_id;
     User.findById(req.params.user_id, function (err, foundUser) {
-      var recipe = foundUser.recipes; 
-      if (!err) {
-          for (var i = 0; i < recipe.length; i++) {
-              if (recipe[i].id == id) {
+        var recipe = foundUser.recipes; 
+        if (!err) {
+            for (var i = 0; i < recipe.length; i++) {
+                if (recipe[i].id == id) {
                     foundUser.recipes[i].remove();
                     foundUser.save(function (err) {
                         if (err){
