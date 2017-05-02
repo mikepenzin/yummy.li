@@ -46,7 +46,7 @@ module.exports = function (grunt) {
       },
       docs: {
         files: {
-          'docs-assets/js/docs.min.js': 'docs-assets/js/docs.js'
+          'docs-assets/js/docs.min.js': 'docs-assets/minified/js/docs.js'
         }
       }
     },
