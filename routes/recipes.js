@@ -11,6 +11,7 @@ router.get("/", function(req, res){
 });
 
 // Used Environment variable (process.env.API_URL) for personal API key from Food2Fork
+// For development use - export API_URL=ec0cc812a67bdf0f980e49db6f3fca85
 
 //SHOW - search results for recipes - by ingridients 
 router.get("/q", function(req, res){
