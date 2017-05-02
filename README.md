@@ -12,6 +12,13 @@ Backend: NodeJS, MongoDB, ExpressJS, PassportJS
 
 ## // Release Notes
 
+#### v. 1.7.2 - Added Gulp tasks to minify JavaScripts and CSS files
+
+- Added Gulp tasks to minify JavaScripts and CSS files.
+- CSS code refactoring.
+- Minor bug fixing
+
+
 #### v. 1.7.1 - Better file upload, via Filepicker
 
 - Added file upload via Filepicker API.
