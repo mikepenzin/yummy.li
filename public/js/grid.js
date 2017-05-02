@@ -1,4 +1,4 @@
-$(document).ready(function () {
+(function($) {
 	$("#gallery-recipes").gridalicious({
 	  selector: '.item',
 	  gutter: 20,
@@ -11,4 +11,4 @@ $(document).ready(function () {
 	    effect: 'fadeInOnAppear'
 	  }
 	});
-});
+})(jQuery);

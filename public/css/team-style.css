@@ -1,31 +1,11 @@
-@import 'https://fonts.googleapis.com/css?family=Pacifico|Raleway';
-@import '../components/font-awesome/css/font-awesome.min.css';
-@import '../components/bootstrap/dist/css/bootstrap.min.css';
-@import '../components/jquery-ui/themes/base/jquery-ui.min.css';
-
 /* Landscape phones and down */
-@media (max-width: 480px) { ... }
+
 @media screen and (max-width: 400px) {
 header div { margin: 0; }
 header { padding: 0; }
 
 }
-/*// Mixin for transition/transform*/
-.translate(@x; @y) {
--webkit-transform: translate(@x, @y);
--ms-transform: translate(@x, @y); // IE9+
-transform: translate(@x, @y);
-}
-.transition(@transition) {
--webkit-transition: @transition;
-transition: @transition;
-}
-.transition-transform(@transition) {
--webkit-transition: -webkit-transform @transition;
--moz-transition: -moz-transform @transition;
--o-transition: -o-transform @transition;
-transition: transform @transition;
-}
+
 ::-webkit-scrollbar {
 width: 5px;
 }

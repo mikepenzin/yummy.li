@@ -1,10 +1,12 @@
 <% include ../partials/header %>
 <title><%= currentUser.name %>'s profile - yummy.li</title>
-<link rel="stylesheet" type="text/css" href="/css/style.css">
-<link rel="stylesheet" type="text/css" href="/css/profile-style.css">
+
+<link rel="stylesheet" type="text/css" href="/css/basic.css">
+<link rel="stylesheet" type="text/css" href="/minified/css/profile-style.css">
+
 <% include ../partials/navbar-body %>
 
-<script type="text/javascript" src="/js/filestack.js"></script>
+<script type="text/javascript" src="/components/filestack/filestack.js"></script>
 
 <div class="jumbotron jumbo-bg-profile" id="top">
 	<div class="header-text">
@@ -65,6 +67,8 @@
 <% include ../partials/footer %>
 <% include ../partials/modal-hiw %>
 <% include ../partials/html-footer %>
-    <script type="text/javascript" src="/js/navbar.js" charset="UTF-8"></script>
+
+    <script type="text/javascript" src="/minified/js/navbar.js" charset="UTF-8"></script>
+    
 </body>
 </html>

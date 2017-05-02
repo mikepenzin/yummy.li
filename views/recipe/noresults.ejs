@@ -1,7 +1,7 @@
 <% include ../partials/header %>
 <title>Search results for <%= q %> - yummy.li</title>
-<link rel="stylesheet" type="text/css" href="/css/style.css">
-<link rel="stylesheet" type="text/css" href="/css/search-style.css">
+<link rel="stylesheet" type="text/css" href="/css/basic.css">
+<link rel="stylesheet" type="text/css" href="/minified/css/search-style.css">
 
 <% include ../partials/navbar-body %>
 
@@ -13,7 +13,7 @@
 			<div class="col-lg-12 col-md-12 col-sx-12">
 				<form action="/q" method="get">
 		            <div class="input-group">
-		              <input type="text" class="form-control" id="tokenfield-1" name="search" value="<%= q %>">
+		              <input type="text" class="form-control" id="search" name="search" value="<%= q %>">
 		              <input type="hidden" name="page" value="1" />
 		              <span class="input-group-btn">
 		                <input type="submit" class="btn btn-default" value="Go!">
@@ -30,9 +30,9 @@
 <% include ../partials/html-footer %>
 
     <script type="text/javascript" src="/components/bootstrap-tokenfield/dist/bootstrap-tokenfield.min.js" charset="UTF-8"></script>
-    <script type="text/javascript" src="/components/bootstrap-tokenfield/docs-assets/js/typeahead.bundle.min.js" charset="UTF-8"></script>
-    <script type="text/javascript" src="/js/docs.js" charset="UTF-8"></script>
-    <script type="text/javascript" src="/js/navbar.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="/components/bootstrap-tokenfield/docs-assets/minified/js/typeahead.bundle.min.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="/minified/js/docs.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="/minified/js/navbar.js" charset="UTF-8"></script>
     
 </body>
 </html>

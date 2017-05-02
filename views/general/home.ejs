@@ -1,6 +1,6 @@
 <% include ../partials/header %>
 <title><%= title %></title>
-<link rel="stylesheet" type="text/css" href="/css/style.css">
+<link rel="stylesheet" type="text/css" href="/css/basic.css">
 
 <% include ../partials/navbar-body %>
     <div class="jumbotron jumbotron-home" id="top">
@@ -17,7 +17,7 @@
           </h4>
           <form action="/q" method="get">
             <div class="container input-group">
-              <input type="text" class="form-control" id="tokenfield-1"
+              <input type="text" class="form-control" id="search"
               placeholder="Type maximum 4 ingredients..."  name="search">
               <input type='hidden' name='page' value='1' />
               <span class="input-group-btn">
@@ -41,7 +41,7 @@
 <% include ../partials/modal-hiw %>
 <% include ../partials/html-footer %>
     <script type="text/javascript" src="/components/bootstrap-tokenfield/dist/bootstrap-tokenfield.min.js" charset="UTF-8"></script>
-    <script type="text/javascript" src="/components/bootstrap-tokenfield/docs-assets/js/typeahead.bundle.min.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="/components/bootstrap-tokenfield/docs-assets/minified/js/typeahead.bundle.min.js" charset="UTF-8"></script>
     <script type="text/javascript" src="/js/docs.js" charset="UTF-8"></script>
     <script type="text/javascript" src="/js/navbar.js" charset="UTF-8"></script>
 </body>

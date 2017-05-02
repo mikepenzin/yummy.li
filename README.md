@@ -7,7 +7,10 @@ Frontend: EJS, Bootstrap, jQuery, CSS
 
 Backend: NodeJS, MongoDB, ExpressJS, PassportJS
 
+
 ------------------------------------------------------------
+
+## // Release Notes
 
 #### v. 1.7.1 - Better file upload, via Filepicker
 
@@ -67,9 +70,11 @@ Backend: NodeJS, MongoDB, ExpressJS, PassportJS
 - Added search refine and basic functionality
 
 
+
 ## // Contributing
 
 In lieu of a formal style guide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code.
+
 
 
 ## // Notes for future releases

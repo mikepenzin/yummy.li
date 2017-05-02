@@ -39,7 +39,7 @@ jQuery(document).ready(function($) {
   /* Run examples */
   $('.token-example-field').tokenfield();
 
-  $('#tokenfield-1').tokenfield({
+  $('#search').tokenfield({
     autocomplete: {
       source: ['red','blue','green','yellow','violet','brown','purple','black','white'],
       delay: 100
