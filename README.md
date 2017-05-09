@@ -1,5 +1,5 @@
 # yummy.li
-
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)]() [![Build Status](https://travis-ci.org/mikepenzin/yummy.li.svg?branch=master)](https://travis-ci.org/mikepenzin/yummy.li) [![Coverage Status](https://coveralls.io/repos/github/mikepenzin/yummy.li/badge.svg?branch=master)](https://coveralls.io/github/mikepenzin/yummy.li?branch=master)
 
 Search recipes using ingredients you already have in the kitchen! Used amazing API of Food2Fork
 
@@ -11,6 +11,13 @@ Backend: NodeJS, MongoDB, ExpressJS, PassportJS
 ------------------------------------------------------------
 
 ## // Release Notes
+
+#### v. 1.7.3 - Added Coverage and Automation Testing using Mocha and Chai
+
+- Added Automation Testing using Mocha and Chai
+- Added coverage using Istanbul and Coveralls
+- Minor bug fixing
+
 
 #### v. 1.7.2 - Added Gulp tasks to minify JavaScripts and CSS files
 

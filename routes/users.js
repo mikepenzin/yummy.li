@@ -45,7 +45,7 @@ router.get("/:user_id/update", middleware.isLoggedIn, function(req, res){
 
 
 //UPDATE - User Profile
-router.put("/:user_id/new", middleware.isLoggedIn, function(req, res){
+router.put("/:user_id/update", middleware.isLoggedIn, function(req, res){
     
     var newUserInfo = {
         name: req.body.name, 
@@ -55,20 +55,6 @@ router.put("/:user_id/new", middleware.isLoggedIn, function(req, res){
     };
     
     User.findByIdAndUpdate(req.params.user_id, newUserInfo, function(err, updatedUser){
-        if(err){
-            console.log(err);
-            res.redirect("back");
-        } else {
-            res.redirect("/profile/" + req.params.user_id);
-        }
-    });
-    
-});
-
-//UPDATE - User's Profile Picture
-router.put("/:user_id/profilePicture", middleware.isLoggedIn, function(req, res){
-
-    User.findByIdAndUpdate(req.params.user_id, { image: req.body.image }, function(err, updatedUser){
         if(err){
             console.log(err);
             res.redirect("back");
