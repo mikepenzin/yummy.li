@@ -1,6 +1,6 @@
-var bodyParser              = require("body-parser"),
+var express                 = require("express"),
+    bodyParser              = require("body-parser"),
     compression             = require('compression'),
-    express                 = require("express"),
     methodOverride          = require('method-override'),
     mongoose                = require('mongoose'),
     passport                = require("passport"),
@@ -91,3 +91,6 @@ app.listen(process.env.PORT, process.env.IP, function(){
     console.log("Yummy.li Server has started!");
     console.log("=========================");
 });
+
+
+module.exports = app;  // for testing
