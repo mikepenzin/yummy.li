@@ -4,8 +4,9 @@
   "description": "Search recipes by ingredients",
   "main": "app.js",
   "scripts": {
-    "test": "mocha --reporter spec",
-    "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*",
+    "test": "mocha",
+    "cover": "istanbul cover _mocha",
+    "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls",
     "start": "node app.js"
   },
   "repository": {
@@ -55,6 +56,7 @@
     "jshint": "^2.9.4",
     "jshint-stylish": "^2.2.1",
     "mocha": "^3.3.0",
+    "mocha-lcov-reporter": "^1.3.0",
     "pump": "^1.0.2"
   }
 }
