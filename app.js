@@ -15,7 +15,7 @@ app.use(compression(9));
 // If process.env.DATABASEURL = undefined - need to perform:
 // export DATABASEURL=mongodb://localhost/yummydb
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.DATABASEURL || "mongodb://localhost/yummydb");
+mongoose.connect(process.env.DATABASEURL || "mongodb://admin:admin@ds137101.mlab.com:37101/yummydb_dev");
 
 //=========================
 // Passport configuration
