@@ -78,7 +78,7 @@ describe('yummyli', function() {
   // Show Profile page
   it('GET - Show User Profile page', function(done) {
     chai.request(app)
-      .get('/profile/5838ac865ef768001173ad05')
+      .get('/profile/5912c571231953191400b517')
       .auth('trvlbids@gmail.com', '123')
       .end(function(err, res){
         res.should.have.status(200);
@@ -90,7 +90,7 @@ describe('yummyli', function() {
   // Show User wishlist page
   it('GET - Show User wishlist page', function(done) {
     chai.request(app)
-      .get('/profile/5838ac865ef768001173ad05/wishlist')
+      .get('/profile/5912c571231953191400b517/wishlist')
       .auth('trvlbids@gmail.com', '123')
       .end(function(err, res){
         res.should.have.status(200);
@@ -102,7 +102,7 @@ describe('yummyli', function() {
   // Show User Profile update page
   it('GET - Show User Profile update page', function(done) {
     chai.request(app)
-      .get('/profile/5838ac865ef768001173ad05/update')
+      .get('/profile/5912c571231953191400b517/update')
       .auth('trvlbids@gmail.com', '123')
       .end(function(err, res){
         res.should.have.status(200);
@@ -114,7 +114,7 @@ describe('yummyli', function() {
   // PUT User Profile update page
   it('PUT - Update User Profile page', function(done) {
     chai.request(app)
-      .put('/profile/5838ac865ef768001173ad05/update')
+      .put('/profile/5912c571231953191400b517/update')
       .field('_method', 'put')
       .field('name', 'Mike')
       .field('surname', 'Penzin')
@@ -158,7 +158,7 @@ describe('yummyli', function() {
   // Add item to wishlist
   it('PUT - Add item to wishlist', function(done) {
     chai.request(app)
-      .put('/wishlist/5838ac865ef768001173ad05/2fac5e')
+      .put('/wishlist/5912c571231953191400b517/2fac5e')
       .field('_method', 'put')
       .field('id', '2fac5e')
       .field('title', 'My Moms Muffins')
@@ -175,7 +175,7 @@ describe('yummyli', function() {
   // Remove item to wishlist
   it('PUT - Remove item to wishlist', function(done) {
     chai.request(app)
-      .put('/wishlist/5838ac865ef768001173ad05/2fac5e/remove')
+      .put('/wishlist/5912c571231953191400b517/2fac5e/remove')
       .field('_method', 'put')
       .field('id', '2fac5e')
       .field('title', 'My Moms Muffins')
@@ -196,7 +196,7 @@ describe('yummyli', function() {
   // Add item to wishlist - without being loggedin
   it('PUT - Add item to wishlist - without being loggedin', function(done) {
     chai.request(app)
-      .post('/wishlist/5838ac865ef768001173ad05/2fac5e')
+      .post('/wishlist/5912c571231953191400b517/2fac5e')
       .field('_method', 'put')
       .field('id', '2fac5e')
       .field('title', 'My Moms Muffins')
@@ -212,7 +212,7 @@ describe('yummyli', function() {
   // Remove item to wishlist - without being loggedin
   it('PUT - Remove item to wishlist - without being loggedin', function(done) {
     chai.request(app)
-      .post('/wishlist/5838ac865ef768001173ad05/2fac5e/remove')
+      .post('/wishlist/5912c571231953191400b517/2fac5e/remove')
       .field('_method', 'put')
       .field('id', '2fac5e')
       .field('title', 'My Moms Muffins')
