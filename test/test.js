@@ -111,49 +111,49 @@ describe('yummyli', function() {
       });
   });
   
-  // // PUT User Profile update page
-  // it('PUT - Update User Profile page', function(done) {
-  //   chai.request(app)
-  //     .put('/profile/5838ac865ef768001173ad05/update')
-  //     .field('_method', 'put')
-  //     .field('name', 'Mike')
-  //     .field('surname', 'Penzin')
-  //     .field('location', 'Haifa')
-  //     .field('bio', 'Love is good')
-  //     .auth('trvlbids@gmail.com', '123')
-  //     .end(function(err, res){
-  //       res.should.have.status(200);
-  //       res.should.be.html;
-  //       done();
-  //     });
-  // });
+  // PUT User Profile update page
+  it('PUT - Update User Profile page', function(done) {
+    chai.request(app)
+      .put('/profile/5838ac865ef768001173ad05/update')
+      .field('_method', 'put')
+      .field('name', 'Mike')
+      .field('surname', 'Penzin')
+      .field('location', 'Haifa')
+      .field('bio', 'Love is good')
+      .auth('trvlbids@gmail.com', '123')
+      .end(function(err, res){
+        res.should.have.status(200);
+        res.should.be.html;
+        done();
+      });
+  });
   
-  // // Login
-  // it('POST - Perform Loggin', function(done) {
-  //   chai.request(app)
-  //     .post('/auth/login')
-  //     .send({username: 'trvlbids@gmail.com', passsword: '123'})
-  //     .end(function(err, res){
-  //       res.should.have.status(200);
-  //       res.should.be.html;
-  //       done();
-  //     });
-  // });
+  // Login
+  it('POST - Perform Loggin', function(done) {
+    chai.request(app)
+      .post('/auth/login')
+      .send({username: 'trvlbids@gmail.com', passsword: '123'})
+      .end(function(err, res){
+        res.should.have.status(200);
+        res.should.be.html;
+        done();
+      });
+  });
   
-  // // Signup
-  // it('POST - Perform Signup', function(done) {
-  //   chai.request(app)
-  //     .post('/auth/signup')
-  //     .field('username', 'mikekeie@gmail.com')
-  //     .field('password', '12333')
-  //     .field('name', 'Mike')
-  //     .field('surname', 'Penzin')
-  //     .end(function(err, res){
-  //       res.should.have.status(200);
-  //       res.should.be.html;
-  //       done();
-  //     });
-  // });
+  // Signup
+  it('POST - Perform Signup', function(done) {
+    chai.request(app)
+      .post('/auth/signup')
+      .field('username', 'mikekeie@gmail.com')
+      .field('password', '12333')
+      .field('name', 'Mike')
+      .field('surname', 'Penzin')
+      .end(function(err, res){
+        res.should.have.status(200);
+        res.should.be.html;
+        done();
+      });
+  });
   
   // Add item to wishlist
   it('PUT - Add item to wishlist', function(done) {
