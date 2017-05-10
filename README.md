@@ -1,5 +1,5 @@
 # yummy.li
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg)]() [![Build Status](https://travis-ci.org/mikepenzin/yummy.li.svg?branch=master)](https://travis-ci.org/mikepenzin/yummy.li) [![Coverage Status](https://coveralls.io/repos/github/mikepenzin/yummy.li/badge.svg?branch=master)](https://coveralls.io/github/mikepenzin/yummy.li?branch=master)
+[![GitHub tag](https://img.shields.io/github/tag/mikepenzin/yummy.li.svg)]() [![license](https://img.shields.io/github/license/mikepenzin/yummy.li.svg)]() [![Build Status](https://travis-ci.org/mikepenzin/yummy.li.svg?branch=master)](https://travis-ci.org/mikepenzin/yummy.li) [![Coverage Status](https://coveralls.io/repos/github/mikepenzin/yummy.li/badge.svg?branch=master)](https://coveralls.io/github/mikepenzin/yummy.li?branch=master)
 
 Search recipes using ingredients you already have in the kitchen! Used amazing API of Food2Fork
 
