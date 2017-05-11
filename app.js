@@ -2,6 +2,7 @@ var express                 = require("express"),
     bodyParser              = require("body-parser"),
     compression             = require('compression'),
     methodOverride          = require('method-override'),
+    morgan                  = require('morgan'),
     mongoose                = require('mongoose'),
     passport                = require("passport"),
     LocalStrategy           = require("passport-local"),
@@ -10,6 +11,8 @@ var express                 = require("express"),
     app                     = express();
 
 app.use(compression(9));
+
+app.use(morgan('tiny'));
 
 // console.log("Current runnig database: " + process.env.DATABASEURL);
 // If process.env.DATABASEURL = undefined - need to perform:
