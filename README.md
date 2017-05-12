@@ -16,7 +16,7 @@ CI: Gulp, Travis CI, Github, Heroku
 ## // Release Notes
 
 
-#### v. 1.7.4 - Increase coverage improvement
+#### v. 1.7.4 - Increase coverage
 
 - Full continuous integration using Travis CI
 - Coverage improvement
