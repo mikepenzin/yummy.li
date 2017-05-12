@@ -193,6 +193,28 @@ describe('yummyli', function() {
   // Troubleshooting
   //=========================
   
+  // Search in general index page - wrong search
+  it('GET - Search in general index page - wrong search', function(done) {
+    chai.request(app)
+      .get('/q?search=fdbgzg,fdgdfgdfg,gdfgdfgdfg&page=1')
+      .end(function(err, res){
+        res.should.have.status(200);
+        res.should.be.html;
+        done();
+      });
+  });
+  
+  // Show recipe - bad recipe id
+  it('GET - Show recipe page - bad recipe id', function(done) {
+    chai.request(app)
+      .get('/recipe/5463467')
+      .end(function(err, res){
+        res.should.have.status(200);
+        res.should.be.html;
+        done();
+      });
+  });
+  
   // Add item to wishlist - without being loggedin
   it('PUT - Add item to wishlist - without being loggedin', function(done) {
     chai.request(app)
