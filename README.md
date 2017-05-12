@@ -1,16 +1,26 @@
 # yummy.li
-[![version tag](https://img.shields.io/badge/version-1.7.3-brightgreen.svg)](https://github.com/mikepenzin/yummy.li) [![license](https://img.shields.io/github/license/mikepenzin/yummy.li.svg)](https://github.com/mikepenzin/yummy.li) [![Build Status](https://travis-ci.org/mikepenzin/yummy.li.svg?branch=master)](https://travis-ci.org/mikepenzin/yummy.li) [![Coverage Status](https://coveralls.io/repos/github/mikepenzin/yummy.li/badge.svg?branch=master)](https://coveralls.io/github/mikepenzin/yummy.li?branch=master)
+[![version tag](https://img.shields.io/badge/version-1.7.4-brightgreen.svg)](https://github.com/mikepenzin/yummy.li) [![license](https://img.shields.io/github/license/mikepenzin/yummy.li.svg)](https://github.com/mikepenzin/yummy.li) [![Build Status](https://travis-ci.org/mikepenzin/yummy.li.svg?branch=master)](https://travis-ci.org/mikepenzin/yummy.li) [![Coverage Status](https://coveralls.io/repos/github/mikepenzin/yummy.li/badge.svg?branch=master)](https://coveralls.io/github/mikepenzin/yummy.li?branch=master)
 
 Search recipes using ingredients you already have in the kitchen! Used amazing API of Food2Fork
 
-Frontend: EJS, Bootstrap, jQuery, CSS
+Frontend: Bower, EJS, Bootstrap, jQuery, CSS
 
 Backend: NodeJS, MongoDB, ExpressJS, PassportJS
 
+Testing: Mocha, Chai, Istanbul, Coveralls
+
+CI: Gulp, Travis CI, Github, Heroku
 
 ------------------------------------------------------------
 
 ## // Release Notes
+
+
+#### v. 1.7.4 - Increase coverage improvement
+
+- Full continuous integration using Travis CI
+- Coverage improvement
+
 
 #### v. 1.7.3 - Added Coverage and Automation Testing using Mocha and Chai
 

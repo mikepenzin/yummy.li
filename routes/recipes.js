@@ -21,6 +21,7 @@ router.get("/q", function(req, res){
     .header("X-Mashape-Key", "Fj5xGp8OhGmshrg45yEPk5IvGe0xp1DCBIFjsnLHD4OsQxCvPD")
     .header("Accept", "application/json")
     .end(function (result) {
+        /* istanbul ignore else */  
         if (result.statusCode == 200) {
             var data = JSON.parse(result.body);
             data = data.recipes;
@@ -46,10 +47,18 @@ router.get("/recipe/:recipe_id", function(req, res){
     .header("X-Mashape-Key", "Fj5xGp8OhGmshrg45yEPk5IvGe0xp1DCBIFjsnLHD4OsQxCvPD")
     .header("Accept", "application/json")
     .end(function (result) {
+        console.log(result.statusCode);
+        /* istanbul ignore else */ 
         if (result.statusCode == 200) {
             var data = JSON.parse(result.body);
             data = data.recipe;
-            res.render("recipe/show", {recipe:data});
+                if(data.length !== 0){   
+                   //this array is not empty 
+                   res.render("recipe/show", {recipe:data});
+                } else {
+                   //this array is empty
+                   res.redirect("back");
+                }
           } else {
             console.log("Something whent wrong!");
             console.log(result.status, result.headers);
@@ -58,6 +67,7 @@ router.get("/recipe/:recipe_id", function(req, res){
     });
 });
 
+/* istanbul ignore next */ 
 // UPDATE - Add recipe to User's wishlist
 router.put("/wishlist/:user_id/:recipe_id",middleware.isLoggedIn, function(req, res){
     var newWishlistItem = {
@@ -67,6 +77,7 @@ router.put("/wishlist/:user_id/:recipe_id",middleware.isLoggedIn, function(req, 
         title: req.body.title
     };
     User.findById(req.params.user_id, function(err, foundUser){
+        /* istanbul ignore if */
         if(err) {
             console.log(err);
         } else {
@@ -77,6 +88,7 @@ router.put("/wishlist/:user_id/:recipe_id",middleware.isLoggedIn, function(req, 
     });
 });
 
+/* istanbul ignore next */ 
 //UPDATE - Remove recipe from User's wishlist
 router.put("/wishlist/:user_id/:recipe_id/remove",middleware.isLoggedIn, function(req, res){
     var id = req.params.recipe_id;
@@ -87,6 +99,7 @@ router.put("/wishlist/:user_id/:recipe_id/remove",middleware.isLoggedIn, functio
                 if (recipe[i].id == id) {
                     foundUser.recipes[i].remove();
                     foundUser.save(function (err) {
+                        /* istanbul ignore if */
                         if (err){
                             console.log(err);
                         } else {

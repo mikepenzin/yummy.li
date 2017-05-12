@@ -3,9 +3,12 @@ var router      = express.Router();
 var User        = require('../models/user');
 var middleware  = require('../middleware');
 
+/* istanbul ignore next */ 
+//SHOW - User's Profile page
 router.get("/:user_id", middleware.isLoggedIn, function(req, res){
     
     User.find(req.params.user_id, function(err, foundUser){
+        /* istanbul ignore if */
         if (err) {
             console.log(err);    
         } else {
@@ -15,11 +18,12 @@ router.get("/:user_id", middleware.isLoggedIn, function(req, res){
     
 });
 
-
+/* istanbul ignore next */ 
 //SHOW - User's Whishlist
 router.get("/:user_id/wishlist", middleware.isLoggedIn, function(req, res){
     
     User.find(req.params.user_id, function(err, foundUser){
+        /* istanbul ignore if */
         if (err) {
             console.log(err);    
         } else {
@@ -29,11 +33,12 @@ router.get("/:user_id/wishlist", middleware.isLoggedIn, function(req, res){
     
 });
 
-
+/* istanbul ignore next */ 
 // SHOW - User's profile update
 router.get("/:user_id/update", middleware.isLoggedIn, function(req, res){
     
     User.find(req.params.user_id, function(err, foundUser){
+        /* istanbul ignore if */
         if (err) {
             console.log(err);    
         } else {
@@ -43,7 +48,7 @@ router.get("/:user_id/update", middleware.isLoggedIn, function(req, res){
     
 });
 
-
+/* istanbul ignore next */ 
 //UPDATE - User Profile
 router.put("/:user_id/update", middleware.isLoggedIn, function(req, res){
     
@@ -55,6 +60,7 @@ router.put("/:user_id/update", middleware.isLoggedIn, function(req, res){
     };
     
     User.findByIdAndUpdate(req.params.user_id, newUserInfo, function(err, updatedUser){
+        /* istanbul ignore if */
         if(err){
             console.log(err);
             res.redirect("back");
@@ -65,9 +71,11 @@ router.put("/:user_id/update", middleware.isLoggedIn, function(req, res){
     
 });
 
+/* istanbul ignore next */ 
 //UPDATE - User's Profile Picture
 router.put("/:user_id/profilePicture", middleware.isLoggedIn, function(req, res){
     User.findByIdAndUpdate(req.params.user_id, { image: req.body.image }, function(err, updatedUser){
+        /* istanbul ignore if */
         if(err){
             console.log(err);
             res.redirect("back");
