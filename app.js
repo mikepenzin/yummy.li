@@ -12,9 +12,9 @@ var express                 = require("express"),
 
 app.use(compression(9));
 
-app.use(morgan('tiny'));
+// app.use(morgan('tiny'));
 
-// console.log("Current runnig database: " + process.env.DATABASEURL);
+console.log("Current runnig database: " + process.env.DATABASEURL);
 // If process.env.DATABASEURL = undefined - need to perform:
 // export DATABASEURL=mongodb://localhost/yummydb
 mongoose.Promise = global.Promise;
@@ -79,15 +79,6 @@ app.use("/", recipeRoutes);
 app.use("/profile", userRoutes);
 app.use("/auth", authRoutes);
 
-//SHOW - Team page
-app.get("/team", function(req, res){
-    res.render("general/team");
-});
-
-//SHOW - If unknown page
-app.get("*", function(req, res){
-    res.redirect("back");
-});
 
 app.listen(process.env.PORT, process.env.IP, function(){
     console.log("=========================");

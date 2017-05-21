@@ -30,6 +30,12 @@
 	max-width: 80%;
 }
 
+.tokenfield {
+    padding-bottom: 0px;
+    position: relative;
+    margin-bottom: 0px;
+}
+
 .image-cropper {
 	max-width: 200px;
 	max-height: 200px;

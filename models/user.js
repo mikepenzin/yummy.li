@@ -15,6 +15,7 @@ var UserSchema = new mongoose.Schema({
         image_url: String,
         publisher: String
         }],
+    favFood: [String],    
     resetPasswordToken: String,
     resetPasswordExpires: Date
 });

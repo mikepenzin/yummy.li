@@ -4,9 +4,14 @@
 <link rel="stylesheet" type="text/css" href="/css/basic.css">
 <link rel="stylesheet" type="text/css" href="/minified/css/recipe-style.css">
 
-<% include ../partials/navbar-body %>
 
-<!--<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59133ce692f23c0f"></script> -->
+<meta property="og:url"           content="https://www.facebook.com/sharer/sharer.php?u=http://yummy.li/recipe/<%= recipe.recipe_id %>" />
+<meta property="og:type"          content="website" />
+<meta property="og:title"         content="yummy.li - <%- recipe.title %>" />
+<meta property="og:description"   content="<%- recipe.title %> - Search other recipes using ingredients you already have in the kitchen!" />
+<meta property="og:image"         content="<%= recipe.image_url %>" />
+
+<% include ../partials/navbar-body %>
 
 		<div class="jumbotron jumbo-bg-show" id="top">
 			<div class="header-text">
@@ -24,41 +29,44 @@
 					<div class="col-md-8 col-xs-12">
 						<a href="<%= recipe.source_url %>" class="btn btn-default btn-def" role="button" target="blank">Original at <%= recipe.publisher %></a>
 						<% if(!currentUser){ %>
-									          	<a href="/auth/login" class="btn btn-default btn-wishlist" role="button">
-												  <i class="fa fa-heart-o" aria-hidden="true"></i></span> Add to Wishlist
-											  	</a>
-									        <% } else { %>
-									        	<% var userRecipes = currentUser.recipes; %>
-									        	<% var found = false; %>
-									        	<% for (var i = 0; i < userRecipes.length; i++) { %>
-									        		<% if(userRecipes[i].id == recipe.recipe_id) { %>
-									        			<% found = true; %>
-									        			<% break; %>
-									        		<% } %>
-									        	<% } %>
-								        		<% if(found) { %>
-								        			<form action="/wishlist/<%= currentUser._id %>/<%= recipe.recipe_id %>/remove?_method=PUT" method="POST">
-				            							<button class="btn btn-default btn-wishlist">
-				            							    <i class="fa fa-times" aria-hidden="true"></i></span> Remove item
-				            							</button>
-				            						</form>
-								        		<% } else { %>
-								        			<form action="/wishlist/<%= currentUser._id %>/<%= recipe.recipe_id %>?_method=PUT" method="POST">
-										        		<input type='hidden' name='id' value='<%= recipe.recipe_id %>' />
-										        		<input type='hidden' name='title' value='<%- recipe.title %>' />
-										        		<input type='hidden' name='image_url' value='<%= recipe.image_url %>' />
-										        		<input type='hidden' name='publisher' value='<%= recipe.publisher %>' />
-										                <button class="btn btn-default btn-wishlist">
-										                	<i class="fa fa-heart-o" aria-hidden="true"></i></span> Add to Wishlist
-										                </button>
-										            </form>
-								        		<% } %>
-							            <% } %>
+				          	<a href="/auth/login" class="btn btn-default btn-wishlist" role="button">
+							  <i class="fa fa-heart-o" aria-hidden="true"></i></span> Add to Wishlist
+						  	</a>
+				        <% } else { %>
+				        	<% var userRecipes = currentUser.recipes; %>
+				        	<% var found = false; %>
+				        	<% for (var i = 0; i < userRecipes.length; i++) { %>
+				        		<% if(userRecipes[i].id == recipe.recipe_id) { %>
+				        			<% found = true; %>
+				        			<% break; %>
+				        		<% } %>
+				        	<% } %>
+			        		<% if(found) { %>
+			        			<form action="/wishlist/<%= currentUser._id %>/<%= recipe.recipe_id %>/remove?_method=PUT" method="POST">
+        							<button class="btn btn-default btn-wishlist">
+        							    <i class="fa fa-times" aria-hidden="true"></i></span> Remove item
+        							</button>
+        						</form>
+			        		<% } else { %>
+			        			<form action="/wishlist/<%= currentUser._id %>/<%= recipe.recipe_id %>?_method=PUT" method="POST">
+					        		<input type='hidden' name='id' value='<%= recipe.recipe_id %>' />
+					        		<input type='hidden' name='title' value='<%- recipe.title %>' />
+					        		<input type='hidden' name='image_url' value='<%= recipe.image_url %>' />
+					        		<input type='hidden' name='publisher' value='<%= recipe.publisher %>' />
+					                <button class="btn btn-default btn-wishlist">
+					                	<i class="fa fa-heart-o" aria-hidden="true"></i></span> Add to Wishlist
+					                </button>
+					            </form>
+			        		<% } %>
+		            <% } %>
 				</div>
 			</div>
 			<div class="row info">
-						<!--<br>-->
-						<!--<div class="addthis_inline_share_toolbox"></div>-->
+						<br>
+						<a href="https://www.facebook.com/sharer/sharer.php?u=https://yummyli-penzin.c9users.io/recipe/<%= recipe.recipe_id %>" onclick="return !window.open(this.href, 'Google', 'width=600,height=530')" class="btn btn-facebook">Share on  <i class="fa fa-facebook-official fa-lg" aria-hidden="true"></i></a>
+						<a href="https://plus.google.com/share?url=http://yummy.li/recipe/<%= recipe.recipe_id %>" class="btn btn-google"  onclick="return !window.open(this.href, 'Google', 'width=420,height=730')">Share on  <i class="fa fa-google-plus fa-lg" aria-hidden="true"></i></a>
+						<a href="https://twitter.com/home?status=Just%20found%20amazing%20recipe%20on%20%23yummyli%20http%3A//yummy.li/recipe/<%= recipe.recipe_id %>" class="btn btn-twitter"  onclick="return !window.open(this.href, 'Twitter', 'width=720,height=530')">Share on  <i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a>
+						<br>
 						<h3>Ingredients</h3>
 						<p class="table-responsive">
 							<table class="table table-striped">

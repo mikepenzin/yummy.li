@@ -6,14 +6,14 @@
 		$(function () {
 			$(window).scroll(function () {
 		        // set distance user needs to scroll before we fadeIn navbar
-				if ($(this).scrollTop() > 100) {
+				if ($(this).scrollTop() > 70) {
 					$('.navbar-inverse').fadeIn();
 					$('.navbar-inverse').css('background-color', '#393e41');
 				} else {
 					$('.navbar-inverse').css('background-color', 'transparent');
 					$('.navbar-fixed-bottom').fadeOut();
 				}
-				if ($(this).scrollTop() > 300) {
+				if ($(this).scrollTop() > 200) {
 					$('.navbar-fixed-bottom').fadeIn();
 				} else {
 					$('.navbar-fixed-bottom').fadeOut();

@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">97.37% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>37/38</span>
+        <span class='fraction'>34/34</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -30,14 +30,14 @@
         <span class='fraction'>2/2</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">80% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>4/5</span>
+        <span class='fraction'>3/3</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">97.37% </span>
+        <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>37/38</span>
+        <span class='fraction'>34/34</span>
       </div>
     </div>
   </div>
@@ -132,16 +132,7 @@
 87
 88
 89
-90
-91
-92
-93
-94
-95
-96
-97
-98
-99</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+90</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -155,9 +146,9 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
@@ -177,10 +168,10 @@
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">28×</span>
-<span class="cline-any cline-yes">28×</span>
-<span class="cline-any cline-yes">28×</span>
-<span class="cline-any cline-yes">28×</span>
+<span class="cline-any cline-yes">31×</span>
+<span class="cline-any cline-yes">31×</span>
+<span class="cline-any cline-yes">31×</span>
+<span class="cline-any cline-yes">31×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
@@ -191,8 +182,8 @@
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">28×</span>
-<span class="cline-any cline-yes">28×</span>
+<span class="cline-any cline-yes">31×</span>
+<span class="cline-any cline-yes">31×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -219,15 +210,6 @@
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -253,9 +235,9 @@
 &nbsp;
 app.use(compression(9));
 &nbsp;
-app.use(morgan('tiny'));
+// app.use(morgan('tiny'));
 &nbsp;
-// console.log("Current runnig database: " + process.env.DATABASEURL);
+console.log("Current runnig database: " + process.env.DATABASEURL);
 // If process.env.DATABASEURL = undefined - need to perform:
 // export DATABASEURL=mongodb://localhost/yummydb
 mongoose.Promise = global.Promise;
@@ -320,15 +302,6 @@ app.use("/", recipeRoutes);
 app.use("/profile", userRoutes);
 app.use("/auth", authRoutes);
 &nbsp;
-//SHOW - Team page
-app.get("/team", <span class="fstat-no" title="function not covered" >function(req, res){</span>
-<span class="cstat-no" title="statement not covered" >    res.render("general/team");</span>
-});
-&nbsp;
-//SHOW - If unknown page
-app.get("*", function(req, res){
-    res.redirect("back");
-});
 &nbsp;
 app.listen(process.env.PORT, process.env.IP, function(){
     console.log("=========================");
@@ -343,7 +316,7 @@ module.exports = app;  // for testing</pre></td></tr>
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri May 12 2017 14:52:07 GMT+0000 (UTC)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun May 21 2017 17:20:43 GMT+0000 (UTC)
 </div>
 </div>
 <script src="../prettify.js"></script>
