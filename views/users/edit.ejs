@@ -17,7 +17,15 @@
 	<div class="row">
 		<div class="col-lg-4 col-md-4 col-sx-12">
 			<div class="image-cropper">
-				<img src="<%= currentUser.image %>" class="rounded" />
+				<% if(currentUser.image == undefined){ %>
+                    <div id="profile-pic">
+                        <img src="/img/profile_user.jpg" class="rounded" />
+                    </div>
+                <% } else { %>
+                    <div id="profile-pic">
+                        <img src="<%= currentUser.image %>" class="rounded" />
+                    </div>
+                <% } %>
 			</div>
 		</div>
 		<div class="col-lg-6 col-lg-offset-1 col-md-6 col-md-offset-1 col-sx-12">
@@ -36,6 +44,14 @@
                         <input type="text" class="form-control" name="location" placeholder="Where are you from?">
                     <% } else { %>
                         <input type="text" class="form-control" name="location" value="<%= currentUser.location %>">
+                    <% } %>
+				</div>
+				<div>
+					<label class="control-label" for="email">Your favorite ingredients:</label>
+					<% if(currentUser.favFood == undefined){ %>
+                        <input type="text" class="form-control"  id="search" name="favs" placeholder="What's your favorite food?">
+                    <% } else { %>
+                        <input type="text" class="form-control" id="search" name="favs" value="<%= currentUser.favFood %>">
                     <% } %>
 				</div>
 				<div>
@@ -60,6 +76,11 @@
 <% include ../partials/footer %>
 <% include ../partials/modal-hiw %>
 <% include ../partials/html-footer %>
+
+	<script type="text/javascript" src="/components/bootstrap-tokenfield/dist/bootstrap-tokenfield.min.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="/components/bootstrap-tokenfield/docs-assets/minified/js/typeahead.bundle.min.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="/minified/js/docs.js" charset="UTF-8"></script>
     <script type="text/javascript" src="/minified/js/navbar.js" charset="UTF-8"></script>
+    
 </body>
 </html>

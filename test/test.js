@@ -20,6 +20,26 @@ describe('yummyli', function() {
       });
   });
   
+  it('GET - General team page', function(done) {
+    chai.request(app)
+      .get('/team')
+      .end(function(err, res){
+        res.should.have.status(200);
+        res.should.be.html;
+        done();
+      });
+  });
+  
+  it('GET - General 404 page', function(done) {
+    chai.request(app)
+      .get('/32590rw9807swgiosdgskljdgsdkjlghw3o295y2398y5rtw9efohsdflkhsdlgoha98p45y34985yht')
+      .end(function(err, res){
+        res.should.have.status(200);
+        res.should.be.html;
+        done();
+      });
+  });
+  
   // Search in general index page
   it('GET - Search in general index page', function(done) {
     chai.request(app)

@@ -42,6 +42,11 @@
 					<h2><%= currentUser.name %> <%= currentUser.surname %></h2>
 					<h4><%= currentUser.location %></h4>
 					<h5><%= currentUser.username %></h5>
+					<h4>
+					<% currentUser.favFood.forEach(function(favFood){ %>
+						<span class="label label-default"><%= favFood %></span>
+					<% }) %>
+					</h4>
 					<p class="well">
 						<%= currentUser.bio %>
 					</p>

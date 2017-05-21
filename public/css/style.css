@@ -14,10 +14,28 @@
     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
 }
 
+
 /*General Body*/
 html{
 	height: 100%;
 	margin: 0;
+}
+
+.container-fluid { 
+	display: table; 
+}
+
+.content { 
+	display: table-row; height: 100%; 
+}
+
+.content-body { 
+	display: table-cell; 
+}
+
+.row {
+	width: 100%;
+	margin: 0 auto;
 }
 
 @media (max-width: 768px) {
@@ -340,14 +358,21 @@ a:hover {
     ),url("/img/food-photo/old-big/9.jpg");
 }
 
+.jumbo-bg-personal {
+	background: linear-gradient(
+      rgba(0, 0, 0, 0.4), 
+      rgba(0, 0, 0, 0.4)
+    ),url("/img/food-photo/old-big/10.jpg");
+}
+
 .jumbo-bg-search {
 	background: linear-gradient(
       rgba(0, 0, 0, 0.4), 
       rgba(0, 0, 0, 0.4)
-    ),url("https://yummyli.herokuapp.com/img/index-bg.jpg");
+    ),url("/img/food-photo/old-big/13.jpg");
 }
 
-.jumbo-bg-profile, .jumbo-bg-search, .jumbo-bg-wishlist, .jumbo-bg-show {
+.jumbo-bg-profile, .jumbo-bg-search, .jumbo-bg-wishlist, .jumbo-bg-show, .jumbo-bg-personal {
 	background-size: cover;
 	background-position: center;
 }
@@ -411,8 +436,15 @@ a:hover {
     box-shadow: 0px 0px 20px #b2b2b2;
 }
 
-/*Search bar*/
 
+.thumbnail img{
+	display: block;
+	width: 100%;
+	height:	auto;
+	overflow: hidden;
+}
+
+/*Search bar*/
 .input-group .form-control:first-child, .input-group-addon:first-child, .input-group-btn:first-child>.btn, .input-group-btn:first-child>.btn-group>.btn, .input-group-btn:first-child>.dropdown-toggle, .input-group-btn:last-child>.btn-group:not(:last-child)>.btn, .input-group-btn:last-child>.btn:not(:last-child):not(.dropdown-toggle) {
 	background: #fffff;
  	border: none;
@@ -422,7 +454,7 @@ a:hover {
  	max-height: 34px;
  }
 
- .input-group-btn:last-child>.btn, .input-group-btn:last-child>.btn-group {
+.input-group-btn:last-child>.btn, .input-group-btn:last-child>.btn-group {
  	min-height: 34px;
  }
 
@@ -465,6 +497,17 @@ a:hover {
 	background: #eaeaea;
 }
 
+.btn-show {
+	background: #F7F7F7;
+	border: 1px solid #DEDEDE;
+	font-size: 1.3rem;
+	color: #393e41;
+}
+
+.btn-show:hover {
+	background: #eaeaea;
+}
+
 .thumbnail img{
 	display: block;
 	width: 100%;
@@ -474,12 +517,17 @@ a:hover {
 
 /*Recipe Gallery*/
 .gallery {
-	padding-top: 80px;
-    margin-top: -30px;
-	margin-bottom: 80px; 
-	text-align: center;
-	font-size: 4.5rem;
+	margin-top: 50px;
+	margin-bottom: 50px; 
+	padding: 0 0 0 30px;
+	line-height: 32px;
+	vertical-align: middle;
 	font-family: "Raleway", sans-serif;
+}
+
+.gallery-text {
+	font-size: 2.5rem;
+	vertical-align: middle;
 	text-transform: uppercase;
 }
 
@@ -759,4 +807,71 @@ a:hover {
 .fork-me-text:hover {
 	color: #f6f7eb;
 	text-decoration: none;
+}
+
+.btn-google {
+	background: #dd4b39;
+	border: 1px solid #F7F7F7;
+	font-size: 0.8em;
+	color: #F7F7F7;
+	padding: 7px;
+	max-width: 90px;
+	margin-bottom: 1%;
+	border-radius: 5px;
+}
+
+.btn-google:hover {
+	background: #F7F7F7;
+	border: 1px solid #dd4b39;
+	color: #e04f67;
+}
+
+.btn-google i {
+	margin-right: 5px;
+}
+
+.btn-twitter {
+	background: #1da1f2;
+	border: 1px solid #F7F7F7;
+	font-size: 0.8em;
+	color: #F7F7F7;
+	padding: 7px;
+	max-width: 90px;
+	margin-bottom: 1%;
+	border-radius: 5px;
+}
+
+.btn-twitter:hover {
+	background: #F7F7F7;
+	border: 1px solid #1da1f2;
+	color: #1da1f2;
+}
+
+.btn-twitter i {
+	margin-right: 5px;
+}
+
+.btn-facebook {
+	background: #3b5998;
+	border: 1px solid #F7F7F7;
+	font-size: 0.8em;
+	color: #F7F7F7;
+	padding: 7px;
+	max-width: 90px;
+	margin-bottom: 1%;
+	border-radius: 5px;
+}
+
+.btn-facebook:hover {
+	background: #F7F7F7;
+	border: 1px solid #3b5998;
+	color: #3b5998;
+}
+
+.btn-facebook i {
+	margin-right: 5px;
+}
+
+.centralize {
+	text-align: center;
 }

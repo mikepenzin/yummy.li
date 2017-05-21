@@ -1,5 +1,7 @@
 var express     = require("express");
 var router      = express.Router();
+var request     = require("request");
+var mongoose    = require('mongoose');
 var User        = require('../models/user');
 var middleware  = require('../middleware');
 
@@ -7,7 +9,8 @@ var middleware  = require('../middleware');
 //SHOW - User's Profile page
 router.get("/:user_id", middleware.isLoggedIn, function(req, res){
     
-    User.find(req.params.user_id, function(err, foundUser){
+    var userID = mongoose.Types.ObjectId(req.params.user_id);
+    User.findById(userID, function(err, foundUser){
         /* istanbul ignore if */
         if (err) {
             console.log(err);    
@@ -22,7 +25,8 @@ router.get("/:user_id", middleware.isLoggedIn, function(req, res){
 //SHOW - User's Whishlist
 router.get("/:user_id/wishlist", middleware.isLoggedIn, function(req, res){
     
-    User.find(req.params.user_id, function(err, foundUser){
+    var userID = mongoose.Types.ObjectId(req.params.user_id);
+    User.findById(userID, function(err, foundUser){
         /* istanbul ignore if */
         if (err) {
             console.log(err);    
@@ -37,7 +41,8 @@ router.get("/:user_id/wishlist", middleware.isLoggedIn, function(req, res){
 // SHOW - User's profile update
 router.get("/:user_id/update", middleware.isLoggedIn, function(req, res){
     
-    User.find(req.params.user_id, function(err, foundUser){
+    var userID = mongoose.Types.ObjectId(req.params.user_id);
+    User.findById(userID, function(err, foundUser){
         /* istanbul ignore if */
         if (err) {
             console.log(err);    
@@ -52,11 +57,15 @@ router.get("/:user_id/update", middleware.isLoggedIn, function(req, res){
 //UPDATE - User Profile
 router.put("/:user_id/update", middleware.isLoggedIn, function(req, res){
     
+    var favs = req.body.favs;
+        favs = favs.split(", ");
+        
     var newUserInfo = {
         name: req.body.name, 
         surname: req.body.surname,
         location: req.body.location, 
-        bio: req.body.bio
+        bio: req.body.bio,
+        favFood: favs
     };
     
     User.findByIdAndUpdate(req.params.user_id, newUserInfo, function(err, updatedUser){
