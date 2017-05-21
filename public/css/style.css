@@ -809,6 +809,16 @@ a:hover {
 	text-decoration: none;
 }
 
+.fork-me-text-black {
+	color: #393e41;
+	font-size: 14px;
+}
+
+.fork-me-text-black:hover {
+	color: #393e41;
+	text-decoration: none;
+}
+
 .btn-google {
 	background: #dd4b39;
 	border: 1px solid #F7F7F7;
