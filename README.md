@@ -1,5 +1,5 @@
 # yummy.li
-[![version tag](https://img.shields.io/badge/version-1.8.0-brightgreen.svg)](https://github.com/mikepenzin/yummy.li) [![license](https://img.shields.io/github/license/mikepenzin/yummy.li.svg)](https://github.com/mikepenzin/yummy.li) [![Build Status](https://travis-ci.org/mikepenzin/yummy.li.svg?branch=master)](https://travis-ci.org/mikepenzin/yummy.li) [![Coverage Status](https://coveralls.io/repos/github/mikepenzin/yummy.li/badge.svg?branch=master)](https://coveralls.io/github/mikepenzin/yummy.li?branch=master)
+[![version tag](https://img.shields.io/badge/version-1.9.0-brightgreen.svg)](https://github.com/mikepenzin/yummy.li) [![license](https://img.shields.io/github/license/mikepenzin/yummy.li.svg)](https://github.com/mikepenzin/yummy.li) [![Build Status](https://travis-ci.org/mikepenzin/yummy.li.svg?branch=master)](https://travis-ci.org/mikepenzin/yummy.li) [![Coverage Status](https://coveralls.io/repos/github/mikepenzin/yummy.li/badge.svg?branch=master)](https://coveralls.io/github/mikepenzin/yummy.li?branch=master)
 
 Search recipes using ingredients you already have in the kitchen! Used amazing API of Food2Fork
 
@@ -14,6 +14,16 @@ CI: Gulp, Travis CI, Github, Heroku
 ------------------------------------------------------------
 
 ## // Release Notes
+
+#### v. 1.9.0 - Added Trending recipes page and section inside Personal page
+
+- Added Trending recipes page and section inside Personal page.
+- Randomized data inside every section on Personal page.
+- Added Cookies seesions, so person that logged in will remain loggedin for 2 month.
+- Added Cookies info banner for EU users.
+- Updated logo.
+- Added major vulnerability tests, including Snyk.
+- Major frontend bugs were fixed.
 
 #### v. 1.8.0 - Added simple personal landing page
 
@@ -100,14 +110,20 @@ CI: Gulp, Travis CI, Github, Heroku
 
 
 
+## // Tests
+
+```js
+npm run cover
+```
+
 ## // Contributing
 
 In lieu of a formal style guide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code.
 
 
-
 ## // Notes for future releases
 
+- Create better DB with lots of recipes
 - Add authentication with facebook, google
 - Add analytics
 - Add SEO

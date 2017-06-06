@@ -14,4 +14,11 @@
 	  animate: true
 	});
 	
+	$("#trending-recipes").gridalicious({
+	  selector: '.trending',
+	  gutter: 20,
+	  width: 250,
+	  animate: true
+	});
+	
 })(jQuery);

@@ -21,16 +21,21 @@ html{
 	margin: 0;
 }
 
-.container-fluid { 
-	display: table; 
+.Site {
+  display: flex;
+  flex-direction: column;
+  height: 80%; /* 1, 3 */
 }
 
-.content { 
-	display: table-row; height: 100%; 
+.Site-header,
+.Site-footer {
+  flex: none; /* 2 */
 }
 
-.content-body { 
-	display: table-cell; 
+.Site-content {
+  flex: 1 0 auto; /* 2 */
+  padding: 0;
+  width: 100%;
 }
 
 .row {
@@ -91,7 +96,8 @@ a:hover {
 
 .navbar-brand>img {
 	display: inline-block;
-	margin-right: -19px;
+	margin-right: -14px;
+    margin-top: -27px;
 }	
 
 .navbar-inverse .navbar-nav>li>a:link {
@@ -372,7 +378,14 @@ a:hover {
     ),url("/img/food-photo/old-big/13.jpg");
 }
 
-.jumbo-bg-profile, .jumbo-bg-search, .jumbo-bg-wishlist, .jumbo-bg-show, .jumbo-bg-personal {
+.jumbo-bg-trending{
+	background: linear-gradient(
+      rgba(0, 0, 0, 0.4), 
+      rgba(0, 0, 0, 0.4)
+    ),url("/img/food-photo/old-big/12.jpg");
+}
+
+.jumbo-bg-profile, .jumbo-bg-search, .jumbo-bg-wishlist, .jumbo-bg-show, .jumbo-bg-personal, .jumbo-bg-trending {
 	background-size: cover;
 	background-position: center;
 }
@@ -713,7 +726,7 @@ a:hover {
 
 .footer {
 	font-family: "Raleway", sans-serif;
-  	background-color: white;
+  	/*background-color: #fff;*/
   	width: 100%;
   	outline: none;
   	display: table-row;
@@ -739,7 +752,7 @@ a:hover {
 }
 
 .leftpanel a{
-	background: #ffffff;
+	/*background: #ffffff;*/
 	color: #393e41;
 	line-height: 200%;
 	padding-bottom: 5px;
@@ -758,7 +771,7 @@ a:hover {
 }
 
 .right-panel .input-group{
-	background: #ffffff;
+	/*background: #ffffff;*/
 	color: #393e41;
 	width: 100%;
 	padding-bottom: 5px;
@@ -771,7 +784,7 @@ a:hover {
 }
 
 .button-social {
-	background: #ffffff;
+	/*background: #ffffff;*/
 	border: 0px;
 	color: #74777A;
 	font-size: 1.9rem;

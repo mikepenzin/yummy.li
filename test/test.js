@@ -30,6 +30,16 @@ describe('yummyli', function() {
       });
   });
   
+  it('GET - Trending recipes page', function(done) {
+    chai.request(app)
+      .get('/trending')
+      .end(function(err, res){
+        res.should.have.status(200);
+        res.should.be.html;
+        done();
+      });
+  });
+  
   it('GET - General 404 page', function(done) {
     chai.request(app)
       .get('/32590rw9807swgiosdgskljdgsdkjlghw3o295y2398y5rtw9efohsdflkhsdlgoha98p45y34985yht')
@@ -44,6 +54,17 @@ describe('yummyli', function() {
   it('GET - Search in general index page', function(done) {
     chai.request(app)
       .get('/q?search=bacon&page=1')
+      .end(function(err, res){
+        res.should.have.status(200);
+        res.should.be.html;
+        done();
+      });
+  });
+  
+  // Search in general index page
+  it('GET - Search in general index page without page number', function(done) {
+    chai.request(app)
+      .get('/q?search=bacon')
       .end(function(err, res){
         res.should.have.status(200);
         res.should.be.html;
@@ -267,7 +288,7 @@ describe('yummyli', function() {
       });
   });
   
-    // Wrong Login
+  // Wrong Login
   it('POST - Perform Bad Loggin', function(done) {
     chai.request(app)
       .post('/login')

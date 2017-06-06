@@ -1,1 +1,1 @@
-!function(e){e("#gallery-recipes").gridalicious({selector:".item",gutter:20,width:250,animate:!0}),e("#feature-recipes").gridalicious({selector:".recipe",gutter:20,width:250,animate:!0})}(jQuery);
+!function(e){e("#gallery-recipes").gridalicious({selector:".item",gutter:20,width:250,animate:!0}),e("#feature-recipes").gridalicious({selector:".recipe",gutter:20,width:250,animate:!0}),e("#trending-recipes").gridalicious({selector:".trending",gutter:20,width:250,animate:!0})}(jQuery);

@@ -8,26 +8,39 @@ var express                 = require("express"),
     LocalStrategy           = require("passport-local"),
     User                    = require('./models/user'),
     flash                   = require('express-flash'),
+    cookieParser            = require('cookie-parser'),
+    helmet                  = require('helmet'),
+    dotenv                  = require('dotenv'),
     app                     = express();
+
+// Load environment variables from .env file
+dotenv.load();
 
 app.use(compression(9));
 
-// app.use(morgan('tiny'));
+app.use(cookieParser('yummy is the best'));
 
-console.log("Current runnig database: " + process.env.DATABASEURL);
-// If process.env.DATABASEURL = undefined - need to perform:
-// export DATABASEURL=mongodb://localhost/yummydb
+app.use(helmet());
+
+app.use(morgan('tiny'));
+
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.DATABASEURL || "mongodb://admin:admin@ds137101.mlab.com:37101/yummydb_dev");
+mongoose.connect(process.env.DATABASEURL);
 
 //=========================
 // Passport configuration
 //=========================
 
+var expiryDate = new Date(Date.now() + 2 * 30 * 24 * 60 * 60 * 1000); // 2 month
+
 app.use(require("express-session")({
-    secret: "We made it!",
+    secret: process.env.SESSION_SECRET,
+    name: 'yummyId',
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: true,
+    cookie: {
+        expires: expiryDate
+    }
 }));
 
 // Configure to use flash
@@ -62,15 +75,9 @@ app.use(express.static(__dirname + "/public", { maxAge: 8640000000 }));
 
 // Configure view engine
 app.set("view engine","ejs");
+app.locals.rmWhitespace = true;
 
 app.use(methodOverride("_method"));
-
-app.use(require("express-session")({
-    secret: "We made it!",
-    resave: false,
-    saveUninitialized: false
-}));
-
 
 //Configure to use body-parser
 app.use(bodyParser.urlencoded({extended: true}));
@@ -79,6 +86,15 @@ app.use("/", recipeRoutes);
 app.use("/profile", userRoutes);
 app.use("/auth", authRoutes);
 
+
+// Production error handler
+/* istanbul ignore next */ 
+if (app.get('env') === 'production') {
+  app.use(function(err, req, res, next) {
+    console.error(err.stack);
+    res.sendStatus(err.status || 500);
+  });
+}
 
 app.listen(process.env.PORT, process.env.IP, function(){
     console.log("=========================");
