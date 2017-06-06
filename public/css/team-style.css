@@ -35,16 +35,7 @@ color: #f6f7eb;
 font-family: 'Pacifico';
 font-size: 2.8rem;
 }
-.hat {
-	max-height: 35px;
-	display: inline-block;
-    display: inline;
-}
 
-.navbar-brand>img {
-	display: inline-block;
-	margin-right: -19px;
-}
 .jumbotron {
 padding-top: 45px;
 padding-bottom: 10px;
@@ -108,24 +99,6 @@ padding-bottom: 5px;
 .nav>li>a {
 background: #393e41;
 }
-.footer {
-	text-align: center;
-	padding: 20px;
-	font-size: 1.5rem;
-	font-family: 'Raleway', sans-serif;
-	position: relative;
-	bottom: 0;
-	left: 0;
-	height: auto;
-	background-color: white;
-	width: 100%;
-	margin-top: 20px;
-  	display: table-row;
-    height: 0;
-}
-.min-footer {
-padding-top: 15px;
-}
 .jumbotron h4{
 margin-bottom: 70px;
 }
@@ -162,7 +135,7 @@ margin-right: 5px;
 background: #eaeaea;
 }
 .button-social {
-background: #ffffff;
+/*background: #ffffff;*/
 border: 0px;
 color: #2c3e50;
 }

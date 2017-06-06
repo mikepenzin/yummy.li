@@ -12,20 +12,18 @@ router.get("/", middleware.PersonalPage, function(req, res){
 });
 
 // Used Environment variable (process.env.API_URL) for personal API key from Food2Fork
-// For development use - export API_URL=ec0cc812a67bdf0f980e49db6f3fca85
 
 //SHOW - search results for recipes - by ingridients 
 router.get("/q", function(req, res){
     var search = req.query.search;
     var page = Number(req.query.page) || 1;
-    var apiURL = process.env.API_URL || 'ec0cc812a67bdf0f980e49db6f3fca85';
+    var apiURL = process.env.API_URL;
     var url = "http://food2fork.com/api/search?key=" + apiURL + "&page=" + page + "&q=" + search + "&sort=r";
     request(url, function (error, response, body) {
         /* istanbul ignore else */ 
         if (!error && response.statusCode == 200) {
             var data = JSON.parse(body);
             data = data.recipes;
-            console.log(data);
             if(data.length !== 0){   
                //this array is not empty 
                res.render("recipe/search", {data:data, q:search, page:page});
@@ -41,6 +39,32 @@ router.get("/q", function(req, res){
     });
 });
 
+
+//SHOW - search results for recipes - by ingridients 
+router.get("/trending", function(req, res){
+    var page = Number(req.query.page) || 1;
+    var apiURL = process.env.API_URL;
+    var url = "http://food2fork.com/api/search?key=" + apiURL + "&page=" + page + "&q=&sort=t";
+    request(url, function (error, response, body) {
+        /* istanbul ignore else */ 
+        if (!error && response.statusCode == 200) {
+            var data = JSON.parse(body);
+            data = data.recipes;
+            console.log(data);
+            if(data.length !== 0){   
+               //this array is not empty 
+               res.render("general/trending", {data:data, page:page});
+            } else {
+               //this array is empty
+               res.render("recipe/noresults", {q:""});
+            }
+        } else {
+            console.log("Something whent wrong!");
+            console.log(error);
+            res.redirect("back");
+        }
+    });
+});
 
 //SHOW - Team page
 router.get("/team", function(req, res){
@@ -62,18 +86,36 @@ router.get("/:user_id", middleware.isLoggedIn, function(req, res){
                 var search = foundUser.favFood;
                 search = search.join(", ");
                 var page = 1;
-                var apiURL = process.env.API_URL || 'ec0cc812a67bdf0f980e49db6f3fca85';
+                if (foundUser.favFood.length <= 3) { 
+                    page = Math.floor(Math.random() * 5); 
+                }
+                var trendingPage = Math.floor(Math.random() * 50);
+                var apiURL = process.env.API_URL;
+                var trending_url = "http://food2fork.com/api/search?key=" + apiURL + "&page=" + trendingPage  + "&q=&sort=t";
                 var url = "http://food2fork.com/api/search?key=" + apiURL + "&page=" + page + "&q=" + search + "&sort=r";
                 request(url, function (error, response, body) {
+                    /* istanbul ignore else */ 
                     if (!error && response.statusCode == 200) {
                         var data = JSON.parse(body);
+                        var dataCount = 5;
                         data = data.recipes;
-                        if(data.length !== 0){   
-                            //this array is not empty 
-                            res.render("general/personal", {user:foundUser, data:data, recipeCount:foundUser.recipes.length});
+                        if (data.length < 5) {
+                            dataCount = data.length;
+                        }
+                        if(data.length !== 0){ 
+                            request(trending_url, function (error, response, body) {
+                                var trending = JSON.parse(body);
+                                trending = trending.recipes;
+                                //this array is not empty 
+                                res.render("general/personal", {user:foundUser, data:data, recipeCount:foundUser.recipes.length, trending:trending, dataCount: dataCount});
+                            });    
                         } else {
-                            //this array is empty
-                            res.render("general/personal", {user:foundUser, recipeCount:foundUser.recipes.length});
+                            request(trending_url, function (error, response, body) {
+                                var trending = JSON.parse(body);
+                                trending = trending.recipes;
+                                //this array is empty 
+                                res.render("general/personal", {user:foundUser, recipeCount:foundUser.recipes.length, trending:trending});
+                            }); 
                         }
                     } else {
                         console.log("Something whent wrong!");
@@ -82,8 +124,15 @@ router.get("/:user_id", middleware.isLoggedIn, function(req, res){
                     }
                 });
             } else {
-                console.log(foundUser);
-                res.render("general/personal", {user:foundUser, recipeCount:foundUser.recipes.length});
+                trendingPage = Math.floor(Math.random() * 50);
+                apiURL = process.env.API_URL;
+                trending_url = "http://food2fork.com/api/search?key=" + apiURL + "&page=" + trendingPage  + "&q=&sort=t";
+                request(trending_url, function (error, response, body) {
+                    var trending = JSON.parse(body);
+                    trending = trending.recipes;
+                    //this array is not empty 
+                    res.render("general/personal", {user:foundUser, recipeCount:foundUser.recipes.length, trending:trending});
+                }); 
             }
         }
     });
@@ -91,9 +140,10 @@ router.get("/:user_id", middleware.isLoggedIn, function(req, res){
 
 //SHOW - Recipe data
 router.get("/recipe/:recipe_id", function(req, res){
-    var apiURL = process.env.API_URL || 'ec0cc812a67bdf0f980e49db6f3fca85';
+    var apiURL = process.env.API_URL;
     var url = "http://food2fork.com/api/get?key=" + apiURL + "&rId=" + req.params.recipe_id;
     request(url, function (error, response, body) {
+        /* istanbul ignore else */ 
         if (!error && response.statusCode == 200) {
             var data = JSON.parse(body);
             data = data.recipe;

@@ -22,7 +22,11 @@
             	    	<div class="item thumbnail">
             		    	<img src="<%= recipe.image_url %>" alt="<%- recipe.title %>">
             			    <div class="caption">
-            					<a href="/recipe/<%= recipe.id %>" class="link"><h5><%- recipe.title %>...</h5></a>
+            			        <% if (recipe.title.length > 50) { %>
+                                    <a href="/recipe/<%= recipe.id %>" class="link"><h5><%- recipe.title.substring(0, 50) %>...</h5></a>
+                                <% } else { %>
+                                    <a href="/recipe/<%= recipe.id %>" class="link"><h5><%- recipe.title %></h5></a>
+                                <% } %>
             					<span class="label label-default"><%= recipe.publisher %></span>
             					<br><br>
             					<p>
