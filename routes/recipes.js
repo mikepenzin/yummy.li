@@ -50,7 +50,6 @@ router.get("/trending", function(req, res){
         if (!error && response.statusCode == 200) {
             var data = JSON.parse(body);
             data = data.recipes;
-            console.log(data);
             if(data.length !== 0){   
                //this array is not empty 
                res.render("general/trending", {data:data, page:page});
