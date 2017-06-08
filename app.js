@@ -75,7 +75,7 @@ app.use(express.static(__dirname + "/public", { maxAge: 8640000000 }));
 
 // Configure view engine
 app.set("view engine","ejs");
-app.locals.rmWhitespace = true;
+// app.locals.rmWhitespace = true;
 
 app.use(methodOverride("_method"));
 
