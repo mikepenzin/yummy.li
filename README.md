@@ -1,5 +1,5 @@
 # yummy.li
-[![version tag](https://img.shields.io/badge/version-1.9.0-brightgreen.svg)](https://github.com/mikepenzin/yummy.li) [![license](https://img.shields.io/github/license/mikepenzin/yummy.li.svg)](https://github.com/mikepenzin/yummy.li) [![Build Status](https://travis-ci.org/mikepenzin/yummy.li.svg?branch=master)](https://travis-ci.org/mikepenzin/yummy.li) [![Coverage Status](https://coveralls.io/repos/github/mikepenzin/yummy.li/badge.svg?branch=master)](https://coveralls.io/github/mikepenzin/yummy.li?branch=master) [![Known Vulnerabilities](https://snyk.io/test/github/mikepenzin/yummy.li/badge.svg)](https://snyk.io/test/github/mikepenzin/yummy.li)
+[![version tag](https://img.shields.io/badge/version-1.9.1-brightgreen.svg)](https://github.com/mikepenzin/yummy.li) [![license](https://img.shields.io/github/license/mikepenzin/yummy.li.svg)](https://github.com/mikepenzin/yummy.li) [![Build Status](https://travis-ci.org/mikepenzin/yummy.li.svg?branch=master)](https://travis-ci.org/mikepenzin/yummy.li) [![Coverage Status](https://coveralls.io/repos/github/mikepenzin/yummy.li/badge.svg?branch=master)](https://coveralls.io/github/mikepenzin/yummy.li?branch=master) 
 
 Search recipes using ingredients you already have in the kitchen! Used amazing API of Food2Fork
 
@@ -14,6 +14,10 @@ CI: Gulp, Travis CI, Github, Heroku
 ------------------------------------------------------------
 
 ## // Release Notes
+
+#### v. 1.9.1 - Major bug fixed
+
+- Major Personal page bug fixed
 
 #### v. 1.9.0 - Added Trending recipes page and section inside Personal page
 

@@ -76,21 +76,23 @@ router.get("/team", function(req, res){
 router.get("/:user_id", middleware.isLoggedIn, function(req, res){
     
     var userID = mongoose.Types.ObjectId(req.params.user_id); 
+    var trendingPage = Math.floor(Math.random() * 50);
+    var apiURL = process.env.API_URL;
+    var trending_url = "http://food2fork.com/api/search?key=" + apiURL + "&page=" + trendingPage  + "&q=&sort=t";
+    
     User.findById(userID, function(err, foundUser){
         /* istanbul ignore if */
         if (err) {
             console.log(err);    
         } else {
             if ((foundUser.favFood.length > 0) && (foundUser.favFood[0] != "")) {
+                var noData = true;
                 var search = foundUser.favFood;
                 search = search.join(", ");
                 var page = 1;
                 if (foundUser.favFood.length <= 3) { 
                     page = Math.floor(Math.random() * 5); 
                 }
-                var trendingPage = Math.floor(Math.random() * 50);
-                var apiURL = process.env.API_URL;
-                var trending_url = "http://food2fork.com/api/search?key=" + apiURL + "&page=" + trendingPage  + "&q=&sort=t";
                 var url = "http://food2fork.com/api/search?key=" + apiURL + "&page=" + page + "&q=" + search + "&sort=r";
                 request(url, function (error, response, body) {
                     /* istanbul ignore else */ 
@@ -98,6 +100,7 @@ router.get("/:user_id", middleware.isLoggedIn, function(req, res){
                         var data = JSON.parse(body);
                         var dataCount = 5;
                         data = data.recipes;
+                        console.log("Data: " + data.length);
                         if (data.length < 5) {
                             dataCount = data.length;
                         }
@@ -105,15 +108,17 @@ router.get("/:user_id", middleware.isLoggedIn, function(req, res){
                             request(trending_url, function (error, response, body) {
                                 var trending = JSON.parse(body);
                                 trending = trending.recipes;
+                                console.log("Trending: " + trending.length);
                                 //this array is not empty 
-                                res.render("general/personal", {user:foundUser, data:data, recipeCount:foundUser.recipes.length, trending:trending, dataCount: dataCount});
+                                res.render("general/personal", {user:foundUser, data:data, noData:noData, recipeCount:foundUser.recipes.length, trending:trending, dataCount: dataCount});
                             });    
                         } else {
                             request(trending_url, function (error, response, body) {
                                 var trending = JSON.parse(body);
                                 trending = trending.recipes;
+                                console.log("Trending: " + trending.length);
                                 //this array is empty 
-                                res.render("general/personal", {user:foundUser, recipeCount:foundUser.recipes.length, trending:trending});
+                                res.render("general/personal", {user:foundUser, noData:noData, recipeCount:foundUser.recipes.length, trending:trending});
                             }); 
                         }
                     } else {
@@ -123,14 +128,12 @@ router.get("/:user_id", middleware.isLoggedIn, function(req, res){
                     }
                 });
             } else {
-                trendingPage = Math.floor(Math.random() * 50);
-                apiURL = process.env.API_URL;
-                trending_url = "http://food2fork.com/api/search?key=" + apiURL + "&page=" + trendingPage  + "&q=&sort=t";
                 request(trending_url, function (error, response, body) {
                     var trending = JSON.parse(body);
                     trending = trending.recipes;
-                    //this array is not empty 
-                    res.render("general/personal", {user:foundUser, recipeCount:foundUser.recipes.length, trending:trending});
+                    console.log("Found user: " + foundUser);
+                    console.log("Going to Personal NoData page");
+                    res.render("general/personalNoData", {user:foundUser, recipeCount:foundUser.recipes.length, trending:trending});
                 }); 
             }
         }
