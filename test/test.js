@@ -40,6 +40,16 @@ describe('yummyli', function() {
       });
   });
   
+  it('GET - Trending recipes page', function(done) {
+    chai.request(app)
+      .get('/robots.txt')
+      .end(function(err, res){
+        res.should.have.status(200);
+        res.should.be.txt;
+        done();
+      });
+  });
+  
   it('GET - General 404 page', function(done) {
     chai.request(app)
       .get('/32590rw9807swgiosdgskljdgsdkjlghw3o295y2398y5rtw9efohsdflkhsdlgoha98p45y34985yht')

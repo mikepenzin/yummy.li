@@ -5,15 +5,21 @@ var express     = require("express"),
     User        = require('../models/user'),
     router      = express.Router();
 
-//Index route - Show search form
+//  Index route - Show search form
 router.get("/", middleware.PersonalPage, function(req, res){
     var title = "yummy.li -  Search recipes using ingredients you already have in the kitchen! What's in your fridge?";
     res.render("general/home", {title: title});
 });
 
-// Used Environment variable (process.env.API_URL) for personal API key from Food2Fork
+//  Route for robots.txt file
+router.get('/robots.txt', function (req, res) {
+    res.type('text/plain');
+    res.send("User-agent: *\nDisallow: ");
+});
 
-//SHOW - search results for recipes - by ingridients 
+//  Used Environment variable (process.env.API_URL) for personal API key from Food2Fork
+
+//  SHOW - search results for recipes - by ingridients 
 router.get("/q", function(req, res){
     var search = req.query.search;
     var page = Number(req.query.page) || 1;
@@ -25,10 +31,10 @@ router.get("/q", function(req, res){
             var data = JSON.parse(body);
             data = data.recipes;
             if(data.length !== 0){   
-               //this array is not empty 
+               // this array is not empty 
                res.render("recipe/search", {data:data, q:search, page:page});
             } else {
-               //this array is empty
+               // this array is empty
                res.render("recipe/noresults", {q:search});
             }
         } else {
@@ -40,7 +46,7 @@ router.get("/q", function(req, res){
 });
 
 
-//SHOW - search results for recipes - by ingridients 
+//  SHOW - search results for recipes - by ingridients 
 router.get("/trending", function(req, res){
     var page = Number(req.query.page) || 1;
     var apiURL = process.env.API_URL;
@@ -51,10 +57,10 @@ router.get("/trending", function(req, res){
             var data = JSON.parse(body);
             data = data.recipes;
             if(data.length !== 0){   
-               //this array is not empty 
+               // this array is not empty 
                res.render("general/trending", {data:data, page:page});
             } else {
-               //this array is empty
+               // this array is empty
                res.render("recipe/noresults", {q:""});
             }
         } else {
@@ -65,14 +71,14 @@ router.get("/trending", function(req, res){
     });
 });
 
-//SHOW - Team page
+// SHOW - Team page
 router.get("/team", function(req, res){
     res.render("general/team");
 });
 
 
 /* istanbul ignore next */
-//Index route - Show search form
+// Index route - Show search form
 router.get("/:user_id", middleware.isLoggedIn, function(req, res){
     
     var userID = mongoose.Types.ObjectId(req.params.user_id); 
@@ -109,7 +115,7 @@ router.get("/:user_id", middleware.isLoggedIn, function(req, res){
                                 var trending = JSON.parse(body);
                                 trending = trending.recipes;
                                 console.log("Trending: " + trending.length);
-                                //this array is not empty 
+                                // this array is not empty 
                                 res.render("general/personal", {user:foundUser, data:data, noData:noData, recipeCount:foundUser.recipes.length, trending:trending, dataCount: dataCount});
                             });    
                         } else {
@@ -117,7 +123,7 @@ router.get("/:user_id", middleware.isLoggedIn, function(req, res){
                                 var trending = JSON.parse(body);
                                 trending = trending.recipes;
                                 console.log("Trending: " + trending.length);
-                                //this array is empty 
+                                // this array is empty 
                                 res.render("general/personal", {user:foundUser, noData:noData, recipeCount:foundUser.recipes.length, trending:trending});
                             }); 
                         }
@@ -140,7 +146,7 @@ router.get("/:user_id", middleware.isLoggedIn, function(req, res){
     });
 });
 
-//SHOW - Recipe data
+// SHOW - Recipe data
 router.get("/recipe/:recipe_id", function(req, res){
     var apiURL = process.env.API_URL;
     var url = "http://food2fork.com/api/get?key=" + apiURL + "&rId=" + req.params.recipe_id;
@@ -150,10 +156,10 @@ router.get("/recipe/:recipe_id", function(req, res){
             var data = JSON.parse(body);
             data = data.recipe;
             if(data.length !== 0){   
-               //this array is not empty 
+               // this array is not empty 
                res.render("recipe/show", {recipe:data});
             } else {
-               //this array is empty
+               // this array is empty
                res.redirect("back");
                 }
         } else {
@@ -165,7 +171,7 @@ router.get("/recipe/:recipe_id", function(req, res){
 });
 
 /* istanbul ignore next */ 
-// UPDATE - Add recipe to User's wishlist
+//  UPDATE - Add recipe to User's wishlist
 router.put("/wishlist/:user_id/:recipe_id",middleware.isLoggedIn, function(req, res){
     var newWishlistItem = {
         id: req.body.id, 
@@ -187,7 +193,7 @@ router.put("/wishlist/:user_id/:recipe_id",middleware.isLoggedIn, function(req, 
 });
 
 /* istanbul ignore next */ 
-//UPDATE - Remove recipe from User's wishlist
+// UPDATE - Remove recipe from User's wishlist
 router.put("/wishlist/:user_id/:recipe_id/remove",middleware.isLoggedIn, function(req, res){
     var id = req.params.recipe_id;
     
