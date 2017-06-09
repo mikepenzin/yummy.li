@@ -40,8 +40,8 @@
                 <div style="margin: 0 auto; !important" id="trending-recipes">
                     
                     <% trendRand = [] %>
-                    <%    while(trendRand.length < 6) { %>
-                    <%        var randomnumber = Math.ceil(Math.random() * (30 - 0) + 0) %>
+                    <%    while(trendRand.length < 5) { %>
+                    <%        var randomnumber = Math.ceil(Math.random() * (29 - 0) + 0) %>
                     <%        if(trendRand.indexOf(randomnumber) > -1) continue; %>
                     <%        trendRand[trendRand.length] = randomnumber; %>
                     <%    } %>
