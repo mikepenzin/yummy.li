@@ -1,6 +1,6 @@
 {
   "name": "yummyli",
-  "version": "1.9.2",
+  "version": "1.9.3",
   "description": "Search recipes by ingredients",
   "main": "app.js",
   "scripts": {

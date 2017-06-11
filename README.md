@@ -1,5 +1,5 @@
 # yummy.li
-[![version tag](https://img.shields.io/badge/version-1.9.2-brightgreen.svg)](https://github.com/mikepenzin/yummy.li) [![license](https://img.shields.io/github/license/mikepenzin/yummy.li.svg)](https://github.com/mikepenzin/yummy.li) [![Build Status](https://travis-ci.org/mikepenzin/yummy.li.svg?branch=master)](https://travis-ci.org/mikepenzin/yummy.li) [![Coverage Status](https://coveralls.io/repos/github/mikepenzin/yummy.li/badge.svg?branch=master)](https://coveralls.io/github/mikepenzin/yummy.li?branch=master) 
+[![version tag](https://img.shields.io/badge/version-1.9.3-brightgreen.svg)](https://github.com/mikepenzin/yummy.li) [![license](https://img.shields.io/github/license/mikepenzin/yummy.li.svg)](https://github.com/mikepenzin/yummy.li) [![Build Status](https://travis-ci.org/mikepenzin/yummy.li.svg?branch=master)](https://travis-ci.org/mikepenzin/yummy.li) [![Coverage Status](https://coveralls.io/repos/github/mikepenzin/yummy.li/badge.svg?branch=master)](https://coveralls.io/github/mikepenzin/yummy.li?branch=master) 
 
 Search recipes using ingredients you already have in the kitchen! Used amazing API of Food2Fork
 
@@ -14,6 +14,13 @@ CI: Gulp, Travis CI, Github, Heroku
 ------------------------------------------------------------
 
 ## // Release Notes
+
+#### v. 1.9.3 - Added welcome mail
+
+- Added welcome mail on signup
+- Updated signup page, including form validation
+- Minor bugs fixed
+
 
 #### v. 1.9.2 - Added robots.txt route
 
