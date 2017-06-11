@@ -50,16 +50,16 @@ router.post("/signup", function(req, res){
       return res.render("users/signup");
     } else {
       passport.authenticate("local")(req, res, function(){
-        res.redirect("/"); 
-      });
-      console.log("Start sending mail");
-      smtpTransport.sendMail(welcomeMail, function(err) {
-        /* istanbul ignore if */
-        if (err) {
-          console.log(err);
-        } else {
-          console.log("Message sent successfully!");
-        }
+        console.log("Start sending mail");
+        smtpTransport.sendMail(welcomeMail, function(err) {
+          /* istanbul ignore if */
+          if (err) {
+            console.log(err);
+          } else {
+            console.log("Message sent successfully!");
+            res.redirect("/");
+          }
+        });
       });
     }
   });
