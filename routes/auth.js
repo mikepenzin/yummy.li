@@ -30,6 +30,18 @@ router.post("/signup", function(req, res){
     name: req.body.name,
     surname: req.body.surname
   });
+  var welcomeMail = {
+    to: req.body.username,
+    from: 'noreply@yummy.li',
+    subject: 'yummy.li // Welcome aboard!',
+    text: "<img src='https://yummy.li/img/Logo_yummyli.png' style='max-height=200px; display: block; margin: 0 auto;' /> \n\n" +
+    "Welcome to yummy.li!" + "\n\n" + 
+    "Dear " + req.body.name + " " + req.body.surname + ", \n\n" +
+    "We have created an account for you on yummy.li, to login visit https://yummy.li/ \n\n" +
+    "Email: " + req.body.username + "\n\n\n\n" + 
+    "Discover trending recipes in: <a href='http://yummy.li/trending'>yummy.li/trending</a>  \n\n\n\n" +
+    "Best Regards, \n\n yummy.li team"
+  };
   User.register(newUser, req.body.password, function(err, user){
     /* istanbul ignore if */
     /* istanbul ignore else */
@@ -37,8 +49,17 @@ router.post("/signup", function(req, res){
       console.log(err);
       return res.render("users/signup");
     } else {
-      passport.authenticate("local")(req, res, function(){
-          res.redirect("/"); 
+      console.log("Start sending mail");
+      smtpTransport.sendMail(welcomeMail, function(err) {
+        /* istanbul ignore if */
+        if (err) {
+          console.log(err);
+        } else {
+          console.log("Message sent successfully!");
+          passport.authenticate("local")(req, res, function(){
+              res.redirect("/"); 
+          });
+        }
       });
     }
   });
@@ -100,7 +121,7 @@ router.post('/forgot', function(req, res, next) {
           'http://' + req.headers.host + '/auth/reset/' + token + '\n\n' +
           'If you did not request this, please ignore this email and your password will remain unchanged.\n'
       };
-        console.log("Message sent to: " + user.username);
+      console.log("Message sent to: " + user.username);
       smtpTransport.sendMail(mailOptions, function(err) {
         done(err, 'done');
       });
