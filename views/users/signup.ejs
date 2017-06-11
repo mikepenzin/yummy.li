@@ -34,12 +34,13 @@
 					</div>
 					<hr>
 					<div>
-					    <label class="control-label" for="email">Password:</label>
-						<input name="password" type="password" placeholder="Enter desired password" class="form-control input-md" require>
+					    <label class="control-label" for="email">Password:</label><br>
+					    <small>Password must contain at least 6 characters, including UPPER/lowercase and numbers</small>
+						<input name="password" type="password" placeholder="Enter desired password" class="form-control input-md" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}">
 					</div>
 					<div>
-					    <label class="control-label" for="email">Retype Password:</label>
-						<input name="cpassword" type="password" placeholder="Enter desired password" class="form-control input-md" require>
+					    <label class="control-label" for="email">Confirm Password:</label>
+						<input name="cpassword" type="password" placeholder="Enter desired password" class="form-control input-md">
 					</div>
 					<br>
 					<div>

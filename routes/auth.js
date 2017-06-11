@@ -103,7 +103,7 @@ router.post('/forgot', function(req, res, next) {
       User.findOne({username: username}, function(err, user) {
         if (!user) {
             console.log(err);
-          return res.redirect('users/forgot');
+            return res.redirect('back');
         }
         user.resetPasswordToken = token;
         user.resetPasswordExpires = Date.now() + 3600000; // 1 hour
