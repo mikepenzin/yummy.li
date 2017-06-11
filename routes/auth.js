@@ -34,13 +34,14 @@ router.post("/signup", function(req, res){
     to: req.body.username,
     from: 'noreply@yummy.li',
     subject: 'yummy.li // Welcome aboard!',
-    text: "<img src='https://yummy.li/img/Logo_yummyli.png' style='max-height=200px; display: block; margin: 0 auto;' /> \n\n" +
-    "Welcome to yummy.li!" + "\n\n" + 
-    "Dear " + req.body.name + " " + req.body.surname + ", \n\n" +
-    "We have created an account for you on yummy.li, to login visit https://yummy.li/ \n\n" +
-    "Email: " + req.body.username + "\n\n\n\n" + 
-    "Discover trending recipes in: <a href='http://yummy.li/trending'>yummy.li/trending</a>  \n\n\n\n" +
-    "Best Regards, \n\n yummy.li team"
+    html: "<img src='https://yummy.li/img/Logo_yummyli.png' style='max-height=200px; display: block; margin: 0 auto;' />" + 
+    "Welcome to yummy.li!" + "<br><br><br><br>" + 
+    "Dear " + req.body.name + " " + req.body.surname + ", <br><br>" +
+    "We have created an account for you on yummy.li, to login visit https://yummy.li/ <br><br>" +
+    "Email: " + req.body.username + "<br><br>" + 
+    "Discover trending recipes in: <a href='http://yummy.li/trending'>yummy.li/trending</a>  <br><br><br><br>" +
+    "<b>Best Regards, <br><br>" +
+    "yummy.li team</b>"
   };
   User.register(newUser, req.body.password, function(err, user){
     /* istanbul ignore if */
