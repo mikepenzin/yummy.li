@@ -49,6 +49,9 @@ router.post("/signup", function(req, res){
       console.log(err);
       return res.render("users/signup");
     } else {
+      passport.authenticate("local")(req, res, function(){
+        res.redirect("/"); 
+      });
       console.log("Start sending mail");
       smtpTransport.sendMail(welcomeMail, function(err) {
         /* istanbul ignore if */
@@ -56,9 +59,6 @@ router.post("/signup", function(req, res){
           console.log(err);
         } else {
           console.log("Message sent successfully!");
-          passport.authenticate("local")(req, res, function(){
-              res.redirect("/"); 
-          });
         }
       });
     }
