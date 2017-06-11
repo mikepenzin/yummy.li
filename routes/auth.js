@@ -34,7 +34,7 @@ router.post("/signup", function(req, res){
     to: req.body.username,
     from: 'noreply@yummy.li',
     subject: 'yummy.li // Welcome aboard!',
-    html: "<img src='https://yummy.li/img/Logo_yummyli.png' style='max-height=200px; display: block; margin: 0 auto;' />" + 
+    html: "<img src='https://yummy.li/img/Logo_yummyli.png' style='height=150px; display: block; margin: 0 auto;' />" + 
     "Welcome to yummy.li!" + "<br><br><br><br>" + 
     "Dear " + req.body.name + " " + req.body.surname + ", <br><br>" +
     "We have created an account for you on yummy.li, to login visit https://yummy.li/ <br><br>" +
