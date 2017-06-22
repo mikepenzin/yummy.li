@@ -6,3 +6,7 @@ patch:
   'npm:ms:20170412':
     - compression > debug > ms:
         patched: '2017-06-22T20:28:54.041Z'
+      snyk > snyk-try-require > debug > ms:
+        patched: '2017-06-22T20:46:24.894Z'
+    - compression > debug > ms:
+        patched: '2017-06-22T20:46:24.894Z'
