@@ -6,11 +6,13 @@ patch:
   'npm:ms:20170412':
     - morgan > debug > ms:
         patched: '2017-05-22T18:46:33.365Z'
-      compression > debug > ms:
-        patched: '2017-06-07T16:21:33.550Z'
     - mongoose > ms:
         patched: '2017-05-22T18:46:33.365Z'
     - compression > debug > ms:
         patched: '2017-05-22T18:46:33.365Z'
     - mongoose > mquery > debug > ms:
         patched: '2017-05-22T18:46:33.365Z'
+    - compression > debug > ms:
+        patched: '2017-06-07T16:21:33.550Z'
+    - compression > debug > ms:
+        patched: '2017-06-22T05:23:00.752Z'
