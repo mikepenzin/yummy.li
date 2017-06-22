@@ -74,9 +74,15 @@
 								<tbody>
 								    <% for(var i = 0; i < ingredients.length; i++){ %>   
     									<tr>
-    										<td>
-    											<%= recipe.ingredients[i] %>
-    										</td>
+    										<% if(recipe.ingredients[i].charAt(Number(recipe.ingredients[i].length) - 1) == ":") { %>
+	    										<td>
+	    											<b><%- recipe.ingredients[i] %></b>
+	    										</td>
+	    									<% } else { %>
+	    										<td>
+	    											<%- recipe.ingredients[i] %>
+	    										</td>
+	    									<% } %>
     									</tr>
 									<% }; %>
 								</tbody>

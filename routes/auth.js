@@ -51,7 +51,6 @@ router.post("/signup", function(req, res){
       return res.render("users/signup");
     } else {
       passport.authenticate("local")(req, res, function(){
-        console.log("Start sending mail");
         smtpTransport.sendMail(welcomeMail, function(err) {
           /* istanbul ignore if */
           if (err) {

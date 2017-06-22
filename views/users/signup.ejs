@@ -34,7 +34,8 @@
 					</div>
 					<hr>
 					<div>
-					    <label class="control-label" for="email">Password:</label><br>
+					    <label class="control-label" for="email">Password:</label>
+					    <br>
 					    <small>Password must contain at least 6 characters, including UPPER/lowercase and numbers</small>
 						<input name="password" type="password" placeholder="Enter desired password" class="form-control input-md" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}">
 					</div>
@@ -54,20 +55,22 @@
 	
 <% include ../partials/modal-hiw %>
 <% include ../partials/html-footer %>
+
 <script>
-function validateForm() {
-    var x = document.forms["signup"]["username"].value;
-    var y = document.forms["signup"]["password"];
-    var z = document.forms["signup"]["cpassword"];
-    if (x == "") {
-        alert("Email field must be filled out");
-        return false;
-    } else if (y.value != z.value) { 
-	   alert("Your password and confirmation password do not match.");
-	   z.focus();
-	   return false; 
+	function validateForm() {
+		var x = document.forms["signup"]["username"].value;
+		var y = document.forms["signup"]["password"];
+		var z = document.forms["signup"]["cpassword"];
+		if (x == "") {
+			alert("Email field must be filled out");
+			return false;
+		} else if (y.value != z.value) { 
+			alert("Your password and confirmation password do not match.");
+			z.focus();
+			return false; 
+		}
 	}
-}
 </script>
+
 </body>
 </html>

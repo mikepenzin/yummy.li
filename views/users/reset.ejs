@@ -21,7 +21,8 @@
 				<form name="reset" class="form-horizontal" action"" onsubmit="return validateForm()" method="POST">
 					<!-- Text input-->							
 					<div>
-						<label class="control-label" for="email">New Password:</label>
+						<label class="control-label" for="email">New Password:</label><br>
+					    <small>Password must contain at least 6 characters, including UPPER/lowercase and numbers</small>
 						<input name="password" type="password" placeholder="Enter new password" class="form-control input-md" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}">
 					</div>
 					<div>

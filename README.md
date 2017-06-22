@@ -1,5 +1,5 @@
 # yummy.li
-[![version tag](https://img.shields.io/badge/version-1.9.3-brightgreen.svg)](https://github.com/mikepenzin/yummy.li) [![license](https://img.shields.io/github/license/mikepenzin/yummy.li.svg)](https://github.com/mikepenzin/yummy.li) [![Build Status](https://travis-ci.org/mikepenzin/yummy.li.svg?branch=master)](https://travis-ci.org/mikepenzin/yummy.li) [![Coverage Status](https://coveralls.io/repos/github/mikepenzin/yummy.li/badge.svg?branch=master)](https://coveralls.io/github/mikepenzin/yummy.li?branch=master) 
+[![version tag](https://img.shields.io/badge/version-1.9.3-brightgreen.svg)](https://github.com/mikepenzin/yummy.li) [![license](https://img.shields.io/github/license/mikepenzin/yummy.li.svg)](https://github.com/mikepenzin/yummy.li) [![Build Status](https://travis-ci.org/mikepenzin/yummy.li.svg?branch=master)](https://travis-ci.org/mikepenzin/yummy.li) [![Coverage Status](https://coveralls.io/repos/github/mikepenzin/yummy.li/badge.svg?branch=master)](https://coveralls.io/github/mikepenzin/yummy.li?branch=master) [![Snyk Status](https://snyk.io/test/github/mikepenzin/yummy.li/badge.svg)](https://snyk.io/org/mikepenzin/project/250d7fd0-8314-4fd2-a849-8da1412b1580) 
 
 Search recipes using ingredients you already have in the kitchen! Used amazing API of Food2Fork
 
