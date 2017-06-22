@@ -4,12 +4,10 @@
   "description": "Search recipes by ingredients",
   "main": "app.js",
   "scripts": {
-    "test": "snyk test && mocha",
+    "test": "mocha",
     "cover": "istanbul cover _mocha",
     "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls",
-    "start": "node app.js",
-    "snyk-protect": "snyk protect",
-    "prepare": "npm run snyk-protect"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -68,6 +66,5 @@
     "pump": "^1.0.2",
     "standard": "^10.0.2"
   },
-  "engine": "node >=4.6.1",
-  "snyk": true
+  "engine": "node >=4.6.1"
 }
