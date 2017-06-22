@@ -1,12 +1,59 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
 version: v1.7.1
-ignore: {}
+# ignores vulnerabilities until expiry date; change duration by modifying expiry date
+ignore:
+  'npm:ms:20170412':
+    - snyk > snyk-try-require > debug > ms:
+        reason: none
+        expires: '2017-07-22T20:59:07.492Z'
+    - snyk > debug > ms:
+        reason: none
+        expires: '2017-07-22T20:59:07.492Z'
+    - snyk > snyk-policy > snyk-module > debug > ms:
+        reason: none
+        expires: '2017-07-22T20:59:07.492Z'
+    - snyk > snyk-resolve-deps > snyk-module > debug > ms:
+        reason: none
+        expires: '2017-07-22T20:59:07.492Z'
+    - snyk > snyk-resolve > debug > ms:
+        reason: none
+        expires: '2017-07-22T20:59:07.493Z'
+    - snyk > snyk-policy > snyk-resolve > debug > ms:
+        reason: none
+        expires: '2017-07-22T20:59:07.493Z'
+    - snyk > snyk-resolve-deps > snyk-resolve > debug > ms:
+        reason: none
+        expires: '2017-07-22T20:59:07.493Z'
+    - snyk > snyk-module > debug > ms:
+        reason: none
+        expires: '2017-07-22T20:59:07.493Z'
+    - snyk > snyk-policy > snyk-try-require > debug > ms:
+        reason: none
+        expires: '2017-07-22T20:59:07.493Z'
+    - snyk > snyk-resolve-deps > snyk-try-require > debug > ms:
+        reason: none
+        expires: '2017-07-22T20:59:07.493Z'
+    - snyk > snyk-policy > debug > ms:
+        reason: none
+        expires: '2017-07-22T20:59:07.493Z'
+    - snyk > snyk-config > debug > ms:
+        reason: none
+        expires: '2017-07-22T20:59:07.493Z'
+    - snyk > snyk-resolve-deps > debug > ms:
+        reason: none
+        expires: '2017-07-22T20:59:07.493Z'
+    - snyk > snyk-resolve-deps > clite > debug > ms:
+        reason: none
+        expires: '2017-07-22T20:59:07.494Z'
+    - compression > debug > ms:
+        reason: none
+        expires: '2017-07-22T20:59:07.494Z'
 # patches apply the minimum changes required to fix a vulnerability
 patch:
   'npm:ms:20170412':
     - compression > debug > ms:
         patched: '2017-06-22T20:28:54.041Z'
-      snyk > snyk-try-require > debug > ms:
-        patched: '2017-06-22T20:46:24.894Z'
     - compression > debug > ms:
+        patched: '2017-06-22T20:46:24.894Z'
+    - snyk > snyk-try-require > debug > ms:
         patched: '2017-06-22T20:46:24.894Z'
