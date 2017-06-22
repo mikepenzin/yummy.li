@@ -82,10 +82,10 @@ router.get("/team", function(req, res){
 router.get("/:user_id", middleware.isLoggedIn, function(req, res){
     
     var userID = mongoose.Types.ObjectId(req.params.user_id); 
-    var trendingPage = Math.floor(Math.random() * 50);
+    var trendingPage = Math.ceil(Math.random() * (100 - 1) + 1);
     var apiURL = process.env.API_URL;
     var trending_url = "http://food2fork.com/api/search?key=" + apiURL + "&page=" + trendingPage  + "&q=&sort=t";
-    
+
     User.findById(userID, function(err, foundUser){
         /* istanbul ignore if */
         if (err) {
@@ -106,15 +106,14 @@ router.get("/:user_id", middleware.isLoggedIn, function(req, res){
                         var data = JSON.parse(body);
                         var dataCount = 5;
                         data = data.recipes;
-                        console.log("Data: " + data.length);
                         if (data.length < 5) {
                             dataCount = data.length;
                         }
                         if(data.length !== 0){ 
+                            
                             request(trending_url, function (error, response, body) {
                                 var trending = JSON.parse(body);
                                 trending = trending.recipes;
-                                console.log("Trending: " + trending.length);
                                 // this array is not empty 
                                 res.render("general/personal", {user:foundUser, data:data, noData:noData, recipeCount:foundUser.recipes.length, trending:trending, dataCount: dataCount});
                             });    
@@ -122,7 +121,6 @@ router.get("/:user_id", middleware.isLoggedIn, function(req, res){
                             request(trending_url, function (error, response, body) {
                                 var trending = JSON.parse(body);
                                 trending = trending.recipes;
-                                console.log("Trending: " + trending.length);
                                 // this array is empty 
                                 res.render("general/personal", {user:foundUser, noData:noData, recipeCount:foundUser.recipes.length, trending:trending});
                             }); 
@@ -137,8 +135,6 @@ router.get("/:user_id", middleware.isLoggedIn, function(req, res){
                 request(trending_url, function (error, response, body) {
                     var trending = JSON.parse(body);
                     trending = trending.recipes;
-                    console.log("Found user: " + foundUser);
-                    console.log("Going to Personal NoData page");
                     res.render("general/personalNoData", {user:foundUser, recipeCount:foundUser.recipes.length, trending:trending});
                 }); 
             }
@@ -216,5 +212,6 @@ router.put("/wishlist/:user_id/:recipe_id/remove",middleware.isLoggedIn, functio
         }
     });
 });
+
 
 module.exports = router;

@@ -39,8 +39,15 @@
             <div class="col-lg-12 col-md-12 col-sx-12">
                 <div style="margin: 0 auto; !important" id="trending-recipes">
                     
+                    <%    trendRand = [] %>
+                    <%    while(trendRand.length < 5) { %>
+                    <%        var randomnumber = Math.ceil(Math.random() * (29 - 0) + 0) %>
+                    <%        if(trendRand.indexOf(randomnumber) > -1) continue; %>
+                    <%        trendRand[trendRand.length] = randomnumber; %>
+                    <%    } %>
+                    
                     <% for(var u = 0; u < 5; u++) { %>  
-                        <% rand = u %>
+                        <% rand = trendRand[u] %>
                         <div class="trending thumbnail">
                             <img src="<%= trending[rand].image_url %>" alt="<%- trending[rand].title %>">
                             <div class="caption">
@@ -86,7 +93,7 @@
     
     <div class="container">
         <div class="gallery">
-            <span class="gallery-text"><i class="fa fa-heart-o" aria-hidden="true"></i> Your Wishlist</span>
+            <span class="gallery-text"><i class="fa fa-heart-o" aria-hidden="true"></i> Your Wishlist (<%= currentUser.recipes.length %>)</span>
             <a href="/profile/<%= currentUser._id %>/wishlist" class="btn btn-show pull-right">See All</a>
         </div>
     </div>
