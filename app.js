@@ -11,6 +11,7 @@ var express                 = require("express"),
     cookieParser            = require('cookie-parser'),
     helmet                  = require('helmet'),
     dotenv                  = require('dotenv'),
+    sslRedirect             = require('heroku-ssl-redirect'),
     app                     = express();
 
 // Load environment variables from .env file
@@ -21,6 +22,8 @@ app.use(compression(9));
 app.use(cookieParser('yummy is the best'));
 
 app.use(helmet());
+
+app.use(sslRedirect(['production']));
 
 app.use(morgan('tiny'));
 
