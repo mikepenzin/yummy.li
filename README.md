@@ -1,5 +1,6 @@
-# yummy.li
-[![version tag](https://img.shields.io/badge/version-1.9.4-brightgreen.svg)](https://github.com/mikepenzin/yummy.li) [![license](https://img.shields.io/github/license/mikepenzin/yummy.li.svg)](https://github.com/mikepenzin/yummy.li) [![Build Status](https://travis-ci.org/mikepenzin/yummy.li.svg?branch=master)](https://travis-ci.org/mikepenzin/yummy.li) [![Coverage Status](https://coveralls.io/repos/github/mikepenzin/yummy.li/badge.svg?branch=master)](https://coveralls.io/github/mikepenzin/yummy.li?branch=master) [![Snyk Status](https://snyk.io/test/github/mikepenzin/yummy.li/badge.svg)](https://snyk.io/org/mikepenzin/project/250d7fd0-8314-4fd2-a849-8da1412b1580) 
+![yummy.li logo](https://yummy.li/img/Logo_1497186262201.png)
+
+[![version tag](https://img.shields.io/badge/version-1.9.5-brightgreen.svg)](https://github.com/mikepenzin/yummy.li) [![license](https://img.shields.io/github/license/mikepenzin/yummy.li.svg)](https://github.com/mikepenzin/yummy.li) [![Build Status](https://travis-ci.org/mikepenzin/yummy.li.svg?branch=master)](https://travis-ci.org/mikepenzin/yummy.li) [![Coverage Status](https://coveralls.io/repos/github/mikepenzin/yummy.li/badge.svg?branch=master)](https://coveralls.io/github/mikepenzin/yummy.li?branch=master) [![Snyk Status](https://snyk.io/test/github/mikepenzin/yummy.li/badge.svg)](https://snyk.io/org/mikepenzin/project/250d7fd0-8314-4fd2-a849-8da1412b1580) 
 
 Search recipes using ingredients you already have in the kitchen! Used amazing API of Food2Fork
 
@@ -13,7 +14,14 @@ CI: Gulp, Travis CI, Github, Heroku
 
 ------------------------------------------------------------
 
-## // Release Notes
+## // 🍒 Release Notes
+
+#### v. 1.9.5 - Critical Bug Fix
+
+- Critical Bug Fix
+- Minor front-end bug fixes
+- Support in case of limit reached in Food2Fork API.
+
 
 #### v. 1.9.4 - Vulnerability updates
 
@@ -134,22 +142,27 @@ CI: Gulp, Travis CI, Github, Heroku
 
 
 
-## // Tests
+## // 🥞 Tests
 
 ```js
 npm run cover
 ```
 
-## // Contributing
+## // 🍲 Contributing
 
 In lieu of a formal style guide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code.
 
 
-## // Notes for future releases
+## // 🍳 Notes for future releases
 
 - Create better DB with lots of recipes
 - Add authentication with facebook, google
 - Add analytics
 - Add SEO
 - Add sitemap
+
+
+<br>
+<br>
+<p style="text-align: center;">made with ❤️ by Mike Penzin</p>
 

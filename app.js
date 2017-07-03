@@ -1,6 +1,7 @@
 var express                 = require("express"),
     bodyParser              = require("body-parser"),
     compression             = require('compression'),
+    session                 = require('express-session'),
     methodOverride          = require('method-override'),
     morgan                  = require('morgan'),
     mongoose                = require('mongoose'),
@@ -8,18 +9,16 @@ var express                 = require("express"),
     LocalStrategy           = require("passport-local"),
     User                    = require('./models/user'),
     flash                   = require('express-flash'),
-    cookieParser            = require('cookie-parser'),
     helmet                  = require('helmet'),
     dotenv                  = require('dotenv'),
     sslRedirect             = require('heroku-ssl-redirect'),
+    cookieParser            = require('cookie-parser'),
     app                     = express();
 
 // Load environment variables from .env file
 dotenv.load();
 
 app.use(compression(9));
-
-app.use(cookieParser('yummy is the best'));
 
 app.use(helmet());
 
@@ -30,21 +29,20 @@ app.use(morgan('tiny'));
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.DATABASEURL);
 
-//=========================
-// Passport configuration
-//=========================
-
 var expiryDate = new Date(Date.now() + 2 * 30 * 24 * 60 * 60 * 1000); // 2 month
 
-app.use(require("express-session")({
+app.use(session({
     secret: process.env.SESSION_SECRET,
-    name: 'yummyId',
+    name: 'yummySession',
     resave: false,
     saveUninitialized: true,
     cookie: {
-        expires: expiryDate
+        secure: true,
+        expires: expiryDate,
     }
 }));
+
+app.use(cookieParser());
 
 // Configure to use flash
 app.use(flash());
@@ -56,6 +54,7 @@ app.use(function(req, res, next){
     next();
 });
 
+// Passport configuration
 app.use(passport.initialize());
 app.use(passport.session());
 

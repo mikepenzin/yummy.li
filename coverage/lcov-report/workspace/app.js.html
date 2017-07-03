@@ -22,7 +22,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>42/42</span>
+        <span class='fraction'>43/43</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -37,7 +37,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>42/42</span>
+        <span class='fraction'>43/43</span>
       </div>
       <div class='fl pad1y'>
         <span class="strong">3 statements, 1 function, 3 branches</span>
@@ -152,12 +152,42 @@
 103
 104
 105
-106</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+106
+107
+108</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -169,33 +199,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
@@ -205,6 +208,7 @@
 <span class="cline-any cline-yes">34×</span>
 <span class="cline-any cline-yes">34×</span>
 <span class="cline-any cline-yes">34×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
@@ -260,6 +264,7 @@
 <span class="cline-any cline-yes">1×</span></td><td class="text"><pre class="prettyprint lang-js">var express                 = require("express"),
     bodyParser              = require("body-parser"),
     compression             = require('compression'),
+    session                 = require('express-session'),
     methodOverride          = require('method-override'),
     morgan                  = require('morgan'),
     mongoose                = require('mongoose'),
@@ -267,9 +272,10 @@
     LocalStrategy           = require("passport-local"),
     User                    = require('./models/user'),
     flash                   = require('express-flash'),
-    cookieParser            = require('cookie-parser'),
     helmet                  = require('helmet'),
     dotenv                  = require('dotenv'),
+    sslRedirect             = require('heroku-ssl-redirect'),
+    cookieParser            = require('cookie-parser'),
     app                     = express();
 &nbsp;
 // Load environment variables from .env file
@@ -277,30 +283,29 @@ dotenv.load();
 &nbsp;
 app.use(compression(9));
 &nbsp;
-app.use(cookieParser('yummy is the best'));
-&nbsp;
 app.use(helmet());
+&nbsp;
+app.use(sslRedirect(['production']));
 &nbsp;
 app.use(morgan('tiny'));
 &nbsp;
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.DATABASEURL);
 &nbsp;
-//=========================
-// Passport configuration
-//=========================
-&nbsp;
 var expiryDate = new Date(Date.now() + 2 * 30 * 24 * 60 * 60 * 1000); // 2 month
 &nbsp;
-app.use(require("express-session")({
+app.use(session({
     secret: process.env.SESSION_SECRET,
-    name: 'yummyId',
+    name: 'yummySession',
     resave: false,
     saveUninitialized: true,
     cookie: {
-        expires: expiryDate
+        secure: true,
+        expires: expiryDate,
     }
 }));
+&nbsp;
+app.use(cookieParser());
 &nbsp;
 // Configure to use flash
 app.use(flash());
@@ -312,6 +317,7 @@ app.use(function(req, res, next){
     next();
 });
 &nbsp;
+// Passport configuration
 app.use(passport.initialize());
 app.use(passport.session());
 &nbsp;
@@ -368,7 +374,7 @@ module.exports = app;  // for testing</pre></td></tr>
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Thu Jun 22 2017 21:11:32 GMT+0000 (UTC)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Jul 03 2017 17:49:58 GMT+0000 (UTC)
 </div>
 </div>
 <script src="../prettify.js"></script>

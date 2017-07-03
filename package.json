@@ -1,6 +1,6 @@
 {
   "name": "yummyli",
-  "version": "1.9.3",
+  "version": "1.9.5",
   "description": "Search recipes by ingredients",
   "main": "app.js",
   "scripts": {
@@ -33,11 +33,12 @@
     "ejs-lint": "^0.3.0",
     "express": "^4.14.0",
     "express-flash": "0.0.2",
-    "express-session": "^1.14.2",
+    "express-session": "^1.15.3",
+    "express-sessions": "^1.0.6",
     "helmet": "^3.6.1",
     "heroku-ssl-redirect": "0.0.4",
     "method-override": "^2.3.6",
-    "mongoose": "4.0.1",
+    "mongoose": "^4.10.2",
     "morgan": "^1.8.2",
     "nodemailer": "0.7.1",
     "nodemailer-sendgrid-transport": "^0.2.0",
@@ -67,5 +68,5 @@
     "pump": "^1.0.2",
     "standard": "^10.0.2"
   },
-  "engine": "node >=4.6.1"
+  "engine": "node >=6.11.0"
 }
