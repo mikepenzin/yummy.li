@@ -183,7 +183,7 @@ describe('yummyli', function() {
   it('POST - Perform Loggin', function(done) {
     chai.request(app)
       .post('/auth/login')
-      .send({username: 'trvlbids@gmail.com', passsword: '123'})
+      .send({username: 'trvlbids@gmail.com', passsword: 'Mp8320973'})
       .end(function(err, res){
         res.should.have.status(200);
         res.should.be.html;

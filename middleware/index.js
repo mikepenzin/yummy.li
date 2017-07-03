@@ -1,8 +1,9 @@
 var middlewareObj = {};
+var request = require("request");
 
 /* istanbul ignore next */ 
 middlewareObj.isLoggedIn = function (req, res, next){
-    if(req.isAuthenticated() || req.cookies.remember){
+    if(req.isAuthenticated() || req.cookies.yummySession){
         return next();
     } else {
         res.redirect("/auth/login");

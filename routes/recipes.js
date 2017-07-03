@@ -27,8 +27,8 @@ router.get("/q", function(req, res){
     var url = "http://food2fork.com/api/search?key=" + apiURL + "&page=" + page + "&q=" + search + "&sort=r";
     request(url, function (error, response, body) {
         /* istanbul ignore else */ 
-        if (!error && response.statusCode == 200) {
-            var data = JSON.parse(body);
+        var data = JSON.parse(body);
+        if (!(data.error) && !error && response.statusCode == 200) {
             data = data.recipes;
             if(data.length !== 0){   
                // this array is not empty 
@@ -53,8 +53,8 @@ router.get("/trending", function(req, res){
     var url = "http://food2fork.com/api/search?key=" + apiURL + "&page=" + page + "&q=&sort=t";
     request(url, function (error, response, body) {
         /* istanbul ignore else */ 
-        if (!error && response.statusCode == 200) {
-            var data = JSON.parse(body);
+        var data = JSON.parse(body);
+        if (!(data.error) && !error && response.statusCode == 200) {
             data = data.recipes;
             if(data.length !== 0){   
                // this array is not empty 
@@ -82,64 +82,80 @@ router.get("/team", function(req, res){
 router.get("/:user_id", middleware.isLoggedIn, function(req, res){
     
     var userID = mongoose.Types.ObjectId(req.params.user_id); 
-    var trendingPage = Math.ceil(Math.random() * (100 - 1) + 1);
+    var trendingPage = Math.ceil(Math.random() * (50 - 1) + 1);
     var apiURL = process.env.API_URL;
     var trending_url = "http://food2fork.com/api/search?key=" + apiURL + "&page=" + trendingPage  + "&q=&sort=t";
-
-    User.findById(userID, function(err, foundUser){
-        /* istanbul ignore if */
-        if (err) {
-            console.log(err);    
-        } else {
-            if ((foundUser.favFood.length > 0) && (foundUser.favFood[0] != "")) {
-                var noData = true;
-                var search = foundUser.favFood;
-                search = search.join(", ");
-                var page = 1;
-                if (foundUser.favFood.length <= 3) { 
-                    page = Math.floor(Math.random() * 5); 
-                }
-                var url = "http://food2fork.com/api/search?key=" + apiURL + "&page=" + page + "&q=" + search + "&sort=r";
-                request(url, function (error, response, body) {
-                    /* istanbul ignore else */ 
-                    if (!error && response.statusCode == 200) {
-                        var data = JSON.parse(body);
-                        var dataCount = 5;
-                        data = data.recipes;
-                        if (data.length < 5) {
-                            dataCount = data.length;
+    request(trending_url, function (error, response, body) {
+        var data = JSON.parse(body);
+        console.log(!data.error);
+        console.log(!error);
+        console.log(response.statusCode == 200);
+        if (!data.error && !error && response.statusCode == 200) {
+            User.findById(userID, function(err, foundUser){
+            /* istanbul ignore if */
+                if (err) {
+                    console.log(err);    
+                } else {
+                    if ((foundUser.favFood.length > 0) && (foundUser.favFood[0] != "")) {
+                        var noData = true;
+                        var search = foundUser.favFood;
+                        search = search.join(", ");
+                        var page = 1;
+                        if (foundUser.favFood.length <= 3) { 
+                            page = Math.floor(Math.random() * 5); 
                         }
-                        if(data.length !== 0){ 
-                            
-                            request(trending_url, function (error, response, body) {
-                                var trending = JSON.parse(body);
-                                trending = trending.recipes;
-                                // this array is not empty 
-                                res.render("general/personal", {user:foundUser, data:data, noData:noData, recipeCount:foundUser.recipes.length, trending:trending, dataCount: dataCount});
-                            });    
-                        } else {
-                            request(trending_url, function (error, response, body) {
-                                var trending = JSON.parse(body);
-                                trending = trending.recipes;
-                                // this array is empty 
-                                res.render("general/personal", {user:foundUser, noData:noData, recipeCount:foundUser.recipes.length, trending:trending});
-                            }); 
-                        }
+                        var url = "http://food2fork.com/api/search?key=" + apiURL + "&page=" + page + "&q=" + search + "&sort=r";
+                        request(url, function (error, response, body) {
+                            /* istanbul ignore else */ 
+                            var data = JSON.parse(body);
+                            if (!(data.error) && !error && response.statusCode == 200) {
+                                var dataCount = 5;
+                                data = data.recipes;
+                                if (data.length < 5) {
+                                    dataCount = data.length;
+                                }
+                                if(data.length !== 0){ 
+                                    
+                                    request(trending_url, function (error, response, body) {
+                                        var trending = JSON.parse(body);
+                                        trending = trending.recipes;
+                                        // this array is not empty 
+                                        res.render("general/personal", {user:foundUser, data:data, noData:noData, recipeCount:foundUser.recipes.length, trending:trending, dataCount: dataCount});
+                                    });    
+                                } else {
+                                    request(trending_url, function (error, response, body) {
+                                        var trending = JSON.parse(body);
+                                        trending = trending.recipes;
+                                        // this array is empty 
+                                        res.render("general/personal", {user:foundUser, noData:noData, recipeCount:foundUser.recipes.length, trending:trending});
+                                    }); 
+                                }
+                            } else {
+                                console.log("Something whent wrong!");
+                                console.log(error);
+                                res.redirect("back");
+                            }
+                        });
                     } else {
-                        console.log("Something whent wrong!");
-                        console.log(error);
-                        res.redirect("back");
+                        request(trending_url, function (error, response, body) {
+                            var trending = JSON.parse(body);
+                            trending = trending.recipes;
+                            res.render("general/personalNoData", {user:foundUser, recipeCount:foundUser.recipes.length, trending:trending});
+                        }); 
                     }
-                });
-            } else {
-                request(trending_url, function (error, response, body) {
-                    var trending = JSON.parse(body);
-                    trending = trending.recipes;
-                    res.render("general/personalNoData", {user:foundUser, recipeCount:foundUser.recipes.length, trending:trending});
-                }); 
-            }
+                }
+            });
+        } else {
+            User.findById(userID, function(err, foundUser){
+                /* istanbul ignore if */
+                if (err) {
+                    console.log(err);    
+                } else {
+                    res.render("general/home", {user:foundUser});
+                }
+            });
         }
-    });
+    });    
 });
 
 // SHOW - Recipe data
@@ -148,8 +164,8 @@ router.get("/recipe/:recipe_id", function(req, res){
     var url = "http://food2fork.com/api/get?key=" + apiURL + "&rId=" + req.params.recipe_id;
     request(url, function (error, response, body) {
         /* istanbul ignore else */ 
-        if (!error && response.statusCode == 200) {
-            var data = JSON.parse(body);
+        var data = JSON.parse(body);
+        if (!(data.error) && !error && response.statusCode == 200) {
             data = data.recipe;
             if(data.length !== 0){   
                // this array is not empty 
