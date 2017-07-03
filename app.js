@@ -91,18 +91,17 @@ app.use("/auth", authRoutes);
 
 // Production error handler
 /* istanbul ignore next */ 
-if (app.get('env') === 'production') {
-  app.use(function(err, req, res, next) {
-    console.error(err.stack);
-    res.sendStatus(err.status || 500);
-  });
-}
+// if (app.get('env') === 'production') {
+//   app.use(function(err, req, res, next) {
+//     console.error(err.stack);
+//     res.sendStatus(err.status || 500);
+//   });
+// }
 
 app.listen(process.env.PORT, process.env.IP, function(){
     console.log("=========================");
     console.log("Yummy.li Server has started!");
     console.log("=========================");
 });
-
 
 module.exports = app;  // for testing
