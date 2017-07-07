@@ -53,8 +53,8 @@ router.get("/trending", function(req, res){
     var url = "http://food2fork.com/api/search?key=" + apiURL + "&page=" + page + "&q=&sort=t";
     request(url, function (error, response, body) {
         /* istanbul ignore else */ 
-        var data = JSON.parse(body);
-        if (!(data.error) && !error && response.statusCode == 200) {
+        if (!error && response.statusCode == 200) {
+            var data = JSON.parse(body);
             data = data.recipes;
             if(data.length !== 0){   
                // this array is not empty 

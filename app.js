@@ -1,7 +1,6 @@
 var express                 = require("express"),
     bodyParser              = require("body-parser"),
     compression             = require('compression'),
-    session                 = require('express-session'),
     methodOverride          = require('method-override'),
     morgan                  = require('morgan'),
     mongoose                = require('mongoose'),
@@ -24,48 +23,10 @@ app.use(helmet());
 
 app.use(sslRedirect(['production']));
 
-app.use(morgan('tiny'));
+app.use(morgan('dev'));
 
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.DATABASEURL);
-
-var expiryDate = new Date(Date.now() + 2 * 30 * 24 * 60 * 60 * 1000); // 2 month
-
-app.use(session({
-    secret: process.env.SESSION_SECRET,
-    name: 'yummySession',
-    resave: false,
-    saveUninitialized: true,
-    cookie: {
-        secure: true,
-        expires: expiryDate,
-    }
-}));
-
-app.use(cookieParser());
-
-// Configure to use flash
-app.use(flash());
-
-app.use(function(req, res, next){
-    res.locals.currentUser = req.user;
-    res.locals.success = req.flash('success');
-    res.locals.error = req.flash('error');
-    next();
-});
-
-// Passport configuration
-app.use(passport.initialize());
-app.use(passport.session());
-
-passport.use(new LocalStrategy(User.authenticate()));
-passport.serializeUser(User.serializeUser());
-passport.deserializeUser(User.deserializeUser());
-
-app.use(function(req, res, next){
-    res.locals.currentUser = req.user;
-    next();
-});
 
 // Requring routes
 var recipeRoutes    = require("./routes/recipes"),
@@ -84,6 +45,51 @@ app.use(methodOverride("_method"));
 //Configure to use body-parser
 app.use(bodyParser.urlencoded({extended: true}));
 
+app.use(function(req, res, next){
+    res.locals.currentUser = req.user;
+    next();
+});
+
+//=========================
+// Passport configuration
+//=========================
+
+var expiryDate = new Date(Date.now() + 2 * 30 * 24 * 60 * 60 * 1000); // 2 month
+
+app.use(require("express-session")({
+    secret: "We made it!",
+    resave: false,
+    name: 'yummySession',
+    saveUninitialized: false,
+    cookie: {
+        expires: expiryDate
+    }
+}));
+
+//for Passport
+app.use(passport.initialize());
+app.use(passport.session());
+
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+//=========================
+// END - Passport configuration
+//=========================
+
+app.use(cookieParser());
+
+// Configure to use flash
+app.use(flash());
+
+app.use(function(req, res, next){
+    res.locals.currentUser = req.user;
+    res.locals.success = req.flash('success');
+    res.locals.error = req.flash('error');
+    next();
+});
+
 app.use("/", recipeRoutes);
 app.use("/profile", userRoutes);
 app.use("/auth", authRoutes);
@@ -91,12 +97,12 @@ app.use("/auth", authRoutes);
 
 // Production error handler
 /* istanbul ignore next */ 
-// if (app.get('env') === 'production') {
-//   app.use(function(err, req, res, next) {
-//     console.error(err.stack);
-//     res.sendStatus(err.status || 500);
-//   });
-// }
+if (app.get('env') === 'production') {
+  app.use(function(err, req, res, next) {
+    console.error(err.stack);
+    res.sendStatus(err.status || 500);
+  });
+}
 
 app.listen(process.env.PORT, process.env.IP, function(){
     console.log("=========================");
