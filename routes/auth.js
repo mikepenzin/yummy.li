@@ -2,7 +2,6 @@ var express                 = require("express");
 var router                  = express.Router();
 var passport                = require("passport");
 var nodemailer              = require('nodemailer');
-var sgTransport             = require('nodemailer-sendgrid-transport');
 var async                   = require('async');
 var crypto                  = require('crypto');
 var User                    = require('../models/user');
@@ -48,7 +47,8 @@ router.post("/signup", function(req, res){
     /* istanbul ignore else */
     if(err){
       console.log(err);
-      return res.render("users/signup");
+      req.flash("error", err);
+      res.render("users/signup");
     } else {
       passport.authenticate("local")(req, res, function(){
         smtpTransport.sendMail(welcomeMail, function(err) {
@@ -56,7 +56,7 @@ router.post("/signup", function(req, res){
           if (err) {
             console.log(err);
           } else {
-            console.log("Message sent successfully!");
+            req.flash("success", "Welcome a board! You just successfully Signed Up! Nice to meet you " + req.body.name + "!");
             res.redirect("/");
           }
         });
@@ -68,6 +68,7 @@ router.post("/signup", function(req, res){
 
 //SHOW - Login form
 router.get("/login", function(req, res){
+  req.flash("error", "Invalid username or password.");
   res.render("users/login");    
 });
 
@@ -75,7 +76,8 @@ router.get("/login", function(req, res){
 //LOGIN Route
 router.post("/login", passport.authenticate("local", {
     successRedirect: "/",
-    failureRedirect: "/login"
+    failureRedirect: "/auth/login",
+    failureFlash : true
   }),
   /* istanbul ignore next */ 
   function(req, res){

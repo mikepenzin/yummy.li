@@ -1,9 +1,21 @@
 ![yummy.li logo](https://yummy.li/img/Logo_1497186262201.png)
 
-[![version tag](https://img.shields.io/badge/version-1.9.5-brightgreen.svg)](https://github.com/mikepenzin/yummy.li) [![license](https://img.shields.io/github/license/mikepenzin/yummy.li.svg)](https://github.com/mikepenzin/yummy.li) [![Build Status](https://travis-ci.org/mikepenzin/yummy.li.svg?branch=master)](https://travis-ci.org/mikepenzin/yummy.li) [![Coverage Status](https://coveralls.io/repos/github/mikepenzin/yummy.li/badge.svg?branch=master)](https://coveralls.io/github/mikepenzin/yummy.li?branch=master) [![Snyk Status](https://snyk.io/test/github/mikepenzin/yummy.li/badge.svg)](https://snyk.io/org/mikepenzin/project/250d7fd0-8314-4fd2-a849-8da1412b1580) 
+[![version tag](https://img.shields.io/badge/version-1.9.5-brightgreen.svg)](https://github.com/mikepenzin/yummy.li) [![license](https://img.shields.io/github/license/mikepenzin/yummy.li.svg)](https://github.com/mikepenzin/yummy.li) [![Build Status](https://travis-ci.org/mikepenzin/yummy.li.svg?branch=master)](https://travis-ci.org/mikepenzin/yummy.li) [![Coverage Status](https://coveralls.io/repos/github/mikepenzin/yummy.li/badge.svg?branch=master)](https://coveralls.io/github/mikepenzin/yummy.li?branch=master)
+
+----------------------------
 
 Search recipes using ingredients you already have in the kitchen! Used amazing API of Food2Fork
 
+----------------------------
+
+## // Table of Content
+- [Release Notes](#--release-notes)
+- [Tests](#--tests)
+- [Contributing](#--contributing)
+- [Notes for future releases](#--notes-for-future-releases)
+
+
+----------------------------
 Frontend: Bower, EJS, Bootstrap, jQuery, CSS
 
 Backend: NodeJS, MongoDB, ExpressJS, PassportJS
@@ -15,6 +27,12 @@ CI: Gulp, Travis CI, Github, Heroku
 ------------------------------------------------------------
 
 ## // 🍒 Release Notes
+
+#### v. 1.10.0 - Added flash notifications
+
+- Added flash notifications
+- Minor bugs fixes
+
 
 #### v. 1.9.5 - Critical Bug Fix
 

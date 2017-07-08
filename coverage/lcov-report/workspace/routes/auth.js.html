@@ -22,7 +22,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>86/86</span>
+        <span class='fraction'>87/87</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -37,7 +37,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>86/86</span>
+        <span class='fraction'>87/87</span>
       </div>
       <div class='fl pad1y'>
         <span class="strong">58 statements, 20 functions, 23 branches</span>
@@ -259,36 +259,15 @@
 210
 211
 212
-213</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+213
+214
+215</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
@@ -301,12 +280,35 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
@@ -330,11 +332,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">9×</span>
+<span class="cline-any cline-yes">9×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -475,7 +479,6 @@
 var router                  = express.Router();
 var passport                = require("passport");
 var nodemailer              = require('nodemailer');
-var sgTransport             = require('nodemailer-sendgrid-transport');
 var async                   = require('async');
 var crypto                  = require('crypto');
 var User                    = require('../models/user');
@@ -521,7 +524,8 @@ router.post("/signup", function(req, res){
     /* istanbul ignore else */
     <span class="skip-if-branch" title="else path not taken" >E</span>if(err){
       console.log(err);
-      return res.render("users/signup");
+      req.flash("error", err);
+      res.render("users/signup");
     } else {
 <span class="cstat-skip" title="statement not covered" >      passport.authenticate("local")(req, res, <span class="fstat-skip" title="function not covered" >function(){</span></span>
 <span class="cstat-skip" title="statement not covered" >        smtpTransport.sendMail(welcomeMail, <span class="fstat-skip" title="function not covered" >function(err) {</span></span>
@@ -529,7 +533,7 @@ router.post("/signup", function(req, res){
 <span class="cstat-skip" title="statement not covered" >          if (err) {</span>
 <span class="cstat-skip" title="statement not covered" >            console.log(err);</span>
           } else {
-<span class="cstat-skip" title="statement not covered" >            console.log("Message sent successfully!");</span>
+<span class="cstat-skip" title="statement not covered" >            req.flash("success", "Welcome a board! You just successfully Signed Up! Nice to meet you " + req.body.name + "!");</span>
 <span class="cstat-skip" title="statement not covered" >            res.redirect("/");</span>
           }
         });
@@ -541,6 +545,7 @@ router.post("/signup", function(req, res){
 &nbsp;
 //SHOW - Login form
 router.get("/login", function(req, res){
+  req.flash("error", "Invalid username or password.");
   res.render("users/login");    
 });
 &nbsp;
@@ -548,7 +553,8 @@ router.get("/login", function(req, res){
 //LOGIN Route
 router.post("/login", passport.authenticate("local", {
     successRedirect: "/",
-    failureRedirect: "/login"
+    failureRedirect: "/auth/login",
+    failureFlash : true
   }),
   /* istanbul ignore next */ 
 <span class="fstat-skip" title="function not covered" >  function(req, res){</span>
@@ -689,7 +695,7 @@ module.exports = router;</pre></td></tr>
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Jul 07 2017 09:20:52 GMT+0000 (UTC)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Jul 08 2017 10:19:52 GMT+0000 (UTC)
 </div>
 </div>
 <script src="../../prettify.js"></script>

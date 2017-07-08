@@ -20,9 +20,9 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">94.26% </span>
+        <span class="strong">94.21% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>115/122</span>
+        <span class='fraction'>114/121</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">94.64% </span>
@@ -35,12 +35,12 @@
         <span class='fraction'>22/22</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">94.26% </span>
+        <span class="strong">94.21% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>115/122</span>
+        <span class='fraction'>114/121</span>
       </div>
       <div class='fl pad1y'>
-        <span class="strong">70 statements, 13 functions, 33 branches</span>
+        <span class="strong">69 statements, 13 functions, 33 branches</span>
         <span class="quiet">Ignored</span>  &nbsp;&nbsp;&nbsp;&nbsp;
       </div>
     </div>
@@ -278,8 +278,7 @@
 229
 230
 231
-232
-233</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+232</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -370,9 +369,6 @@
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
@@ -481,12 +477,13 @@
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -501,6 +498,7 @@
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -600,9 +598,6 @@ router.get("/:user_id", middleware.isLoggedIn, <span class="fstat-skip" title="f
 <span class="cstat-skip" title="statement not covered" >    var trending_url = "http://food2fork.com/api/search?key=" + apiURL + "&amp;page=" + trendingPage  + "&amp;q=&amp;sort=t";</span>
 <span class="cstat-skip" title="statement not covered" >    request(trending_url, <span class="fstat-skip" title="function not covered" >function (error, response, body) {</span></span>
 <span class="cstat-skip" title="statement not covered" >        var data = JSON.parse(body);</span>
-<span class="cstat-skip" title="statement not covered" >        console.log(!data.error);</span>
-<span class="cstat-skip" title="statement not covered" >        console.log(!error);</span>
-<span class="cstat-skip" title="statement not covered" >        console.log(response.statusCode == 200);</span>
 <span class="cstat-skip" title="statement not covered" >        if (!data.error &amp;&amp; !error &amp;&amp; response.statusCode == 200) {</span>
 <span class="cstat-skip" title="statement not covered" >            User.findById(userID, <span class="fstat-skip" title="function not covered" >function(err, foundUser){</span></span>
             /* istanbul ignore if */
@@ -712,6 +707,7 @@ router.put("/wishlist/:user_id/:recipe_id",middleware.isLoggedIn, <span class="f
         } else {
 <span class="cstat-skip" title="statement not covered" >            foundUser.recipes.push(newWishlistItem);</span>
 <span class="cstat-skip" title="statement not covered" >            foundUser.save();</span>
+<span class="cstat-skip" title="statement not covered" >            req.flash("success", '"' + req.body.title + '" was added to your Wishlist!');</span>
 <span class="cstat-skip" title="statement not covered" >            res.redirect("back");</span>
         }
     });
@@ -733,6 +729,7 @@ router.put("/wishlist/:user_id/:recipe_id/remove",middleware.isLoggedIn, <span c
 <span class="cstat-skip" title="statement not covered" >                        if (err){</span>
 <span class="cstat-skip" title="statement not covered" >                            console.log(err);</span>
                         } else {
+<span class="cstat-skip" title="statement not covered" >                            req.flash("success", 'Recipe was removed from your Wishlist!');</span>
 <span class="cstat-skip" title="statement not covered" >                            res.redirect("back");</span>
                         }
                     });
@@ -749,7 +746,7 @@ module.exports = router;</pre></td></tr>
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Jul 07 2017 09:20:52 GMT+0000 (UTC)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sat Jul 08 2017 10:19:52 GMT+0000 (UTC)
 </div>
 </div>
 <script src="../../prettify.js"></script>

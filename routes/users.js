@@ -73,6 +73,7 @@ router.put("/:user_id/update", middleware.isLoggedIn, function(req, res){
             console.log(err);
             res.redirect("back");
         } else {
+            req.flash('success', 'Profile was updated successfully!');
             res.redirect("/profile/" + req.params.user_id);
         }
     });
@@ -88,6 +89,7 @@ router.put("/:user_id/profilePicture", middleware.isLoggedIn, function(req, res)
             console.log(err);
             res.redirect("back");
         } else {
+            req.flash('success', 'User picture was updated successfully!');
             res.redirect("/profile/" + req.params.user_id);
         }
     });
