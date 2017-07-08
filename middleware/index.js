@@ -1,11 +1,11 @@
 var middlewareObj = {};
-var request = require("request");
 
 /* istanbul ignore next */ 
 middlewareObj.isLoggedIn = function (req, res, next){
-    if(req.isAuthenticated() || req.cookies.yummySession){
+    if(req.isAuthenticated()){
         return next();
     } else {
+        req.flash("error", "Please login first!");
         res.redirect("/auth/login");
     }
 };

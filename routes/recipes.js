@@ -87,9 +87,6 @@ router.get("/:user_id", middleware.isLoggedIn, function(req, res){
     var trending_url = "http://food2fork.com/api/search?key=" + apiURL + "&page=" + trendingPage  + "&q=&sort=t";
     request(trending_url, function (error, response, body) {
         var data = JSON.parse(body);
-        console.log(!data.error);
-        console.log(!error);
-        console.log(response.statusCode == 200);
         if (!data.error && !error && response.statusCode == 200) {
             User.findById(userID, function(err, foundUser){
             /* istanbul ignore if */
@@ -199,6 +196,7 @@ router.put("/wishlist/:user_id/:recipe_id",middleware.isLoggedIn, function(req, 
         } else {
             foundUser.recipes.push(newWishlistItem);
             foundUser.save();
+            req.flash("success", '"' + req.body.title + '" was added to your Wishlist!');
             res.redirect("back");
         }
     });
@@ -220,6 +218,7 @@ router.put("/wishlist/:user_id/:recipe_id/remove",middleware.isLoggedIn, functio
                         if (err){
                             console.log(err);
                         } else {
+                            req.flash("success", 'Recipe was removed from your Wishlist!');
                             res.redirect("back");
                         }
                     });

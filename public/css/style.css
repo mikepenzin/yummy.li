@@ -72,10 +72,14 @@ html{
 	}
 }
 
+div[data-notify="container"] {
+	opacity: 0.3 !important;
+}
 
 a {
 	color: #393e41;
 }
+
 a:hover {
 	color: #393e41;
 	text-decoration: none;

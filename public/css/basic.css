@@ -4,4 +4,5 @@
 @import '../components/jquery-ui/themes/base/jquery-ui.min.css';
 @import '../components/bootstrap-tokenfield/dist/css/tokenfield-typeahead.min.css';
 @import '../components/bootstrap-tokenfield/dist/css/bootstrap-tokenfield.min.css';
-@import '..//minified/css/style.css';
+@import '../components/animate.css/animate.min.css';
+@import '../minified/css/style.css';

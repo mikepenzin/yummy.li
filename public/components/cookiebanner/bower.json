@@ -1,0 +1,27 @@
+{
+  "name": "cookiebanner",
+  "version": "1.4.0",
+  "homepage": "https://github.com/nephila/cookie-banner",
+  "authors": [
+    "Diego Perini, Good Code, Nephila"
+  ],
+  "description": "JavaScript based cookie-info banner for complying with EU cookie law.",
+  "main": "dist/cookiebanner.js",
+  "keywords": [
+    "plugin",
+    "cookie",
+    "banner"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "build",
+    "test",
+    "*.md",
+    "Gruntfile.js",
+    "*.json",
+    "index.html"
+  ],
+  "dependencies": {
+  }
+}
