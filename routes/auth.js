@@ -47,7 +47,6 @@ router.post("/signup", function(req, res){
     /* istanbul ignore else */
     if(err){
       console.log(err);
-      req.flash("error", err);
       res.render("users/signup");
     } else {
       passport.authenticate("local")(req, res, function(){

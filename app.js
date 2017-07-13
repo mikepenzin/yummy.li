@@ -23,7 +23,7 @@ app.use(helmet());
 
 app.use(sslRedirect(['production']));
 
-app.use(morgan('dev'));
+app.use(morgan('tiny'));
 
 mongoose.Promise = global.Promise;
 mongoose.connect(process.env.DATABASEURL);

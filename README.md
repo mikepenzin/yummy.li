@@ -1,6 +1,6 @@
 ![yummy.li logo](https://yummy.li/img/Logo_1497186262201.png)
 
-[![version tag](https://img.shields.io/badge/version-1.10.0-brightgreen.svg)](https://github.com/mikepenzin/yummy.li) [![license](https://img.shields.io/github/license/mikepenzin/yummy.li.svg)](https://github.com/mikepenzin/yummy.li) [![Build Status](https://travis-ci.org/mikepenzin/yummy.li.svg?branch=master)](https://travis-ci.org/mikepenzin/yummy.li) [![Coverage Status](https://coveralls.io/repos/github/mikepenzin/yummy.li/badge.svg?branch=master)](https://coveralls.io/github/mikepenzin/yummy.li?branch=master)
+[![version tag](https://img.shields.io/badge/version-1.11.1-brightgreen.svg)](https://github.com/mikepenzin/yummy.li) [![license](https://img.shields.io/github/license/mikepenzin/yummy.li.svg)](https://github.com/mikepenzin/yummy.li) [![Build Status](https://travis-ci.org/mikepenzin/yummy.li.svg?branch=master)](https://travis-ci.org/mikepenzin/yummy.li) [![Coverage Status](https://coveralls.io/repos/github/mikepenzin/yummy.li/badge.svg?branch=master)](https://coveralls.io/github/mikepenzin/yummy.li?branch=master)
 
 ----------------------------
 
@@ -8,7 +8,7 @@ Search recipes using ingredients you already have in the kitchen! Used amazing A
 
 ----------------------------
 
-## // Table of Content
+## // 📕 Table of Content
 - [Release Notes](#--release-notes)
 - [Tests](#--tests)
 - [Contributing](#--contributing)
@@ -27,6 +27,13 @@ CI: Gulp, Travis CI, Github, Heroku
 ------------------------------------------------------------
 
 ## // 🍒 Release Notes
+
+#### v. 1.11.1 - Upgrade Node.js version
+
+- Upgrade Node.js version - due to vulnerablity issues
+- Add more video formats in Home page (better browser compatibility)
+- Add window size detection and image use if needed.
+
 
 #### v. 1.10.0 - Added flash notifications
 
@@ -158,7 +165,7 @@ CI: Gulp, Travis CI, Github, Heroku
 - Added recipepuppy API
 - Added search refine and basic functionality
 
-
+[🔼 Back to Top](#--table-of-content)
 
 ## // 🥞 Tests
 
@@ -166,9 +173,15 @@ CI: Gulp, Travis CI, Github, Heroku
 npm run cover
 ```
 
+[🔼 Back to Top](#--table-of-content)
+
+
 ## // 🍲 Contributing
 
 In lieu of a formal style guide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code.
+
+
+[🔼 Back to Top](#--table-of-content)
 
 
 ## // 🍳 Notes for future releases
@@ -179,6 +192,7 @@ In lieu of a formal style guide, take care to maintain the existing coding style
 - Add SEO
 - Add sitemap
 
+[🔼 Back to Top](#--table-of-content)
 
 <br>
 <br>
