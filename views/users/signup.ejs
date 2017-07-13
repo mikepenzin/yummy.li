@@ -10,7 +10,7 @@
 		<div class="row">
 			<div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-xs-12">
 			    <h2>SIGN UP</h2>
-				<form name="signup" class="form-horizontal" action="/auth/signup" onsubmit="return validateForm()" method="POST">
+				<form name="signup" class="form-horizontal" action="/auth/signup" onsubmit="validateForm()" method="POST">
 					
 					<p class="help-block">All fields are required!</p>
 					<div>
@@ -49,21 +49,7 @@
 <% include ../partials/modal-hiw %>
 <% include ../partials/html-footer %>
 
-<script>
-	function validateForm() {
-		var x = document.forms["signup"]["username"].value;
-		var y = document.forms["signup"]["password"];
-		var z = document.forms["signup"]["cpassword"];
-		if (x == "") {
-			alert("Email field must be filled out");
-			return false;
-		} else if (y.value != z.value) { 
-			alert("Your password and confirmation password do not match.");
-			z.focus();
-			return false; 
-		}
-	}
-</script>
+<script type="text/javascript" src="/minified/js/formValidation.js"></script>
 
 </body>
 </html>
