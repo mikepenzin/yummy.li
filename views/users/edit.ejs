@@ -2,6 +2,7 @@
 <title>Update <%= currentUser.name %>'s profile - yummy.li</title>
 
 <link rel="stylesheet" type="text/css" href="/css/basic.css">
+<link rel="stylesheet" type="text/css" href="/components/bootstrap-toggle/css/bootstrap-toggle.min.css">
 <link rel="stylesheet" type="text/css" href="/minified/css/profile-style.css">
 
 <% include ../partials/navbar-body %>
@@ -64,6 +65,20 @@
 				</div>
 				<br>
 				<div>
+				  <label>
+				  	<% if(currentUser.promo){ %>
+                        <input type="checkbox" value="true" checked data-toggle="toggle" data-size="small" data-style="slow" name="promo[]">
+				    	Send monthly updates
+                    <% } else { %>
+                        <input type="checkbox" value="true" data-toggle="toggle" data-size="small" data-style="slow" name="promo[]">
+				    	Send monthly updates
+                    <% } %>
+				    
+				  </label>
+				</div>
+				<br>
+				
+				<div>
 				    <!-- Button -->
 					<button id="signup" name="signup" class="btn btn-default btn-signup btn-block">Update your profile</button>
 				</div>
@@ -81,6 +96,7 @@
     <script type="text/javascript" src="/components/bootstrap-tokenfield/docs-assets/minified/js/typeahead.bundle.min.js" charset="UTF-8"></script>
     <script type="text/javascript" src="/minified/js/docs.js" charset="UTF-8"></script>
     <script type="text/javascript" src="/minified/js/navbar.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="/components/bootstrap-toggle/js/bootstrap-toggle.min.js"></script>
     
 </body>
 </html>

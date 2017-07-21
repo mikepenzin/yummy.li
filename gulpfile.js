@@ -2,6 +2,7 @@ var gulp        = require('gulp'),
     jshint      = require('gulp-jshint'),
     concat      = require('gulp-concat'),
     uglify      = require('gulp-uglify'),
+    htmlminify  = require("gulp-html-minify"),
     pump        = require('pump'),
     csso        = require('gulp-csso'),
     sourcemaps  = require('gulp-sourcemaps');
@@ -22,7 +23,13 @@ gulp.task('watch', function() {
   gulp.watch('public/css/*.css' || 'public/js/*.js', ['compress']);
 });
 
-gulp.task('css-compress', function () {
+gulp.task('build-html' , function(){
+  return gulp.src("public/mailTemplates/*.html")
+    .pipe(htmlminify())
+    .pipe(gulp.dest("public/minified/mailTemplates"));
+});
+
+gulp.task('css-compress', ['build-html'], function () {
   return gulp.src('public/css/*.css')
     .pipe(csso())
     .pipe(gulp.dest('public/minified/css/'));

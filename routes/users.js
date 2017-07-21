@@ -56,6 +56,12 @@ router.get("/:user_id/update", middleware.isLoggedIn, function(req, res){
 //UPDATE - User Profile
 router.put("/:user_id/update", middleware.isLoggedIn, function(req, res){
     
+    var promo;
+    if (typeof(req.body.promo) != 'undefined' && req.body.promo[0] == 'true'){
+        promo = true;
+    } else {
+        promo = false;
+    }
     var favs = req.body.favs;
         favs = favs.split(", ");
         
@@ -64,7 +70,8 @@ router.put("/:user_id/update", middleware.isLoggedIn, function(req, res){
         surname: req.body.surname,
         location: req.body.location, 
         bio: req.body.bio,
-        favFood: favs
+        favFood: favs,
+        promo: promo
     };
     
     User.findByIdAndUpdate(req.params.user_id, newUserInfo, function(err, updatedUser){

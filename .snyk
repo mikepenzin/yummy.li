@@ -48,6 +48,34 @@ ignore:
     - compression > debug > ms:
         reason: none
         expires: '2017-07-22T20:59:07.494Z'
+  'npm:cli:20160615':
+    - rhtml > html-minifier > cli:
+        reason: None given
+        expires: '2017-08-18T12:35:10.394Z'
+  'npm:connect:20120107':
+    - express-sessions > express > connect:
+        reason: None given
+        expires: '2017-08-18T12:35:10.394Z'
+  'npm:connect:20130701':
+    - express-sessions > express > connect:
+        reason: None given
+        expires: '2017-08-18T12:35:10.394Z'
+  'npm:express:20140912':
+    - express-sessions > express:
+        reason: None given
+        expires: '2017-08-18T12:35:10.394Z'
+  'npm:qs:20140806':
+    - express-sessions > express > qs:
+        reason: None given
+        expires: '2017-08-18T12:35:10.394Z'
+  'npm:qs:20140806-1':
+    - express-sessions > express > qs:
+        reason: None given
+        expires: '2017-08-18T12:35:10.394Z'
+  'npm:qs:20170213':
+    - express-sessions > express > qs:
+        reason: None given
+        expires: '2017-08-18T12:35:10.394Z'
 # patches apply the minimum changes required to fix a vulnerability
 patch:
   'npm:ms:20170412':
@@ -57,3 +85,9 @@ patch:
         patched: '2017-06-22T20:46:24.894Z'
     - snyk > snyk-try-require > debug > ms:
         patched: '2017-06-22T20:46:24.894Z'
+  'npm:minimatch:20160620':
+    - rhtml > html-minifier > cli > glob > minimatch:
+        patched: '2017-07-19T12:33:52.174Z'
+  'npm:uglify-js:20151024':
+    - rhtml > html-minifier > uglify-js:
+        patched: '2017-07-19T12:33:52.174Z'

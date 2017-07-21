@@ -28,7 +28,7 @@
 		<div id="gallery-recipes">
 			<% data.forEach(function(recipe){ %> 
 				<div class="item thumbnail">
-					<img src="<%= recipe.image_url %>" alt="<%- recipe.title %>">
+					<img src="<%= recipe.image_url.replace("http", "https"); %>" alt="<%- recipe.title %>">
 					<div class="caption">
 						<% if (recipe.title.length > 50) { %>
                             <a href="/recipe/<%= recipe.recipe_id %>" class="link"><h5><%- recipe.title.substring(0, 50) %>...</h5></a>
@@ -64,7 +64,7 @@
 					        			<form action="/wishlist/<%= currentUser._id %>/<%= recipe.recipe_id %>?_method=PUT" method="POST">
 							        		<input type='hidden' name='id' value='<%= recipe.recipe_id %>' />
 							        		<input type='hidden' name='title' value='<%- recipe.title %>' />
-							        		<input type='hidden' name='image_url' value='<%= recipe.image_url %>' />
+							        		<input type='hidden' name='image_url' value='<%= recipe.image_url.replace("http", "https"); %>' />
 							        		<input type='hidden' name='publisher' value='<%= recipe.publisher %>' />
 							                <button class="btn btn-default btn-wishlist btn-block">
 							                	<i class="fa fa-heart-o" aria-hidden="true"></i></span> Add to Wishlist
@@ -99,7 +99,7 @@
 <% include ../partials/html-footer %>
 
     <script type="text/javascript" src="/components/bootstrap-tokenfield/dist/bootstrap-tokenfield.min.js" charset="UTF-8"></script>
-    <script type="text/javascript" src="/components/bootstrap-tokenfield/docs-assets/minified/js/typeahead.bundle.min.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="/components/bootstrap-tokenfield/docs-assets/js/typeahead.bundle.min.js" charset="UTF-8"></script>
     <script type="text/javascript" src="/minified/js/docs.js" charset="UTF-8"></script>
     <script type="text/javascript" src="/minified/js/navbar.js" charset="UTF-8"></script>
     

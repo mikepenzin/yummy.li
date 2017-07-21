@@ -1,6 +1,6 @@
 ![yummy.li logo](https://yummy.li/img/Logo_1497186262201.png)
 
-[![version tag](https://img.shields.io/badge/version-1.11.1-brightgreen.svg)](https://github.com/mikepenzin/yummy.li) [![license](https://img.shields.io/github/license/mikepenzin/yummy.li.svg)](https://github.com/mikepenzin/yummy.li) [![Build Status](https://travis-ci.org/mikepenzin/yummy.li.svg?branch=master)](https://travis-ci.org/mikepenzin/yummy.li) [![Coverage Status](https://coveralls.io/repos/github/mikepenzin/yummy.li/badge.svg?branch=master)](https://coveralls.io/github/mikepenzin/yummy.li?branch=master)
+[![version tag](https://img.shields.io/badge/version-1.12.0-brightgreen.svg)](https://github.com/mikepenzin/yummy.li) [![license](https://img.shields.io/github/license/mikepenzin/yummy.li.svg)](https://github.com/mikepenzin/yummy.li) [![Build Status](https://travis-ci.org/mikepenzin/yummy.li.svg?branch=master)](https://travis-ci.org/mikepenzin/yummy.li) [![Coverage Status](https://coveralls.io/repos/github/mikepenzin/yummy.li/badge.svg?branch=master)](https://coveralls.io/github/mikepenzin/yummy.li?branch=master)
 
 ----------------------------
 
@@ -27,6 +27,16 @@ CI: Gulp, Travis CI, Github, Heroku
 ------------------------------------------------------------
 
 ## // 🍒 Release Notes
+
+#### v. 1.12.0 - Added monthly updates email
+
+- Added monthly updates email - including email templating.
+- Added ability to subscribe/unsubscribe in user profile update page.
+- Vunerability updates.
+- Updated user scheme with Registration date&time and Last login date&time.
+- Updated to latest NodeMailer to v.4
+- Lots of Bugs were fixed
+
 
 #### v. 1.11.1 - Upgrade Node.js version
 
@@ -186,15 +196,13 @@ In lieu of a formal style guide, take care to maintain the existing coding style
 
 ## // 🍳 Notes for future releases
 
-- Create better DB with lots of recipes
-- Add authentication with facebook, google
-- Add analytics
-- Add SEO
-- Add sitemap
+- Create better DB with lots of recipes.
+- Add more personalized emails with holidays emails as cron jobs.
+- Add authentication with facebook, google.
 
 [🔼 Back to Top](#--table-of-content)
 
 <br>
 <br>
-<p style="text-align: center;">made with ❤️ by Mike Penzin</p>
+<p style="text-align: center;">made with <span>&#10084;</span> by Mike Penzin</p>
 

@@ -52,7 +52,7 @@ router.get("/trending", function(req, res){
     var apiURL = process.env.API_URL;
     var url = "http://food2fork.com/api/search?key=" + apiURL + "&page=" + page + "&q=&sort=t";
     request(url, function (error, response, body) {
-        /* istanbul ignore else */ 
+        /* istanbul ignore next */ 
         if (!error && response.statusCode == 200) {
             var data = JSON.parse(body);
             data = data.recipes;
@@ -93,6 +93,8 @@ router.get("/:user_id", middleware.isLoggedIn, function(req, res){
                 if (err) {
                     console.log(err);    
                 } else {
+                    foundUser.latestLogin = Date.now();
+                    foundUser.save();
                     if ((foundUser.favFood.length > 0) && (foundUser.favFood[0] != "")) {
                         var noData = true;
                         var search = foundUser.favFood;
@@ -111,6 +113,7 @@ router.get("/:user_id", middleware.isLoggedIn, function(req, res){
                                 if (data.length < 5) {
                                     dataCount = data.length;
                                 }
+                                
                                 if(data.length !== 0){ 
                                     
                                     request(trending_url, function (error, response, body) {
@@ -134,6 +137,8 @@ router.get("/:user_id", middleware.isLoggedIn, function(req, res){
                             }
                         });
                     } else {
+                        foundUser.latestLogin = Date.now();
+                        foundUser.save();
                         request(trending_url, function (error, response, body) {
                             var trending = JSON.parse(body);
                             trending = trending.recipes;
@@ -148,6 +153,8 @@ router.get("/:user_id", middleware.isLoggedIn, function(req, res){
                 if (err) {
                     console.log(err);    
                 } else {
+                    foundUser.latestLogin = Date.now();
+                    foundUser.save();
                     res.render("general/home", {user:foundUser});
                 }
             });
