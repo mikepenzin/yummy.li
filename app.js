@@ -10,6 +10,8 @@ var express                 = require("express"),
     flash                   = require('express-flash'),
     helmet                  = require('helmet'),
     dotenv                  = require('dotenv'),
+    schedule                = require('node-schedule'),
+    cronJobs                = require('./schedule/index'),
     sslRedirect             = require('heroku-ssl-redirect'),
     cookieParser            = require('cookie-parser'),
     app                     = express();
@@ -93,6 +95,23 @@ app.use(function(req, res, next){
 app.use("/", recipeRoutes);
 app.use("/profile", userRoutes);
 app.use("/auth", authRoutes);
+
+
+//=========================
+// Cron jobs configuration
+//=========================
+/* istanbul ignore next */
+if (process.env.NODE_ENV === 'production') {
+
+    var monthly = schedule.scheduleJob({hour: 15, minute: 05, date: 1}, function(){
+      cronJobs.monthly();
+    });
+    
+}
+
+//=========================
+// End - Cron job configuration
+//=========================
 
 
 // Production error handler

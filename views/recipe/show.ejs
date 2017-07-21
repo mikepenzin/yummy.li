@@ -9,7 +9,7 @@
 <meta property="og:type"          content="website" />
 <meta property="og:title"         content="yummy.li - <%- recipe.title %>" />
 <meta property="og:description"   content="<%- recipe.title %> - Search other recipes using ingredients you already have in the kitchen!" />
-<meta property="og:image"         content="<%= recipe.image_url %>" />
+<meta property="og:image"         content="<%= recipe.image_url.replace("http", "https"); %>" />
 
 <% include ../partials/navbar-body %>
 
@@ -21,7 +21,7 @@
 		<div class="container">
 			<div class="col-lg-4 col-md-4 col-xs-12">
 				<div class="recipe-image">
-					<img src="<%= recipe.image_url %>">
+					<img src="<%= recipe.image_url.replace("http", "https"); %>">
 				</div>
 			</div>
 			<div class="col-lg-8 col-md-8 col-xs-12">
@@ -51,7 +51,7 @@
 			        			<form action="/wishlist/<%= currentUser._id %>/<%= recipe.recipe_id %>?_method=PUT" method="POST">
 					        		<input type='hidden' name='id' value='<%= recipe.recipe_id %>' />
 					        		<input type='hidden' name='title' value='<%- recipe.title %>' />
-					        		<input type='hidden' name='image_url' value='<%= recipe.image_url %>' />
+					        		<input type='hidden' name='image_url' value='<%= recipe.image_url.replace("http", "https"); %>' />
 					        		<input type='hidden' name='publisher' value='<%= recipe.publisher %>' />
 					                <button class="btn btn-default btn-wishlist">
 					                	<i class="fa fa-heart-o" aria-hidden="true"></i></span> Add to Wishlist

@@ -66,6 +66,35 @@
 	margin: 0 auto;
 }
 
+.btn-toggle {
+	background-color: #F7F7F7;
+	border-color: #e04f67;
+	color: #e04f67;
+}
+
+.btn-toggle:visited {
+    background-color: #e04f67;
+	border-color: #e04f67;
+	color: #F7F7F7;
+}
+
+.slow .toggle-group { 
+	transition: left 0.7s; 
+	-webkit-transition: left 0.7s; 
+}
+
+.btn-toggle:active {
+	background-color: #e04f67;
+	border-color: #e04f67;
+	color: #F7F7F7;
+}
+
+.btn-toggle:hover {
+	background-color: #e04f67;
+	border-color: #e04f67;
+	color: #F7F7F7;
+}
+
 .btn-wishlist {
 	background: #F7F7F7;
 	font-size: 1.3rem;

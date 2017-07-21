@@ -17,7 +17,19 @@ var UserSchema = new mongoose.Schema({
         }],
     favFood: [String],    
     resetPasswordToken: String,
-    resetPasswordExpires: Date
+    resetPasswordExpires: Date,
+    promo: { 
+        type: Boolean, 
+        default: true
+    },
+    registrationDate: {
+        type: Date, 
+        default: Date.now
+    },
+    latestLogin: { 
+        type: Date, 
+        default: Date.now 
+    }
 });
 
 UserSchema.plugin(passportLocalMongoose);
