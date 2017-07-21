@@ -1,2 +1,4 @@
 public/components/* linguist-vendored
 coverage/* linguist-vendored
+/public/mailTemplates/* linguist-vendored
+/public/minified/mailTemplates/* linguist-vendored
