@@ -24,13 +24,7 @@
 		          <li><a href="/auth/login">Log in</a></li>
 		          <li><a href="/auth/signup">Sign Up</a></li>
 		        <% } else { %>
-              <li>
-                <% if(currentUser.image == undefined){ %>
-                      <img class="profile-img" src="/img/profile_user.jpg">
-                  <% } else { %>
-                      <img class="profile-img" src="<%= currentUser.image %>">
-                  <% } %>
-              </li>
+              <li><img class="profile-img" src="<%= currentUser.image %>"></li>
               <li>
                 <a href="/profile/<%= currentUser._id %>"><%= currentUser.name %> <%= currentUser.surname %></a>
               </li>

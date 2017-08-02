@@ -14,7 +14,12 @@ var express                 = require("express"),
     cronJobs                = require('./schedule/index'),
     sslRedirect             = require('heroku-ssl-redirect'),
     cookieParser            = require('cookie-parser'),
+    seedData                = require('./seeds/index'),
     app                     = express();
+
+// Perform seed jobs in order to align with DB changes.
+seedData.addImageToUsers();
+seedData.addPromoData();
 
 // Load environment variables from .env file
 dotenv.load();
@@ -53,7 +58,7 @@ app.use(function(req, res, next){
 });
 
 //=========================
-// Passport configuration
+// Cookies configuration
 //=========================
 
 var expiryDate = new Date(Date.now() + 2 * 30 * 24 * 60 * 60 * 1000); // 2 month
@@ -68,7 +73,10 @@ app.use(require("express-session")({
     }
 }));
 
-//for Passport
+//=========================
+// Passport configuration
+//=========================
+
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -100,13 +108,12 @@ app.use("/auth", authRoutes);
 //=========================
 // Cron jobs configuration
 //=========================
+
 /* istanbul ignore next */
 if (process.env.NODE_ENV === 'production') {
-
     var monthly = schedule.scheduleJob({hour: 15, minute: 05, date: 1}, function(){
-      cronJobs.monthly();
+        cronJobs.monthly();
     });
-    
 }
 
 //=========================
