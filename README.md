@@ -1,6 +1,6 @@
 ![yummy.li logo](https://yummy.li/img/Logo_1497186262201.png)
 
-[![version tag](https://img.shields.io/badge/version-1.12.0-brightgreen.svg)](https://github.com/mikepenzin/yummy.li) [![license](https://img.shields.io/github/license/mikepenzin/yummy.li.svg)](https://github.com/mikepenzin/yummy.li) [![Build Status](https://travis-ci.org/mikepenzin/yummy.li.svg?branch=master)](https://travis-ci.org/mikepenzin/yummy.li) [![Coverage Status](https://coveralls.io/repos/github/mikepenzin/yummy.li/badge.svg?branch=master)](https://coveralls.io/github/mikepenzin/yummy.li?branch=master)
+[![version tag](https://img.shields.io/badge/version-1.12.1-brightgreen.svg)](https://github.com/mikepenzin/yummy.li) [![license](https://img.shields.io/github/license/mikepenzin/yummy.li.svg)](https://github.com/mikepenzin/yummy.li) [![Build Status](https://travis-ci.org/mikepenzin/yummy.li.svg?branch=master)](https://travis-ci.org/mikepenzin/yummy.li) [![Coverage Status](https://coveralls.io/repos/github/mikepenzin/yummy.li/badge.svg?branch=master)](https://coveralls.io/github/mikepenzin/yummy.li?branch=master)
 
 ----------------------------
 
@@ -27,6 +27,12 @@ CI: Gulp, Travis CI, Github, Heroku
 ------------------------------------------------------------
 
 ## // 🍒 Release Notes
+
+#### v. 1.12.1 - Google search update
+
+- Added google search update.
+- Updated user model for better use.
+- Added seeds folder for seed functiality for user that don't have essential data.
 
 #### v. 1.12.0 - Added monthly updates email
 

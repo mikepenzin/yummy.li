@@ -18,15 +18,9 @@
 	<div class="row">
 				<div class="col-lg-4 col-md-4 col-sx-12">
 					<div class="image-cropper">
-						<% if(currentUser.image == undefined){ %>
-		                    <div id="profile-pic">
-		                        <img src="/img/profile_user.jpg" class="rounded" />
-		                    </div>
-		                <% } else { %>
-		                    <div id="profile-pic">
-		                        <img src="<%= currentUser.image %>" class="rounded" />
-		                    </div>
-		                <% } %>
+	                    <div id="profile-pic">
+	                        <img src="<%= currentUser.image %>" class="rounded" />
+	                    </div>
 					</div>
 					<div class="buttons-panel">
 						<a href="/profile/<%= currentUser._id %>/update" class="btn btn-default btn-def btn-block" role="button">

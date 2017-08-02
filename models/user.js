@@ -6,7 +6,10 @@ var UserSchema = new mongoose.Schema({
     password: String,
     name: String,
     surname: String,
-    image: String,
+    image: { 
+        type: String, 
+        default: '/img/profile_user.jpg' 
+    },
     bio: String,
     location: String,
     recipes: [{
