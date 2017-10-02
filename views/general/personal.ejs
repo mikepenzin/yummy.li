@@ -1,10 +1,11 @@
-<% include ../partials/header %>
-<title>Your personal page - yummy.li</title>
+<%- include('../partials/header', { 
+    title: "Your personal page - yummy.li"
+}) %>
 <link rel="stylesheet" type="text/css" href="/css/basic.css">
 <link rel="stylesheet" type="text/css" href="/minified/css/personal-style.css">
 
 
-<% include ../partials/navbar-body %>
+<%- include('../partials/navbar-body') %>
 
     <div class="jumbotron jumbo-bg-personal" id="top">
         <div class="header-text">
@@ -38,16 +39,8 @@
         <div class="row"> 
             <div class="col-lg-12 col-md-12 col-sx-12">
                 <div style="margin: 0 auto; !important" id="trending-recipes">
-                    
-                    <%    trendRand = [] %>
-                    <%    while(trendRand.length < 5) { %>
-                    <%        var randomnumber = Math.ceil(Math.random() * (29 - 0) + 0) %>
-                    <%        if(trendRand.indexOf(randomnumber) > -1) continue; %>
-                    <%        trendRand[trendRand.length] = randomnumber; %>
-                    <%    } %>
-                    
                     <% for(var u = 0; u < 5; u++) { %>  
-                        <% rand = trendRand[u] %>
+                        <% rand = randomTrendingData[u] %>
                         <div class="trending thumbnail">
                             <img src="<%= trending[rand].image_url %>" alt="<%- trending[rand].title %>">
                             <div class="caption">
@@ -82,27 +75,20 @@
         <div class="col-lg-12 col-md-12 col-sx-12">
             <div id="gallery-recipes">
                 
-                <% randFeat = [] %>
-                <%    while(randFeat.length < dataCount) { %>
-                <%        var randomnumber = Math.ceil(Math.random() * (dataCount - 0) + 0) %>
-                <%        if(randFeat.indexOf(randomnumber) > -1) continue; %>
-                <%        randFeat[randFeat.length] = randomnumber; %>
-                <%    } %>
-                    
-                <% for(var i = 0; i < dataCount; i++) { %>  
-                    <% featuredRand = randFeat[i] %>
+                <% for(var i = 0; i < randomFeaturedData.length; i++) { %>  
+                    <% featuredRand = randomFeaturedData[i] %>
                     <div class="item thumbnail">
-                        <img src="<%= data[featuredRand].image_url %>" alt="<%- data[featuredRand].title %>">
+                        <img src="<%= featuredRecipes[featuredRand].image_url %>" alt="<%- featuredRecipes[featuredRand].title %>">
                         <div class="caption">
-                            <% if (data[featuredRand].title.length > 50) { %>
-                                <a href="/recipe/<%= data[featuredRand].id %>" class="link"><h5><%- data[featuredRand].title.substring(0, 50) %>...</h5></a>
+                            <% if (featuredRecipes[featuredRand].title.length > 50) { %>
+                                <a href="/recipe/<%= featuredRecipes[featuredRand].recipe_id %>" class="link"><h5><%- featuredRecipes[featuredRand].title.substring(0, 50) %>...</h5></a>
                             <% } else { %>
-                                <a href="/recipe/<%= data[featuredRand].id %>" class="link"><h5><%- data[featuredRand].title %></h5></a>
+                                <a href="/recipe/<%= featuredRecipes[featuredRand].recipe_id %>" class="link"><h5><%- featuredRecipes[featuredRand].title %></h5></a>
                             <% } %>
-                            <span class="label label-default"><%= data[featuredRand].publisher %></span>
+                            <span class="label label-default"><%= featuredRecipes[featuredRand].publisher %></span>
                             <br><br>
                             <p>
-                                <a href="/recipe/<%= data[featuredRand].recipe_id %>" class="btn btn-default btn-def btn-block" role="button">
+                                <a href="/recipe/<%= featuredRecipes[featuredRand].recipe_id %>" class="btn btn-default btn-def btn-block" role="button">
                                     Read more
                                 </a>
                             </p>
@@ -115,31 +101,21 @@
 
 <hr>    
 
-<% if(recipeCount > 0) { %>
-    
-    <% if(recipeCount > 5) { recipeCount = 5 } %>
-    
-    <div class="container">
-        <div class="gallery">
-            <span class="gallery-text"><i class="fa fa-heart-o" aria-hidden="true"></i> Your Wishlist (<%= currentUser.recipes.length %>)</span>
-            <a href="/profile/<%= currentUser._id %>/wishlist" class="btn btn-show pull-right">See All</a>
+<% if(randomData.length != 0) { %>
+        
+        <div class="container">
+            <div class="gallery">
+                <span class="gallery-text"><i class="fa fa-heart-o" aria-hidden="true"></i> Your Wishlist (<%= currentUser.recipes.length %>)</span>
+                <a href="/profile/<%= currentUser._id %>/wishlist" class="btn btn-show pull-right">See All</a>
+            </div>
         </div>
-    </div>
         <div class="row"> 
             <div class="col-lg-12 col-md-12 col-sx-12">
                 <div style="margin: 0 auto; !important" id="feature-recipes">
-                    
                     <% recipes = currentUser.recipes %>
-                    <% randCount = [] %>
-                    <%    while(randCount.length < recipeCount) { %>
-                    <%        var randomnumber = (Math.ceil(Math.random() * (currentUser.recipes.length - 1))) %>
-                    <%        if(randCount.indexOf(randomnumber) > -1) continue; %>
-                    <%        randCount[randCount.length] = randomnumber; %>
-                    <%    } %>
-                    
-                    <% for(var q = 0; q < recipeCount; q++) { %>  
+                    <% for(var q = 0; q < randomData.length; q++) { %>  
                         <div class="recipe thumbnail">
-                            <% randNumber = randCount[q] %>
+                            <% randNumber = randomData[q] %>
                             <img src="<%= recipes[randNumber].image_url %>" alt="<%- recipes[randNumber].title %>">
                             <div class="caption">
                                 <% if (recipes[randNumber].title.length > 50) { %>
@@ -179,17 +155,8 @@
             <br>
             <br>
         </div>
-    <% } %>
-    
+<% } %>
 </div>
-    
-<% include ../partials/footer %>
-<% include ../partials/modal-hiw %>
-<% include ../partials/html-footer %>
 
-    <script type="text/javascript" src="/components/bootstrap-tokenfield/dist/bootstrap-tokenfield.min.js" charset="UTF-8"></script>
-    <script type="text/javascript" src="/components/bootstrap-tokenfield/docs-assets/js/typeahead.bundle.min.js" charset="UTF-8"></script>
-    <script type="text/javascript" src="/minified/js/docs.js" charset="UTF-8"></script>
-    <script type="text/javascript" src="/minified/js/navbar.js" charset="UTF-8"></script>
-</body>
-</html>
+<%- include('../partials/footer') %>    
+<%- include('../partials/html-footer') %>

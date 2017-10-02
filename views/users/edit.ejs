@@ -1,12 +1,12 @@
-<% include ../partials/header %>
+<%- include('../partials/header') %>
+
 <title>Update <%= currentUser.name %>'s profile - yummy.li</title>
 
 <link rel="stylesheet" type="text/css" href="/css/basic.css">
 <link rel="stylesheet" type="text/css" href="/components/bootstrap-toggle/css/bootstrap-toggle.min.css">
 <link rel="stylesheet" type="text/css" href="/minified/css/profile-style.css">
 
-<% include ../partials/navbar-body %>
-<% include ../partials/modal-hiw %>
+<%- include('../partials/navbar-body') %>
 
 <div class="jumbotron jumbo-bg-profile" id="top">
 	<div class="header-text">
@@ -88,15 +88,5 @@
 </div>
 <div class="dummy"></div>
 
-<% include ../partials/footer %>
-<% include ../partials/modal-hiw %>
-<% include ../partials/html-footer %>
-
-	<script type="text/javascript" src="/components/bootstrap-tokenfield/dist/bootstrap-tokenfield.min.js" charset="UTF-8"></script>
-    <script type="text/javascript" src="/components/bootstrap-tokenfield/docs-assets/minified/js/typeahead.bundle.min.js" charset="UTF-8"></script>
-    <script type="text/javascript" src="/minified/js/docs.js" charset="UTF-8"></script>
-    <script type="text/javascript" src="/minified/js/navbar.js" charset="UTF-8"></script>
-    <script type="text/javascript" src="/components/bootstrap-toggle/js/bootstrap-toggle.min.js"></script>
-    
-</body>
-</html>
+<%- include('../partials/footer') %>    
+<%- include('../partials/html-footer') %>

@@ -20,7 +20,8 @@ var mailer = nodemailer.createTransport(sgTransport(options));
 
 //NEW - Show form to register new User
 router.get("/signup", function(req, res){
-  res.render("users/signup");
+  var navbar = false;
+  res.render("users/signup", { navbar: navbar });
 });
 
 
@@ -63,8 +64,9 @@ router.post("/signup", function(req, res){
 
 //SHOW - Login form
 router.get("/login", function(req, res){
+  var navbar = false;
   req.flash("error", "Invalid username or password.");
-  res.render("users/login");    
+  res.render("users/login", { navbar: navbar });    
 });
 
 
@@ -147,7 +149,8 @@ router.get('/reset/:token', function(req, res) {
         req.flash('error', 'Password reset token is invalid or has expired.');
         return res.redirect('/forgot');
       }
-      res.render('users/reset', { user: req.user });
+      var navbar = false;
+      res.render('users/reset', { user: req.user, navbar: navbar });
     }
   });
 });

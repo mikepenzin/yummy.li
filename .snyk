@@ -55,27 +55,31 @@ ignore:
   'npm:connect:20120107':
     - express-sessions > express > connect:
         reason: None given
-        expires: '2017-08-18T12:35:10.394Z'
+        expires: '2017-11-01T18:42:23.576Z'
   'npm:connect:20130701':
     - express-sessions > express > connect:
         reason: None given
-        expires: '2017-08-18T12:35:10.394Z'
+        expires: '2017-11-01T18:42:23.577Z'
   'npm:express:20140912':
     - express-sessions > express:
         reason: None given
-        expires: '2017-08-18T12:35:10.394Z'
+        expires: '2017-11-01T18:42:23.577Z'
   'npm:qs:20140806':
     - express-sessions > express > qs:
         reason: None given
-        expires: '2017-08-18T12:35:10.394Z'
+        expires: '2017-11-01T18:42:23.577Z'
   'npm:qs:20140806-1':
     - express-sessions > express > qs:
         reason: None given
-        expires: '2017-08-18T12:35:10.394Z'
+        expires: '2017-11-01T18:42:23.577Z'
   'npm:qs:20170213':
     - express-sessions > express > qs:
         reason: None given
-        expires: '2017-08-18T12:35:10.394Z'
+        expires: '2017-11-01T18:42:23.577Z'
+  'npm:mime:20170907':
+    - express-sessions > express > mime:
+        reason: None given
+        expires: '2017-11-01T18:42:23.577Z'
 # patches apply the minimum changes required to fix a vulnerability
 patch:
   'npm:ms:20170412':

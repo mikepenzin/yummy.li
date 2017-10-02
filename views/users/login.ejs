@@ -1,11 +1,11 @@
-<% include ../partials/header %>
-<title>Log in to your account - yummy.li</title>
+<%- include('../partials/header', { 
+    title: "Log in to your account - yummy.li"
+}) %>
 
 <link rel="stylesheet" type="text/css" href="/css/basic.css">
 <link rel="stylesheet" type="text/css" href="/minified/css/team-style.css">
 
-<% include ../partials/navbar-body %>
-<% include ../partials/modal-hiw %>
+<%- include('../partials/navbar-body') %>
     
 	<div class="container">
 		<div class="row">
@@ -30,6 +30,4 @@
 	</div>
 
 
-<% include ../partials/html-footer %>
-</body>
-</html>
+<%- include('../partials/html-footer') %>

@@ -1,8 +1,10 @@
-<% include ../partials/header %>
-<title>About us - yummy.li</title>
+<%- include('../partials/header', { 
+    title: "About us - yummy.li"
+}) %>
+
 <link rel="stylesheet" type="text/css" href="/css/basic.css">
 <link rel="stylesheet" type="text/css" href="/minified/css/team-style.css">
-<% include ../partials/navbar-body %>
+<%- include('../partials/navbar-body') %>
 
 		<div class="row profile-row">
 			<div class="tabs-left info">
@@ -262,27 +264,5 @@
 				</div>	
 			</div>
 		</div>
-<% include ../partials/footer %>
-<% include ../partials/modal-hiw %>
-<% include ../partials/html-footer %>
-	
-	<script type="text/javascript" src="/components/bootstrap/js/tab.js" charset="UTF-8"></script>
-	
-	<script>
-	(function($) {
-		$(function(){
-		  var hash = window.location.hash;
-		  hash && $('ul.nav a[href="' + hash + '"]').tab('show');
-		
-		  $('.nav-tabs a').click(function (e) {
-		    $(this).tab('show');
-		    var scrollmem = $('body').scrollTop() || $('html').scrollTop();
-		    window.location.hash = this.hash;
-		    $('html,body').scrollTop(scrollmem);
-		  });
-		});
-	})(jQuery);
-	</script>
-	
-</body>
-</html>
+<%- include('../partials/footer') %>   
+<%- include('../partials/html-footer') %>

@@ -1,6 +1,7 @@
 var express     = require("express");
 var router      = express.Router();
 var mongoose    = require('mongoose');
+var Tags        = require('../models/tags');
 var User        = require('../models/user');
 var middleware  = require('../middleware');
 
@@ -46,7 +47,14 @@ router.get("/:user_id/update", middleware.isLoggedIn, function(req, res){
         if (err) {
             console.log(err);    
         } else {
-            res.render("users/edit", {user:foundUser});
+            Tags.find({}, { _id: 0, tag: 1 }, function(err, foundTags){
+                if(err){ console.log(err); }
+                var tags = [];
+                foundTags.forEach(function (tag) {
+                    tags.push(tag.tag);
+                });
+                res.render("users/edit", {user:foundUser, tags:tags});
+            });    
         }
     });
     
@@ -64,7 +72,7 @@ router.put("/:user_id/update", middleware.isLoggedIn, function(req, res){
     }
     var favs = req.body.favs;
         favs = favs.split(", ");
-        
+    console.log(favs);
     var newUserInfo = {
         name: req.body.name, 
         surname: req.body.surname,

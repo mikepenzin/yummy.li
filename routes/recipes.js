@@ -3,12 +3,26 @@ var express     = require("express"),
     middleware  = require('../middleware'),
     mongoose    = require('mongoose'),
     User        = require('../models/user'),
+    Tags        = require('../models/tags'),
+    Chance      = require('chance'),
     router      = express.Router();
+
+// We use chance to generate random but unique numbers in getRandomData()
+var chance = new Chance();
 
 //  Index route - Show search form
 router.get("/", middleware.PersonalPage, function(req, res){
-    var title = "yummy.li -  Search recipes using ingredients you already have in the kitchen! What's in your fridge?";
-    res.render("general/home", {title: title});
+    // Search all tags in DB, to use it in search form
+    Tags.find({}, { _id: 0, tag: 1 }, function(err, foundTags){
+        if(err){ console.log(err); }
+        var tags = [];
+        // Retrieve tag from every tag
+        foundTags.forEach(function (tag) {
+            tags.push(tag.tag);
+        });
+        
+        res.render("general/home", { tags: tags }); 
+    });
 });
 
 //  Route for robots.txt file
@@ -30,14 +44,24 @@ router.get("/q", function(req, res){
         var data = JSON.parse(body);
         if (!(data.error) && !error && response.statusCode == 200) {
             data = data.recipes;
-            if(data.length !== 0){   
-               // this array is not empty 
-               res.render("recipe/search", {data:data, q:search, page:page});
-            } else {
-               // this array is empty
-               res.render("recipe/noresults", {q:search});
-            }
+            Tags.find({}, { _id: 0, tag: 1 }, function(err, foundTags){
+                if(err){ console.log(err); }
+                var tags = [];
+                foundTags.forEach(function (tag) {
+                    tags.push(tag.tag);
+                });
+                
+                if(data.length !== 0){   
+                    // this array is not empty 
+                   res.render("recipe/search", {data:data, q:search, page:page, tags: tags});
+                } else {
+                    // this array is empty
+                   res.render("recipe/noresults", {q:search, tags: tags});
+                }
+            });
+            
         } else {
+            
             console.log("Something whent wrong!");
             console.log(error);
             res.redirect("back");
@@ -56,13 +80,22 @@ router.get("/trending", function(req, res){
         if (!error && response.statusCode == 200) {
             var data = JSON.parse(body);
             data = data.recipes;
-            if(data.length !== 0){   
-               // this array is not empty 
-               res.render("general/trending", {data:data, page:page});
-            } else {
-               // this array is empty
-               res.render("recipe/noresults", {q:""});
-            }
+            Tags.find({}, { _id: 0, tag: 1 }, function(err, foundTags){
+                if(err){ console.log(err); }
+                var tags = [];
+                foundTags.forEach(function (tag) {
+                    tags.push(tag.tag);
+                });
+                
+                if(data.length !== 0){   
+                   // this array is not empty 
+                   res.render("general/trending", {data:data, page:page, tags: tags});
+                } else {
+                   // this array is empty
+                   res.render("recipe/noresults", {q:"", tags: tags});
+                }
+            });
+            
         } else {
             console.log("Something whent wrong!");
             console.log(error);
@@ -73,7 +106,9 @@ router.get("/trending", function(req, res){
 
 // SHOW - Team page
 router.get("/team", function(req, res){
-    res.render("general/team");
+    var team = true;
+    var navbar = false;
+    res.render("general/team", { team: team, navbar: navbar });
 });
 
 
@@ -82,83 +117,128 @@ router.get("/team", function(req, res){
 router.get("/:user_id", middleware.isLoggedIn, function(req, res){
     
     var userID = mongoose.Types.ObjectId(req.params.user_id); 
+    
+    // General data for trending search requests.
     var trendingPage = Math.ceil(Math.random() * (50 - 1) + 1);
     var apiURL = process.env.API_URL;
     var trending_url = "http://food2fork.com/api/search?key=" + apiURL + "&page=" + trendingPage  + "&q=&sort=t";
-    request(trending_url, function (error, response, body) {
-        var data = JSON.parse(body);
-        if (!data.error && !error && response.statusCode == 200) {
-            User.findById(userID, function(err, foundUser){
-            /* istanbul ignore if */
-                if (err) {
-                    console.log(err);    
-                } else {
-                    foundUser.latestLogin = Date.now();
-                    foundUser.save();
-                    if ((foundUser.favFood.length > 0) && (foundUser.favFood[0] != "")) {
-                        var noData = true;
-                        var search = foundUser.favFood;
-                        search = search.join(", ");
-                        var page = 1;
-                        if (foundUser.favFood.length <= 3) { 
-                            page = Math.floor(Math.random() * 5); 
-                        }
-                        var url = "http://food2fork.com/api/search?key=" + apiURL + "&page=" + page + "&q=" + search + "&sort=r";
-                        request(url, function (error, response, body) {
-                            /* istanbul ignore else */ 
-                            var data = JSON.parse(body);
-                            if (!(data.error) && !error && response.statusCode == 200) {
-                                var dataCount = 5;
-                                data = data.recipes;
-                                if (data.length < 5) {
-                                    dataCount = data.length;
-                                }
-                                
-                                if(data.length !== 0){ 
-                                    
-                                    request(trending_url, function (error, response, body) {
-                                        var trending = JSON.parse(body);
-                                        trending = trending.recipes;
-                                        // this array is not empty 
-                                        res.render("general/personal", {user:foundUser, data:data, noData:noData, recipeCount:foundUser.recipes.length, trending:trending, dataCount: dataCount});
-                                    });    
-                                } else {
-                                    request(trending_url, function (error, response, body) {
-                                        var trending = JSON.parse(body);
-                                        trending = trending.recipes;
-                                        // this array is empty 
-                                        res.render("general/personal", {user:foundUser, noData:noData, recipeCount:foundUser.recipes.length, trending:trending});
-                                    }); 
-                                }
+    
+    // Search for all tags then for each object that found pass tag name into tags array.
+    var tags = [];
+    Tags.find({}, function(err, foundTags){
+        if(err){ console.log(err); }
+        
+        foundTags.forEach(function (tag) {
+            tags.push(tag.tag);
+        });
+        
+        // Search for trending recipes with random page number as parameter.
+        request(trending_url, function (error, response, body) {
+            var trending = JSON.parse(body);
+            trending = trending.recipes;
+            
+            // Check if data we get without errors or status code of 200.
+            // Need to add checks for "limit reached" situation.
+            if (!trending.error && !error && response.statusCode == 200 && trending.count != 0) {
+                // Get data for current loggedin user
+                User.findById(userID, function(err, foundUser){
+                /* istanbul ignore if */
+                    if (err) {
+                        console.log(err);    
+                    } else {
+                        
+                        // Update User data of last performed login.
+                        // May add some functionality to this.
+                        foundUser.latestLogin = Date.now();
+                        foundUser.save();
+                        
+                        // Check if current user have favorite foods inside his profile.
+                        if ((foundUser.favFood.length > 0) && (foundUser.favFood[0] != "")) {
+                            var search = foundUser.favFood;
+                            search = search.join(", ");
+                            var page;
+                            
+                            // Check if user favorite food count is less or equal to 3,
+                            // If we have more than 3 theire is big possibility no much results for that.
+                            if (foundUser.favFood.length < 3) { 
+                                page = Math.ceil(Math.random() * 5); 
                             } else {
-                                console.log("Something whent wrong!");
-                                console.log(error);
-                                res.redirect("back");
+                                page = 1;
                             }
-                        });
+                            var url = "http://food2fork.com/api/search?key=" + apiURL + "&page=" + page + "&q=" + search + "&sort=r";
+                            
+                            // Search recipes by users favorite foods with random page number as parameter.
+                            request(url, function (error, response, body) {
+                                /* istanbul ignore else */ 
+                                var featuredRecipes = JSON.parse(body);
+                                // Generate array with random numbers using getRandomData function.
+                                var randomData = getRandomData(foundUser.recipes.length);
+                                var randomTrendingData = getRandomData(trending.length);
+                                // Check if data we get without errors or status code of 200.
+                                if (!(featuredRecipes.error) && !error && response.statusCode == 200 && featuredRecipes.count != 0) {
+                                        
+                                    featuredRecipes = featuredRecipes.recipes;
+                                    // Check if array we've got isn't empty.
+                                    if(featuredRecipes.length !== 0){ 
+                                        
+                                        // Generate arrays with random numbers using getRandomData function.
+                                        var randomFeaturedData = getRandomData(featuredRecipes.length);
+                                        res.render("general/personal", {
+                                            user: foundUser, 
+                                            featuredRecipes: featuredRecipes, 
+                                            randomFeaturedData: randomFeaturedData, 
+                                            randomData: randomData, 
+                                            randomTrendingData: randomTrendingData, 
+                                            trending: trending, 
+                                            tags: tags
+                                        });
+                                    } else {
+                                        res.render("general/personal", {
+                                            user: foundUser, 
+                                            randomData: randomData, 
+                                            randomTrendingData: randomTrendingData, 
+                                            trending: trending, 
+                                            tags: tags
+                                        });
+                                    }
+                                } else {
+                                    res.render("general/personalNoData", {
+                                        user: foundUser, 
+                                        randomData: randomData, 
+                                        randomTrendingData: randomTrendingData, 
+                                        trending: trending, 
+                                        tags: tags
+                                    });
+                                }
+                            });
+                        } else {
+                            // Generate arrays with random numbers using getRandomData function.
+                            var randomData = getRandomData(foundUser.recipes.length);
+                            var randomTrendingData = getRandomData(trending.length);
+                            res.render("general/personalNoData", {
+                                user: foundUser, 
+                                randomData: randomData, 
+                                randomTrendingData: randomTrendingData, 
+                                trending: trending, 
+                                tags: tags
+                            });
+                        }
+                    }
+                });
+            } else {
+                
+                User.findById(userID, function(err, foundUser){
+                    /* istanbul ignore if */
+                    if (err) {
+                        console.log(err);    
                     } else {
                         foundUser.latestLogin = Date.now();
                         foundUser.save();
-                        request(trending_url, function (error, response, body) {
-                            var trending = JSON.parse(body);
-                            trending = trending.recipes;
-                            res.render("general/personalNoData", {user:foundUser, recipeCount:foundUser.recipes.length, trending:trending});
-                        }); 
+                        res.render("general/home", {user:foundUser, tags: tags });
                     }
-                }
-            });
-        } else {
-            User.findById(userID, function(err, foundUser){
-                /* istanbul ignore if */
-                if (err) {
-                    console.log(err);    
-                } else {
-                    foundUser.latestLogin = Date.now();
-                    foundUser.save();
-                    res.render("general/home", {user:foundUser});
-                }
-            });
-        }
+                });
+            }
+        });
     });    
 });
 
@@ -171,13 +251,25 @@ router.get("/recipe/:recipe_id", function(req, res){
         var data = JSON.parse(body);
         if (!(data.error) && !error && response.statusCode == 200) {
             data = data.recipe;
-            if(data.length !== 0){   
-               // this array is not empty 
-               res.render("recipe/show", {recipe:data});
-            } else {
-               // this array is empty
-               res.redirect("back");
+            if(data.length !== 0){ 
+                if (req.isAuthenticated()) {
+                    var found = false;
+                    User.find({$and: [{ 'username': req.user.username },{'recipes.id': req.params.recipe_id}]}, function(err, recipe) {
+                        if(err){ console.log(err); }
+                        if (recipe.length > 0) {
+                            found = true;
+                        }
+                        // this array is not empty 
+                        res.render("recipe/show", { recipe:data, found:found });
+                    });
+                } else {
+                    // this array is not empty 
+                    res.render("recipe/show", { recipe:data });
                 }
+            } else {
+                // this array is empty
+                res.redirect("back");
+            }
         } else {
             console.log("Something whent wrong!");
             console.log(error);
@@ -235,5 +327,23 @@ router.put("/wishlist/:user_id/:recipe_id/remove",middleware.isLoggedIn, functio
     });
 });
 
+
+// Helpers functions
+
+// The purpose of this function is to generate random but unique array of numbers 
+// Get the parameter of number of recipes like currentUser.recipes.length. 
+function getRandomData(numberOfRecipes) {
+    var recipesForRandom = numberOfRecipes-1;
+    var data;
+    if (numberOfRecipes > 0 && numberOfRecipes >=5) {
+        data = chance.unique(chance.natural, 5, {min: 0, max: recipesForRandom});
+        return data;
+    } else if(numberOfRecipes > 0 && numberOfRecipes < 5) {
+        data = chance.unique(chance.natural, numberOfRecipes, {min: 0, max: recipesForRandom});
+        return data;
+    } else {
+        return 0;
+    }
+}
 
 module.exports = router;

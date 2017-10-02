@@ -1,11 +1,11 @@
-<% include ../partials/header %>
-<title>Choose your new password - yummy.li</title>
+<%- include('../partials/header', { 
+    title: "Choose your new password - yummy.li"
+}) %>
 
 <link rel="stylesheet" type="text/css" href="/css/basic.css">
 <link rel="stylesheet" type="text/css" href="/minified/css/team-style.css">
 
-<% include ../partials/navbar-body %>
-<% include ../partials/modal-hiw %>
+<%- include('../partials/navbar-body') %>
 
 	<div class="container">	
 		<div class="row">
@@ -29,9 +29,7 @@
 			</div>	
 		</div>					
 	</div>
-
-
-<% include ../partials/html-footer %>
+	
 <script>
 function validateForm() {
     var y = document.forms["reset"]["password"];
@@ -42,7 +40,6 @@ function validateForm() {
 	   return false; 
 	}
 }
-</script>
+</script>	
 
-</body>
-</html>
+<%- include('../partials/html-footer') %>

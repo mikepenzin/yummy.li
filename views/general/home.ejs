@@ -1,8 +1,11 @@
-<% include ../partials/header %>
-<title><%= title %></title>
+<%- include('../partials/header', { 
+    title: "yummy.li - Search recipes using ingredients you already have in the kitchen! What's in your fridge?"
+}) %>
+
 <link rel="stylesheet" type="text/css" href="/css/basic.css">
 
-<% include ../partials/navbar-body-home %>
+<%- include('../partials/navbar-body-home') %>
+
     <div class="jumbotron" id="top">
       <div class="overlay"></div>
         <video id="video-background" preload muted autoplay loop>
@@ -41,13 +44,4 @@
     </div>
   </div>
 
-<% include ../partials/modal-hiw %>
-<% include ../partials/html-footer %>
-    
-    <script type="text/javascript" src="/components/bootstrap-tokenfield/dist/bootstrap-tokenfield.min.js" charset="UTF-8"></script>
-    <script type="text/javascript" src="/components/bootstrap-tokenfield/docs-assets/js/typeahead.bundle.min.js" charset="UTF-8"></script>
-    <script type="text/javascript" src="/minified/js/docs.js" charset="UTF-8"></script>
-    <script type="text/javascript" src="/minified/js/navbar.js" charset="UTF-8"></script>
-    
-</body>
-</html>
+<%- include('../partials/html-footer') %>

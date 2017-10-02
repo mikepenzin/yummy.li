@@ -1,9 +1,9 @@
-<% include ../partials/header %>
+<%- include('../partials/header') %>
+
 <title><%= recipe.title %> - yummy.li</title>
 
 <link rel="stylesheet" type="text/css" href="/css/basic.css">
 <link rel="stylesheet" type="text/css" href="/minified/css/recipe-style.css">
-
 
 <meta property="og:url"           content="https://www.facebook.com/sharer/sharer.php?u=http://yummy.li/recipe/<%= recipe.recipe_id %>" />
 <meta property="og:type"          content="website" />
@@ -11,7 +11,7 @@
 <meta property="og:description"   content="<%- recipe.title %> - Search other recipes using ingredients you already have in the kitchen!" />
 <meta property="og:image"         content="<%= recipe.image_url.replace("http", "https"); %>" />
 
-<% include ../partials/navbar-body %>
+<%- include('../partials/navbar-body') %>
 
 		<div class="jumbotron jumbo-bg-show" id="top">
 			<div class="header-text">
@@ -33,15 +33,7 @@
 							  <i class="fa fa-heart-o" aria-hidden="true"></i></span> Add to Wishlist
 						  	</a>
 				        <% } else { %>
-				        	<% var userRecipes = currentUser.recipes; %>
-				        	<% var found = false; %>
-				        	<% for (var i = 0; i < userRecipes.length; i++) { %>
-				        		<% if(userRecipes[i].id == recipe.recipe_id) { %>
-				        			<% found = true; %>
-				        			<% break; %>
-				        		<% } %>
-				        	<% } %>
-			        		<% if(found) { %>
+				        	<% if(found) { %>
 			        			<form action="/wishlist/<%= currentUser._id %>/<%= recipe.recipe_id %>/remove?_method=PUT" method="POST">
         							<button class="btn btn-default btn-wishlist">
         							    <i class="fa fa-times" aria-hidden="true"></i></span> Remove item
@@ -102,11 +94,5 @@
 		</div>
 	</div>
 
-<% include ../partials/footer %>
-<% include ../partials/modal-hiw %>
-<% include ../partials/html-footer %>
-
-    <script type="text/javascript" src="/minified/js/navbar.js" charset="UTF-8"></script>
-    
-</body>
-</html>
+<%- include('../partials/footer') %>    
+<%- include('../partials/html-footer') %>

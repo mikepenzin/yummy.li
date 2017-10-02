@@ -1,10 +1,11 @@
-<% include ../partials/header %>
+<%- include('../partials/header') %>
+
 <title><%= currentUser.name %>'s wishlist - yummy.li</title>
 
 <link rel="stylesheet" type="text/css" href="/css/basic.css">
 <link rel="stylesheet" type="text/css" href="/minified/css/profile-style.css">
 
-<% include ../partials/navbar-body %>
+<%- include('../partials/navbar-body') %>
 
 <div class="jumbotron jumbo-bg-wishlist" id="top">
 	<div class="header-text">
@@ -62,11 +63,5 @@
         </div>	
     </div>
 
-<% include ../partials/footer %>
-<% include ../partials/modal-hiw %>
-<% include ../partials/html-footer %>
-
-    <script type="text/javascript" src="/minified/js/navbar.js" charset="UTF-8"></script>
-    
-</body>
-</html>
+<%- include('../partials/footer') %>   
+<%- include('../partials/html-footer') %>

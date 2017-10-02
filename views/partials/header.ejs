@@ -1,6 +1,5 @@
 <html>
     <head>
-        <meta name="google-site-verification" content="0LVl9MSFJ-N9ZFGcqiBMhS-y-NUVbPdJ9FOwPoC3gBE" />
         <meta charset="utf-8">
         <link rel="apple-touch-icon" sizes="57x57" href="/img/fav-icon/apple-icon-57x57.png">
         <link rel="apple-touch-icon" sizes="60x60" href="/img/fav-icon/apple-icon-60x60.png">
@@ -19,16 +18,26 @@
         <meta name="msapplication-TileColor" content="#ffffff">
         <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
         <meta name="theme-color" content="#ffffff">
+        <% if(typeof(title) != 'undefined') { %>
+            <title><%= title %></title>
+        <% } %>    
+        <%if (settings.NODE_ENV === 'production') { %>
+            <meta name="google-site-verification" content="0LVl9MSFJ-N9ZFGcqiBMhS-y-NUVbPdJ9FOwPoC3gBE" />
+        <% } %>  
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        
-    <!-- Hotjar Tracking Code for https://yummy.li -->
-    <script>
-        (function(h,o,t,j,a,r){
-            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-            h._hjSettings={hjid:375559,hjsv:5};
-            a=o.getElementsByTagName('head')[0];
-            r=o.createElement('script');r.async=1;
-            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-            a.appendChild(r);
-        })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
-    </script>
+    
+    <%if (settings.env === 'production') { %>
+        <!-- Hotjar Tracking Code for https://yummy.li -->
+        <script>
+            (function(h,o,t,j,a,r){
+                h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+                h._hjSettings={hjid:375559,hjsv:5};
+                a=o.getElementsByTagName('head')[0];
+                r=o.createElement('script');r.async=1;
+                r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+                a.appendChild(r);
+            })(window,document,'//static.hotjar.com/c/hotjar-','.js?sv=');
+        </script>
+    <% } %>   
+    
+    <%- include('../partials/modal-hiw') %>

@@ -20,6 +20,7 @@ var express                 = require("express"),
 // Perform seed jobs in order to align with DB changes.
 seedData.addImageToUsers();
 seedData.addPromoData();
+seedData.addDefaultTags();
 
 // Load environment variables from .env file
 dotenv.load();
@@ -33,7 +34,7 @@ app.use(sslRedirect(['production']));
 app.use(morgan('tiny'));
 
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.DATABASEURL);
+mongoose.connect(process.env.EXT_DATABASEURL);
 
 // Requring routes
 var recipeRoutes    = require("./routes/recipes"),
@@ -119,7 +120,6 @@ if (process.env.NODE_ENV === 'production') {
 //=========================
 // End - Cron job configuration
 //=========================
-
 
 // Production error handler
 /* istanbul ignore next */ 

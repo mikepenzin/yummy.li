@@ -4,11 +4,45 @@
     <script type="text/javascript" src="/components/smoothScroll/smoothscroll.js"></script>
     <script type="text/javascript" src="/components/gridalicious/jquery.grid-a-licious.min.js"></script>
     <script type="text/javascript" src="/minified/js/grid.js"></script>
-    <script type="text/javascript" id="cookiebanner" src="/components/cookiebanner/dist/cookiebanner.min.js"></script>
+    <script type="text/javascript" id="cookiebanner" 
+            data-position="bottom"
+            data-message="🍪 We use cookies to improve taste of your browsing experience."
+            src="/components/cookiebanner/dist/cookiebanner.min.js"></script>
     <script type="text/javascript" src="/components/remarkable-bootstrap-notify/dist/bootstrap-notify.min.js"></script>
+    <script type="text/javascript" src="/components/bootstrap-toggle/js/bootstrap-toggle.min.js"></script>
     
+    
+  <% if (typeof(navbar) == 'undefined') { %>
+    <script type="text/javascript" src="/minified/js/navbar.js" charset="UTF-8"></script>
+  <% } %>
+    
+  <% if (typeof(tags) != 'undefined') { %>
+    <script type="text/javascript" src="/components/bootstrap-tokenfield/dist/bootstrap-tokenfield.min.js" charset="UTF-8"></script>
+    <script type="text/javascript" src="/components/bootstrap-tokenfield/docs-assets/js/typeahead.bundle.min.js" charset="UTF-8"></script>
+    <script type="text/javascript">
+      (function($) {
+        $('#search').tokenfield({
+          autocomplete: {
+            source: <%- JSON.stringify(tags); %>,
+            delay: 100
+          },
+          showAutocompleteOnFocus: false,
+          delimiter: [',','-', '_'],
+          limit: 4
+        });
       
-  <% if(error && error.length > 0) { %>
+        $('#search').on('tokenfield:createtoken', function (event) {
+      	    var existingTokens = $(this).tokenfield('getTokens');
+      	    $.each(existingTokens, function(index, token) {
+      	        if (token.value === event.attrs.value)
+      	            event.preventDefault();
+      	    });
+      	});
+      })(jQuery); 
+    </script>
+  <% } %>
+      
+  <% if (error && error.length > 0) { %>
     <script>
       $.notify({
       	// options
@@ -33,7 +67,7 @@
       	}
       }).delay( 1300 );
     </script>
-  <% } else if(success && success.length > 0) { %>
+  <% } else if (success && success.length > 0) { %>
     <script>
       $.notify({
       	// options
@@ -59,3 +93,26 @@
       }).delay( 1300 ); 
     </script>
   <% } %>  
+  
+  <% if (typeof(team) != 'undefined') { %>
+    
+    <script type="text/javascript" src="/components/bootstrap/js/tab.js" charset="UTF-8"></script>
+    
+    <script>
+  	(function($) {
+  		$(function(){
+  		  var hash = window.location.hash;
+  		  hash && $('ul.nav a[href="' + hash + '"]').tab('show');
+  		
+  		  $('.nav-tabs a').click(function (e) {
+  		    $(this).tab('show');
+  		    var scrollmem = $('body').scrollTop() || $('html').scrollTop();
+  		    window.location.hash = this.hash;
+  		    $('html,body').scrollTop(scrollmem);
+  		  });
+  		});
+  	})(jQuery);
+  	</script>
+  <% } %>
+</body>
+</html>

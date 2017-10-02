@@ -1,10 +1,11 @@
-<% include ../partials/header %>
+<%- include('../partials/header') %>
+
 <title>Search results for <%= q %> - yummy.li</title>
 <link rel="stylesheet" type="text/css" href="/css/basic.css">
 <link rel="stylesheet" type="text/css" href="/minified/css/search-style.css">
 <link rel="stylesheet" type="text/css" href="/minified/css/noresults-style.css">
 
-<% include ../partials/navbar-body %>
+<%- include('../partials/navbar-body') %>
 
 <div class="jumbotron-noresults jumbo-bg-search" id="top">
 	<div class="header-text">
@@ -26,13 +27,5 @@
 	</div>
 </div>
 		
-<% include ../partials/modal-hiw %>
-<% include ../partials/html-footer %>
-
-    <script type="text/javascript" src="/components/bootstrap-tokenfield/dist/bootstrap-tokenfield.min.js" charset="UTF-8"></script>
-    <script type="text/javascript" src="/components/bootstrap-tokenfield/docs-assets/minified/js/typeahead.bundle.min.js" charset="UTF-8"></script>
-    <script type="text/javascript" src="/minified/js/docs.js" charset="UTF-8"></script>
-    <script type="text/javascript" src="/minified/js/navbar.js" charset="UTF-8"></script>
-    
-</body>
-</html>
+		
+<%- include('../partials/html-footer') %>
