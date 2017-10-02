@@ -1,15 +1,13 @@
 {
   "name": "yummyli",
-  "version": "1.12.1",
+  "version": "1.12.2",
   "description": "Search recipes by ingredients",
   "main": "app.js",
   "scripts": {
     "test": "mocha",
     "cover": "istanbul cover _mocha",
     "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls",
-    "start": "node app.js",
-    "snyk-protect": "snyk protect",
-    "prepare": "npm run snyk-protect"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -52,7 +50,7 @@
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^4.0.0",
     "request": "^2.81.0",
-    "snyk": "^1.41.1"
+    "snyk": "^1.36.0"
   },
   "devDependencies": {
     "bower": "^1.8.0",
@@ -79,10 +77,14 @@
     "node": "6.11.1",
     "npm": "3.10.10"
 <<<<<<< HEAD
+<<<<<<< HEAD
   }
 }
 =======
   },
   "snyk": true
+=======
+  }
+>>>>>>> b7cc18cd99cba48ba3a931f50a3d7e2cf5be2978
 }
 >>>>>>> 58d1f22d8ad1e47b9f64f38ee22f7f4b098f5ef9
