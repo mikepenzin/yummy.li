@@ -76,15 +76,5 @@
   "engines": {
     "node": "6.11.1",
     "npm": "3.10.10"
-<<<<<<< HEAD
-<<<<<<< HEAD
   }
 }
-=======
-  },
-  "snyk": true
-=======
-  }
->>>>>>> b7cc18cd99cba48ba3a931f50a3d7e2cf5be2978
-}
->>>>>>> 58d1f22d8ad1e47b9f64f38ee22f7f4b098f5ef9
