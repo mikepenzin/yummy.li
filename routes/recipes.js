@@ -14,6 +14,7 @@ var chance = new Chance();
 router.get("/", middleware.PersonalPage, function(req, res){
     // Search all tags in DB, to use it in search form
     Tags.find({}, { _id: 0, tag: 1 }, function(err, foundTags){
+        /* istanbul ignore next */
         if(err){ console.log(err); }
         var tags = [];
         // Retrieve tag from every tag
@@ -42,6 +43,7 @@ router.get("/q", function(req, res){
     request(url, function (error, response, body) {
         /* istanbul ignore else */ 
         var data = JSON.parse(body);
+        /* istanbul ignore next */
         if (!(data.error) && !error && response.statusCode == 200) {
             data = data.recipes;
             Tags.find({}, { _id: 0, tag: 1 }, function(err, foundTags){
@@ -50,7 +52,7 @@ router.get("/q", function(req, res){
                 foundTags.forEach(function (tag) {
                     tags.push(tag.tag);
                 });
-                
+                /* istanbul ignore next */
                 if(data.length !== 0){   
                     // this array is not empty 
                    res.render("recipe/search", {data:data, q:search, page:page, tags: tags});
@@ -86,7 +88,7 @@ router.get("/trending", function(req, res){
                 foundTags.forEach(function (tag) {
                     tags.push(tag.tag);
                 });
-                
+                /* istanbul ignore next */
                 if(data.length !== 0){   
                    // this array is not empty 
                    res.render("general/trending", {data:data, page:page, tags: tags});
@@ -126,6 +128,7 @@ router.get("/:user_id", middleware.isLoggedIn, function(req, res){
     // Search for all tags then for each object that found pass tag name into tags array.
     var tags = [];
     Tags.find({}, function(err, foundTags){
+        /* istanbul ignore next */
         if(err){ console.log(err); }
         
         foundTags.forEach(function (tag) {
@@ -139,6 +142,7 @@ router.get("/:user_id", middleware.isLoggedIn, function(req, res){
             
             // Check if data we get without errors or status code of 200.
             // Need to add checks for "limit reached" situation.
+            /* istanbul ignore next */
             if (!trending.error && !error && response.statusCode == 200 && trending.count != 0) {
                 // Get data for current loggedin user
                 User.findById(userID, function(err, foundUser){
@@ -151,7 +155,7 @@ router.get("/:user_id", middleware.isLoggedIn, function(req, res){
                         // May add some functionality to this.
                         foundUser.latestLogin = Date.now();
                         foundUser.save();
-                        
+                        /* istanbul ignore next */
                         // Check if current user have favorite foods inside his profile.
                         if ((foundUser.favFood.length > 0) && (foundUser.favFood[0] != "")) {
                             var search = foundUser.favFood;
@@ -249,8 +253,10 @@ router.get("/recipe/:recipe_id", function(req, res){
     request(url, function (error, response, body) {
         /* istanbul ignore else */ 
         var data = JSON.parse(body);
+        /* istanbul ignore next */
         if (!(data.error) && !error && response.statusCode == 200) {
             data = data.recipe;
+            /* istanbul ignore next */
             if(data.length !== 0){ 
                 if (req.isAuthenticated()) {
                     var found = false;
@@ -308,8 +314,10 @@ router.put("/wishlist/:user_id/:recipe_id/remove",middleware.isLoggedIn, functio
     
     User.findById(req.params.user_id, function (err, foundUser) {
         var recipe = foundUser.recipes; 
+        /* istanbul ignore next */
         if (!err) {
             for (var i = 0; i < recipe.length; i++) {
+                /* istanbul ignore next */
                 if (recipe[i].id == id) {
                     foundUser.recipes[i].remove();
                     foundUser.save(function (err) {
@@ -335,6 +343,7 @@ router.put("/wishlist/:user_id/:recipe_id/remove",middleware.isLoggedIn, functio
 function getRandomData(numberOfRecipes) {
     var recipesForRandom = numberOfRecipes-1;
     var data;
+    /* istanbul ignore next */
     if (numberOfRecipes > 0 && numberOfRecipes >=5) {
         data = chance.unique(chance.natural, 5, {min: 0, max: recipesForRandom});
         return data;

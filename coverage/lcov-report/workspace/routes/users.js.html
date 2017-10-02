@@ -22,25 +22,25 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>45/45</span>
+        <span class='fraction'>53/53</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>14/14</span>
+        <span class='fraction'>16/16</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>10/10</span>
+        <span class='fraction'>12/12</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>45/45</span>
+        <span class='fraction'>52/52</span>
       </div>
       <div class='fl pad1y'>
-        <span class="strong">34 statements, 10 functions, 14 branches</span>
+        <span class="strong">41 statements, 12 functions, 16 branches</span>
         <span class="quiet">Ignored</span>  &nbsp;&nbsp;&nbsp;&nbsp;
       </div>
     </div>
@@ -151,27 +151,20 @@
 102
 103
 104
-105</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
+105
+106
+107
+108
+109
+110
+111
+112
+113</td><td class="line-coverage quiet"><span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -211,13 +204,36 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -258,6 +274,7 @@
 <span class="cline-any cline-yes">1×</span></td><td class="text"><pre class="prettyprint lang-js">var express     = require("express");
 var router      = express.Router();
 var mongoose    = require('mongoose');
+var Tags        = require('../models/tags');
 var User        = require('../models/user');
 var middleware  = require('../middleware');
 &nbsp;
@@ -303,7 +320,14 @@ router.get("/:user_id/update", middleware.isLoggedIn, <span class="fstat-skip" t
 <span class="cstat-skip" title="statement not covered" >        if (err) {</span>
 <span class="cstat-skip" title="statement not covered" >            console.log(err);    </span>
         } else {
-<span class="cstat-skip" title="statement not covered" >            res.render("users/edit", {user:foundUser});</span>
+<span class="cstat-skip" title="statement not covered" >            Tags.find({}, { _id: 0, tag: 1 }, <span class="fstat-skip" title="function not covered" >function(err, foundTags){</span></span>
+<span class="cstat-skip" title="statement not covered" >                if(err){ <span class="cstat-skip" title="statement not covered" >console.log(err); </span>}</span>
+<span class="cstat-skip" title="statement not covered" >                var tags = [];</span>
+<span class="cstat-skip" title="statement not covered" >                foundTags.forEach(<span class="fstat-skip" title="function not covered" >function (tag) {</span></span>
+<span class="cstat-skip" title="statement not covered" >                    tags.push(tag.tag);</span>
+                });
+<span class="cstat-skip" title="statement not covered" >                res.render("users/edit", {user:foundUser, tags:tags});</span>
+            });    
         }
     });
     
@@ -321,7 +345,7 @@ router.put("/:user_id/update", middleware.isLoggedIn, <span class="fstat-skip" t
     }
 <span class="cstat-skip" title="statement not covered" >    var favs = req.body.favs;</span>
 <span class="cstat-skip" title="statement not covered" >        favs = favs.split(", ");</span>
-        
+<span class="cstat-skip" title="statement not covered" >    console.log(favs);</span>
 <span class="cstat-skip" title="statement not covered" >    var newUserInfo = {</span>
         name: req.body.name, 
         surname: req.body.surname,
@@ -365,7 +389,7 @@ module.exports = router;</pre></td></tr>
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Aug 02 2017 17:40:54 GMT+0000 (UTC)
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Oct 02 2017 18:51:46 GMT+0000 (UTC)
 </div>
 </div>
 <script src="../../prettify.js"></script>

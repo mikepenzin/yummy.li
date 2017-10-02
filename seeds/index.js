@@ -30,6 +30,7 @@ var defaultTags = [
 
 seedDB.addImageToUsers = function() {
     User.find( { image: null }, function(err, foundUsers){
+        /* istanbul ignore next */ 
         if (err){
             console.lo(err);
         } else {
@@ -46,6 +47,7 @@ seedDB.addImageToUsers = function() {
 
 seedDB.addPromoData = function() {
     User.find( { promo: null }, function(err, foundUsers) {
+        /* istanbul ignore next */
         if (err){
             console.lo(err);
         } else {
@@ -61,8 +63,9 @@ seedDB.addPromoData = function() {
 
 seedDB.addDefaultTags = function() {
     Tags.find({}, function(err, foundTags) {
-        
+        /* istanbul ignore next */
         if(err){ console.log(err) }
+        /* istanbul ignore next */
         if (!(foundTags.length > 0)) {
             defaultTags.forEach(function(tag){
                 Tags.create({tag: tag}, function(err, createdTag){

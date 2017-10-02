@@ -23,6 +23,7 @@ cronJob.monthly = function(){
     
     /* istanbul ignore next */
     User.find({"promo": true}, function(err, users) {
+        /* istanbul ignore next */
         if (err) {
             console.log(err);
         } else {
@@ -44,7 +45,7 @@ cronJob.monthly = function(){
                         from: 'noreply@yummy.li',
                         subject: 'yummy.li // Monthly Update'
                     };
-                    
+                    /* istanbul ignore next */
                     if (user.recipes.length >= 3) {
                         var recipes = user.recipes;
                         var wishlistRand = [];
