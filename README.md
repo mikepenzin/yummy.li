@@ -28,6 +28,12 @@ CI: Gulp, Travis CI, Github, Heroku
 
 ## // 🍒 Release Notes
 
+#### v. 1.12.3 - Holidays updates
+
+- Happy Holidays!
+- Front-End code refactoring
+
+
 #### v. 1.12.2 - Front-End code refactoring
 
 - Front-End code refactoring
