@@ -7,7 +7,9 @@
     "test": "mocha",
     "cover": "istanbul cover _mocha",
     "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls",
-    "start": "node app.js"
+    "start": "node app.js",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -50,7 +52,7 @@
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^4.0.0",
     "request": "^2.81.0",
-    "snyk": "^1.36.0"
+    "snyk": "^1.88.1"
   },
   "devDependencies": {
     "bower": "^1.8.0",
@@ -76,5 +78,6 @@
   "engines": {
     "node": "6.11.1",
     "npm": "3.10.10"
-  }
+  },
+  "snyk": true
 }
