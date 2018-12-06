@@ -7,7 +7,9 @@
     "test": "mocha",
     "cover": "istanbul cover _mocha",
     "coveralls": "npm run cover -- --report lcovonly && cat ./coverage/lcov.info | coveralls",
-    "start": "node app.js"
+    "start": "node app.js",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -25,32 +27,32 @@
   "homepage": "https://github.com/mikepenzin/yummy.li#readme",
   "dependencies": {
     "async": "^2.1.4",
-    "body-parser": "^1.15.2",
+    "body-parser": "^1.18.2",
     "chance": "^1.0.10",
-    "compression": "^1.7.0",
+    "compression": "^1.7.1",
     "cookie-parser": "^1.4.3",
     "dotenv": "^4.0.0",
     "each-async": "^1.1.1",
     "ejs": "^2.5.2",
     "ejs-lint": "^0.3.0",
-    "express": "^4.14.0",
+    "express": "^4.16.0",
     "express-flash": "0.0.2",
-    "express-session": "^1.15.3",
+    "express-session": "^1.15.6",
     "express-sessions": "^1.0.6",
     "fs": "0.0.1-security",
-    "helmet": "^3.6.1",
+    "helmet": "^3.8.2",
     "heroku-ssl-redirect": "0.0.4",
-    "method-override": "^2.3.6",
+    "method-override": "^2.3.10",
     "mongoose": "^4.11.14",
-    "morgan": "^1.8.2",
+    "morgan": "^1.9.1",
     "node-schedule": "^1.2.3",
     "nodemailer": "^4.0.1",
     "nodemailer-sendgrid-transport": "^0.2.0",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^4.0.0",
-    "request": "^2.81.0",
-    "snyk": "^1.36.0"
+    "request": "^2.84.0",
+    "snyk": "^1.115.0"
   },
   "devDependencies": {
     "bower": "^1.8.0",
@@ -76,5 +78,6 @@
   "engines": {
     "node": "6.11.1",
     "npm": "3.10.10"
-  }
+  },
+  "snyk": true
 }
