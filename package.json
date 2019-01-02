@@ -50,7 +50,7 @@
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^4.0.0",
     "request": "^2.81.0",
-    "snyk": "^1.36.0"
+    "snyk": "^1.36.2"
   },
   "devDependencies": {
     "bower": "^1.8.0",
