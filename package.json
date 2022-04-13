@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/mikepenzin/yummy.li#readme",
   "dependencies": {
-    "async": "^2.1.4",
+    "async": "^3.2.2",
     "body-parser": "^1.15.2",
     "chance": "^1.0.10",
     "compression": "^1.7.0",
@@ -41,7 +41,7 @@
     "helmet": "^3.6.1",
     "heroku-ssl-redirect": "0.0.4",
     "method-override": "^2.3.6",
-    "mongoose": "^4.11.14",
+    "mongoose": "^5.7.3",
     "morgan": "^1.8.2",
     "node-schedule": "^1.2.3",
     "nodemailer": "^4.0.1",
