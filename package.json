@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/mikepenzin/yummy.li#readme",
   "dependencies": {
-    "async": "^2.1.4",
+    "async": "^2.6.4",
     "body-parser": "^1.15.2",
     "chance": "^1.0.10",
     "compression": "^1.7.0",
