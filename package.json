@@ -32,7 +32,7 @@
     "dotenv": "^4.0.0",
     "each-async": "^1.1.1",
     "ejs": "^2.5.2",
-    "ejs-lint": "^0.3.0",
+    "ejs-lint": "^1.2.2",
     "express": "^4.14.0",
     "express-flash": "0.0.2",
     "express-session": "^1.15.3",
