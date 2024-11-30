@@ -123,6 +123,21 @@ a:hover {
 	font-size: 2.8rem;
 }
 
+/*Regular mode*/
+/*.hat {*/
+/*	max-height: 35px;*/
+/*	display: inline-block;*/
+/*    display: inline;*/
+/*}*/
+
+/*.navbar-brand>img {*/
+/*	display: inline-block;*/
+/*	margin-right: -14px;*/
+/*    margin-top: -27px;*/
+/*}	*/
+
+/*Holiday mode*/
+
 .hat {
 	max-height: 35px;
 	display: inline-block;
@@ -133,7 +148,7 @@ a:hover {
 	display: inline-block;
 	margin-right: -14px;
     margin-top: -27px;
-}	
+}
 
 .navbar-inverse .navbar-nav>li>a:link {
 	color: #f6f7eb;
